@@ -1,0 +1,61 @@
+-- Creación de la tabla usuarios
+CREATE TABLE usuarios (
+    idregistro INT PRIMARY KEY,
+    nombre VARCHAR(45),
+    correo VARCHAR(45),
+    usuario VARCHAR(45),
+    contrasena VARCHAR(45)
+);
+
+-- Creación de la tabla resultados
+CREATE TABLE resultados (
+    idresultados INT PRIMARY KEY,
+    aciertos INT,
+    derrotas INT,
+    usuarios_idregistro INT,
+    FOREIGN KEY (usuarios_idregistro) REFERENCES usuarios(idregistro)
+);
+
+-- Creación de la tabla juegoBloques
+CREATE TABLE juegoBloques (
+    idjuegoBloques INT PRIMARY KEY,
+    clasificacion VARCHAR(45),
+    bloque VARCHAR(45)
+);
+
+-- Creación de la tabla juegoElementos
+CREATE TABLE juegoElementos (
+    idjuegoElementos INT PRIMARY KEY,
+    nombre VARCHAR(45),
+    simbolo VARCHAR(45),
+    grupo INT,
+    periodo INT,
+    categoria VARCHAR(45)
+);
+
+-- Creación de la tabla juegoPropiedades
+CREATE TABLE juegoPropiedades (
+    idjuegoPropiedades INT PRIMARY KEY,
+    nombre VARCHAR(45),
+    radio_atomico FLOAT,
+    energia_de_ionizacion FLOAT,
+    electronegatividad FLOAT
+);
+
+-- Creación de la tabla elementos
+CREATE TABLE elementos (
+    idelementos INT PRIMARY KEY,
+    nombre VARCHAR(45),
+    numero_atomico FLOAT,
+    simbolo VARCHAR(45),
+    grupo INT,
+    periodo INT,
+    juegoBloques_idjuegoBloques INT,
+    juegoElementos_idjuegoElementos INT,
+    juegoPropiedades_idjuegoPropiedades INT,
+    resultados_idresultados INT,
+    FOREIGN KEY (juegoBloques_idjuegoBloques) REFERENCES juegoBloques(idjuegoBloques),
+    FOREIGN KEY (juegoElementos_idjuegoElementos) REFERENCES juegoElementos(idjuegoElementos),
+    FOREIGN KEY (juegoPropiedades_idjuegoPropiedades) REFERENCES juegoPropiedades(idjuegoPropiedades),
+    FOREIGN KEY (resultados_idresultados) REFERENCES resultados(idresultados)
+);

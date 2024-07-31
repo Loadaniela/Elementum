@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego2</title>
+  <link rel="stylesheet" href="css/pagina1.css">
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <label for="toggle" class="hamburger"><span></span></label>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">PERFIL DEL JUGADOR</a></li>
+            <p><strong style="color: orange;">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
+            <p><strong style="color: orange;">Correo:</strong> <span id="correo" style="color: white;"></span></p>
+            <p><strong style="color: orange;">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
+            <li><a href="pagina1.html">Menú Principal</a></li>
+            <li><a href="login.html" id="logout">Cerrar sesión</a></li>
+            <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
+        </ul>
+    </nav>
+  <h1 style="color: white;" aling="center">Elementos Químicos</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Número Atómico</th>
+        <th>Símbolo</th>
+        <th>Grupo</th>
+        <th>Período</th>
+        <th>Radio Atómico</th>
+        <th>Energía de Ionización</th>
+        <th>Electronegatividad</th>
+        <th>Bloque</th>
+      </tr>
+    </thead>
+    <tbody id="elementos-list">
+    </tbody>
+  </table>
+
+  <script>
+    // Define una función asíncrona llamada fetchElementos
+async function fetchElementos() {
+    try {
+        // Realiza una solicitud HTTP GET a la URL especificada para obtener datos
+        const response = await fetch('http://localhost:3000/elementos');
+        
+        // Espera la conversión de la respuesta a formato JSON
+        const elementos = await response.json();
+
+        // Obtiene la referencia del elemento del DOM con el id 'elementos-list'
+        const elementosList = document.getElementById('elementos-list');
+        
+        // Limpia el contenido interno del elemento 'elementos-list'
+        elementosList.innerHTML = '';
+
+        // Itera sobre cada objeto 'elemento' en el array 'elementos'
+        elementos.forEach(elemento => {
+            // Crea un nuevo elemento de fila de tabla ('tr')
+            const row = document.createElement('tr');
+            
+            // Asigna el contenido HTML de la fila usando los datos del 'elemento'
+            row.innerHTML = `
+                <td>${elemento.nombre}</td>
+                <td>${elemento.numero_atomico}</td>
+                <td>${elemento.simbolo}</td>
+                <td>${elemento.grupo}</td>
+                <td>${elemento.periodo}</td>
+                <td>${elemento.radio}</td>
+                <td>${elemento.energia_de_ionizacion}</td>
+                <td>${elemento.electronegatividad}</td>
+                <td>${elemento.bloque}</td>
+            `;
+            
+            // Añade la nueva fila ('tr') al elemento 'elementos-list'
+            elementosList.appendChild(row);
+        });
+    } catch (err) {
+        // Captura y muestra en la consola cualquier error que ocurra durante la solicitud o el procesamiento de datos
+        console.error('Error fetching elementos:', err);
+    }
+}
+
+
+    // Llamar a la función para obtener y mostrar los elementos
+    fetchElementos();
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+                fetch('/perfil')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('No autorizado');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        document.getElementById('nombre').textContent = data.nombre;
+                        document.getElementById('correo').textContent = data.correo;
+                        document.getElementById('usuario').textContent = data.usuario;
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar el perfil:', error);
+                        alert('Debes iniciar sesión primero');
+                        window.location.href = '/login.html';
+                    });
+            });
+
+            document.getElementById('logout').addEventListener('click', function(e) {
+                e.preventDefault();
+                fetch('/logout', { method: 'POST' })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/login.html';
+                        } else {
+                            throw new Error('Error al cerrar sesión');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error al cerrar sesión:', error);
+                        alert('Error al cerrar sesión');
+                    });
+            });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+-- -----------------------------------------------------
+-- Table `Registro_jugadores`.`usuarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Registro_jugadores`.`usuarios` (
+  `id_registro_` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `correo` VARCHAR(45) NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
+  `contrasena` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_registro_`),
+  UNIQUE INDEX `idregistro__UNIQUE` (`id_registro_` ASC) VISIBLE,
+  UNIQUE INDEX `usuario_UNIQUE` (`usuario` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+------------------por si no sirve el de arriba----
+CREATE TABLE IF NOT EXISTS `Registro_jugadores`.`usuarios` (
+  `id_registro_` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `correo` VARCHAR(45) NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
+  `contrasena` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_registro_`),
+  UNIQUE INDEX `idregistro__UNIQUE` (`id_registro_` ASC),
+  UNIQUE INDEX `usuario_UNIQUE` (`usuario` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Registro_jugadores`.`juegos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Registro_jugadores`.`juegos` (
+  `idjuegos` INT NOT NULL,
+  `nombre_de_juego` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idjuegos`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Registro_jugadores`.`partida`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Registro_jugadores`.`partida` (
+  `id_partida` INT NOT NULL,
+  `victoria` BOOLEAN NOT NULL,
+  `hora_inicio` DATE NOT NULL,
+  `hora_fin` DATE NOT NULL,
+  `usuarios_id_registro_` INT NOT NULL,
+  `juegos_idjuegos` INT NOT NULL,
+  PRIMARY KEY (`id_partida`),
+  INDEX `fk_partida_usuarios_idx` (`usuarios_id_registro_` ASC) VISIBLE,
+  INDEX `fk_partida_juegos1_idx` (`juegos_idjuegos` ASC) VISIBLE,
+  CONSTRAINT `fk_partida_usuarios`
+    FOREIGN KEY (`usuarios_id_registro_`)
+    REFERENCES `Registro_jugadores`.`usuarios` (`id_registro_`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_partida_juegos1`
+    FOREIGN KEY (`juegos_idjuegos`)
+    REFERENCES `Registro_jugadores`.`juegos` (`idjuegos`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Registro_jugadores`.`elementos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Registro_jugadores`.`elementos` (
+  `idelementos` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `numero_atomico` FLOAT NOT NULL,
+  `simbolo` VARCHAR(45) NOT NULL,
+  `grupo` INT NOT NULL,
+  `periodo` INT NOT NULL,
+  `radio` FLOAT NOT NULL,
+  `energia_de_ionizacion` FLOAT NOT NULL,
+  `electronegatividad` FLOAT NOT NULL,
+  `bloque` FLOAT NOT NULL,
+  PRIMARY KEY (`idelementos`))
+ENGINE = InnoDB;
+
+USE `registro_jugadores` ;
+
+-- -----------------------------------------------------
+-- Table `registro_jugadores`.`usuarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `registro_jugadores`.`usuarios` (
+  `idusuarios` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombre_completo` VARCHAR(45) NOT NULL,
+  `correo` VARCHAR(45) NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
+  `contrasena` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idusuarios`),
+  UNIQUE INDEX `idusuarios_UNIQUE` (`idusuarios` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 23
+DEFAULT CHARACTER SET = utf8mb4;
+
+USE `Registro_jugadores` ;
+

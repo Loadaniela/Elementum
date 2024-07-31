@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Hamburguesa Desplegable</title>
+    <link rel="stylesheet" href="/css/pagina1.css">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" href="/Imagenes/icon-512x512.png.png"> <!--Etiqueta para la imagen del icono-->
+</head>
+<body>
+    <main>
+        <input type="checkbox" id="toggle">
+        <label for="toggle" class="hamburger"><span></span></label>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">PERFIL DEL JUGADOR</a></li>
+                <p><strong style="color: orange;">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
+                <p><strong style="color: orange;">Correo:</strong> <span id="correo" style="color: white;"></span></p>
+                <p><strong style="color: orange;">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
+                <li><a href="tabla-periodica.html">Tabla periódica</a></li>
+                <li><a href="login.html" id="logout">Cerrar sesión</a></li>
+                <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
+            </ul>
+        </nav>
+        <h1 class="neon-text">ELEMENTUM</h1>
+        <h1><p style="color: white;">Elije un juego</p></h1>
+        <!--
+        <div class="image-container">
+        <img src="Imagenes/bloques.png" id="bloques" width="400" height="420">
+        <img src="Imagenes/tabla_SNfondo.png" alt="tabla" width="200" height="420">
+        <img src="Imagenes/propiedades.jpg" alt="propiedades" width="400" height="420">
+        </div>
+        -->
+
+        <div class="carousel"> <!--Etiquetas para activar el carrusel-->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Imagenes/bloques.png" alt="Juego 1" width="350" height="400">
+                    <a href="juego.html" class="carousel-link">Juego 1</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="Imagenes/posición.png" alt="Juego 2">
+                    <a href="juego2.html" class="carousel-link">Juego 2</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="Imagenes/propiedades.jpg" alt="Juego 3">
+                    <a href="juego3.html" class="carousel-link">Juego 3</a>
+                </div>
+            </div>
+            <a class="carousel-control prev" onclick="prevSlide()">&#10094;</a>
+            <a class="carousel-control next" onclick="nextSlide()">&#10095;</a>
+        </div>
+        <script src="/js/menu_juegos.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                fetch('/perfil')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('No autorizado');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        document.getElementById('nombre').textContent = data.nombre;
+                        document.getElementById('correo').textContent = data.correo;
+                        document.getElementById('usuario').textContent = data.usuario;
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar el perfil:', error);
+                        alert('Debes iniciar sesión primero');
+                        window.location.href = '/login.html';
+                    });
+            });
+
+            document.getElementById('logout').addEventListener('click', function(e) {
+                e.preventDefault();
+                fetch('/logout', { method: 'POST' })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/login.html';
+                        } else {
+                            throw new Error('Error al cerrar sesión');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error al cerrar sesión:', error);
+                        alert('Error al cerrar sesión');
+                    });
+            });
+        </script>
+        
+    </main>
+</body>
+</html>

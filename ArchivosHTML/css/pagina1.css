@@ -1,0 +1,269 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../Imagenes/fondo1.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+/*
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}*/
+
+/*CSS DE LA ANIMACIÓN DE EL TITULO DE ELEMENTUM*/
+.neon-text {
+    font-size: 7em; /*Tamaño de letra*/
+    color: #fff;
+    text-align: center;
+    position: relative;
+    animation: flicker 2s infinite alternate;
+}
+/*Colores de fondo*/
+@keyframes flicker {
+    0% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
+        color: #00ff00;
+    }
+    25% {
+        text-shadow: none;
+        color: #000;
+    }
+    50% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+        color: #fff;
+    }
+    75% {
+        text-shadow: none;
+        color: #000;
+    }
+    100% {
+        text-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff, 0 0 40px #0000ff, 0 0 50px #0000ff, 0 0 60px #0000ff, 0 0 70px #0000ff;
+        color: #0000ff;
+    }
+}
+
+/*CSS del carrusel para legir los luegos*/
+.carousel {
+    position: relative;
+    max-width: 60%; /*Cambia el tamaño del carrusel*/
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+/*Tamaño de las imagenes dentro del carrusel*/
+.carousel-item img {
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+.carousel-link {
+    display: block;
+    margin-top: 1px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.carousel-link:hover {
+    background-color: #0056b3;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 90%; /*estaba en 50*/
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/*CSS para mostrar la informacion del perfil*/
+.profile {
+    background-color: rgba(253, 253, 253, 0.993);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.profile h1 {
+    margin-bottom: 20px;
+}
+/* Estilos del menú hamburguesa */
+.hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/*ICONO DE HAMBURGESA*/
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+   
+    cursor: pointer;
+    background-color: #681fad;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#toggle {
+    display: none;
+}
+/*Interior del menu*/
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    background-color: #111111;
+    width: 250px;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.menu ul li {
+    margin-bottom: 15px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+#toggle:checked + .hamburger span {
+    transform: rotate(45deg);
+}
+
+#toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#toggle:checked ~ .menu {
+    transform: translateX(0);
+}
+
+/* Estilos para el contenido principal */
+main {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    margin-top: 80px; /* Ajustar según la altura del menú hamburguesa */
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 4px; /* Espacio entre las imágenes */
+}
+  
+#elementos-list{
+    background-color: white;
+    container: center;
+    align-items: center;
+
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    th {
+      text-align: center;
+    }
+  
+    tr {
+      margin-bottom: 10px;
+    }
+  
+    td {
+      text-align: center;
+      padding: 10px;
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
