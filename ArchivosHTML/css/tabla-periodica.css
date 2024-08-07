@@ -118,14 +118,17 @@
   }
   body {
     font-family: Arial;
+    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
+   
     padding: 1%;
   }
   .periodic {
     position: relative;
     height: 200px;
+    overflow:hidden; 
     margin-right: -1px;
     text-shadow: none;
   }
@@ -640,9 +643,7 @@
   }
   }
   
-body{
-  background-color: black;
-}
+
   
 .neon-text {
     font-size: 7em;

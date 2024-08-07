@@ -217,6 +217,9 @@ app.post("/usuarios", async (req, res) => {
         res.status(500).send("Error al guardar el usuario");
     }
 });
+/*comentario */
+//ruta para enviar 5 elementos aleatorios cada que se recargue
+
 
 
 // Ejemplo de ingreso de un dato
@@ -259,6 +262,20 @@ app.get("/elementos", async function (req, res) {
         res.json({ error: "Error al consultar todos los elementos en la BD" });
     }
 });
+
+// ruta para obtener los elementos al azar 
+app.get('/elementos/aleatorios', async (req, res) => {
+    try {
+        const elementos = await ElementosModel.aggregate([
+            { $sample: { size: 5 } } // Devuelve 5 documentos al azar  cada que se recarga la pagina
+        ]);
+        res.json(elementos);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+
 /*La información de radio atómico está en picómetros (pm), la energía de ionización
  en kJ/mol y la electronegatividad es según la escala de Pauling. */
 

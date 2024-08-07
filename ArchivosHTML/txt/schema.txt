@@ -98,3 +98,5 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 USE `Registro_jugadores` ;
 
+
+link https://codepen.io/YuDiCC/pen/OJvEebY?editors=0100

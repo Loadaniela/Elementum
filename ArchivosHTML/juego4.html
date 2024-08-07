@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juego2</title>
-  <link rel="stylesheet" href="css/juego2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Bloques</title>
+    <link rel="stylesheet" href="css/juego4.css">
 </head>
 <body>
     <input type="checkbox" id="toggle">
@@ -22,7 +22,7 @@
     </nav>
 
     <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
-  
+
     <!--ELEMENTOS DE LA TABLA PERIODICA-->  
  <!--INICIA EL BLOQUE S-->
 <div class="gas" id="eq1">
@@ -513,44 +513,8 @@
     </div>
 <!--AQUI TERMINA EL BLOQUE F-->
 
-
-    <div class="elemento-alcalino" id="elemento1"></div>
-    <div class="elemento-alcalino" id="elemento2"></div>
-    <div class="elemento-alcalino" id="elemento3"></div>
-    <div class="elemento-alcalino" id="elemento4"></div>
-    <div class="elemento-alcalino" id="elemento5"></div>
-
-  
-  <script>
-    /*Define la funcion buscar Elemento*/
-        async function buscaElemento() {
-    try {
-         // Realiza una solicitud HTTP GET a la URL especificada para obtener datos
-        const response = await fetch('http://localhost:3000/elementos/aleatorios'); // ruta hecha en prueba.js para devolver 5 aleatorios
-        // Espera la respuesta a formato JSON
-        const elementos = await response.json();
-
-         // Itera sobre cada objeto 'elemento' en el array 'elementos'
-        elementos.forEach((elemento, index) => {
-             // Obtiene la referencia del elemento del DOM con un id dinámico basado en el índice (por ejemplo, elemento1, elemento2, etc.)
-            const elementoDiv = document.getElementById(`elemento${index + 1}`);
-            elementoDiv.innerHTML = `
-                <p class="numero_atomico">${elemento.numero_atomico}</p>
-                <p class="simbolo">${elemento.simbolo}</p>
-                <p class="nombre">${elemento.nombre}</p>
-                <p class="grupo">${elemento.grupo}</p>
-                <p class="periodo">${elemento.periodo}</p>
-            `;
-        });
-    } catch (err) {
-        console.error('Error de fetching elementos:', err);
-    }
-}
-        // Cargar elementos al cargar la página
-        document.addEventListener('DOMContentLoaded', buscaElemento);
-  </script>
- 
-  <script>
+</body>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
                 fetch('/perfil')
                     .then(response => {
@@ -588,5 +552,4 @@
             });
 
   </script>
-</body>
 </html>

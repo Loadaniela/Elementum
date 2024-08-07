@@ -1,122 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
+juego html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Propiedades</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/juego3.css">
+</head>
+<body>
+    <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+   <div id="tablon">
+        <div id="slider-wrapper">
+             <p id="hover">Pasa tu mouse por encima</p>
+            <div id="slider">
+                <a href="javascript:void();">
+                    <img src="Imagenes/Juego1_Bloques.jpg" alt="">
+                    <div>
+                        <span>Juego 1<br/><b>Bloques</b></span>					
+                        <p>Arcania es un foro rol de fantasía épica medieval, ambientado en las salvajes tierras del Nuevo Mundo. Aquí tienes libertad para crear tu personaje y decidir su destino; toma parte en la guerra uniéndote a la campaña de alguna facción o en cambio, haz tu propio camino y descubre la magia detrás de este vasto mundo. Sea cual sea tu elección ¡una gran aventura te espera!</p>
+                    </div>
+                </a>
+                <a href="javascript:void();">
+                    <img src="Imagenes/posición.png" alt="">
+                    <div>
+                        <span>Juego 2<br/><b>Elementos</b></span>					
+                        <p>Arcania es un rol que te brinda la mayor libertad a la hora de crear y hacer crecer a tu personaje. Puedes elegir ser un aventurero, explorar, realizar misiones y rolear junto a otros roleadores entusiastas. Además, si quieres ir un poco más allá, puedes incluso hacerte líder de algún poblado y gobernarlo a placer. Constrúyelo desde cero, maneja su economía, sociedad y ¡crea tu propio ejército!</p>
+                    </div>
+                </a>
+                <a href="javascript:void();">
+                    <img src="Imagenes/radio.png" alt="">
+                    <div>
+                        <span>Juego 3<br/><b>Radio Atomico</b></span>				
+                        <p>El Nuevo Mundo es una gran masa de tierra fragmentada por diversas civilizaciones fantásticas, llenas de deidades, criaturas salvajes y personajes singulares por doquier. Estarás rodeado de los bien conocidos humanos, elfos elitistas, enanos gruñones, orcos salvajes, goblins pendencieros y un sinfín de criaturas más. ¿A qué andas esperando para unirte a la aventura?</p>
+                    </div>
+                </a>
+                <a href="javascript:void();">
+                    <img src="Imagenes/electronegatividad.jpg" alt="">
+                    <div>
+                        <span>Juego 4<br/><b>Electronegatividad</b></span>				
+                        <p>Desde hace muchos eones atrás, la tierra ha crujido al estruendoso son de los tambores de guerra, siendo fragmentada por siglos de lucha casi interminable. Y, aunque estos son tiempos de calma, la paz es efímera y su final parece asomarse en el horizonte. Aquí, tres facciones se juegan la supremacía total. Únete a las filas de algún Señor Soberano o lidera tu propio ejército, la decisión es tuya.</p>
+                    </div>
+                </a>
+            </div>
+            <a href="javascript:void();" class="mas">&rsaquo;</a>
+              <a href="javascript:void();" class="menos">&lsaquo;</a>
+        </div>
+        <div class="right">
+            <div id="top">
+                <img src="Imagenes/Tabla-Ayuda.png" alt="">
+                <h2><span>Tabla de </span>ayuda</h2>
+                <div class="links">
+                    <a href="link1">
+                        
+                        <p>Tabla Periódica de los Elementos</p>
+                    </a>
+                </div>
+            </div>
+            <div id="bottom">
+                <div class="up">
+                    <a href="#" id="new">
+                        <img src="https://i.imgur.com/g4t3O0x.jpg">
+                        <p>Autor</p>
+                    </a>
+                    <a href="#" id="rules">
+                        <img src="https://i.imgur.com/eYd810m.jpg">
+                         <p>Normas y reglas del juego</p>
+                    </a>
+                </div>
+                <div class="down">
+                    <a href="#" id="char">
+                        <img src="https://i.imgur.com/gYPtZgQ.jpg">
+                        <p>Inserta un tu cuestionario</p>
+                    </a>
+                    <a href="#" id="notices">
+                        <img src="https://i.imgur.com/4XOklrY.jpg">
+                        <p>Marcador</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/juego3.js"></script>
+</body>
+</html>
+
+
+juego 3 css 
+body{
     Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
-    /*background-image: url(../Imagenes/fondo1.jpg);*/
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center;
-    background-attachment: fixed; 
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    margin: 0;
-    
 }
-
-/*
-main{
-    width: 100%;
-    padding: 20px;
-    margin: auto;
-    margin-top: 100px;
-}*/
-main {
-    width: 100%;
-    margin: auto;
-    padding: 10px;
-    margin-top: 1px; /* Ajustar según la altura del menú hamburguesa */
-}
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-p{
-    text-align: center;
-}
-
-
-/*CSS PARA LA PAGINA 1 CARUSEL*/
-
-/*CSS para mostrar la informacion del perfil*/
-.profile {
-    background-color: rgba(253, 253, 253, 0.993);
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 400px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  .profile h1 {
-    margin-bottom: 20px;
-  }
-  /* Estilos del menú hamburguesa */
-  .hamburger {
-    display: block;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-/*ICONO DE HAMBURGESA*/
-.hamburger span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #ad1f1f;
-    margin-bottom: 5px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  #toggle {
-    display: none;
-  }
-  /*Interior del menu*/
-  .menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    
-    background-color: #111111;
-    width: 250px;
-    height: 100%;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
-  
-  .menu ul {
-    list-style: none;
-    padding: 20px;
-  }
-  
-  .menu ul li {
-    margin-bottom: 15px;
-  }
-  
-  .menu ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.2em;
-  }
-  
-  #toggle:checked + .hamburger span {
-    transform: rotate(45deg);
-  }
-  
-  #toggle:checked + .hamburger span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  #toggle:checked + .hamburger span:nth-child(3) {
-    transform: rotate(-45deg);
-  }
-  
-  #toggle:checked ~ .menu {
-    transform: translateX(0);
-  }
-  
 
 /* Contenedor principal */
 #tablon {
@@ -230,10 +203,10 @@ p{
 	font-size: 60px;
 	text-transform: uppercase;
 	font-weight: 400;
-	color: #f7f5f3;
+	color: #141414;
 	line-height: 55px;
 	letter-spacing: -2px;
-	text-shadow: 15px 15px 15px rgba(0,0,0,0.7);
+	text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
 
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
@@ -625,3 +598,137 @@ a.mas {
         clip: rect(17px, 9999px, 39px, 0);
     }
 }
+
+juego 3 js
+$(function() {
+    $('#slider a:gt(0)').hide();
+    var interval = setInterval(changeDiv, 3500);
+  
+    function changeDiv() {
+      $('#slider a:first-child').fadeOut(1000)
+        .next('a').fadeIn(1000)
+        .end().appendTo('#slider');
+    }
+    $('#slider').hover(
+      function() {
+        clearInterval(interval);
+      },
+      function() {
+        interval = setInterval(changeDiv, 3500);
+      }
+    );
+    $('.mas').click(function() {
+      changeDiv();
+      clearInterval(interval);
+      interval = setInterval(changeDiv, 3500);
+    });
+    $('.menos').click(function() {
+      $('#slider a:first-child').fadeOut(1000);
+      $('#slider a:last-child').fadeIn(1000).prependTo('#slider');
+      clearInterval(interval);
+      interval = setInterval(changeDiv, 3500);
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+  otro css pagina 1 
+  
+/* Estilos para el contenido principal */
+main {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    margin-top: 80px; /* Ajustar según la altura del menú hamburguesa */
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 4px; /* Espacio entre las imágenes */
+}
+  
+#elementos-list{
+    background-color: white;
+    container: center;
+    align-items: center;
+
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    th {
+      text-align: center;
+    }
+  
+    tr {
+      margin-bottom: 10px;
+    }
+  
+    td {
+      text-align: center;
+      padding: 10px;
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+
+
+
+  PARTE DEL CODIGO PARA OBTENER LOS DATOS DE MONGO EN UNA TABLA 
+   <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Número Atómico</th>
+        <th>Símbolo</th>
+        <th>Grupo</th>
+        <th>Período</th>
+        <th>Radio Atómico</th>
+        <th>Energía de Ionización</th>
+        <th>Electronegatividad</th>
+        <th>Bloque</th>
+      </tr>
+    </thead>
+    <tbody id="elementos-list">
+    </tbody>
+  </table>
