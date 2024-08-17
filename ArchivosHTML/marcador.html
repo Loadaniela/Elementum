@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcador</title>
+    <link rel="stylesheet" href="/css/estilosJuego.css">
+</head>
+<body>
+    <main>
+        <input type="checkbox" id="toggle">
+        <label for="toggle" class="hamburger"><span></span></label>
+        <nav class="menu">
+            <ul>
+                <li><a href="#" >PERFIL DEL JUGADOR</a></li>
+                <p><strong style="color: orange;">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
+                <p><strong style="color: orange;">Correo:</strong> <span id="correo" style="color: white;"></span></p>
+                <p><strong style="color: orange;">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
+                <li><a href="pagina1.html">Menú Principal</a></li>
+                <li><a href="login.html" id="logout">Cerrar sesión</a></li>
+                <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
+            </ul>
+        </nav>
+        <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/perfil')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No autorizado');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('nombre').textContent = data.nombre;
+                    document.getElementById('correo').textContent = data.correo;
+                    document.getElementById('usuario').textContent = data.usuario;
+                })
+                .catch(error => {
+                    console.error('Error al cargar el perfil:', error);
+                    alert('Debes iniciar sesión primero');
+                    window.location.href = '/login.html';
+                });
+        });
+
+        document.getElementById('logout').addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch('/logout', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/login.html';
+                    } else {
+                        throw new Error('Error al cerrar sesión');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al cerrar sesión:', error);
+                    alert('Error al cerrar sesión');
+                });
+        });
+    </script>
+</body>
+</html>

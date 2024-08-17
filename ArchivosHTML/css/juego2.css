@@ -6,6 +6,10 @@ body{
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+h2{
+    font-size: 2em;
+}
+
 p{
     text-align: center;
 }
@@ -15,7 +19,7 @@ p{
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
     font-family: 'Permanent Marker', cursive;
-    font-size: 6em;
+    font-size: 7em;
     text-shadow: 8px -8px 0px #d37d1b;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
@@ -196,6 +200,31 @@ p{
     transform: translateX(0);
   }
 
+
+  /*menu oculto */
+  /*MENU OCULTO*/
+#menuoculto a{
+    position: fixed;
+    color: black;
+    left:-100px; 
+    transition: 0.2s;
+    font-size: 15px;
+    font-weight:bold;
+    text-decoration: none;
+    padding: 15px 50px 15px 10px;
+    width: 100px; /* tamaño del menú */
+    border-radius: 0 20px 5px 0; 
+    } 
+    #menuoculto a:hover {
+        left: 0; 
+        }
+    
+    #menu1{
+        top: 100px; 
+        background-color: #eb4300; 
+        }
+
+        
   /* CSS PARA TARER LA INFORMACION DE MONGO */
 main {
     width: 100%;
@@ -220,10 +249,11 @@ div{
   width:100%;
   height:100%;
   margin: 8rem;
-  font-family: 'DynaPuff', cursive;
+  
   color: #fff;
 }
 
+/*
 @keyframes text{
   0%{
     filter: hue-rotate(0deg);
@@ -231,63 +261,43 @@ div{
   100%{
     filter: hue-rotate(360deg);
   }
-}
+}*/
 
-.atomico{
-  font-size: 12px;
-  line-height: 0px;
-}
 
-.simbolo{
-  font-size: 18px;
-  line-height: 0px;
-}
-
-.nombre{
-  font-size: 15px;
-  line-height: 0px;
-}
-
-.peso{
-  font-size: 8px;
-  line-height: 0px;
-}
-.grupo{
-  font-size: 11px;
-  line-height: 0px;
-}
-.periodo{
-  font-size: 11px;
-  line-height: 0px;
-}
-
-  /*pruebas para el bloque por medio de mongo*/
-  .elemento-alcalino{
-    width: 100px;
-    height: 100px;
-    display:inline-block ;
+/* Ajuste de tamaño de fuente */
+.atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
+    margin: 0;           /* Elimina márgenes para evitar desalineaciones */
+    line-height: 1.6;  /* Restablece el line-height */
     
-    border: dashed black 2px;
-    text-align: center;
-    
-    border-radius: 5px;
-    background: #2f96e6; /*no mover*/
-    -webkit-transition-duration: 0.9s;
-    
-}
-
-.elemento-alcalino:hover{
-  background: #fb7;
-  -webkit-transform:scale(1.2);
-}
+  }
+.atomico {
+    font-size: 6px;
+  }
+  
+  .simbolo {
+    font-size: 14px;
+  }
+  
+  .nombre {
+    font-size: 14px;
+  }
+  
+  .peso {
+    font-size: 8px;
+  }
+  
+  .grupo, .periodo {
+    font-size: 8px;
+  }
+  
 
  /*fin contenido de cada elementos*/
   
   /*elementos*/
   
   .gas{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -296,7 +306,7 @@ div{
 }
 
 .gas:hover{
-    background: #B5B8B1;
+   /* background: #B5B8B1;*/
     -webkit-transform: scale(1.2);
 }
 
@@ -308,8 +318,8 @@ div{
 }
 
 .alcalino{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -319,7 +329,7 @@ div{
 }
 
 .alcalino:hover{
-    background: #fb7;
+    /*background: #fb7;*/
     -webkit-transform:scale(1.2);
 }
 
@@ -349,8 +359,8 @@ div{
 }
 
 .alcalinoterreos{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -359,7 +369,7 @@ div{
 }
 
 .alcalinoterreos:hover{
-    background: #CF010B;
+    /*background: #CF010B;*/
     -webkit-transform: scale(1.2);
 }
 #eq4{
@@ -388,8 +398,8 @@ div{
 }
 
 .transicion{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -398,7 +408,7 @@ div{
 }
 
 .transicion:hover{
-    background: #9B6DC6;
+    /*background: #9B6DC6;*/
     -webkit-transform: scale(1.2);
 }
 #eq21{
@@ -411,8 +421,8 @@ div{
 }
 
 .lantanidos{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -421,7 +431,7 @@ div{
 }
 
 .lantanidos:hover{
-    background: #FF6961;
+    /*background: #FF6961;*/
     -webkit-transform: scale(1.2);
 }
 #eq5771{
@@ -430,8 +440,8 @@ div{
 }
 
 .actinidos{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -440,7 +450,7 @@ div{
 }
 
 .actinidos:hover{
-    background: #EC7C26;
+    /*background: #EC7C26;*/
     -webkit-transform: scale(1.2);
 }
 #eq89103{
@@ -603,8 +613,8 @@ div{
     color: #9C9C9C;
 }
 .metaloides{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -613,7 +623,7 @@ div{
 }
 
 .metaloides:hover{
-    background: #008F39;
+   /* background: #008F39;*/
     -webkit-transform: scale(1.2);
 }
 #eq5{
@@ -621,8 +631,8 @@ div{
     top: 160px;left: 740px;
 }
 .metales{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -631,7 +641,7 @@ div{
 }
 
 .metales:hover{
-    background: #015D52;
+    /*background: #015D52;*/
     -webkit-transform: scale(1.2);
 }
 #eq13{
@@ -652,8 +662,8 @@ div{
 }
 
 .desconocidos{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -661,7 +671,7 @@ div{
     -webkit-transition-duration: 0.9s;
 }
 .desconocidos:hover{
-    background: #009999;
+   /* background: #009999;*/
     -webkit-transform: scale(1.2);
 }
 #eq113{
@@ -747,8 +757,8 @@ div{
     color: #9C9C9C;
 }
 .halogenos{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -757,7 +767,7 @@ div{
 }
 
 .halogenos:hover{
-    background: #ABDEE6;
+   /* background: #ABDEE6;}*/
     -webkit-transform:scale(1.2);
 }
 #eq9{
@@ -789,8 +799,8 @@ div{
     color: #9C9C9C;
 }
 .nobles{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -799,7 +809,7 @@ div{
 }
 
 .nobles:hover{
-    background: #6B85A9;
+    /*background: #6B85A9;*/
     -webkit-transform:scale(1.2);
 }
 
@@ -959,241 +969,136 @@ div{
 #eq103{
     position: absolute;
     top: 610px;left: 980px;
+    
 }
 
-
-/*tipos de elementos*/
-.tipos{
-  font-size: 10px
+/*
+#elemento1{
+    position: relative;
+    bottom: -400px; right: -100px;
+    
 }
 
-.t1{
-  position: absolute;
-  top: 170px;left: 350px;
+#elemento2{
+    position: relative;
+    bottom: -400px; left:-80px;
 }
-.t2{
-  position: absolute;
-  top: 190px;left: 350px;
-}
-.t3{
-  position: absolute;
-  top: 210px;left: 350px;
-}
-.t4{
-  position: absolute;
-  top: 230px;left: 350px;
-}
-.t5{
-  position: absolute;
-  top: 170px;left: 530px;
-}
-.t6{
-  position: absolute;
-  top: 190px;left: 530px;
-}
-.t7{
-  position: absolute;
-  top: 210px;left: 530px;
-}
-.t8{
-  position: absolute;
-  top: 230px;left: 530px;
-}
-.t9{
-  position: absolute;
-  top: 170px;left: 680px;
-}
-.t10{
-  position: absolute;
-  top: 190px;left: 680px;
-}
-.t11{
-  position: absolute;
-  top: 210px;left: 680px;
-}
-/* fin a tipos de elementos*/
 
-/*colores de los tipos de elementos*/
-.box1{
-    width: 10px;
-    height: 10px;
-    background: #65727C;
+#elemento3{
+position: relative;
+bottom: -400px; left: -280px;
+}
+#elemento4{
+position: relative;
+bottom: -400px; left: -480px;
+}
+#elemento5{
+position: relative;
+bottom: -80px;
+}
+
+#elemento6{
+position: relative;
+bottom: -80px; left: 270px; 
+
+}
+#elemento7{
+position: relative;
+
+left: 50px; bottom: -80px;
+}
+
+#elemento8{
+position: relative;
+
+left: 60px; bottom: -80px;
+}
+
+#elemento9{
+position: relative;
+top: 300px;
+
+left: 920px; top: -240px;
+}
+#elemento10{
+position: relative;
+left: 500px; bottom: 250px;
+}
+*/
+
+/* Ajusta los elementos a su posición debajo de la tabla periódica */
+#elemento1, #elemento2, #elemento3, #elemento4, #elemento5, 
+#elemento6, #elemento7, #elemento8, #elemento9, #elemento10 {
     position: absolute;
-    top: 100px;left:250px;
 }
 
-.box2{
-    width: 10px;
-    height: 10px;
-    background: #800000;
-    position: absolute;
-    top: 120px;left:250px;
+/* Ajusta la posición vertical para que estén debajo de la tabla */
+#elemento1 {
+    top: 700px; /* Ajusta este valor según la altura de la tabla */
+    left: 100px;
 }
 
-.box3{
-    width: 10px;
-    height: 10px;
-    background: #fb2;
-    position: absolute;
-    top: 140px;left:250px;
+#elemento2 {
+    top: 700px; 
+    left: 300px;
 }
 
-.box4{
-    width: 10px;
-    height: 10px;
-    background: #4931AF;
-    position: absolute;
-    top: 160px;left:250px;
+#elemento3 {
+    top: 700px; 
+    left: 500px;
 }
 
-.box5{
-    width: 10px;
-    height: 10px;
-    background: #2D572C;
-    position: absolute;
-    top: 100px;left:430px;
+#elemento4 {
+    top: 700px; 
+    left: 700px;
 }
 
-.box6{
-    width: 10px;
-    height: 10px;
-    background: #00BB2D;
-    position: absolute;
-    top: 120px;left:430px;
+#elemento5 {
+    top: 800px; /* Ajusta según sea necesario */
+    left: 100px;
 }
 
-.box7{
-    width: 10px;
-    height: 10px;
-    background: #109DFA;
-    position: absolute;
-    top: 140px;left:430px;
+#elemento6 {
+    top: 800px; 
+    left: 300px;
 }
 
-.box8{
-    width: 10px;
-    height: 10px;
-    background: #002392;
-    position: absolute;
-    top: 160px;left: 430px;
+#elemento7 {
+    top: 800px;
+    left: 500px;
 }
 
-.box9{
-    width: 10px;
-    height: 10px;
-    background: #FF8000;
-    position: absolute;
-    top: 100px;left:580px;
+#elemento8 {
+    top: 800px;
+    left: 700px;
 }
 
-.box10{
-    width: 10px;
-    height: 10px;
-    background: #CB3234;
-    position: absolute;
-    top: 120px;left: 580px;
+#elemento9 {
+    top: 800px;
+    left: 900px;
 }
 
-.box11{
-    width: 10px;
-    height: 10px;
-    background: #006666;
-    position: absolute;
-    top: 140px;left: 580px;
-}
-/*fin colores de los tipos de elementos*/
-
-.solido{
-    position: absolute;
-    top: 90px;left: 900px;
-    font-family: 'DynaPuff', cursive;
-}
-.liquido{
-    position: absolute;
-    top: 110px;left: 900px;
-    font-family: 'DynaPuff', cursive;
-}
-.gaseoso{
-    position: absolute;
-    top: 130px;left: 900px; 
-    font-family: 'DynaPuff', cursive;
-}
-.desconocido{
-    position: absolute;
-    top: 150px;left: 900px;
-    font-family: 'DynaPuff', cursive;
+#elemento10 {
+    top: 700px;
+    left: 900px;
 }
 
-.btn-neon{
-  
-  position: relative;
-  top: 100px; left: 500px;
-  display: inline-block;
-  padding: 10px 10px;
-  color: #fff;
-  letter-spacing: 4px;
-  font-size:  10px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: 0.2s;
-  font-family: 'DynaPuff', cursive;
-}
-.btn-neon:hover{
-  background: #a945c7;
-  box-shadow: 0 0 8px #a945c7, 0 0 20px #a945c7, 0 0 40px #a945c7;
-  transition-delay: 1s;
-}
-.btn-neon span{
-  position: absolute;
-  display: block;
-}
-#span1{
-  top: 0;
-  left:-100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #a945c7)
-}
-.btn-neon:hover #span1{
-  left: 100%;
-  transition: 1s;
-}
-#span3{
-  bottom: 0;
-  right:-100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #a945c7)
-}
-.btn-neon:hover #span3{
-  right: 100%;
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-#span2{
-  top: -100%;
-  left: 0%;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #a945c7)
-}
-.btn-neon:hover #span2{
-  top: 100%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
-#span4{
-  top: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(350deg, transparent, #a945c7)
-}
-.btn-neon:hover #span4{
-  bottom:100%;
-  transition: 1s;
-  transition-delay: 0.75s;
+/*pruebas para el bloque por medio de mongo*/
+.elemento-alcalino{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display:inline-block ;
+    border: dashed black 2px; /*tamaño del color negro del borde*/
+    text-align: center;
+    font-size: small;
+    border-radius: 2px;
+    background: #2f96e6; /*no mover*/
+    -webkit-transition-duration: 0.9s;
+    
 }
 
-
-
+.elemento-alcalino:hover{
+  /*background: #fb7;*/
+  -webkit-transform:scale(1.2);
+}

@@ -66,7 +66,7 @@ const ElementosSchema = new mongoose.Schema(
         radio_atomico: { type: Number, required: true, min: 0 },
         energia_de_ionizacion: { type: Number, required: true, min: 0 },
         electronegatividad: { type: Number, required: true, min: 0 },
-        bloque: { type: String, required: true, unique: true, maxlength: 50 },
+        bloque: { type: String, required: true, unique: false, maxlength: 50 },
     },
     {
         timestamps: true
@@ -208,7 +208,6 @@ app.post("/usuarios", async (req, res) => {
         if (!nombre || !correo || !usuario || !contrasena) {
             return res.status(400).json({ error: "Todos los campos son obligatorios" });
         }
-        
         const nuevoUsuario = new UsuariosModel({ nombre, correo, usuario, contrasena });
         await nuevoUsuario.save();
         res.send("Usuario guardado con éxito");
@@ -267,7 +266,7 @@ app.get("/elementos", async function (req, res) {
 app.get('/elementos/aleatorios', async (req, res) => {
     try {
         const elementos = await ElementosModel.aggregate([
-            { $sample: { size: 5 } } // Devuelve 5 documentos al azar  cada que se recarga la pagina
+            { $sample: { size: 10 } } // Devuelve 5 documentos al azar  cada que se recarga la pagina
         ]);
         res.json(elementos);
     } catch (error) {

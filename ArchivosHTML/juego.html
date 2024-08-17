@@ -25,7 +25,6 @@
 
 
 
-</body>
 
  <!--ELEMENTOS DE LA TABLA PERIODICA-->  
  <!--INICIA EL BLOQUE S-->
@@ -517,6 +516,13 @@
      </div>
 <!--AQUI TERMINA EL BLOQUE F-->
 
+<div class="bloquesN">
+    <div class="bloques" id="bloque1" draggable="true" ondragstart="drag(event)">Representativos</div>
+    <div class="bloques" id="bloque2" draggable="true" ondragstart="drag(event)">Transición</div>
+    <div class="bloques" id="bloque3" draggable="true" ondragstart="drag(event)">Nobles</div>
+    <div class="bloques" id="bloque4" draggable="true" ondragstart="drag(event)">Transición interna</div>
+</div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
                 fetch('/perfil')
@@ -555,4 +561,5 @@
             });
 
   </script>
+  </body>
 </html>

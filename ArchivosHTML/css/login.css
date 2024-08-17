@@ -2,7 +2,7 @@
 *{
     margin: 0%;
     padding: 0%;
-    font-family: sans-serif;
+    
     text-decoration: none;
     box-sizing: border-box;
     }
@@ -10,7 +10,9 @@
     
     body{
         /*Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
-        background-image: url(/Imagenes/tablaLogin.jpg); /*pone el fondo de la pagina*/
+       /* background-image: url(/Imagenes/tablaLogin.jpg); /*pone el fondo de la pagina*/
+       Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+       /*background-image: url(../Imagenes/fondo1.jpg);*/
         background-size: cover; /*Para que se posisione la imagen y se pueda centrar*/
         background-repeat: no-repeat; /*para que no se repita la imagen en los lados*/
         background-position: center;
@@ -37,7 +39,7 @@
         display: flex;
         justify-content: center;
         backdrop-filter: blur(10px);
-        background-color: rgba(18, 104, 78, 0.3);
+        background-color: rgba(243, 129, 23, 0.3);
     }
     
     .caja_trasera div{
@@ -97,7 +99,7 @@
         font-size: 30px;
         text-align: center;
         margin-bottom: 20px;
-        color: aqua;
+        color: rgb(255, 102, 0);
     }
     .contenedor_login_registro form input{
         width: 100%;
@@ -114,7 +116,7 @@
         margin-top: 40px;
         border: none;
         font-size: 14px;
-        background: #46A2FD;
+        background: #f12f28;
         color: white;
         cursor: pointer;
         outline: none;
@@ -130,52 +132,107 @@
     }
 
     /*Diseño para el movimiento y colores del titulo de ELEMENTUM*/
-    .glow {
+    .glitch {
+        position:relative;
+        justify-content: center;
+        text-align: center; /*Para poner el titulo en el centro */
+        align-items: center;
+       
         font-size: 7em;
-        color: #fff;
-        text-align: center;
-        animation: glow 1s ease-in-out infinite alternate;
+        text-shadow: 8px -8px 0px #d37d1b;
+        background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     
-    @keyframes glow {
-        from {
-            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
-        }
-        to {
-            text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
-        }
-    }
-    
-/*RESPONSIVE DESING*/
-@media screen and(max-width: 1000px) {
-    
-    main{
-        margin-top: 50px;
-    }
-
-    .caja_trasera{
-        max-width: 350px;
-        height: 300px;
-        flex-direction: column;
-        margin: auto;
-    }
-
-    .caja_trasera div{
-        margin: 0%;
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
         position: absolute;
-    }
-
-    /*responsive del formulario*/
-    .contenedor_login_registro{
-        top: -10px;
-        left: -5px;
-        margin: auto;
-    }
-    .contenedor_login_registro form{
-        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: black;
+        color: #f0efee;
+        clip: rect(0, 900px, 0, 0);
+        overflow: hidden;
     }
     
-}
-
-
-
+    .glitch::before {
+        left: 7px;
+        text-shadow: 1px 0 #eeedea;
+        animation: glitch-effect 3s infinite linear alternate-reverse;
+    }
+    
+    .glitch::after {
+        left: 3px;
+        text-shadow: -1px 0 #ebe4e4;
+        animation: glitch-effect 2s infinite linear alternate-reverse;
+    }
+    
+    @keyframes glitch-effect {
+        0% {
+            clip: rect(10px, 9999px, 48px, 0);
+        }
+        5% {
+            clip: rect(51px, 9999px, 99px, 0);
+        }
+        10% {
+            clip: rect(34px, 9999px, 71px, 0);
+        }
+        15% {
+            clip: rect(75px, 9999px, 74px, 0);
+        }
+        20% {
+            clip: rect(88px, 9999px, 28px, 0);
+        }
+        25% {
+            clip: rect(82px, 9999px, 33px, 0);
+        }
+        30% {
+            clip: rect(57px, 9999px, 73px, 0);
+        }
+        35% {
+            clip: rect(79px, 9999px, 58px, 0);
+        }
+        40% {
+            clip: rect(2px, 9999px, 78px, 0);
+        }
+        45% {
+            clip: rect(7px, 9999px, 3px, 0);
+        }
+        50% {
+            clip: rect(59px, 9999px, 16px, 0);
+        }
+        55% {
+            clip: rect(97px, 9999px, 76px, 0);
+        }
+        60% {
+            clip: rect(57px, 9999px, 43px, 0);
+        }
+        65% {
+            clip: rect(35px, 9999px, 21px, 0);
+        }
+        70% {
+            clip: rect(61px, 9999px, 84px, 0);
+        }
+        75% {
+            clip: rect(54px, 9999px, 100px, 0);
+        }
+        80% {
+            clip: rect(8px, 9999px, 98px, 0);
+        }
+        85% {
+            clip: rect(47px, 9999px, 32px, 0);
+        }
+        90% {
+            clip: rect(13px, 9999px, 5px, 0);
+        }
+        95% {
+            clip: rect(63px, 9999px, 30px, 0);
+        }
+        100% {
+            clip: rect(17px, 9999px, 39px, 0);
+        }
+    }
+    

@@ -7,7 +7,8 @@
 </head>
    <body>
     <main>
-        <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+        <h1 class="glitch"  data-text="Elementum">RADIO ATÓMICO</h1>
+       
         <input type="checkbox" id="toggle">
         <label for="toggle" class="hamburger"><span></span></label>
         <nav class="menu">
@@ -24,7 +25,10 @@
     </main>
 
     <!--titulo y opciones-->
- 
+    <div id="menuoculto">
+        <a id="menu1" href="juego3.html">Elementos Nuevos</a>
+        
+ </div>
     <!--ELEMENTOS DE LA TABLA PERIODICA-->  
  <!--INICIA EL BLOQUE S-->
 <div class="gas" id="eq1">
@@ -515,9 +519,51 @@
     </div>
 <!--AQUI TERMINA EL BLOQUE F-->
   
+<div class="contenedorJ3">
+
+    <div class="elemento-alcalino" id="elemento1" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento2" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento3" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento4" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento5" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento6" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento7" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento8" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento9" draggable="true" ondragstart="drag(event)"></div>
+    <div class="elemento-alcalino" id="elemento10" draggable="true" ondragstart="drag(event)"></div>
+    </div>
   
 
    </body>
+   <!--PARA ENCONTAR LOS ELEMENTOS DEL RADIO ATOMICO-->
+   <script>
+    /*Define la funcion buscar Elemento*/
+        async function buscaElemento() {
+    try {
+         // Realiza una solicitud HTTP GET a la URL especificada para obtener datos
+        const response = await fetch('http://localhost:3000/elementos/aleatorios'); // ruta hecha en prueba.js para devolver 5 aleatorios
+        // Espera la respuesta a formato JSON
+        const elementos = await response.json();
+
+         // Itera sobre cada objeto 'elemento' en el array 'elementos'   <p class="numero_atomico">${elemento.numero_atomico}</p>
+        elementos.forEach((elemento, index) => {
+             // Obtiene la referencia del elemento del DOM con un id dinámico basado en el índice (por ejemplo, elemento1, elemento2, etc.)
+            const elementoDiv = document.getElementById(`elemento${index + 1}`);
+            elementoDiv.innerHTML = `
+               
+                <p class="simbolo">${elemento.simbolo}</p>
+                <p class="nombre">${elemento.nombre}</p>
+                <p class="radio">${elemento.radio}</p>
+                
+            `;
+        });
+    } catch (err) {
+        console.error('Error de fetching elementos:', err);
+    }
+}
+        // Cargar elementos al cargar la página
+        document.addEventListener('DOMContentLoaded', buscaElemento);
+  </script>
    <script>
          
     document.addEventListener('DOMContentLoaded', function() {

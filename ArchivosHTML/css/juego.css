@@ -260,19 +260,21 @@ div{
       text-align: center;
       border-radius: 5px;
       background: #2f96e6;
+      /*background: #002392;*/
       -webkit-transition-duration: 0.9s;
   }
-  
+   
+  /*
   .gas:hover{
-      background: #B5B8B1;
+      /*background: #B5B8B1;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   
   
   #eq1{
       position: absolute;
       top: 100px;left:20px;
-      color: #CF010B;
+      
   }
   
   .alcalino{
@@ -287,7 +289,7 @@ div{
   }
   
   .alcalino:hover{
-      background: #fb7;
+     /* background: #fb7;*/
       -webkit-transform:scale(1.2);
   }
   
@@ -327,7 +329,7 @@ div{
   }
   /*HASTA AQUI ES EL CSS DEL BLOQUE S*/
   .alcalinoterreos:hover{
-      background: #CF010B;
+     /* background: #CF010B;*/
       -webkit-transform: scale(1.2);
   }
   #eq4{
@@ -366,7 +368,7 @@ div{
   }
   
   .transicion:hover{
-      background: #9B6DC6;
+     /* background: #9B6DC6;   COLORES DE LOS HOVER AL MOVER*/
       -webkit-transform: scale(1.2);
   }
   #eq21{
@@ -391,7 +393,7 @@ div{
   }
   
   .lantanidos:hover{
-      background: #FF6961;
+     /* background: #FF6961;*/
       -webkit-transform: scale(1.2);
   }
   #eq5771{
@@ -410,7 +412,7 @@ div{
   }
   
   .actinidos:hover{
-      background: #EC7C26;
+     /* background: #EC7C26;*/
       -webkit-transform: scale(1.2);
   }
   #eq89103{
@@ -433,7 +435,7 @@ div{
   #eq104{
       position: absolute;
       top: 460px;left: 200px;
-      color: #9C9C9C;
+     
   }
   #eq23{
       position: absolute;
@@ -450,7 +452,7 @@ div{
   #eq105{
       position: absolute;
       top: 460px;left: 260px;
-      color: #9C9C9C;
+     
   }
   #eq24{
       position: absolute;
@@ -570,7 +572,7 @@ div{
   #eq112{
       position: absolute;
       top: 460px;left: 680px;
-      color: #9C9C9C;
+     
   }
   .metaloides{
       width: 50px;
@@ -583,7 +585,7 @@ div{
   }
   
   .metaloides:hover{
-      background: #008F39;
+      /*background: #008F39;*/
       -webkit-transform: scale(1.2);
   }
   #eq5{
@@ -601,7 +603,7 @@ div{
   }
   
   .metales:hover{
-      background: #015D52;
+      /*background: #015D52;*/
       -webkit-transform: scale(1.2);
   }
   #eq13{
@@ -631,7 +633,7 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   .desconocidos:hover{
-    background: #002392;
+   /* background: #002392;*/
       -webkit-transform: scale(1.2);
   }
   #eq113{
@@ -714,7 +716,7 @@ div{
   #eq116{
       position: absolute;
       top: 460px;left: 920px;
-      color: #9C9C9C;
+      
   }
   .halogenos{
       width: 50px;
@@ -727,7 +729,7 @@ div{
   }
   
   .halogenos:hover{
-      background: #ABDEE6;
+     /* background: #ABDEE6;*/
       -webkit-transform:scale(1.2);
   }
   #eq9{
@@ -769,7 +771,7 @@ div{
   }
   
   .nobles:hover{
-      background: #6B85A9;
+    /*  background: #6B85A9;*/
       -webkit-transform:scale(1.2);
   }
   
@@ -934,138 +936,8 @@ div{
   }
   
   
-  /*tipos de elementos*/
-  .tipos{
-    font-size: 10px
-  }
-  
-  .t1{
-    position: absolute;
-    top: 170px;left: 350px;
-  }
-  .t2{
-    position: absolute;
-    top: 190px;left: 350px;
-  }
-  .t3{
-    position: absolute;
-    top: 210px;left: 350px;
-  }
-  .t4{
-    position: absolute;
-    top: 230px;left: 350px;
-  }
-  .t5{
-    position: absolute;
-    top: 170px;left: 530px;
-  }
-  .t6{
-    position: absolute;
-    top: 190px;left: 530px;
-  }
-  .t7{
-    position: absolute;
-    top: 210px;left: 530px;
-  }
-  .t8{
-    position: absolute;
-    top: 230px;left: 530px;
-  }
-  .t9{
-    position: absolute;
-    top: 170px;left: 680px;
-  }
-  .t10{
-    position: absolute;
-    top: 190px;left: 680px;
-  }
-  .t11{
-    position: absolute;
-    top: 210px;left: 680px;
-  }
-  /* fin a tipos de elementos*/
-  
-  /*colores de los tipos de elementos*/
-  .box1{
-      width: 10px;
-      height: 10px;
-      background: #65727C;
-      position: absolute;
-      top: 100px;left:250px;
-  }
-  
-  .box2{
-      width: 10px;
-      height: 10px;
-      background: #800000;
-      position: absolute;
-      top: 120px;left:250px;
-  }
-  
-  .box3{
-      width: 10px;
-      height: 10px;
-      background: #fb2;
-      position: absolute;
-      top: 140px;left:250px;
-  }
-  
-  .box4{
-      width: 10px;
-      height: 10px;
-      background: #4931AF;
-      position: absolute;
-      top: 160px;left:250px;
-  }
-  
-  .box5{
-      width: 10px;
-      height: 10px;
-      background: #2D572C;
-      position: absolute;
-      top: 100px;left:430px;
-  }
-  
-  .box6{
-      width: 10px;
-      height: 10px;
-      background: #00BB2D;
-      position: absolute;
-      top: 120px;left:430px;
-  }
-  
-  .box7{
-      width: 10px;
-      height: 10px;
-      background: #109DFA;
-      position: absolute;
-      top: 140px;left:430px;
-  }
-  
-  .box8{
-      width: 10px;
-      height: 10px;
-      background: #002392;
-      position: absolute;
-      top: 160px;left: 430px;
-  }
-  
-  .box9{
-      width: 10px;
-      height: 10px;
-      background: #FF8000;
-      position: absolute;
-      top: 100px;left:580px;
-  }
-  
-  .box10{
-      width: 10px;
-      height: 10px;
-      background: #CB3234;
-      position: absolute;
-      top: 120px;left: 580px;
-  }
-  
+ 
+  /*
   .box11{
       width: 10px;
       height: 10px;
@@ -1075,94 +947,49 @@ div{
   }
   /*fin colores de los tipos de elementos*/
   
-  .solido{
-      position: absolute;
-      top: 90px;left: 900px;
-      font-family: 'DynaPuff', cursive;
-  }
-  .liquido{
-      position: absolute;
-      top: 110px;left: 900px;
-      font-family: 'DynaPuff', cursive;
-  }
-  .gaseoso{
-      position: absolute;
-      top: 130px;left: 900px; 
-      font-family: 'DynaPuff', cursive;
-  }
-  .desconocido{
-      position: absolute;
-      top: 150px;left: 900px;
-      font-family: 'DynaPuff', cursive;
-  }
   
-  .btn-neon{
-    
+  .bloques{
+    width: 130px; /*Ancho*/
+    height: 50px;
     position: relative;
-    top: 100px; left: 500px;
-    display: inline-block;
-    padding: 10px 10px;
-    color: #fff;
-    letter-spacing: 4px;
-    font-size:  10px;
-    text-decoration: none;
-    overflow: hidden;
-    transition: 0.2s;
-    font-family: 'DynaPuff', cursive;
-  }
-  .btn-neon:hover{
-    background: #a945c7;
-    box-shadow: 0 0 8px #a945c7, 0 0 20px #a945c7, 0 0 40px #a945c7;
-    transition-delay: 1s;
-  }
-  .btn-neon span{
+    display:inline-block ;
+    border: dashed black 2px; /*tamaño del color negro del borde*/
+    text-align: center;
+    font-size:medium;
+    top: auto;
+    border-radius: 2px;
+    color: black;
+    background: #fcfdfd; /*no mover*/
+    -webkit-transition-duration: 0.9s;
+    
+}
+
+.bloques:hover{
+  /*background: #fb7;*/
+  -webkit-transform:scale(1.2);
+}
+
+#bloque1 {
+    top: 700px; /* Ajusta este valor según la altura de la tabla */
+    left: 100px;
     position: absolute;
-    display: block;
-  }
-  #span1{
-    top: 0;
-    left:-100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #a945c7)
-  }
-  .btn-neon:hover #span1{
-    left: 100%;
-    transition: 1s;
-  }
-  #span3{
-    bottom: 0;
-    right:-100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #a945c7)
-  }
-  .btn-neon:hover #span3{
-    right: 100%;
-    transition: 1s;
-    transition-delay: 0.5s;
-  }
-  #span2{
-    top: -100%;
-    left: 0%;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #a945c7)
-  }
-  .btn-neon:hover #span2{
-    top: 100%;
-    transition: 1s;
-    transition-delay: 0.25s;
-  }
-  #span4{
-    top: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(350deg, transparent, #a945c7)
-  }
-  .btn-neon:hover #span4{
-    bottom:100%;
-    transition: 1s;
-    transition-delay: 0.75s;
-  }
+}
+
+#bloque2 {
+    top: 700px; 
+    left: 300px;
+    position: absolute;
+}
+
+#bloque3 {
+    top: 700px; 
+    left: 500px;
+    position: absolute;
+}
+
+#bloque4 {
+    top: 700px; 
+    left: 700px;
+    position: absolute;
+}
+

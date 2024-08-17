@@ -1,13 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+  
     Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
     /*background-image: url(../Imagenes/fondo1.jpg);*/
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center;
-    background-attachment: fixed; 
-    justify-content: center;
-    align-items: center;
+    
+    
     height: 100vh;
     width: 100%;
     display: flex;
@@ -26,7 +25,7 @@ main {
     width: 100%;
     margin: auto;
     padding: 10px;
-    margin-top: 1px; /* Ajustar según la altura del menú hamburguesa */
+    margin-top: 5px; /* Ajustar según la altura del menú hamburguesa */
 }
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
@@ -155,7 +154,7 @@ p{
 	display: block;
 	font-size: 12px;
 	color: #FFF;
-	transition: 0.3s all ease-in-out;
+	transition: 0.9s all ease-in-out;
 	opacity: 1;
 }
 
@@ -527,7 +526,7 @@ a.mas {
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
-    font-family: 'Permanent Marker', cursive;
+   
     font-size: 7em;
     text-shadow: 8px -8px 0px #d37d1b;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);

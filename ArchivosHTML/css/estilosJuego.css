@@ -1,0 +1,192 @@
+body{
+    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+    /*background-image: url(../Imagenes/fondo1.jpg);*/
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+/*CSS para mostrar la informacion del perfil*/
+.profile {
+    background-color: rgba(253, 253, 253, 0.993);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .profile h1 {
+    margin-bottom: 20px;
+  }
+  /* Estilos del menú hamburguesa */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+/*ICONO DE HAMBURGESA*/
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #ad1f1f;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  #toggle {
+    display: none;
+  }
+  /*Interior del menu*/
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    background-color: #111111;
+    width: 250px;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 20px;
+  }
+  
+  .menu ul li {
+    margin-bottom: 15px;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+  }
+  
+  #toggle:checked + .hamburger span {
+    transform: rotate(45deg);
+  }
+  
+  #toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  
+  #toggle:checked ~ .menu {
+    transform: translateX(0);
+  }
+  
+  .glitch {
+    position:relative;
+    justify-content: center;
+    text-align: center; /*Para poner el titulo en el centro */
+    align-items: center;
+   
+    font-size: 7em;
+    text-shadow: 8px -8px 0px #d37d1b;
+    background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: #f0efee;
+    clip: rect(0, 900px, 0, 0);
+    overflow: hidden;
+}
+
+.glitch::before {
+    left: 7px;
+    text-shadow: 1px 0 #eeedea;
+    animation: glitch-effect 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: 3px;
+    text-shadow: -1px 0 #ebe4e4;
+    animation: glitch-effect 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-effect {
+    0% {
+        clip: rect(10px, 9999px, 48px, 0);
+    }
+    5% {
+        clip: rect(51px, 9999px, 99px, 0);
+    }
+    10% {
+        clip: rect(34px, 9999px, 71px, 0);
+    }
+    15% {
+        clip: rect(75px, 9999px, 74px, 0);
+    }
+    20% {
+        clip: rect(88px, 9999px, 28px, 0);
+    }
+    25% {
+        clip: rect(82px, 9999px, 33px, 0);
+    }
+    30% {
+        clip: rect(57px, 9999px, 73px, 0);
+    }
+    35% {
+        clip: rect(79px, 9999px, 58px, 0);
+    }
+    40% {
+        clip: rect(2px, 9999px, 78px, 0);
+    }
+    45% {
+        clip: rect(7px, 9999px, 3px, 0);
+    }
+    50% {
+        clip: rect(59px, 9999px, 16px, 0);
+    }
+    55% {
+        clip: rect(97px, 9999px, 76px, 0);
+    }
+    60% {
+        clip: rect(57px, 9999px, 43px, 0);
+    }
+    65% {
+        clip: rect(35px, 9999px, 21px, 0);
+    }
+    70% {
+        clip: rect(61px, 9999px, 84px, 0);
+    }
+    75% {
+        clip: rect(54px, 9999px, 100px, 0);
+    }
+    80% {
+        clip: rect(8px, 9999px, 98px, 0);
+    }
+    85% {
+        clip: rect(47px, 9999px, 32px, 0);
+    }
+    90% {
+        clip: rect(13px, 9999px, 5px, 0);
+    }
+    95% {
+        clip: rect(63px, 9999px, 30px, 0);
+    }
+    100% {
+        clip: rect(17px, 9999px, 39px, 0);
+    }
+}
