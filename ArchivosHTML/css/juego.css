@@ -2,19 +2,28 @@
 
 body{
     Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 p{
+    
+}
+.arrastres{
+    font-size:x-large;
     text-align: center;
+    left: 50px;
+    
 }
 .glitch {
     position:relative;
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
-    font-family: 'Permanent Marker', cursive;
+    
     font-size: 6em;
     text-shadow: 8px -8px 0px #d37d1b;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
@@ -115,6 +124,36 @@ p{
 
 /*CSS PARA LA INFORMACION DEL PERFIL */
 
+/*Resposive desing*
+/* Responsive Typography */
+.glitch {
+    font-size: 4em;
+}
+
+
+
+/* Media Queries for Different Devices */
+@media (min-width: 768px) {
+    .glitch {
+        font-size: 5em;
+    }
+    .profile {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .glitch {
+        font-size: 6em;
+    }
+    .profile {
+        max-width: 400px;
+    }
+}
+
+
+
+
 /*CSS para mostrar la informacion del perfil*/
 .profile {
     background-color: rgba(253, 253, 253, 0.993);
@@ -129,7 +168,7 @@ p{
     margin-bottom: 20px;
   }
   /* Estilos del menú hamburguesa */
-  .hamburger {
+.hamburger {
     display: block;
     position: fixed;
     top: 20px;
@@ -138,25 +177,26 @@ p{
     z-index: 1001;
   }
   
-  /*ICONO DE HAMBURGESA*/
+  /* ICONO DE HAMBURGUESA */
   .hamburger span {
     display: block;
     width: 30px;
     height: 3px;
     background-color: #ad1f1f;
-    margin-bottom: 5px;
+    margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
   
+  /* Ocultar el input */
   #toggle {
     display: none;
   }
-  /*Interior del menu*/
+  
+  /* Interior del menú */
   .menu {
     position: fixed;
     top: 0;
     right: 0;
-    
     background-color: #111111;
     width: 250px;
     height: 100%;
@@ -180,8 +220,9 @@ p{
     font-size: 1.2em;
   }
   
-  #toggle:checked + .hamburger span {
-    transform: rotate(45deg);
+  /* Animaciones del icono hamburguesa al abrir el menú */
+  #toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
   }
   
   #toggle:checked + .hamburger span:nth-child(2) {
@@ -189,20 +230,44 @@ p{
   }
   
   #toggle:checked + .hamburger span:nth-child(3) {
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) translateY(-8px);
   }
   
+  /* Mostrar el menú cuando está activado */
   #toggle:checked ~ .menu {
     transform: translateX(0);
   }
+  
 
   /*TODO EL CODIGO ANTERIOR ES ESCENCIAL PARA LA PAGINA*/
 
+
+  /*MENU OCULTO DE INSTRUCCIONES*/
+  #menuoculto a{
+    position: absolute;
+    color: black;
+    left:-100px; 
+    transition: 0.2s;
+    font-size: 15px;
+    font-weight:bold;
+    text-decoration: none;
+    padding: 15px 50px 15px 10px;
+    width: 150px; /* tamaño del menú */
+    border-radius: 0 20px 5px 0; 
+    } 
+    #menuoculto a:hover {
+        left: 0; 
+        }
+    
+    #menu1{
+        top: 100px; 
+        background-color: #eb8500; 
+        }
   /*A partir de aqui es css de la tabla periodica */
 div{
     width:100%;
     height:100%;
-    margin: 8rem;
+    margin: 9rem;
     font-family: 'DynaPuff', cursive;
     color: #fff;
   }
@@ -270,6 +335,9 @@ div{
       -webkit-transform: scale(1.2);
   }*/
   
+  .bloqueS:hover{
+    
+  }
   
   #eq1{
       position: absolute;
@@ -288,10 +356,11 @@ div{
       
   }
   
+  /*
   .alcalino:hover{
-     /* background: #fb7;*/
+     /* background: #fb7;
       -webkit-transform:scale(1.2);
-  }
+  }*/
   
   #eq3{
       position: absolute;
@@ -327,11 +396,11 @@ div{
       background: #2f96e6; /*no mover*/
       -webkit-transition-duration: 0.9s;
   }
-  /*HASTA AQUI ES EL CSS DEL BLOQUE S*/
+  /*HASTA AQUI ES EL CSS DEL BLOQUE S
   .alcalinoterreos:hover{
-     /* background: #CF010B;*/
+     /* background: #CF010B;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq4{
       position: absolute;
       top: 160px;left: 80px;
@@ -366,11 +435,11 @@ div{
       background: #4931AF;
       -webkit-transition-duration: 0.9s;
   }
-  
+  /*
   .transicion:hover{
-     /* background: #9B6DC6;   COLORES DE LOS HOVER AL MOVER*/
+     /* background: #9B6DC6;   COLORES DE LOS HOVER AL MOVER
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq21{
       position: absolute;
       top: 280px;left: 140px;
@@ -392,10 +461,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .lantanidos:hover{
-     /* background: #FF6961;*/
+     /* background: #FF6961;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq5771{
       position: absolute;
       top: 400px;left: 140px;
@@ -410,11 +480,11 @@ div{
       background: #CB3234;
       -webkit-transition-duration: 0.9s;
   }
-  
+  /*
   .actinidos:hover{
-     /* background: #EC7C26;*/
+     /* background: #EC7C26;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq89103{
       position: absolute;
       top: 460px;left: 140px;
@@ -584,10 +654,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .metaloides:hover{
-      /*background: #008F39;*/
+      /*background: #008F39;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq5{
       position: absolute;
       top: 160px;left: 740px;
@@ -602,10 +673,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .metales:hover{
-      /*background: #015D52;*/
+      /*background: #015D52;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq13{
       position: absolute;
       top: 220px;left: 740px;
@@ -632,10 +704,11 @@ div{
       background: #002392;
       -webkit-transition-duration: 0.9s;
   }
+  /*
   .desconocidos:hover{
-   /* background: #002392;*/
+   /* background: #002392;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq113{
       position: absolute;
       top: 460px;left: 740px;
@@ -728,10 +801,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .halogenos:hover{
-     /* background: #ABDEE6;*/
+     /* background: #ABDEE6;
       -webkit-transform:scale(1.2);
-  }
+  }*/
   #eq9{
       position: absolute;
       top: 160px;left: 980px;
@@ -769,12 +843,12 @@ div{
       background: #002392;
       -webkit-transition-duration: 0.9s;
   }
-  
+  /*
   .nobles:hover{
-    /*  background: #6B85A9;*/
+    /*  background: #6B85A9;
       -webkit-transform:scale(1.2);
   }
-  
+  */
   #eq2{
       position: absolute;
       top: 100px;left: 1040px;
@@ -962,6 +1036,7 @@ div{
     background: #fcfdfd; /*no mover*/
     -webkit-transition-duration: 0.9s;
     
+    
 }
 
 .bloques:hover{
@@ -969,27 +1044,53 @@ div{
   -webkit-transform:scale(1.2);
 }
 
-#bloque1 {
+
+
+#S {
     top: 700px; /* Ajusta este valor según la altura de la tabla */
     left: 100px;
     position: absolute;
+    z-index: 10;
+   
 }
 
-#bloque2 {
+#P {
     top: 700px; 
     left: 300px;
     position: absolute;
+    z-index: 10;
+   
 }
 
-#bloque3 {
+#D {
     top: 700px; 
     left: 500px;
     position: absolute;
+    z-index: 10;
+   
 }
-
-#bloque4 {
+#F {
     top: 700px; 
     left: 700px;
+    z-index: 10;
     position: absolute;
+
 }
 
+.bloqueS, .bloqueD, .bloqueP, .bloqueF {
+   
+    position: relative; /* Posición relativa para que los elementos internos puedan ser posicionados */
+    right: 170px;
+    top: -330px;
+    
+    transition: transform 0.3s ease;
+   
+}
+/* Efecto al pasar el mouse sobre el contenedor */
+.bloqueS:hover, .bloqueD:hover, .bloqueP:hover, .bloqueF:hover {
+   
+    /* Cambia el cursor a una mano indicando que es interactivo */
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    border: white;
+}

@@ -632,49 +632,122 @@
     padding: 3px;
     float: left;
     width: 70%;
-    cursor: pointer;
+    
   }
   .legend .list-3 li {
     margin: 2px;
     padding: 3px;
     float: left;
     width: 70%;
-    cursor: pointer;
+    
   }
   }
   
 
-  
-.neon-text {
-    font-size: 7em;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    animation: flicker 2s infinite alternate;
+  .glitch {
+    position:relative;
+    justify-content: center;
+    text-align: center; /*Para poner el titulo en el centro */
+    align-items: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6em;
+    text-shadow: 8px -8px 0px #d37d1b;
+    background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-@keyframes flicker {
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: #f0efee;
+    clip: rect(0, 900px, 0, 0);
+    overflow: hidden;
+}
+
+.glitch::before {
+    left: 7px;
+    text-shadow: 1px 0 #eeedea;
+    animation: glitch-effect 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: 3px;
+    text-shadow: -1px 0 #ebe4e4;
+    animation: glitch-effect 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-effect {
     0% {
-        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
-        color: #00ff00;
+        clip: rect(10px, 9999px, 48px, 0);
+    }
+    5% {
+        clip: rect(51px, 9999px, 99px, 0);
+    }
+    10% {
+        clip: rect(34px, 9999px, 71px, 0);
+    }
+    15% {
+        clip: rect(75px, 9999px, 74px, 0);
+    }
+    20% {
+        clip: rect(88px, 9999px, 28px, 0);
     }
     25% {
-        text-shadow: none;
-        color: #000;
+        clip: rect(82px, 9999px, 33px, 0);
+    }
+    30% {
+        clip: rect(57px, 9999px, 73px, 0);
+    }
+    35% {
+        clip: rect(79px, 9999px, 58px, 0);
+    }
+    40% {
+        clip: rect(2px, 9999px, 78px, 0);
+    }
+    45% {
+        clip: rect(7px, 9999px, 3px, 0);
     }
     50% {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
-        color: #fff;
+        clip: rect(59px, 9999px, 16px, 0);
+    }
+    55% {
+        clip: rect(97px, 9999px, 76px, 0);
+    }
+    60% {
+        clip: rect(57px, 9999px, 43px, 0);
+    }
+    65% {
+        clip: rect(35px, 9999px, 21px, 0);
+    }
+    70% {
+        clip: rect(61px, 9999px, 84px, 0);
     }
     75% {
-        text-shadow: none;
-        color: #000;
+        clip: rect(54px, 9999px, 100px, 0);
+    }
+    80% {
+        clip: rect(8px, 9999px, 98px, 0);
+    }
+    85% {
+        clip: rect(47px, 9999px, 32px, 0);
+    }
+    90% {
+        clip: rect(13px, 9999px, 5px, 0);
+    }
+    95% {
+        clip: rect(63px, 9999px, 30px, 0);
     }
     100% {
-        text-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff, 0 0 40px #0000ff, 0 0 50px #0000ff, 0 0 60px #0000ff, 0 0 70px #0000ff;
-        color: #0000ff;
+        clip: rect(17px, 9999px, 39px, 0);
     }
 }
+  
 
 
 /*CSS para mostrar la informacion del perfil*/
@@ -703,8 +776,8 @@
 /*ICONO DE HAMBURGESA*/
 .hamburger span {
   display: block;
-  width: 30px;
-  height: 3px;
+  width: 50px;
+  height: 5px;
   background-color: #ad1f1f;
   margin-bottom: 5px;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -757,3 +830,4 @@
 #toggle:checked ~ .menu {
   transform: translateX(0);
 }
+

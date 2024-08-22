@@ -201,6 +201,8 @@ app.post('/logout', (req, res) => {
 });
 
 
+
+
 // Ruta para manejar el envío del formulario
 app.post("/usuarios", async (req, res) => {
     try {
@@ -210,12 +212,13 @@ app.post("/usuarios", async (req, res) => {
         }
         const nuevoUsuario = new UsuariosModel({ nombre, correo, usuario, contrasena });
         await nuevoUsuario.save();
-        res.send("Usuario guardado con éxito");
+        res.redirect("/login.html"); // Redirigir a login.html tras guardar exitosamente
     } catch (err) {
         console.error(err);
         res.status(500).send("Error al guardar el usuario");
     }
 });
+
 /*comentario */
 //ruta para enviar 5 elementos aleatorios cada que se recargue
 

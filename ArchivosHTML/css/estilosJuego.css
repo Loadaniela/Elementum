@@ -1,35 +1,37 @@
-body{
-    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
-    /*background-image: url(../Imagenes/fondo1.jpg);*/
+body {
+    background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center;
     background-attachment: fixed; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/*CSS para mostrar la informacion del perfil*/
 .profile {
     background-color: rgba(253, 253, 253, 0.993);
     padding: 10px;
     border-radius: 10px;
     text-align: center;
     max-width: 400px;
-    margin: auto;
+    margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  .profile h1 {
+}
+
+.profile h1 {
     margin-bottom: 20px;
-  }
-  /* Estilos del menú hamburguesa */
-  .hamburger {
+}
+
+.hamburger {
     display: block;
     position: fixed;
     top: 20px;
     right: 20px;
     cursor: pointer;
     z-index: 1001;
-  }
-/*ICONO DE HAMBURGESA*/
+}
+
 .hamburger span {
     display: block;
     width: 30px;
@@ -37,63 +39,61 @@ body{
     background-color: #ad1f1f;
     margin-bottom: 5px;
     transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  #toggle {
+}
+
+#toggle {
     display: none;
-  }
-  /*Interior del menu*/
-  .menu {
+}
+
+.menu {
     position: fixed;
     top: 0;
     right: 0;
-    
     background-color: #111111;
     width: 250px;
     height: 100%;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 1000;
-  }
-  
-  .menu ul {
+}
+
+.menu ul {
     list-style: none;
     padding: 20px;
-  }
-  
-  .menu ul li {
+}
+
+.menu ul li {
     margin-bottom: 15px;
-  }
-  
-  .menu ul li a {
+}
+
+.menu ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 1.2em;
-  }
-  
-  #toggle:checked + .hamburger span {
+}
+
+#toggle:checked + .hamburger span {
     transform: rotate(45deg);
-  }
-  
-  #toggle:checked + .hamburger span:nth-child(2) {
+}
+
+#toggle:checked + .hamburger span:nth-child(2) {
     opacity: 0;
-  }
-  
-  #toggle:checked + .hamburger span:nth-child(3) {
+}
+
+#toggle:checked + .hamburger span:nth-child(3) {
     transform: rotate(-45deg);
-  }
-  
-  #toggle:checked ~ .menu {
+}
+
+#toggle:checked ~ .menu {
     transform: translateX(0);
-  }
-  
-  .glitch {
-    position:relative;
+}
+
+.glitch {
+    position: relative;
     justify-content: center;
-    text-align: center; /*Para poner el titulo en el centro */
+    text-align: center;
     align-items: center;
-   
-    font-size: 7em;
+    font-size: 5em;
     text-shadow: 8px -8px 0px #d37d1b;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
@@ -188,5 +188,36 @@ body{
     }
     100% {
         clip: rect(17px, 9999px, 39px, 0);
+    }
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    .profile {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .glitch {
+        font-size: 4em;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+    }
+
+    .menu ul li a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 3em;
+    }
+
+    .menu ul li a {
+        font-size: 0.9em;
     }
 }

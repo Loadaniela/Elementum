@@ -123,6 +123,7 @@ p{
     text-align: center;
     max-width: 400px;
     margin: auto;
+    cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   .profile h1 {
@@ -141,8 +142,9 @@ p{
   /*ICONO DE HAMBURGESA*/
   .hamburger span {
     display: block;
-    width: 30px;
-    height: 3px;
+    width: 50px;
+    height: 5px;
+    cursor: pointer;
     background-color: #ad1f1f;
     margin-bottom: 5px;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -199,14 +201,14 @@ p{
   /*Menu oculto*/
   /*MENU OCULTO*/
 #menuoculto a{
-    position: fixed;
+    position: absolute;
     color: black;
     left:-100px; 
     transition: 0.2s;
     font-size: 15px;
     font-weight:bold;
     text-decoration: none;
-    padding: 15px 50px 15px 10px;
+    padding: 1px 50px 10px 10px;
     width: 100px; /* tamaño del menú */
     border-radius: 0 20px 5px 0; 
     } 
@@ -215,8 +217,12 @@ p{
         }
     
     #menu1{
-        top: 100px; 
+        top: 900px; 
         background-color: #eb4300; 
+        }
+        #menu2{
+            top: 100px; 
+            background-color: #eb8500; 
         }
   /*TODO EL CODIGO ANTERIOR ES ESCENCIAL PARA LA PAGINA*/
   /*A partir de aqui es css de la tabla periodica */
@@ -284,10 +290,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .gas:hover{
-      /*background: #B5B8B1;*/
+      /*background: #B5B8B1;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   
   
   #eq1{
@@ -307,10 +314,11 @@ div{
       
   }
   
+  /*
   .alcalino:hover{
-      /*background: #fb7;*/
+      /*background: #fb7;
       -webkit-transform:scale(1.2);
-  }
+  }*/
   
   #eq3{
       position: absolute;
@@ -347,10 +355,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .alcalinoterreos:hover{
-      /*background: #CF010B;*/
+      /*background: #CF010B;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq4{
       position: absolute;
       top: 160px;left: 80px;
@@ -386,10 +395,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .transicion:hover{
-      /*background: #9B6DC6;*/
+      /*background: #9B6DC6;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq21{
       position: absolute;
       top: 280px;left: 140px;
@@ -409,10 +419,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .lantanidos:hover{
-      /*background: #FF6961;*/
+      /*background: #FF6961;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq5771{
       position: absolute;
       top: 400px;left: 140px;
@@ -428,10 +439,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .actinidos:hover{
-      /*background: #EC7C26;*/
+      /*background: #EC7C26;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq89103{
       position: absolute;
       top: 460px;left: 140px;
@@ -601,10 +613,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .metaloides:hover{
-      /*background: #008F39;*/
+      /*background: #008F39;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq5{
       position: absolute;
       top: 160px;left: 740px;
@@ -619,10 +632,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .metales:hover{
-      /*background: #015D52;}*/
+      /*background: #015D52;}
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq13{
       position: absolute;
       top: 220px;left: 740px;
@@ -649,10 +663,11 @@ div{
       background: #f5f6f7;
       -webkit-transition-duration: 0.9s;
   }
+  /*
   .desconocidos:hover{
-      /*background: #009999;*/
+      /*background: #009999;
       -webkit-transform: scale(1.2);
-  }
+  }*/
   #eq113{
       position: absolute;
       top: 460px;left: 740px;
@@ -745,10 +760,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .halogenos:hover{
-      /*background: #ABDEE6;*/
+      /*background: #ABDEE6;
       -webkit-transform:scale(1.2);
-  }
+  }*/
   #eq9{
       position: absolute;
       top: 160px;left: 980px;
@@ -787,10 +803,11 @@ div{
       -webkit-transition-duration: 0.9s;
   }
   
+  /*
   .nobles:hover{
-     /* background: #6B85A9;*/
+     /* background: #6B85A9;
       -webkit-transform:scale(1.2);
-  }
+  }*/
   
   #eq2{
       position: absolute;
@@ -1024,6 +1041,6 @@ div{
 
 .elemento-alcalino:hover{
   /*background: #fb7;*/
-  -webkit-transform:scale(1.2);
+  -webkit-transform:scale(2.2);
 }
   

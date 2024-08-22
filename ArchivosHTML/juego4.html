@@ -25,7 +25,7 @@
 <!--titulo y opciones-->
 <div id="menuoculto">
     <a id="menu1" href="juego4.html">Elementos Nuevos</a>
-    
+    <a id="menu2" href="#">Arrastra los elementos asignados a la tabla periodica vacia. Los colores de los elementos son asigandos conforme a la carga de intensidad de electronegatividad</a>
 </div>
     <!--ELEMENTOS DE LA TABLA PERIODICA-->  
  <!--INICIA EL BLOQUE S-->
@@ -598,4 +598,22 @@
             });
 
   </script>
+   <script>
+    // Manejo del evento beforeunload
+window.addEventListener('beforeunload', function (event) {
+    const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
+    event.returnValue = message;
+    return message;
+});
+
+//En caso de no salir
+window.addEventListener('popstate', function (event) {
+    const confirmExit = confirm("Estás a punto de salir del juego. Los datos podrían no guardarse.");
+    if (!confirmExit) {
+        // Si el usuario decide no salir
+        history.pushState(null, null, window.location.href);
+    }
+});
+
+</script>
 </html>

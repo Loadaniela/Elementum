@@ -27,7 +27,7 @@
     <!--titulo y opciones-->
     <div id="menuoculto">
         <a id="menu1" href="juego3.html">Elementos Nuevos</a>
-        
+        <a id="menu2" href="#">Arrastra los elementos asignados en gris, conforme a la carga de radio atómico que te muestra.</a>
  </div>
     <!--ELEMENTOS DE LA TABLA PERIODICA-->  
  <!--INICIA EL BLOQUE S-->
@@ -601,6 +601,24 @@
                 alert('Error al cerrar sesión');
             });
     });
+
+</script>
+<script>
+    // Manejo del evento beforeunload
+window.addEventListener('beforeunload', function (event) {
+    const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
+    event.returnValue = message;
+    return message;
+});
+
+//En caso de no salir
+window.addEventListener('popstate', function (event) {
+    const confirmExit = confirm("Estás a punto de salir del juego. Los datos podrían no guardarse.");
+    if (!confirmExit) {
+        // Si el usuario decide no salir
+        history.pushState(null, null, window.location.href);
+    }
+});
 
 </script>
 </html>

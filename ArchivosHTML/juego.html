@@ -23,13 +23,17 @@
 
     <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
 
-
+    <div id="menuoculto">
+        <a id="menu1" href="#">Arrastra los nombres de los bloques a su lugar correspondiente </a>
+        
+ </div>
 
 
  <!--ELEMENTOS DE LA TABLA PERIODICA-->  
  <!--INICIA EL BLOQUE S-->
+ <div class="bloqueS" id="bloqueS" ondrop="drop(event)" ondragover="allowDrop(event)" >
 <div class="gas" id="eq1">
-       
+
  </div>
 
  <div class="alcalino" id="eq3">
@@ -79,7 +83,11 @@
  <div class="alcalinoterreos" id="eq88">
 
  </div>
+</div>
 <!--AQUI TERMINA EL BLOQUE S-->
+
+
+<div class="bloqueP" id="bloqueP" ondrop="drop(event)" ondragover="allowDrop(event)">
  <!--AQUI INICIA EL BLOQUE D-->
        
  <div class="transicion" id="eq21" style="color:  #4931AF;">
@@ -241,8 +249,10 @@
  <div class="transicion" id="eq112">
     
  </div>
+</div>
 <!--AQUI TERMINA EL BLOQUE D-->
-               
+
+<div class="bloqueD" id="bloqueD" ondrop="drop(event)" ondragover="allowDrop(event)">               
  <div class="metaloides" id="eq5">
     
  </div>
@@ -390,10 +400,11 @@
  <div class="desconocidos" id="eq118">
      
  </div>
-
+</div>
 <!--AQUI TERMINA EL BLOQUE P-->
 
 
+<div class="bloqueF" id="bloqueF" ondrop="drop(event)" ondragover="allowDrop(event)"> 
 <!--AQUI INICIA EL BLOQUE F-->
  <div class="lantanidos" id="eq57">
     
@@ -514,14 +525,18 @@
 <div class="actinidos" id="eq103">
     
      </div>
+    </div>
 <!--AQUI TERMINA EL BLOQUE F-->
 
 <div class="bloquesN">
-    <div class="bloques" id="bloque1" draggable="true" ondragstart="drag(event)">Representativos</div>
-    <div class="bloques" id="bloque2" draggable="true" ondragstart="drag(event)">Transición</div>
-    <div class="bloques" id="bloque3" draggable="true" ondragstart="drag(event)">Nobles</div>
-    <div class="bloques" id="bloque4" draggable="true" ondragstart="drag(event)">Transición interna</div>
+    <div class="bloques" id="S" draggable="true" ondragstart="drag(event)"><strong>Representativos</strong></div>
+    <div class="bloques" id="P" draggable="true" ondragstart="drag(event)"><strong>Transición</strong></div>
+    <div class="bloques" id="D" draggable="true" ondragstart="drag(event)"><strong>Nobles</strong></div>
+    <div class="bloques" id="F" draggable="true" ondragstart="drag(event)"><strong>Transición interna</strong></div>
 </div>
+
+<p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -561,5 +576,139 @@
             });
 
   </script>
+  <script>
+    // Manejo del evento beforeunload
+window.addEventListener('beforeunload', function (event) {
+    const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
+    event.returnValue = message;
+    return message;
+});
+
+//En caso de no salir
+window.addEventListener('popstate', function (event) {
+    const confirmExit = confirm("Estás a punto de salir del juego. Los datos podrían no guardarse.");
+    if (!confirmExit) {
+        // Si el usuario decide no salir
+        history.pushState(null, null, window.location.href);
+    }
+});
+
+</script>
+
+
+
+
+<!--
+<script>
+    
+    // Variable para contar el número de arrastres
+    let arrastresContador = 0;
+    // Total de elementos que deben ser arrastrados correctamente
+    const totalElementos = document.querySelectorAll('.bloques[draggable="true"]').length;
+    // Contador de elementos correctos colocados
+    let correctosContador = 0;
+    // Función que permite el arrastre
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+    // Función que permite soltar el elemento sobre un contenedor
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+    // Función que maneja la acción de soltar el elemento
+    function drop(event) {
+        event.preventDefault();
+        arrastresContador++; // Incrementa el contador de arrastres
+        var data = event.dataTransfer.getData("text");
+        var element = document.getElementById(data);
+        // Id del contenedor al que se intenta soltar
+        var targetContainer = event.target.closest('.bloqueS, .bloqueD, .bloqueP, .bloqueF');
+        // Verifica si el contenedor existe y si es el correcto
+        if (targetContainer && targetContainer.id === "bloque" + data) {
+            // Agrega el elemento al contenedor correcto
+            targetContainer.appendChild(element);
+            // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
+            element.setAttribute("draggable", "false");
+            element.style.cursor = "default"; // Cambia el cursor a normal
+            alert("¡Correcto! Has colocado el " + element.textContent + " en su lugar.");
+            // Incrementa el contador de elementos correctos
+            correctosContador++;
+        } else {
+            alert("¡Incorrecto! Intenta de nuevo.");
+        }
+        // Actualiza el contador de arrastres en la página
+        document.getElementById("contadorArrastres").textContent = arrastresContador;
+        // Verifica si todos los elementos han sido colocados correctamente
+        if (correctosContador === totalElementos) {
+            alert("¡Felicidades! Has colocado todos los elementos correctamente en " + arrastresContador + " arrastres.");
+        }
+    }
+</script>
+-->
+
+<!--ESTE SI FUNCIONA-->
+<script>
+    // Variable para contar el número de arrastres
+    let arrastresContador = 0;
+    // Total de elementos que deben ser arrastrados correctamente
+    const totalElementos = document.querySelectorAll('.bloques[draggable="true"]').length;
+    // Contador de elementos correctos colocados
+    let correctosContador = 0;
+
+    // Función que permite el arrastre
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    // Función que permite soltar el elemento sobre un contenedor
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    // Función que maneja la acción de soltar el elemento
+    function drop(event) {
+        event.preventDefault();
+        arrastresContador++; // Incrementa el contador de arrastres
+        var data = event.dataTransfer.getData("text");
+        var element = document.getElementById(data);
+        
+        // Identifica el contenedor al que se intenta soltar
+        var targetContainer = event.target.closest('.bloqueS, .bloqueD, .bloqueP, .bloqueF');
+        
+        // Verifica si el contenedor existe y si es el correcto
+        if (targetContainer && targetContainer.id === "bloque" + data) {
+            // Calcula la posición relativa al contenedor
+            var rect = targetContainer.getBoundingClientRect();
+            var elemRect = element.getBoundingClientRect();
+            var offsetX = event.clientX - elemRect.width / 2;
+            var offsetY = event.clientY - elemRect.height / 2;
+
+            // Ajusta la posición del elemento para que quede sobre el contenedor
+            element.style.position = "absolute";
+            element.style.left = offsetX + "px";
+            element.style.top = offsetY + "px";
+            
+            // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
+            element.setAttribute("draggable", "false");
+            element.style.cursor = "default"; // Cambia el cursor a normal
+            alert("¡Correcto! Has colocado el " + element.textContent + " en su lugar.");
+            
+            // Incrementa el contador de elementos correctos
+            correctosContador++;
+        } else {
+            alert("¡Incorrecto! Intenta de nuevo.");
+        }
+        
+        // Actualiza el contador de arrastres en la página
+        document.getElementById("contadorArrastres").textContent = arrastresContador;
+        
+        // Verifica si todos los elementos han sido colocados correctamente
+        if (correctosContador === totalElementos) {
+            alert("¡Felicidades! Has colocado todos los elementos correctamente en " + arrastresContador + " arrastres.");
+        }
+    }
+</script>
+
+
   </body>
 </html>
