@@ -592,59 +592,8 @@ window.addEventListener('popstate', function (event) {
         history.pushState(null, null, window.location.href);
     }
 });
-
 </script>
 
-
-
-
-<!--
-<script>
-    
-    // Variable para contar el número de arrastres
-    let arrastresContador = 0;
-    // Total de elementos que deben ser arrastrados correctamente
-    const totalElementos = document.querySelectorAll('.bloques[draggable="true"]').length;
-    // Contador de elementos correctos colocados
-    let correctosContador = 0;
-    // Función que permite el arrastre
-    function drag(event) {
-        event.dataTransfer.setData("text", event.target.id);
-    }
-    // Función que permite soltar el elemento sobre un contenedor
-    function allowDrop(event) {
-        event.preventDefault();
-    }
-    // Función que maneja la acción de soltar el elemento
-    function drop(event) {
-        event.preventDefault();
-        arrastresContador++; // Incrementa el contador de arrastres
-        var data = event.dataTransfer.getData("text");
-        var element = document.getElementById(data);
-        // Id del contenedor al que se intenta soltar
-        var targetContainer = event.target.closest('.bloqueS, .bloqueD, .bloqueP, .bloqueF');
-        // Verifica si el contenedor existe y si es el correcto
-        if (targetContainer && targetContainer.id === "bloque" + data) {
-            // Agrega el elemento al contenedor correcto
-            targetContainer.appendChild(element);
-            // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
-            element.setAttribute("draggable", "false");
-            element.style.cursor = "default"; // Cambia el cursor a normal
-            alert("¡Correcto! Has colocado el " + element.textContent + " en su lugar.");
-            // Incrementa el contador de elementos correctos
-            correctosContador++;
-        } else {
-            alert("¡Incorrecto! Intenta de nuevo.");
-        }
-        // Actualiza el contador de arrastres en la página
-        document.getElementById("contadorArrastres").textContent = arrastresContador;
-        // Verifica si todos los elementos han sido colocados correctamente
-        if (correctosContador === totalElementos) {
-            alert("¡Felicidades! Has colocado todos los elementos correctamente en " + arrastresContador + " arrastres.");
-        }
-    }
-</script>
--->
 
 <!--ESTE SI FUNCIONA-->
 <script>
@@ -691,14 +640,9 @@ window.addEventListener('popstate', function (event) {
             // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
             element.setAttribute("draggable", "false");
             element.style.cursor = "default"; // Cambia el cursor a normal
-            alert("¡Correcto! Has colocado el " + element.textContent + " en su lugar.");
-            
             // Incrementa el contador de elementos correctos
             correctosContador++;
-        } else {
-            alert("¡Incorrecto! Intenta de nuevo.");
-        }
-        
+        } 
         // Actualiza el contador de arrastres en la página
         document.getElementById("contadorArrastres").textContent = arrastresContador;
         
@@ -709,6 +653,8 @@ window.addEventListener('popstate', function (event) {
     }
 </script>
 
+
+    
 
   </body>
 </html>

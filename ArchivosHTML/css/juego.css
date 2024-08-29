@@ -319,8 +319,8 @@ div{
   /*elementos*/
   
   .gas{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -346,8 +346,8 @@ div{
   }
   
   .alcalino{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -388,8 +388,8 @@ div{
   }
   
   .alcalinoterreos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -427,8 +427,8 @@ div{
   }
   
   .transicion{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -452,8 +452,8 @@ div{
   }
   
   .lantanidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -472,8 +472,8 @@ div{
   }
   
   .actinidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -645,8 +645,8 @@ div{
      
   }
   .metaloides{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -664,8 +664,8 @@ div{
       top: 160px;left: 740px;
   }
   .metales{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -696,8 +696,8 @@ div{
   }
   
   .desconocidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -792,8 +792,8 @@ div{
       
   }
   .halogenos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -835,8 +835,8 @@ div{
       color: #9C9C9C;
   }
   .nobles{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -1077,8 +1077,10 @@ div{
 
 }
 
+/*contenedores*/
 .bloqueS, .bloqueD, .bloqueP, .bloqueF {
-   
+   width: 100%;
+   height: 100%;
     position: relative; /* Posición relativa para que los elementos internos puedan ser posicionados */
     right: 170px;
     top: -330px;
@@ -1090,7 +1092,7 @@ div{
 .bloqueS:hover, .bloqueD:hover, .bloqueP:hover, .bloqueF:hover {
    
     /* Cambia el cursor a una mano indicando que es interactivo */
-    -webkit-transform: scale(1.02);
+    -webkit-transform: scale(2.05);
     transform: scale(1.02);
-    border: white;
+    
 }

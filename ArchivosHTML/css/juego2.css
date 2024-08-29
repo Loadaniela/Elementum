@@ -248,16 +248,23 @@ main {
   
 
 
-/*contenido de cada elemento*/
+/*contenido de cada elemento
 div{
   width:100%;
   height:100%;
   margin: 8rem;
-  
+ 
   color: #fff;
-}
+}*/
 
-
+@keyframes text{
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+  }
 
 /* Ajuste de tamaño de fuente */
 .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
@@ -267,22 +274,63 @@ div{
   }
 .atomico {
     font-size: 8px;
+    font-size: 18px;
+    font-weight: bold; /*  texto sea más grueso */
+    color: white; /* Asegurando un buen contraste con el fondo */
+    overflow: hidden; /* Oculta texto que se desborda */
+    text-overflow: ellipsis; 
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    line-height: 1.2; /* Controlar la altura de la línea */
+    box-sizing: border-box; 
+   
   }
   
   .simbolo {
-    font-size: 12px;
+    font-size: 20px;
+    font-weight: bold; /*  texto sea más grueso */
+    color: white; /* Asegurando un buen contraste con el fondo */
+    overflow: hidden; /* Oculta texto que se desborda */
+    text-overflow: ellipsis; 
+    text-decoration: underline;
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    line-height: 1; /* Controlar la altura de la línea */
+    box-sizing: border-box; 
   }
   
   .nombre {
-    font-size: 14px;
+    font-size: 13px;
+    
+    font-weight: bold; /*texto sea más grueso */
+    color: white; /* Asegurando un buen contraste con el fondo */
+    overflow: hidden; /* Oculta texto que se desborda */
+    text-overflow: ellipsis; 
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    line-height: 1; /* Controlar la altura de la línea */
+    box-sizing: border-box; 
   }
   
   .peso {
-    font-size: 8px;
+    font-size: 10px;
+    
+    font-weight: bold; /*  texto sea más grueso */
+    color: white; /* Asegurando un buen contraste con el fondo */
+    overflow: hidden; /* Ocultar texto que se desborda */
+    text-overflow: ellipsis; 
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    line-height: 1.2; /* Controlar la altura de la línea */
+    box-sizing: border-box; 
   }
   
   .grupo, .periodo {
-    font-size: 8px;
+    font-size: 10px;
+   
+    font-weight: bold; /*  texto sea más grueso */
+    color: white; /* Asegurando un buen contraste con el fondo */
+    overflow: hidden; /* Ocultar texto que se desborda */
+    text-overflow: ellipsis; /* Añadir puntos suspensivos si el texto se desborda */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    line-height: 1.2; /* Controlar la altura de la línea */
+    box-sizing: border-box; 
   }
   
 
@@ -295,6 +343,7 @@ div{
     height: 60px;
     border: dashed black 2px;
     text-align: center;
+    position: relative;
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -310,7 +359,7 @@ div{
 #eq1{
     position: absolute;
     top: 100px;left:20px;
-    color: #CF010B;
+   
 }
 
 .alcalino{
@@ -318,6 +367,7 @@ div{
     height: 60px;
     border: dashed black 2px;
     text-align: center;
+    position: relative;
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -360,6 +410,7 @@ div{
     height: 60px;
     border: dashed black 2px;
     text-align: center;
+    position: relative;
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -401,6 +452,7 @@ div{
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
+    position: relative;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
 }
@@ -421,6 +473,7 @@ div{
 
 .lantanidos{
     width: 60px;
+    position: relative;
     height: 60px;
     border: dashed black 2px;
     text-align: center;
@@ -443,6 +496,7 @@ div{
     width: 60px;
     height: 60px;
     border: dashed black 2px;
+    position: relative;
     text-align: center;
     border-radius: 5px;
     background: #f5f6f7;
@@ -614,6 +668,7 @@ div{
 }
 .metaloides{
     width: 60px;
+    position: relative;
     height: 60px;
     border: dashed black 2px;
     text-align: center;
@@ -633,6 +688,7 @@ div{
 }
 .metales{
     width: 60px;
+    position: relative;
     height: 60px;
     border: dashed black 2px;
     text-align: center;
@@ -668,6 +724,7 @@ div{
     height: 60px;
     border: dashed black 2px;
     text-align: center;
+    position: relative;
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -765,6 +822,7 @@ div{
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
+    position: relative;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
 }
@@ -805,6 +863,7 @@ div{
 .nobles{
     width: 60px;
     height: 60px;
+    position: relative;
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
@@ -821,7 +880,7 @@ div{
 #eq2{
     position: absolute;
     top: 100px;left: 1040px;
-    color: #CF010B;
+    
 }
 #eq10{
     position: absolute;
@@ -983,75 +1042,98 @@ div{
 #elemento1, #elemento2, #elemento3, #elemento4, #elemento5, 
 #elemento6, #elemento7, #elemento8, #elemento9, #elemento10 {
     position: absolute;
+  
 }
 
 /* Ajusta la posición vertical para que estén debajo de la tabla */
 #elemento1 {
-    top: 700px; /* Ajusta este valor según la altura de la tabla */
-    left: 100px;
+    top: 850px; /* Ajusta este valor según la altura de la tabla */
+    left: 200px;
 }
 
 #elemento2 {
-    top: 700px; 
-    left: 300px;
+    top: 850px; 
+    left: 400px;
 }
 
 #elemento3 {
-    top: 700px; 
-    left: 500px;
+    top: 850px; 
+    left: 600px;
 }
 
 #elemento4 {
-    top: 700px; 
-    left: 700px;
+    top: 850px; 
+    left: 800px;
 }
 
 #elemento5 {
-    top: 800px; /* Ajusta según sea necesario */
-    left: 100px;
+    top: 950px; /* Ajusta según sea necesario */
+    left: 200px;
 }
 
 #elemento6 {
-    top: 800px; 
-    left: 300px;
+    top: 950px; 
+    left: 400px;
 }
 
 #elemento7 {
-    top: 800px;
-    left: 500px;
+    top: 950px;
+    left: 600px;
 }
 
 #elemento8 {
-    top: 800px;
-    left: 700px;
+    top: 950px;
+    left: 800px;
 }
 
 #elemento9 {
-    top: 800px;
-    left: 900px;
+    top: 950px;
+    left: 1000px;
 }
 
 #elemento10 {
-    top: 700px;
-    left: 900px;
+    top: 850px;
+    left: 1000px;
 }
 
 /*pruebas para el bloque por medio de mongo*/
-.elemento-alcalino{
+.elemento-arrastable{
     width: 60px;
     height: 60px;
-    position: relative;
+    position: absolute;
     display:inline-block ;
     border: dashed black 2px; /*tamaño del color negro del borde*/
     text-align: center;
     font-size: small;
+    cursor: move;
+  
     border-radius: 2px;
     background: #2f96e6; /*no mover*/
     -webkit-transition-duration: 0.9s;
     
 }
 
-.elemento-alcalino:hover{
+.elemento-arrastable:hover{
   /*background: #fb7;*/
   -webkit-transform:scale(2.2);
+}
+.draggable {
+    cursor: grab;
+    
+}
+
+.contenedores{
+    position: relative;
+    bottom: 190px;
+    left: 100px;
+}
+
+
+ /* Estilos para las celdas */
+ .nobles, .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, .metaloides, .metales, .halogenos, .desconocidos {
+   
+    display: flex;
+   
+    position: relative;
+   
 }

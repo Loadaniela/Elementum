@@ -225,7 +225,7 @@ p{
             background-color: #eb8500; 
         }
   /*TODO EL CODIGO ANTERIOR ES ESCENCIAL PARA LA PAGINA*/
-  /*A partir de aqui es css de la tabla periodica */
+  /*A partir de aqui es css de la tabla periodica 
 div{
     width:100%;
     height:100%;
@@ -259,21 +259,36 @@ div{
   .atomico{
       font-size: 8px;
       line-height: 0px;
+      font-weight: bold; /*  texto sea más grueso */
+      color: white; /* Asegurando un buen contraste con el fondo */
+      overflow: hidden; /* Oculta texto que se desborda */
+      text-overflow: ellipsis; 
+      white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+     
+      box-sizing: border-box; 
   }
   
   .simbolo{
-      font-size: 13px;
+      font-size: 18px;
       line-height: 0px;
+      font-weight: bold; /*  texto sea más grueso */
+      color: white; /* Asegurando un buen contraste con el fondo */
   }
   
   .nombre{
-      font-size: 12px;
+      font-size: 14px;
       line-height: 0px;
+      font-weight: bold; /*  texto sea más grueso */
+      color: white; /* Asegurando un buen contraste con el fondo */
+     
+     
   }
   
   .electronegatividad{
       font-size: 9px;
       line-height: 0px;
+      font-weight: bold; /*  texto sea más grueso */
+      color: white; /* Asegurando un buen contraste con el fondo */
   }
   
   /*fin contenido de cada elementos*/
@@ -975,57 +990,58 @@ div{
 
 /* Ajusta la posición vertical para que estén debajo de la tabla */
 #elemento1 {
-    top: 700px; /* Ajusta este valor según la altura de la tabla */
-    left: 100px;
+    top: 850px; /* Ajusta este valor según la altura de la tabla */
+    left: 200px;
 }
 
 #elemento2 {
-    top: 700px; 
-    left: 300px;
+    top: 850px; 
+    left: 400px;
 }
 
 #elemento3 {
-    top: 700px; 
-    left: 500px;
+    top: 850px; 
+    left: 600px;
 }
 
 #elemento4 {
-    top: 700px; 
-    left: 700px;
+    top: 850px; 
+    left: 800px;
 }
 
 #elemento5 {
-    top: 800px; /* Ajusta según sea necesario */
-    left: 100px;
+    top: 950px; /* Ajusta según sea necesario */
+    left: 200px;
 }
 
 #elemento6 {
-    top: 800px; 
-    left: 300px;
+    top: 950px; 
+    left: 400px;
 }
 
 #elemento7 {
-    top: 800px;
-    left: 500px;
+    top: 950px;
+    left: 600px;
 }
 
 #elemento8 {
-    top: 800px;
-    left: 700px;
+    top: 950px;
+    left: 800px;
 }
 
 #elemento9 {
-    top: 800px;
-    left: 900px;
+    top: 950px;
+    left: 1000px;
 }
 
 #elemento10 {
-    top: 700px;
-    left: 900px;
+    top: 850px;
+    left: 1000px;
 }
 
+
 /*pruebas para el bloque por medio de mongo*/
-.elemento-alcalino{
+.elemento-arrastable{
     width: 55px;
     height: 55px;
     position: relative;
@@ -1033,14 +1049,22 @@ div{
     border: dashed black 2px; /*tamaño del color negro del borde*/
     text-align: center;
     font-size: small;
+    cursor: move;
     border-radius: 2px;
     background: #ee2a1c; /*no mover*/
     -webkit-transition-duration: 0.9s;
     
 }
 
-.elemento-alcalino:hover{
+.elemento-arrastable:hover{
   /*background: #fb7;*/
   -webkit-transform:scale(2.2);
 }
+
+.contenedores{
+    position: relative;
+    bottom: 130px;
+    left: 100px;
+}
+
   
