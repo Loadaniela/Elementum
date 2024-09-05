@@ -24,5 +24,3 @@ function prevSlide() {
 // Inicializar el carrusel
 showSlide(currentIndex);
 
-//PERFIL DE HAMBURGUESA
-

@@ -344,6 +344,7 @@ div{
     border: dashed black 2px;
     text-align: center;
     position: relative;
+   
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -367,6 +368,7 @@ div{
     height: 60px;
     border: dashed black 2px;
     text-align: center;
+    
     position: relative;
     border-radius: 5px;
     background: #f5f6f7;
@@ -411,6 +413,7 @@ div{
     border: dashed black 2px;
     text-align: center;
     position: relative;
+   
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -452,6 +455,7 @@ div{
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
+   
     position: relative;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -477,6 +481,7 @@ div{
     height: 60px;
     border: dashed black 2px;
     text-align: center;
+    
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -497,6 +502,7 @@ div{
     height: 60px;
     border: dashed black 2px;
     position: relative;
+    
     text-align: center;
     border-radius: 5px;
     background: #f5f6f7;
@@ -673,6 +679,7 @@ div{
     border: dashed black 2px;
     text-align: center;
     border-radius: 5px;
+   
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
 }
@@ -692,6 +699,7 @@ div{
     height: 60px;
     border: dashed black 2px;
     text-align: center;
+    
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -725,6 +733,7 @@ div{
     border: dashed black 2px;
     text-align: center;
     position: relative;
+   
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -823,6 +832,7 @@ div{
     text-align: center;
     border-radius: 5px;
     position: relative;
+   
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
 }
@@ -866,6 +876,7 @@ div{
     position: relative;
     border: dashed black 2px;
     text-align: center;
+    
     border-radius: 5px;
     background: #f5f6f7;
     -webkit-transition-duration: 0.9s;
@@ -1042,6 +1053,7 @@ div{
 #elemento1, #elemento2, #elemento3, #elemento4, #elemento5, 
 #elemento6, #elemento7, #elemento8, #elemento9, #elemento10 {
     position: absolute;
+    z-index: 1000;
   
 }
 
@@ -1136,4 +1148,13 @@ div{
    
     position: relative;
    
+}
+.arrastres{
+    font-size:x-large;
+    text-align: center;
+    right: 50%;
+    position: absolute;
+    top: 90px; /* Ajusta la posición desde el top del contenedor */
+    
+    
 }

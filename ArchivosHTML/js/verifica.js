@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var caja1_interior_login = document.querySelector(".caja1_interior_login");
     var caja1_interior_registro = document.querySelector(".caja1_interior_registro");
 
-    // Funciones del login
+    // Funciones del login para el moviiento de la ventana de registro 
+    //cuando se activa uno, se desactiva el cuadro inferior
     function iniciar() {
         formulario_registro.style.display = "none";
         contenedor_login_registro.style.left = "10px";

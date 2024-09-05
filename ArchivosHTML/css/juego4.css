@@ -276,7 +276,7 @@ div{
   }
   
   .nombre{
-      font-size: 14px;
+      font-size: 12px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */
@@ -296,8 +296,8 @@ div{
   /*elementos*/
   
   .gas{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -319,8 +319,8 @@ div{
   }
   
   .alcalino{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -361,8 +361,8 @@ div{
   }
   
   .alcalinoterreos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -401,8 +401,8 @@ div{
   }
   
   .transicion{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -425,8 +425,8 @@ div{
   }
   
   .lantanidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -443,10 +443,10 @@ div{
       position: absolute;
       top: 400px;left: 140px;
   }
-  
+  /*1 actinido es null*/
   .actinidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -619,8 +619,8 @@ div{
       color: #9C9C9C;
   }
   .metaloides{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -638,8 +638,8 @@ div{
       top: 160px;left: 740px;
   }
   .metales{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -670,8 +670,8 @@ div{
   }
   
   .desconocidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -766,8 +766,8 @@ div{
       color: #9C9C9C;
   }
   .halogenos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -809,8 +809,8 @@ div{
       color: #9C9C9C;
   }
   .nobles{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -986,6 +986,7 @@ div{
 #elemento1, #elemento2, #elemento3, #elemento4, #elemento5, 
 #elemento6, #elemento7, #elemento8, #elemento9, #elemento10 {
     position: absolute;
+    z-index: 1000;
 }
 
 /* Ajusta la posición vertical para que estén debajo de la tabla */
@@ -1067,4 +1068,12 @@ div{
     left: 100px;
 }
 
-  
+.arrastres{
+    font-size:x-large;
+    text-align: center;
+    right: 20%;
+    position: relative;
+    top: 160px; /* Ajusta la posición desde el top del contenedor */
+    
+    
+}

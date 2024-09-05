@@ -27,3 +27,5 @@ $(function() {
       interval = setInterval(changeDiv, 3500);
     });
   });
+
+  //intervalos del slider del menu de juegos

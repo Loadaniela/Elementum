@@ -12,7 +12,7 @@
         <label for="toggle" class="hamburger"><span></span></label>
         <nav class="menu">
             <ul>
-                <li><a href="#" >PERFIL DEL JUGADOR</a></li>
+                <li><a href="#">PERFIL DEL JUGADOR</a></li>
                 <p><strong style="color: orange;">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
                 <p><strong style="color: orange;">Correo:</strong> <span id="correo" style="color: white;"></span></p>
                 <p><strong style="color: orange;">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
@@ -21,12 +21,41 @@
                 <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
             </ul>
         </nav>
-        <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+        <h1 class="glitch" data-text="Elementum">ELEMENTUM</h1>
+
+        <style>
+            h2 {
+                text-align: center;
+                color: #f38e1b;
+            }
+            #resultados {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .resultado {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 15px;
+                padding: 15px;
+            }
+            .resultado p {
+                margin: 5px 0;
+            }
+            .resultado hr {
+                margin: 10px 0;
+            }
+        </style>
+
+        <h2>Marcador de Resultados</h2>
+        <div id="resultados">
+            <!-- Los resultados de las partidas se mostrarán aquí -->
+        </div>
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('/perfil')
+        function cargarPerfil() {
+            return fetch('/perfil')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('No autorizado');
@@ -37,12 +66,63 @@
                     document.getElementById('nombre').textContent = data.nombre;
                     document.getElementById('correo').textContent = data.correo;
                     document.getElementById('usuario').textContent = data.usuario;
+                    return data.id; // Retorna el userId para usarlo después
                 })
                 .catch(error => {
                     console.error('Error al cargar el perfil:', error);
                     alert('Debes iniciar sesión primero');
                     window.location.href = '/login.html';
                 });
+        }
+
+        function mostrarResultados(userId) {
+            if (!userId) {
+                alert('No se pudo encontrar el ID del usuario.');
+                return;
+            }
+
+            fetch(`/obtener-resultados?userId=${userId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la respuesta del servidor');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const resultadosContenedor = document.getElementById('resultados');
+                    resultadosContenedor.innerHTML = '';
+
+                    if (data.length === 0) {
+                        resultadosContenedor.innerHTML = '<p>No se encontraron resultados.</p>';
+                        return;
+                    }
+
+                    data.forEach(resultado => {
+                        const item = document.createElement('div');
+                        item.className = 'resultado';
+                        item.innerHTML = `
+                            <p><strong>Juego:</strong> ${resultado.juegos.nombre_juego}</p>
+                            <p><strong>Número de Arrastres:</strong> ${resultado.numArrastres}</p>
+                            <p><strong>Calificación:</strong> ${resultado.calificacion}</p>
+                            <p><strong>Hora de Inicio:</strong> ${new Date(resultado.hora_inicio).toLocaleString()}</p>
+                            <p><strong>Hora de Fin:</strong> ${new Date(resultado.hora_fin).toLocaleString()}</p>
+                            <hr>
+                        `;
+                        resultadosContenedor.appendChild(item);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener los resultados:', error);
+                    alert('Error al cargar los resultados.');
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarPerfil().then(userId => {
+                if (userId) {
+                    mostrarResultados(userId); // Llama a la función después de obtener el userId
+                }
+            });
         });
 
         document.getElementById('logout').addEventListener('click', function(e) {

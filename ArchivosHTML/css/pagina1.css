@@ -199,7 +199,7 @@ p{
 	top: 0;
 	bottom: 0;
 	right: 0;
-	transition: 0.2s all ease-in-out;
+	transition: 0.10s all ease-in-out;
 	transform: scale(1);
 }
 
@@ -318,7 +318,7 @@ a.mas, a.menos {
 	background: rgba(0,0,0,0.4);
 	border: 2px solid #FFF;
 	text-decoration: none;
-	transition: 0.3s all ease-in-out;	
+	transition: 0.20s all ease-in-out;	
 }
 
 a.mas {
@@ -617,5 +617,57 @@ a.mas {
     }
     100% {
         clip: rect(17px, 9999px, 39px, 0);
+    }
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .profile {
+        max-width: 300px;
+    }
+
+    .hamburger span {
+        width: 35px;
+    }
+
+    .menu {
+        width: 200px;
+    }
+
+    #tablon {
+        height: auto; /* Permite ajustar el tamaño automáticamente */
+        flex-direction: column; /* Ajusta el layout para pantallas más pequeñas */
+    }
+
+    #slider-wrapper {
+        width: 100%; /* Se ajusta al 100% del contenedor en pantallas pequeñas */
+        max-width: 100%;
+    }
+
+    #slider div span {
+        font-size: 30px; /* Reduce el tamaño de fuente para pantallas más pequeñas */
+    }
+
+    .right #top .links a {
+        font-size: large; /* Ajusta el tamaño de la fuente */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile {
+        max-width: 90%;
+    }
+
+    .hamburger {
+        top: 10px;
+        right: 10px;
+    }
+
+    .menu {
+        width: 180px;
+    }
+
+    #slider div span {
+        font-size: 20px;
     }
 }

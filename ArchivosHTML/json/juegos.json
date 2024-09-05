@@ -1,20 +1,20 @@
 [
     
       {
-        "id": 1,
-        "nombre": "Bloques"
+        "Id": 1,
+        "nombre_juego": "Bloques"
       },
       {
-        "id": 2,
-        "nombre": "Elementos"
+        "Id": 2,
+        "nombre_juego": "Elementos"
       },
       {
-        "id": 3,
-        "nombre": "RadioA"
+        "Id": 3,
+        "nombre_juego": "RadioA"
       },
       {
-        "id": 4,
-        "nombre": "Electronegatividad"
+        "Id": 4,
+        "nombre_juego": "Electronegatividad"
       }
 
  ]

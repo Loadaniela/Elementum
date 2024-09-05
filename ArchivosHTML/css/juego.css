@@ -5,25 +5,16 @@ body{
     background-size: cover;
     background-position: center;
     margin: 0;
+    
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-p{
-    
-}
-.arrastres{
-    font-size:x-large;
-    text-align: center;
-    left: 50px;
-    
-}
 .glitch {
-    position:relative;
-    justify-content: center;
-    text-align: center; /*Para poner el titulo en el centro */
+    position:absolute;
     align-items: center;
-    
+    bottom: 120px; /* Ajusta la posición desde el top del contenedor */
+    left: 5%;
     font-size: 6em;
     text-shadow: 8px -8px 0px #d37d1b;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
@@ -160,7 +151,7 @@ p{
     padding: 10px;
     border-radius: 10px;
     text-align: center;
-    max-width: 400px;
+    max-width: 90%;
     margin: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
@@ -263,14 +254,14 @@ p{
         top: 100px; 
         background-color: #eb8500; 
         }
-  /*A partir de aqui es css de la tabla periodica */
+  /*A partir de aqui es css de la tabla periodica 
 div{
     width:100%;
     height:100%;
     margin: 9rem;
     font-family: 'DynaPuff', cursive;
     color: #fff;
-  }
+  }*/
   
   /*
   h1{
@@ -283,6 +274,8 @@ div{
     -webkit-background-clip: text;
     animation: text 5s linear infinite;
   }*/
+
+/*TODO EL CSS DEL JUEGO*/
   
   @keyframes text{
     0%{
@@ -314,10 +307,6 @@ div{
       line-height: 0px;
   }
   
-  /*fin contenido de cada elementos*/
-  
-  /*elementos*/
-  
   .gas{
       width: 60px;
       height: 60px;
@@ -328,13 +317,7 @@ div{
       /*background: #002392;*/
       -webkit-transition-duration: 0.9s;
   }
-   
-  /*
-  .gas:hover{
-      /*background: #B5B8B1;
-      -webkit-transform: scale(1.2);
-  }*/
-  
+
   .bloqueS:hover{
     
   }
@@ -356,11 +339,7 @@ div{
       
   }
   
-  /*
-  .alcalino:hover{
-     /* background: #fb7;
-      -webkit-transform:scale(1.2);
-  }*/
+ 
   
   #eq3{
       position: absolute;
@@ -435,11 +414,7 @@ div{
       background: #4931AF;
       -webkit-transition-duration: 0.9s;
   }
-  /*
-  .transicion:hover{
-     /* background: #9B6DC6;   COLORES DE LOS HOVER AL MOVER
-      -webkit-transform: scale(1.2);
-  }*/
+  
   #eq21{
       position: absolute;
       top: 280px;left: 140px;
@@ -1051,6 +1026,7 @@ div{
     left: 100px;
     position: absolute;
     z-index: 10;
+    font-family: cursive;
    
 }
 
@@ -1059,7 +1035,7 @@ div{
     left: 300px;
     position: absolute;
     z-index: 10;
-   
+    font-family: cursive;
 }
 
 #D {
@@ -1067,14 +1043,15 @@ div{
     left: 500px;
     position: absolute;
     z-index: 10;
-   
+    font-family: cursive;
+    
 }
 #F {
     top: 700px; 
     left: 700px;
     z-index: 10;
     position: absolute;
-
+    font-family: cursive;
 }
 
 /*contenedores*/
@@ -1094,5 +1071,21 @@ div{
     /* Cambia el cursor a una mano indicando que es interactivo */
     -webkit-transform: scale(2.05);
     transform: scale(1.02);
+    
+}
+
+.contenedor{
+    position: relative;
+    top: 330px;
+    left: 300px;
+}
+
+.arrastres{
+    font-size:x-large;
+    text-align: center;
+    left: 10%;
+    position: absolute;
+    bottom: 100px; /* Ajusta la posición desde el top del contenedor */
+    
     
 }

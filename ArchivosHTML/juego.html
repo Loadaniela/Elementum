@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/juego.css">
 </head>
 <body>
+    <main>
     <input type="checkbox" id="toggle">
     <label for="toggle" class="hamburger"><span></span></label>
     <nav class="menu">
@@ -21,16 +22,20 @@
         </ul>
     </nav>
 
-    <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
-
+   <!--- <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+    <p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
+-->
     <div id="menuoculto">
         <a id="menu1" href="#">Arrastra los nombres de los bloques a su lugar correspondiente </a>
-        
  </div>
-
-
  <!--ELEMENTOS DE LA TABLA PERIODICA-->  
+ 
  <!--INICIA EL BLOQUE S-->
+<div class="contenedor"> 
+    <!--AQUI INICIA EL CONTENEDOR PADRE-->
+    <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+    <p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
+  
  <div class="bloqueS" id="bloqueS" ondrop="drop(event)" ondragover="allowDrop(event)" >
 <div class="gas" id="eq1">
 
@@ -525,7 +530,7 @@
 <div class="actinidos" id="eq103">
     
      </div>
-    </div>
+   
 <!--AQUI TERMINA EL BLOQUE F-->
 
 <div class="bloquesN">
@@ -534,9 +539,9 @@
     <div class="bloques" id="D" draggable="true" ondragstart="drag(event)"><strong>Nobles</strong></div>
     <div class="bloques" id="F" draggable="true" ondragstart="drag(event)"><strong>Transición interna</strong></div>
 </div>
+</div>
 
-<p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
-
+</main>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -559,6 +564,31 @@
                     });
             });
 
+
+                        // Función para obtener el ID del juego desde la URL
+            function obtenerIdJuegoDeURL() {
+                const urlActual = window.location.pathname; // Obtiene la ruta del archivo
+                if (urlActual.includes('juego.html')) return 1;
+                if (urlActual.includes('juego2.html')) return 2;
+                if (urlActual.includes('juego3.html')) return 3;
+                if (urlActual.includes('juego4.html')) return 4;
+                return null; // En caso de que no se encuentre un juego válido
+            }
+
+            // Función para registrar la entrada del usuario al juego
+            function registrarEntradaJuego(userId, juegoId) {
+                fetch('/api/entrada-juego', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userId, juegoId })
+                })
+                .then(response => response.json())
+                .then(data => console.log('Entrada registrada:', data))
+                .catch(error => console.error('Error registrando entrada:', error));
+            }
+
             document.getElementById('logout').addEventListener('click', function(e) {
                 e.preventDefault();
                 fetch('/logout', { method: 'POST' })
@@ -576,33 +606,48 @@
             });
 
   </script>
-  <script>
-    // Manejo del evento beforeunload
-window.addEventListener('beforeunload', function (event) {
-    const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
-    event.returnValue = message;
-    return message;
-});
 
-//En caso de no salir
-window.addEventListener('popstate', function (event) {
-    const confirmExit = confirm("Estás a punto de salir del juego. Los datos podrían no guardarse.");
-    if (!confirmExit) {
-        // Si el usuario decide no salir
-        history.pushState(null, null, window.location.href);
+<script>
+
+    // Variable para indicar si el juego ha terminado
+let juegoTerminado = false;
+
+// Manejo del evento beforeunload
+window.addEventListener('beforeunload', function (event) {
+    if (!juegoTerminado) { // Solo muestra el mensaje si el juego no ha terminado
+        const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
+        event.returnValue = message;
+        return message;
     }
 });
+
+// Manejo del evento popstate
+window.addEventListener('popstate', function (event) {
+    if (!juegoTerminado) { // Solo muestra el mensaje si el juego no ha terminado
+        const confirmExit = confirm("Estás a punto de salir del juego. Los datos podrían no guardarse.");
+        if (!confirmExit) {
+            // Si el usuario decide no salir
+            history.pushState(null, null, window.location.href);
+        }
+    }
+});
+
+
 </script>
 
 
-<!--ESTE SI FUNCIONA-->
+<!--funcion para hacer los arrastres -->
 <script>
+    
     // Variable para contar el número de arrastres
     let arrastresContador = 0;
     // Total de elementos que deben ser arrastrados correctamente
     const totalElementos = document.querySelectorAll('.bloques[draggable="true"]').length;
     // Contador de elementos correctos colocados
     let correctosContador = 0;
+
+    const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
+    const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
 
     // Función que permite el arrastre
     function drag(event) {
@@ -642,17 +687,68 @@ window.addEventListener('popstate', function (event) {
             element.style.cursor = "default"; // Cambia el cursor a normal
             // Incrementa el contador de elementos correctos
             correctosContador++;
-        } 
+            sonidoAcierto.play(); // Reproduce el sonido de acierto
+        } else {
+            sonidoError.play(); // Reproduce el sonido de error
+        }
         // Actualiza el contador de arrastres en la página
         document.getElementById("contadorArrastres").textContent = arrastresContador;
         
         // Verifica si todos los elementos han sido colocados correctamente
         if (correctosContador === totalElementos) {
             alert("¡Felicidades! Has colocado todos los elementos correctamente en " + arrastresContador + " arrastres.");
+            
+            // Guardar el resultado del juego en la base de datos
+            const userId = document.getElementById('usuario').textContent; // Obtener el userId del perfil cargado
+            const juegoId = obtenerIdJuegoDeURL(); // Obtener el ID del juego actual
+            
+            // Llamar a la función para guardar el resultado
+            guardarResultadoJuego(userId, juegoId, arrastresContador);
         }
     }
-</script>
 
+    // Función para guardar el resultado del juego
+    function guardarResultadoJuego(userId, juegoId, numArrastres) {
+    const nombreJuego = obtenerNombreJuego(juegoId);
+
+    fetch('/guardar-resultado', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userId, juegoId, numArrastres })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Resultado guardado:', data);
+
+        if (data.message === 'Resultado guardado correctamente') {
+             // Indicar que el juego ha terminado
+             juegoTerminado = true;
+            window.location.href = 'marcador.html';
+        } else {
+            alert('Error al guardar resultados: ' + (data.error || 'Error desconocido'));
+            console.error('Detalles del error:', data);
+        }
+    })
+    .catch(error => {
+        console.error('Error de red:', error);
+        alert('Error de red, por favor intenta nuevamente.');
+    });
+}
+//los casos de los switch estan en prueba.js
+function obtenerNombreJuego(juegoId) {
+        switch (parseInt(juegoId)) {
+            case 1: return 'Bloques';
+            case 2: return 'Elementos';
+            case 3: return 'RadioA';
+            case 4: return 'Electronegatividad';
+            default: return 'Juego desconocido';
+        }
+    }
+
+
+</script>
 
     
 

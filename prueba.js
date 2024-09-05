@@ -32,11 +32,11 @@ mongoose.connect(process.env.MONGO_LOCAL_URL, { useNewUrlParser: true, useUnifie
 //conectar con la sesion
 // Configuración de la sesión
 app.use(session({
-    secret: 'Dani7890', // Cambia esto por una cadena secreta segura
+    secret: 'Dani7890', //cadena secreta segura
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: process.env.MONGO_LOCAL_URL, // Usa la URL de tu base de datos MongoDB
+        mongoUrl: process.env.MONGO_LOCAL_URL, // 
     }),
     cookie: { maxAge: 1000 * 60 * 60 * 24 } // 1 día de duración
 }));
@@ -75,6 +75,7 @@ const ElementosSchema = new mongoose.Schema(
 
 const JuegosSchema = new mongoose.Schema(
     {
+        Id: { type: Number, required: true },
         nombre_juego: { type: String, required: true, maxlength: 100 }
     },
     {
@@ -84,11 +85,13 @@ const JuegosSchema = new mongoose.Schema(
 
 const PartidasSchema = new mongoose.Schema(
     {
-        victoria: { type: Boolean },
-        hora_inicio: { type: Date },
-        hora_fin: { type: Date },
+       
         usuarios: { type: mongoose.Schema.Types.ObjectId, ref: "usuarios", required: true },
         juegos: { type: mongoose.Schema.Types.ObjectId, ref: "juegos", required: true },
+        numArrastres: { type: Number, required: true },
+        hora_inicio: { type: Date },
+        hora_fin: { type: Date },
+        calificacion: { type: Number, required: true } // Calificación obtenida
     },
     {
         timestamps: true
@@ -111,22 +114,79 @@ app.get('/login', (req, res) => {
 
 
 //RUTAS POST
-// Ruta de inicio de sesión
-/*
-app.post("/login", async (req, res) => {
-    const { correo, contrasena } = req.body;
-    const usuario = await Usuario.findOne({ correo, contrasena });
-
-    if (usuario) {
-        req.session.userId = usuario._id;
-        res.redirect("/pagina1.html");
-    } else {
-        res.status(401).send("Credenciales incorrectas");
+//obtiene el resultado 
+// Endpoint para obtener resultados de las partidas
+app.get('/obtener-resultados', async (req, res) => {
+    const userId = req.query.userId;
+    if (!userId) {
+        return res.status(400).json({ error: 'ID de usuario no proporcionado' });
     }
-});*/
+//obtiene el id del usario y el id del juego
+    try {
+        const resultados = await PartidasModel.find({ usuarios: userId }).populate('juegos').exec();
+        res.json(resultados);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error al obtener los resultados' });
+    }
+});
+
+app.post('/guardar-resultado', async (req, res) => {
+    const { userId, juegoId, numArrastres } = req.body;
+
+    try {
+        // Buscar el juego en la colección de juegos por su ID
+        const juego = await JuegosModel.findOne({ Id: juegoId });
+        if (!juego) {
+            return res.status(404).json({ error: 'Juego no encontrado' });
+        }
+
+        // Buscar el usuario en la colección de usuarios por su nombre de usuario
+        const usuario = await UsuariosModel.findOne({ usuario: userId }); // busca al usuario
+        if (!usuario) {
+            return res.status(404).json({ error: 'Usuario no encontrado' });
+        }
+
+        // if de las reglas del juego
+        //el primer juego pone de regla ganar el 10 si el usuario hace el menor numero de arrastres
+        //el tercero, cuarto y quinto juego, hace que pueda hacer los mayores arratres pero en cuanto mayor sea su arrastre, menor será la calificacion
+        //para obtener el 10 se necesita hacer 10 arrastres
+        let calificacion = 0;
+        switch (parseInt(juegoId)) {  
+            case 1:
+                calificacion = numArrastres <= 4 ? 10 : Math.max(10 - (numArrastres - 4), 0);
+                break;
+            case 2:
+            case 3:
+            case 4:
+                calificacion = numArrastres <= 10 ? 10 : Math.max(10 - (numArrastres - 10), 0);
+                break;
+            default:
+                calificacion = 0;
+        }
+
+        // Crear y guardar una nueva partida
+        const nuevaPartida = new PartidasModel({
+            usuarios: usuario._id,  // Aquí está usando correctamente el _id del usuario encontrado
+            juegos: juego._id,
+            numArrastres: numArrastres,
+            hora_inicio: new Date(),
+            hora_fin: new Date(),
+            calificacion: calificacion
+        });
+
+        await nuevaPartida.save();
+
+        res.status(201).json({ message: 'Resultado guardado correctamente', partida: nuevaPartida });
+    } catch (error) {
+        console.error('Error al guardar el resultado del juego:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
 
 
-// Tu código de rutas y lógica de la aplicación aquí
+
+// para hacer valido el login 
 app.post("/login", async (req, res) => {
     try {
         const { correo, contrasena } = req.body;
@@ -134,7 +194,7 @@ app.post("/login", async (req, res) => {
 
         if (usuario) {
             req.session.userId = usuario._id;
-            console.log('Usuario iniciado sesión:', req.session.userId);
+            console.log('Usuario iniciado sesión:', req.session.userId =usuario._id); //aqui cambie el final agregeue lo de = ..
             res.json({ success: true, message: "Inicio de sesión exitoso" });
         } else {
             res.status(401).json({ success: false, message: "Correo o contraseña incorrecta" });
@@ -176,6 +236,7 @@ app.get('/perfil', async (req, res) => {
         }
 
         res.json({
+            id: usuario._id,
             nombre: usuario.nombre,
             correo: usuario.correo,
             usuario: usuario.usuario
@@ -219,20 +280,6 @@ app.post("/usuarios", async (req, res) => {
     }
 });
 
-/*comentario */
-//ruta para enviar 5 elementos aleatorios cada que se recargue
-
-
-
-// Ejemplo de ingreso de un dato
-/*
-{
-    "nombre": "Juan Perez",
-    "correo": "juan.perez@gmail.com",
-    "usuario": "juanperez",
-    "contrasena": "juanito"
-}
- */
 
 app.get("/usuarios", async function (req, res) {
     try {

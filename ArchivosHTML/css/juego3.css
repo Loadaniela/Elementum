@@ -14,6 +14,8 @@ p{
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
+   right: 10%;
+   top: -100px;
     font-family: 'Permanent Marker', cursive;
     font-size: 5em;
     text-shadow: 8px -8px 0px #d37d1b;
@@ -988,6 +990,7 @@ div{
 #elemento6, #elemento7, #elemento8, #elemento9, #elemento10 {
     position: absolute;
     color: white;
+    z-index: 1000;
    
 }
 
@@ -1073,6 +1076,16 @@ div{
 
 .contenedores{
     position: relative;
-    bottom: 100px;
+    bottom: -80px;
     left: 100px;
+}
+
+.arrastres{
+    font-size:x-large;
+    text-align: center;
+    right: 20%;
+    position: relative;
+    top: 160px; /* Ajusta la posición desde el top del contenedor */
+    
+    
 }

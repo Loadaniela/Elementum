@@ -50,7 +50,7 @@
     </main>
 <script>
     document.getElementById("loginForm").addEventListener("submit", async function(event) {
-        event.preventDefault(); // Previene el envío tradicional del formulario
+        event.preventDefault(); 
     
         const formData = new FormData(this);
         const data = {};
@@ -70,11 +70,9 @@
             const result = await response.json();
     
             if (result.success) {
-                alert(result.message); 
-                // Muestra alerta de éxito
-                window.location.href = "/pagina1.html"; // Redirige a otra página si es necesario
+                window.location.href = "/pagina1.html"; // Redirige a la pagina principal del juego
             } else {
-                alert(result.message); // Muestra alerta de error
+                alert(result.message); // Muestra alerta de error en caso de que este mal el correo o contraseña
             }
         } catch (error) {
             console.error('Error:', error);
