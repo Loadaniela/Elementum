@@ -35,6 +35,7 @@ body {
     backface-visibility: hidden;
     transition: transform 0.5s;
     border-radius: 10px;
+    margin: 20px;
     overflow: hidden;
 }
 
@@ -43,6 +44,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px;
 }
 
 .front img {
@@ -52,8 +54,14 @@ body {
 }
 
 .back {
-    background: black;
-    color: #fff;
+    background: white;
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Centra horizontalmente */
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    color: black;
     transform: rotateY(180deg);
 }
 
@@ -70,13 +78,34 @@ body {
     margin-top: 20px;
 }
 
+
+#instruciones {
+    text-align: center;
+    font-size: large;
+   
+    padding: 10px; /* Espacio dentro del párrafo */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+h3{
+    color: #f18826;
+    font-size: xx-large;
+    text-align: center;
+    font-style: italic;
+    margin-top: 0%;
+    margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+}
+
 button {
     padding: 10px 20px;
     background-color: #ff8800;
     color: white;
-    border: none;
-    cursor: pointer;
+    
     border-radius: 5px;
+    margin-top: 20px; /* Espacio superior */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    text-decoration: none; /* Quita subrayado en enlaces */
 }
 
 /*Estilos estras*/

@@ -127,6 +127,7 @@ body {
     
 }
 
+
 .card:hover .front{
     transform: perspective(600px) rotateY(180deg);
 }
@@ -162,7 +163,7 @@ body {
 }
 
 
-  /*De aqui para abajo ya lo tenia*/
+  /*De aqui para abajo ya lo tenia y es necesario todod*/
 .profile {
     background-color: rgba(253, 253, 253, 0.993);
     padding: 10px;
