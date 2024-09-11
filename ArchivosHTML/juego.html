@@ -9,7 +9,12 @@
 <body>
     <main>
     <input type="checkbox" id="toggle">
-    <label for="toggle" class="hamburger"><span></span></label>
+    <label for="toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    
+    </label>
     <nav class="menu">
         <ul>
             <li><a href="#">PERFIL DEL JUGADOR</a></li>
@@ -36,7 +41,10 @@
     <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
     <p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
   
+    
  <div class="bloqueS" id="bloqueS" ondrop="drop(event)" ondragover="allowDrop(event)" >
+    
+  
 <div class="gas" id="eq1">
 
  </div>
@@ -84,6 +92,9 @@
  <div class="alcalinoterreos" id="eq56">
    
  </div>
+ <div class="alcalinoterreos" id="eq2"> 
+    
+ </div>
      
  <div class="alcalinoterreos" id="eq88">
 
@@ -95,7 +106,7 @@
 <div class="bloqueP" id="bloqueP" ondrop="drop(event)" ondragover="allowDrop(event)">
  <!--AQUI INICIA EL BLOQUE D-->
        
- <div class="transicion" id="eq21" style="color:  #4931AF;">
+ <div class="transicion" id="eq21">
      
  </div>
          
@@ -103,11 +114,11 @@
     
  </div>
          
- <div class="lantanidos" id="eq5771">
+ <div class="transicion" id="eq5771">
     
  </div>
          
- <div class="actinidos" id="eq89103">
+ <div class="transicion" id="eq89103">
    
  </div>
          
@@ -250,6 +261,7 @@
  <div class="transicion" id="eq80">
      
  </div>
+
              
  <div class="transicion" id="eq112">
     
@@ -257,7 +269,8 @@
 </div>
 <!--AQUI TERMINA EL BLOQUE D-->
 
-<div class="bloqueD" id="bloqueD" ondrop="drop(event)" ondragover="allowDrop(event)">               
+
+<div class="bloqueD" id="bloqueD" ondrop="drop(event)" ondragover="allowDrop(event)">              
  <div class="metaloides" id="eq5">
     
  </div>
@@ -282,7 +295,7 @@
      
  </div>
                  
- <div class="gas" id="eq6">
+ <div class="nobles" id="eq6">
     
  </div>
 
@@ -306,11 +319,11 @@
      
  </div>
                    
-<div class="gas" id="eq7">
+<div class="nobles" id="eq7">
      
  </div>
 
- <div class="gas" id="eq15">
+ <div class="nobles" id="eq15">
     
  </div>
  
@@ -330,15 +343,15 @@
     
  </div>
                      
- <div class="gas" id="eq8">
+ <div class="nobles" id="eq8">
      
  </div>
 
- <div class="gas" id="eq16">
+ <div class="nobles" id="eq16">
     
  </div>
  
- <div class="gas" id="eq34">
+ <div class="nobles" id="eq34">
     
  </div>
 
@@ -346,7 +359,7 @@
      
  </div>
  
-<div class="metaloides" id="eq84">
+<div class="nobles" id="eq84">
     
  </div>
 
@@ -377,10 +390,10 @@
 <div class="desconocidos" id="eq117">
      
  </div>
-                         
-<div class="nobles" id="eq2">
+    <!--                    
+<div class="alcalinoterreos" id="eq2"> <p>ver</p>
     
- </div>
+ </div>-->
                        
  <div class="nobles" id="eq10">
     
@@ -533,17 +546,21 @@
    
 <!--AQUI TERMINA EL BLOQUE F-->
 
+<!--por si no jalan aqui estan-->
 <div class="bloquesN">
-    <div class="bloques" id="S" draggable="true" ondragstart="drag(event)"><strong>Representativos</strong></div>
+    <div class="bloques" id="F" draggable="true" ondragstart="drag(event)"><strong>Transición interna</strong></div>
     <div class="bloques" id="P" draggable="true" ondragstart="drag(event)"><strong>Transición</strong></div>
     <div class="bloques" id="D" draggable="true" ondragstart="drag(event)"><strong>Nobles</strong></div>
-    <div class="bloques" id="F" draggable="true" ondragstart="drag(event)"><strong>Transición interna</strong></div>
+    <div class="bloques" id="S" draggable="true" ondragstart="drag(event)"><strong>Representativos</strong></div>
+   
 </div>
+
+
 </div>
 
 </main>
 
-<script>
+<script> 
     document.addEventListener('DOMContentLoaded', function() {
                 fetch('/perfil')
                     .then(response => {
@@ -607,7 +624,11 @@
 
   </script>
 
-<script>
+<!-- Incluye SweetAlert2 desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!--
+<script> //funcion para indicar el alrt de salir sin guardar o juego terminado
 
     // Variable para indicar si el juego ha terminado
 let juegoTerminado = false;
@@ -634,9 +655,73 @@ window.addEventListener('popstate', function (event) {
 
 
 </script>
+-->
+
+<script> //ventanas de swet alart para salir
+    // Variable para indicar si el juego ha terminado
+    let juegoTerminado = false;
+
+    // Manejo del evento beforeunload (solo para recarga o cierre de pestaña)
+    window.addEventListener('beforeunload', function (event) {
+        if (!juegoTerminado) {
+            const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
+            event.returnValue = message; // Mensaje predeterminado del navegador
+            return message;
+        }
+    });
+
+    // Manejo de clicks en enlaces o botones que navegan fuera del sitio
+    document.querySelectorAll('a, button').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            if (!juegoTerminado) {
+                event.preventDefault(); // Previene la acción predeterminada de navegación
+                Swal.fire({
+                    title: '¿Estás seguro?',
+                    text: "Estás a punto de salir del juego. Los datos podrían no guardarse.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, salir',
+                    cancelButtonText: 'No, quedarse'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Permitir navegación después de la confirmación
+                        window.location.href = element.href || element.getAttribute('data-href');
+                    }
+                });
+            }
+        });
+    });
+
+    // Manejo del evento popstate (retroceso del navegador)
+    window.addEventListener('popstate', function (event) {
+        if (!juegoTerminado) { 
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Estás a punto de salir del juego. Los datos podrían no guardarse.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, salir',
+                cancelButtonText: 'No, quedarse'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.history.back();
+                } else {
+                    history.pushState(null, null, window.location.href);
+                }
+            });
+        }
+    });
+
+    // Simulamos una entrada de historial para manejar el popstate correctamente
+    window.history.pushState(null, null, window.location.href);
+</script>
 
 
-<!--funcion para hacer los arrastres -->
+<!--funcion para hacer los arrastres 
 <script>
     
     // Variable para contar el número de arrastres
@@ -749,7 +834,132 @@ function obtenerNombreJuego(juegoId) {
 
 
 </script>
-
+-->
+<script>
+    // Variable para contar el número de arrastres
+    let arrastresContador = 0;
+    // Total de elementos que deben ser arrastrados correctamente
+    const totalElementos = document.querySelectorAll('.bloques[draggable="true"]').length;
+    // Contador de elementos correctos colocados
+    let correctosContador = 0;
+    
+    const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
+    const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
+    
+    // Función que permite el arrastre
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+    
+    // Función que permite soltar el elemento sobre un contenedor
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+    
+    // Función que maneja la acción de soltar el elemento
+    function drop(event) {
+        event.preventDefault();
+        arrastresContador++; // Incrementa el contador de arrastres
+        var data = event.dataTransfer.getData("text");
+        var element = document.getElementById(data);
+        
+        // Identifica el contenedor al que se intenta soltar
+        var targetContainer = event.target.closest('.bloqueS, .bloqueD, .bloqueP, .bloqueF');
+        
+        // Verifica si el contenedor existe y si es el correcto
+        if (targetContainer && targetContainer.id === "bloque" + data) {
+            // Calcula la posición relativa al contenedor
+            var rect = targetContainer.getBoundingClientRect();
+            var elemRect = element.getBoundingClientRect();
+            var offsetX = event.clientX - elemRect.width / 2;
+            var offsetY = event.clientY - elemRect.height / 2;
+    
+            // Ajusta la posición del elemento para que quede sobre el contenedor
+            element.style.position = "absolute";
+            element.style.left = offsetX + "px";
+            element.style.top = offsetY + "px";
+            
+            // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
+            element.setAttribute("draggable", "false");
+            element.style.cursor = "default"; // Cambia el cursor a normal
+            // Incrementa el contador de elementos correctos
+            correctosContador++;
+            sonidoAcierto.play(); // Reproduce el sonido de acierto
+        } else {
+            sonidoError.play(); // Reproduce el sonido de error
+        }
+        // Actualiza el contador de arrastres en la página
+        document.getElementById("contadorArrastres").textContent = arrastresContador;
+        
+        // Verifica si todos los elementos han sido colocados correctamente
+        if (correctosContador === totalElementos) {
+            Swal.fire({
+                title: '¡Felicidades!',
+                text: `Has colocado todos los elementos correctamente en ${arrastresContador} arrastres.`,
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                // Guardar el resultado del juego en la base de datos
+                const userId = document.getElementById('usuario').textContent; // Obtener el userId del perfil cargado
+                const juegoId = obtenerIdJuegoDeURL(); // Obtener el ID del juego actual
+                
+                // Llamar a la función para guardar el resultado
+                guardarResultadoJuego(userId, juegoId, arrastresContador);
+            });
+        }
+    }
+    
+    // Función para guardar el resultado del juego
+    function guardarResultadoJuego(userId, juegoId, numArrastres) {
+        const nombreJuego = obtenerNombreJuego(juegoId);
+    
+        fetch('/guardar-resultado', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId, juegoId, numArrastres })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Resultado guardado:', data);
+    
+            if (data.message === 'Resultado guardado correctamente') {
+                 // Indicar que el juego ha terminado
+                 juegoTerminado = true;
+                window.location.href = 'marcador.html';
+            } else {
+                Swal.fire({
+                    title: 'Error al guardar resultados',
+                    text: data.error || 'Error desconocido',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+                console.error('Detalles del error:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Error de red:', error);
+            Swal.fire({
+                title: 'Error de red',
+                text: 'Por favor intenta nuevamente.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        });
+    }
+    
+    // Función para obtener el nombre del juego
+    function obtenerNombreJuego(juegoId) {
+        switch (parseInt(juegoId)) {
+            case 1: return 'Bloques';
+            case 2: return 'Elementos';
+            case 3: return 'RadioA';
+            case 4: return 'Electronegatividad';
+            default: return 'Juego desconocido';
+        }
+    }
+    </script>
     
 
   </body>

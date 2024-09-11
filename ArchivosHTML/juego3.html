@@ -10,7 +10,11 @@
         
        
         <input type="checkbox" id="toggle">
-        <label for="toggle" class="hamburger"><span></span></label>
+        <label for="toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <nav class="menu">
             <ul>
                 <li><a href="#">PERFIL DEL JUGADOR</a></li>
@@ -527,7 +531,7 @@
 
 </script>
 
-
+<!--
 <script> //AQUI ESTA LA FUNCION PARA SALIR DEL JUEGO SIN GUARDAR O ACEPTAR EL GUARADADO 
     // Variable para indicar si el juego ha terminado
 let juegoTerminado = false;
@@ -553,7 +557,13 @@ window.addEventListener('popstate', function (event) {
 });
 
 </script>
+--> 
+<!-- Incluye SweetAlert2 desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+
+<!--
 <script> //funciones de arratre y almacenamiento en la base y marcador.html
     let contadorArrastres = 0; // Cuenta todos los arrastres (correctos e incorrectos)
     let elementosColocadosCorrectamente = 0; // Cuenta solo los elementos colocados correctamente
@@ -644,6 +654,124 @@ window.addEventListener('popstate', function (event) {
     }
 
     // Función para obtener el nombre del juego basado en el ID, los swich estan en prueba.js
+    function obtenerNombreJuego(juegoId) {
+        switch (parseInt(juegoId)) {
+            case 1: return 'Bloques';
+            case 2: return 'Elementos';
+            case 3: return 'RadioA';
+            case 4: return 'Electronegatividad';
+            default: return 'Juego desconocido';
+        }
+    }
+</script>
+-->
+<script>
+    let contadorArrastres = 0; // Cuenta todos los arrastres (correctos e incorrectos)
+    let elementosColocadosCorrectamente = 0; // Cuenta solo los elementos colocados correctamente
+    const totalElementos = 10; // Total de elementos que se deben colocar correctamente
+
+    // Carga de los sonidos de acierto y error
+    const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
+    const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        const elemento = event.target;
+        const nombreElemento = elemento.querySelector('.nombre').textContent.trim();
+        event.dataTransfer.setData('nombreElemento', nombreElemento);
+        event.dataTransfer.setData('elementoId', elemento.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        contadorArrastres++; // Incrementa el contador de arrastres totales en cada intento
+
+        const nombreElemento = event.dataTransfer.getData('nombreElemento');
+        const dropTarget = event.currentTarget;
+        const nombreCelda = dropTarget.getAttribute('data-nombre').trim();
+
+        console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
+
+        if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
+            const elementoId = event.dataTransfer.getData('elementoId');
+            const elemento = document.getElementById(elementoId);
+            dropTarget.appendChild(elemento);
+            elemento.style.position = 'relative';
+            elemento.style.left = '0';
+            elemento.style.top = '0';
+            elemento.classList.add('colocado');
+            elemento.setAttribute('draggable', 'false'); // Deshabilita el arrastre
+            elemento.removeEventListener('dragstart', drag); // Remueve el evento de arrastre
+            
+            elementosColocadosCorrectamente++; // Incrementa el contador de elementos colocados correctamente
+            sonidoAcierto.play(); // Reproduce el sonido de acierto
+        } else {
+            sonidoError.play(); // Reproduce el sonido de error
+        }
+
+        // Actualiza el contador de arrastres en el DOM
+        document.getElementById('contadorArrastres').textContent = contadorArrastres;
+
+        // Verifica si todos los elementos han sido colocados correctamente
+        if (elementosColocadosCorrectamente === totalElementos) {
+            Swal.fire({
+                title: '¡Felicidades!',
+                text: `Has colocado todos los elementos correctamente en ${contadorArrastres} arrastres.`,
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                // Guardar el resultado del juego en la base de datos
+                const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
+                const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
+
+                guardarResultadoJuego(userId, juegoId, contadorArrastres);
+            });
+        }
+    }
+
+    // Función para guardar el resultado del juego
+    function guardarResultadoJuego(userId, juegoId, numArrastres) {
+        const nombreJuego = obtenerNombreJuego(juegoId);
+
+        fetch('/guardar-resultado', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId, juegoId, numArrastres })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Resultado guardado:', data);
+
+            if (data.message === 'Resultado guardado correctamente') {
+                // Redirige a marcador.html
+                window.location.href = 'marcador.html';
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Error al guardar resultados: ' + (data.error || 'Error desconocido'),
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+                console.error('Detalles del error:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Error de red:', error);
+            Swal.fire({
+                title: 'Error de red',
+                text: 'Por favor, intenta nuevamente.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        });
+    }
+
+    // Función para obtener el nombre del juego basado en el ID
     function obtenerNombreJuego(juegoId) {
         switch (parseInt(juegoId)) {
             case 1: return 'Bloques';

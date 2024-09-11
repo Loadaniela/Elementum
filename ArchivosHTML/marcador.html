@@ -9,7 +9,11 @@
 <body>
     <main>
         <input type="checkbox" id="toggle">
-        <label for="toggle" class="hamburger"><span></span></label>
+        <label for="toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <nav class="menu">
             <ul>
                 <li><a href="#">PERFIL DEL JUGADOR</a></li>
@@ -103,7 +107,7 @@
                         item.innerHTML = `
                             <p><strong>Juego:</strong> ${resultado.juegos.nombre_juego}</p>
                             <p><strong>Número de Arrastres:</strong> ${resultado.numArrastres}</p>
-                            <p><strong>Calificación:</strong> ${resultado.calificacion}</p>
+                            <p><strong>Calificación obtenida:</strong> ${resultado.calificacion}</p>
                             <p><strong>Hora de Inicio:</strong> ${new Date(resultado.hora_inicio).toLocaleString()}</p>
                             <p><strong>Hora de Fin:</strong> ${new Date(resultado.hora_fin).toLocaleString()}</p>
                             <hr>

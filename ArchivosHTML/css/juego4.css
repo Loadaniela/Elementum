@@ -1,6 +1,7 @@
 /*CSS PARA EL TITULO*/
 
 body{
+    font-family: Arial, Helvetica, sans-serif;
     Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
 }
 
@@ -21,7 +22,7 @@ p{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
+/*
 .glitch::before,
 .glitch::after {
     content: attr(data-text);
@@ -40,7 +41,7 @@ p{
     text-shadow: 1px 0 #eeedea;
     animation: glitch-effect 3s infinite linear alternate-reverse;
 }
-
+*/
 .glitch::after {
     left: 3px;
     text-shadow: -1px 0 #ebe4e4;
@@ -140,15 +141,15 @@ p{
   }
   
   /*ICONO DE HAMBURGESA*/
-  .hamburger span {
+.hamburger span {
     display: block;
-    width: 50px;
-    height: 5px;
-    cursor: pointer;
-    background-color: #ad1f1f;
-    margin-bottom: 5px;
+    width: 35px;
+    height: 4px;  /* Reduje la altura de las líneas */
+    background-color: #f18826;
+    margin: 6px 0;  /* Espaciado entre líneas */
+    border-radius: 2px;  /* Bordes redondeados */
     transition: transform 0.3s ease, opacity 0.3s ease;
-  }
+}
   
   #toggle {
     display: none;

@@ -8,7 +8,11 @@
 </head>
 <body>
     <input type="checkbox" id="toggle">
-    <label for="toggle" class="hamburger"><span></span></label>
+    <label for="toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
     <nav class="menu">
         <ul>
             <li><a href="#">PERFIL DEL JUGADOR</a></li>
@@ -516,32 +520,73 @@
 
   </script>
 
-<script> //AQUI ESTA LA FUNCION PARA SALIR DEL JUEGO SIN GUARDAR O ACEPTAR EL GUARADADO 
+<!-- Incluye SweetAlert2 desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script> //para las ventanas swetalert2
     // Variable para indicar si el juego ha terminado
-let juegoTerminado = false;
+    let juegoTerminado = false;
 
-// Manejo del evento beforeunload
-window.addEventListener('beforeunload', function (event) {
-    if (!juegoTerminado) { // Solo muestra el mensaje si el juego no ha terminado
-        const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
-        event.returnValue = message;
-        return message;
-    }
-});
-
-// Manejo del evento popstate
-window.addEventListener('popstate', function (event) {
-    if (!juegoTerminado) { // Solo muestra el mensaje si el juego no ha terminado
-        const confirmExit = confirm("Estás a punto de salir del juego. Los datos podrían no guardarse.");
-        if (!confirmExit) {
-            // Si el usuario decide no salir
-            history.pushState(null, null, window.location.href);
+    // Manejo del evento beforeunload (solo para recarga o cierre de pestaña)
+    window.addEventListener('beforeunload', function (event) {
+        if (!juegoTerminado) {
+            const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
+            event.returnValue = message; // Mensaje predeterminado del navegador
+            return message;
         }
-    }
-});
+    });
 
+    // Manejo de clicks en enlaces o botones que navegan fuera del sitio
+    document.querySelectorAll('a, button').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            if (!juegoTerminado) {
+                event.preventDefault(); // Previene la acción predeterminada de navegación
+                Swal.fire({
+                    title: '¿Estás seguro?',
+                    text: "Estás a punto de salir del juego. Los datos podrían no guardarse.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, salir',
+                    cancelButtonText: 'No, quedarse'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Permitir navegación después de la confirmación
+                        window.location.href = element.href || element.getAttribute('data-href');
+                    }
+                });
+            }
+        });
+    });
+
+    // Manejo del evento popstate (retroceso del navegador)
+    window.addEventListener('popstate', function (event) {
+        if (!juegoTerminado) { 
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Estás a punto de salir del juego. Los datos podrían no guardarse.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, salir',
+                cancelButtonText: 'No, quedarse'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.history.back();
+                } else {
+                    history.pushState(null, null, window.location.href);
+                }
+            });
+        }
+    });
+
+    // Simulamos una entrada de historial para manejar el popstate correctamente
+    window.history.pushState(null, null, window.location.href);
 </script>
-  
+
+  <!--
 <script> //funciones de arratre y almacenamiento en la base y marcador.html
     let contadorArrastres = 0; // Cuenta todos los arrastres (correctos e incorrectos)
     let elementosColocadosCorrectamente = 0; // Cuenta solo los elementos colocados correctamente
@@ -642,6 +687,126 @@ window.addEventListener('popstate', function (event) {
         }
     }
 </script>
+-->
+<script>
+    let contadorArrastres = 0; // Cuenta todos los arrastres (correctos e incorrectos)
+    let elementosColocadosCorrectamente = 0; // Cuenta solo los elementos colocados correctamente
+    const totalElementos = 10; // Total de elementos que se deben colocar correctamente
+
+    // Carga de los sonidos de acierto y error
+    const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
+    const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        const elemento = event.target;
+        const nombreElemento = elemento.querySelector('.nombre').textContent.trim();
+        event.dataTransfer.setData('nombreElemento', nombreElemento);
+        event.dataTransfer.setData('elementoId', elemento.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        contadorArrastres++; // Incrementa el contador de arrastres totales en cada intento
+
+        const nombreElemento = event.dataTransfer.getData('nombreElemento');
+        const dropTarget = event.currentTarget;
+        const nombreCelda = dropTarget.getAttribute('data-nombre').trim();
+
+        console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
+
+        if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
+            const elementoId = event.dataTransfer.getData('elementoId');
+            const elemento = document.getElementById(elementoId);
+            dropTarget.appendChild(elemento);
+            elemento.style.position = 'relative';
+            elemento.style.left = '0';
+            elemento.style.top = '0';
+            elemento.classList.add('colocado');
+            elemento.setAttribute('draggable', 'false'); // Deshabilita el arrastre
+            elemento.removeEventListener('dragstart', drag); // Remueve el evento de arrastre
+            
+            elementosColocadosCorrectamente++; // Incrementa el contador de elementos colocados correctamente
+            sonidoAcierto.play(); // Reproduce el sonido de acierto
+        } else {
+            sonidoError.play(); // Reproduce el sonido de error
+        }
+
+        // Actualiza el contador de arrastres en el DOM
+        document.getElementById('contadorArrastres').textContent = contadorArrastres;
+
+        // Verifica si todos los elementos han sido colocados correctamente
+        if (elementosColocadosCorrectamente === totalElementos) {
+            Swal.fire({
+                title: '¡Felicidades!',
+                text: `Has colocado todos los elementos correctamente en ${contadorArrastres} arrastres.`,
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                // Guardar el resultado del juego en la base de datos
+                const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
+                const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
+
+                guardarResultadoJuego(userId, juegoId, contadorArrastres);
+            });
+        }
+    }
+
+    // Función para guardar el resultado del juego
+    function guardarResultadoJuego(userId, juegoId, numArrastres) {
+        const nombreJuego = obtenerNombreJuego(juegoId);
+
+        fetch('/guardar-resultado', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId, juegoId, numArrastres })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Resultado guardado:', data);
+
+            if (data.message === 'Resultado guardado correctamente') {
+                // Redirige a marcador.html
+                window.location.href = 'marcador.html';
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Error al guardar resultados: ' + (data.error || 'Error desconocido'),
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+                console.error('Detalles del error:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Error de red:', error);
+            Swal.fire({
+                title: 'Error de red',
+                text: 'Por favor, intenta nuevamente.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        });
+    }
+
+    // Función para obtener el nombre del juego basado en el ID
+    function obtenerNombreJuego(juegoId) {
+        switch (parseInt(juegoId)) {
+            case 1: return 'Bloques';
+            case 2: return 'Elementos';
+            case 3: return 'RadioA';
+            case 4: return 'Electronegatividad';
+            default: return 'Juego desconocido';
+        }
+    }
+</script>
+
+
 
 </body>
 

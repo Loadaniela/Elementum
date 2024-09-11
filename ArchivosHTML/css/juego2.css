@@ -26,6 +26,7 @@ p{
     -webkit-text-fill-color: transparent;
 }
 
+/*
 .glitch::before,
 .glitch::after {
     content: attr(data-text);
@@ -43,7 +44,7 @@ p{
     left: 7px;
     text-shadow: 1px 0 #eeedea;
     animation: glitch-effect 3s infinite linear alternate-reverse;
-}
+}*/
 
 .glitch::after {
     left: 3px;
@@ -143,14 +144,16 @@ p{
   }
   
   /*ICONO DE HAMBURGESA*/
-  .hamburger span {
+  /*ICONO DE HAMBURGESA*/
+.hamburger span {
     display: block;
-    width: 50px;
-    height: 5px;
-    background-color: #ad1f1f;
-    margin-bottom: 5px;
+    width: 35px;
+    height: 4px;  /* Reduje la altura de las líneas */
+    background-color: #f18826;
+    margin: 6px 0;  /* Espaciado entre líneas */
+    border-radius: 2px;  /* Bordes redondeados */
     transition: transform 0.3s ease, opacity 0.3s ease;
-  }
+}
   
   #toggle {
     display: none;

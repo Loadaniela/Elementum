@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reglas y normas</title>
-    <link rel="stylesheet" href="/css/estilosJuego.css">
+    <link rel="stylesheet" href="/css/x.css">
 </head>
 <body>
     <main>
         <input type="checkbox" id="toggle">
-        <label for="toggle" class="hamburger"><span></span></label>
+        <label for="toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <nav class="menu">
             <ul>
                 <li><a href="#" >PERFIL DEL JUGADOR</a></li>
@@ -22,6 +26,87 @@
             </ul>
         </nav>
         <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+
+
+        <body>
+            <div class="container">
+                <div class="header"></div>
+                <div class="content">
+                    <div class="card-container">
+                        <!-- Tarjeta 1 -->
+                        <div class="card">
+                            <div class="face front">
+                                <img src="Imagenes/Juego1Eleme.png" alt="">
+                                <h3>Autor</h3>
+                            </div>
+                            <div class="face back">
+                                <h3>Daniela Loa Salinas</h3>
+                                <p>Información adicional sobre el autor...</p>
+                                <div class="link">
+                                    <a href="mailto:correo@ejemplo.com">Correo Electronico</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tarjeta 2 -->
+                        <div class="card">
+                            <div class="face front">
+                                <img src="multimedia/musica.jpeg" alt="">
+                                <h3>Fuentes</h3>
+                            </div>
+                            <div class="face back">
+                                <h3>Fuentes de Elementum</h3>
+                                <p>Detalles sobre las fuentes...</p>
+                            </div>
+                        </div>
+                        <!-- Tarjeta 3 -->
+                        <div class="card">
+                            <div class="face front">
+                                <img src="multimedia/10.jpg" alt="">
+                                <h3>Asesores e Institución</h3>
+                            </div>
+                            <div class="face back">
+                                <h3>Función de cine UAM</h3>
+                                <p>Detalles sobre el evento...</p>
+                            </div>
+                        </div>
+                        <!-- Tarjeta 4 -->
+                        <div class="card">
+                            <div class="face front">
+                                <img src="multimedia/10.jpg" alt="">
+                                <h3>Asesores e Institución</h3>
+                            </div>
+                            <div class="face back">
+                                <h3>Función de cine UAM</h3>
+                                <p>Detalles sobre el evento...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <p>Proyecto Terminal UAM-Cuajimalpa</p>
+                    <button onclick="flipCards()">Voltear Tarjetas</button>
+                </div>
+            </div>
+        
+
+
+
+
+            <!-- Script para voltear las tarjetas -->
+            <script>
+                function flipCards() {
+                    const cards = document.querySelectorAll('.card');
+                    cards.forEach(card => {
+                        card.classList.toggle('flipped');
+                    });
+                }
+            </script>
+
+
+
+
+
+
     </main>
 
     <script>
