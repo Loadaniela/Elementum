@@ -48,7 +48,7 @@ const UsuariosSchema = new mongoose.Schema(
     {
         nombre: { type: String, required: true, maxlength: 80 },
         correo: { type: String, required: true, unique: true, maxlength: 50 },
-        usuario: { type: String, required: true, maxlength: 50 },
+        usuario: { type: String, required: true, maxlength: 50, unique:true},
         contrasena: { type: String, required: true, maxlength: 100 }
     },
     {
@@ -98,6 +98,15 @@ const PartidasSchema = new mongoose.Schema(
     }
 );
 
+//modelo para el question, el json esta en la carpeta json con nombre de Questions
+const questionSchema = new mongoose.Schema({
+    question: String,
+    correctAnswer: Boolean,
+    elementSymbol: String
+});
+
+const QuestionModel = mongoose.model('questions', questionSchema); 
+
 // Definición de modelos
 
 const UsuariosModel = mongoose.model("usuarios", UsuariosSchema);
@@ -107,6 +116,7 @@ const JuegosModel = mongoose.model("juegos", JuegosSchema);
 
 // Rutas GET
 
+//demas rutas 
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'ArchivosHTML', 'login.html'));
 });
@@ -204,6 +214,25 @@ app.post("/login", async (req, res) => {
         res.status(500).json({ success: false, message: "Error en el servidor" });
     }
 });
+
+
+//get de preguntas
+app.get('/get-question/:simbolo', async (req, res) => {
+    const { simbolo } = req.params; 
+    try {
+        const question = await QuestionModel.findOne({ elementSymbol: simbolo }); //Utiliza findOne  para buscar el campo elementSymbol y coincida con el valor del parámetro simbolo de elementos
+        if (question) { //si se compara elemeSymbol con simbolo, se manda la pregunta almacenada en question
+            res.json(question); 
+        } else {
+            res.status(404).json({ message: 'No se encontró la pregunta para este elemento.' });
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener la pregunta' });
+    }
+});
+
+
+
 
 // Ruta protegida
 app.get("/pagina1.html", (req, res) => {

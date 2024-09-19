@@ -1,0 +1,183 @@
+[
+    {
+      "question": "¿El Hidrógeno tiene una electronegatividad mayor que 2?",
+      "correctAnswer": true,
+      "elementSymbol": "H"
+    },
+    {
+      "question": "¿El Helio tiene una electronegatividad mayor que 3?",
+      "correctAnswer": false,
+      "elementSymbol": "He"
+    },
+    {
+      "question": "¿El Litio tiene una electronegatividad mayor que 1?",
+      "correctAnswer": false,
+      "elementSymbol": "Li"
+    },
+    {
+      "question": "¿El Berilio tiene una electronegatividad mayor que 1.5?",
+      "correctAnswer": false,
+      "elementSymbol": "Be"
+    },
+    {
+      "question": "¿El Boro tiene una electronegatividad mayor que 2?",
+      "correctAnswer": true,
+      "elementSymbol": "B"
+    },
+    {
+      "question": "¿El Carbono tiene una electronegatividad mayor que 2.5?",
+      "correctAnswer": true,
+      "elementSymbol": "C"
+    },
+    {
+      "question": "¿El Nitrógeno tiene una electronegatividad mayor que 3?",
+      "correctAnswer": true,
+      "elementSymbol": "N"
+    },
+    {
+      "question": "¿El Oxígeno tiene una electronegatividad menor que 3?",
+      "correctAnswer": false,
+      "elementSymbol": "O"
+    },
+    {
+      "question": "¿El Flúor tiene la electronegatividad más alta de todos los elementos?",
+      "correctAnswer": true,
+      "elementSymbol": "F"
+    },
+    {
+      "question": "¿El Neón tiene una electronegatividad mayor que 0?",
+      "correctAnswer": false,
+      "elementSymbol": "Ne"
+    },
+    {
+      "question": "¿El Sodio tiene una electronegatividad mayor que 1?",
+      "correctAnswer": false,
+      "elementSymbol": "Na"
+    },
+    {
+      "question": "¿El Magnesio tiene una electronegatividad menor que 1.5?",
+      "correctAnswer": true,
+      "elementSymbol": "Mg"
+    },
+    {
+      "question": "¿El Aluminio tiene una electronegatividad menor que 1.5?",
+      "correctAnswer": true,
+      "elementSymbol": "Al"
+    },
+    {
+      "question": "¿El Silicio tiene una electronegatividad mayor que 1.8?",
+      "correctAnswer": true,
+      "elementSymbol": "Si"
+    },
+    {
+      "question": "¿El Fósforo tiene una electronegatividad mayor que 2?",
+      "correctAnswer": false,
+      "elementSymbol": "P"
+    },
+    {
+      "question": "¿El Azufre tiene una electronegatividad mayor que 2.5?",
+      "correctAnswer": true,
+      "elementSymbol": "S"
+    },
+    {
+      "question": "¿El Cloro tiene una electronegatividad mayor que 3?",
+      "correctAnswer": true,
+      "elementSymbol": "Cl"
+    },
+    {
+      "question": "¿El Argón tiene una electronegatividad mayor que 0?",
+      "correctAnswer": false,
+      "elementSymbol": "Ar"
+    },
+    {
+      "question": "¿El Potasio tiene una electronegatividad mayor que 1?",
+      "correctAnswer": false,
+      "elementSymbol": "K"
+    },
+    {
+      "question": "¿El Calcio tiene una electronegatividad menor que 1.5?",
+      "correctAnswer": true,
+      "elementSymbol": "Ca"
+    },
+    {
+      "question": "¿El Escandio tiene una electronegatividad mayor que 1.3?",
+      "correctAnswer": false,
+      "elementSymbol": "Sc"
+    },
+    {
+      "question": "¿El Titanio tiene una electronegatividad mayor que 1.5?",
+      "correctAnswer": true,
+      "elementSymbol": "Ti"
+    },
+    {
+      "question": "¿El Vanadio tiene una electronegatividad mayor que 1.6?",
+      "correctAnswer": true,
+      "elementSymbol": "V"
+    },
+    {
+      "question": "¿El Cromo tiene una electronegatividad mayor que 1.6?",
+      "correctAnswer": true,
+      "elementSymbol": "Cr"
+    },
+    {
+      "question": "¿El Manganeso tiene una electronegatividad mayor que 1.5?",
+      "correctAnswer": true,
+      "elementSymbol": "Mn"
+    },
+    {
+      "question": "¿El Hierro tiene una electronegatividad mayor que 1.8?",
+      "correctAnswer": true,
+      "elementSymbol": "Fe"
+    },
+    {
+      "question": "¿El Cobalto tiene una electronegatividad mayor que 1.8?",
+      "correctAnswer": true,
+      "elementSymbol": "Co"
+    },
+    {
+      "question": "¿El Níquel tiene una electronegatividad mayor que 1.9?",
+      "correctAnswer": true,
+      "elementSymbol": "Ni"
+    },
+    {
+      "question": "¿El Cobre tiene una electronegatividad mayor que 1.9?",
+      "correctAnswer": true,
+      "elementSymbol": "Cu"
+    },
+    {
+      "question": "¿El Zinc tiene una electronegatividad menor que 1.7?",
+      "correctAnswer": true,
+      "elementSymbol": "Zn"
+    },
+    {
+      "question": "¿El Galio tiene una electronegatividad mayor que 1.8?",
+      "correctAnswer": true,
+      "elementSymbol": "Ga"
+    },
+    {
+      "question": "¿El Germanio tiene una electronegatividad mayor que 2?",
+      "correctAnswer": true,
+      "elementSymbol": "Ge"
+    },
+    {
+      "question": "¿El Arsénico tiene una electronegatividad mayor que 2?",
+      "correctAnswer": true,
+      "elementSymbol": "As"
+    },
+    {
+      "question": "¿El Selenio tiene una electronegatividad mayor que 2.5?",
+      "correctAnswer": true,
+      "elementSymbol": "Se"
+    },
+    {
+      "question": "¿El Bromo tiene una electronegatividad mayor que 2.8?",
+      "correctAnswer": true,
+      "elementSymbol": "Br"
+    },
+    {
+      "question": "¿El Kriptón tiene una electronegatividad mayor que 2.5?",
+      "correctAnswer": true,
+      "elementSymbol": "Kr"
+    }
+  ]
+  

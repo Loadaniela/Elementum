@@ -22,25 +22,7 @@ body{
     -webkit-text-fill-color: transparent;
 }
 
-/*
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: black;
-    color: #f0efee;
-    clip: rect(0, 900px, 0, 0);
-    overflow: hidden;
-}
 
-.glitch::before {
-    left: 7px;
-    text-shadow: 1px 0 #eeedea;
-    animation: glitch-effect 3s infinite linear alternate-reverse;
-}*/
 
 .glitch::after {
     left: 3px;
@@ -116,32 +98,7 @@ body{
 
 /*CSS PARA LA INFORMACION DEL PERFIL */
 
-/*Resposive desing*
-/* Responsive Typography */
-.glitch {
-    font-size: 4em;
-}
 
-
-
-/* Media Queries for Different Devices */
-@media (min-width: 768px) {
-    .glitch {
-        font-size: 5em;
-    }
-    .profile {
-        max-width: 600px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .glitch {
-        font-size: 6em;
-    }
-    .profile {
-        max-width: 400px;
-    }
-}
 
 
 
@@ -1091,3 +1048,33 @@ div{
     
     
 }
+
+
+/*RESPONSIVE*/
+/* Para pantallas de menos de 768px (móviles) */
+@media (max-width: 768px) {
+    .glitch {
+      font-size: 4em; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+      left: 2%; /* Ajusta la posición desde el lado izquierdo */
+    }
+}
+
+/* Para pantallas entre 768px y 1024px (tabletas) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .glitch {
+      font-size: 5em;
+    }
+  
+    .profile {
+      max-width: 80%;
+    }
+  
+    .hamburger {
+      top: 15px;
+      right: 15px;
+    }
+  
+    .menu {
+      width: 230px;
+    }
+  }

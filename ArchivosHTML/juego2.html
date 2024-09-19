@@ -25,7 +25,7 @@
         </ul>
     </nav>
 
-    <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+   
   
     <!--ELEMENTOS DE LA TABLA PERIODICA-->  
 
@@ -37,6 +37,7 @@
 </div>
 
 <div class="contenedores">
+    <h1 class="glitch"  data-text="Elementum">ELEMENTOS</h1>
     <p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
  <!--INICIA EL BLOQUE S-->
 <div class="gas" id="eq1" data-nombre="Hidrógeno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -86,10 +87,10 @@
 <div class="transicion" id="eq39" data-nombre="Itrio" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
         
-<div class="lantanidos" id="eq5771" data-nombre="Lantano" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="lantanidos" id="eq5771" data-nombre="Lutecio" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
         
-<div class="actinidos" id="eq89103" data-nombre="Actinio" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="actinidos" id="eq89103" data-nombre="Lawrencio" ondrop="drop(event)" ondragover="allowDrop(event)"> 
 </div>
         
 <div class="transicion" id="eq22" data-nombre="Titanio" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -325,7 +326,7 @@
 <div class="lantanidos" id="eq59" data-nombre="Praseodimio" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
 
-<div class="lantanidos" id="eq60" data-nombre="Lantano" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="lantanidos" id="eq60" data-nombre="Neodimio" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
 
 <div class="lantanidos" id="eq61" data-nombre="Prometio" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -358,8 +359,9 @@
 <div class="lantanidos" id="eq70" data-nombre="Iterbio" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
 
-<div class="lantanidos" id="eq71" data-nombre="Lutecio" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-</div>
+<!--
+<div class="lantanidos" id="eq71" data-nombre="Actinio" ondrop="drop(event)" ondragover="allowDrop(event)"><p>act</p> 
+</div>-->
 
 <div class="actinidos" id="eq89" data-nombre="Actinio" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
@@ -403,8 +405,9 @@
 <div class="actinidos" id="eq102" data-nombre="Nobelio" ondrop="drop(event)" ondragover="allowDrop(event)">
 </div>
 
+<!---
 <div class="actinidos" id="eq103" data-nombre="Lawrencio" ondrop="drop(event)" ondragover="allowDrop(event)">
-    </div>
+    </div>-->
 
 </div>
 <!--AQUI TERMINA EL BLOQUE F-->
@@ -557,6 +560,7 @@ window.addEventListener('popstate', function (event) {
     // Variable para indicar si el juego ha terminado
     let juegoTerminado = false;
 
+    /*
     // Manejo del evento beforeunload (solo para recarga o cierre de pestaña)
     window.addEventListener('beforeunload', function (event) {
         if (!juegoTerminado) {
@@ -564,7 +568,7 @@ window.addEventListener('popstate', function (event) {
             event.returnValue = message; // Mensaje predeterminado del navegador
             return message;
         }
-    });
+    });*/
 
     // Manejo de clicks en enlaces o botones que navegan fuera del sitio
     document.querySelectorAll('a, button').forEach(function(element) {

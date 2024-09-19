@@ -75,8 +75,7 @@
        </div>
        
        <div class="alcalinoterreos" id="eq38" data-nombre="Estroncio" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <p><strong>219</strong></p>
-        </div>
+       </div>
            
        <div class="alcalinoterreos" id="eq56" data-nombre="Bario" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -94,8 +93,7 @@
         </div>
                
        <div class="lantanidos" id="eq5771" data-nombre="Lutecio" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong> 217</strong></p>
-        </div>
+       </div>
                
        <div class="actinidos" id="eq89103" data-nombre="Lawrencio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -127,8 +125,7 @@
        </div>
             
        <div class="transicion" id="eq24" data-nombre="Cromo" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>166</strong></p>
-        </div>
+       </div>
                    
        <div class="transicion" id="eq42" data-nombre="Molibdeno" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -140,8 +137,7 @@
        </div>
                      
        <div class="transicion" id="eq25" data-nombre="Manganeso" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>161</strong></p>
-        </div>
+       </div>
                    
        <div class="transicion" id="eq43" data-nombre="Tecnecio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -153,8 +149,7 @@
        </div>
           
        <div class="transicion" id="eq26" data-nombre="Hierro" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>156</strong></p>
-        </div>
+       </div>
                    
        <div class="transicion" id="eq44" data-nombre="Rutenio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -172,8 +167,7 @@
        </div>
                    
        <div class="transicion" id="eq77" data-nombre="Iridio" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>180</strong></p>
-        </div>
+       </div>
                    
        <div class="transicion" id="eq109" data-nombre="Meitnerio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -188,8 +182,7 @@
        </div>
                    
        <div class="transicion" id="eq110" data-nombre="Darmstadtio" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>128</strong></p>
-        </div>
+       </div>
                 
        <div class="transicion" id="eq29" data-nombre="Cobre" ondrop="drop(event)" ondragover="allowDrop(event)">
         <p><strong>145</strong></p>
@@ -199,8 +192,7 @@
        </div>
                    
        <div class="transicion" id="eq79" data-nombre="Oro" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>174</strong></p>
-        </div>
+       </div>
                    
        <div class="transicion" id="eq111" data-nombre="Roentgenio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -251,8 +243,7 @@
        </div>
        
        <div class="metales" id="eq82" data-nombre="Plomo" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <p><strong>154</strong></p>
-        </div>
+       </div>
        
        <div class="desconocidos" id="eq114" data-nombre="Flerovio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -261,12 +252,10 @@
        </div>
        
        <div class="gas" id="eq15" data-nombre="Fósforo" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <p><strong>98</strong></p>
-        </div>
+       </div>
        
        <div class="metaloides" id="eq33" data-nombre="Arsénico" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <p><strong>114</strong></p>
-        </div>
+       </div>
        
        <div class="metaloides" id="eq51" data-nombre="Antimonio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -296,8 +285,7 @@
        </div>
                              
        <div class="halogenos" id="eq9" data-nombre="Flúor" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <p><strong>42</strong></p>
-        </div>
+       </div>
        
        <div class="halogenos" id="eq17" data-nombre="Cloro" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -306,22 +294,19 @@
        </div>
        
        <div class="halogenos" id="eq53" data-nombre="Yodo" ondrop="drop(event)" ondragover="allowDrop(event)">
-     <p><strong>115</strong></p>
-        </div>
+       </div>
        
        <div class="halogenos" id="eq85" data-nombre="Astato" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
        
        <div class="desconocidos" id="eq117" data-nombre="Tenesino" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>190</strong></p>
-        </div>
+       </div>
                                
        <div class="nobles" id="eq2" data-nombre="Helio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
                              
        <div class="nobles" id="eq10" data-nombre="Neón" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <p><strong>38</strong></p>
-        </div>
+       </div>
        
        <div class="nobles" id="eq18" data-nombre="Argón" ondrop="drop(event)" ondragover="allowDrop(event)">
        <p><strong>71</strong></p>
@@ -344,8 +329,7 @@
        
        <!--AQUI INICIA EL BLOQUE F-->
        <div class="lantanidos" id="eq57" data-nombre="Lantano" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <p><strong>240</strong></p>
-        </div>
+       </div>
        
        <div class="lantanidos" id="eq58" data-nombre="Cerio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -357,8 +341,7 @@
        </div>
        
        <div class="lantanidos" id="eq61" data-nombre="Prometio" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>236</strong></p>
-        </div>
+       </div>
        
        <div class="lantanidos" id="eq62" data-nombre="Samario" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -370,8 +353,7 @@
        </div>
        
        <div class="lantanidos" id="eq65" data-nombre="Terbio" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>225</strong></p>
-        </div>
+       </div>
        
        <div class="lantanidos" id="eq66" data-nombre="Disprosio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -386,8 +368,7 @@
        </div>
        
        <div class="lantanidos" id="eq70" data-nombre="Iterbio" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>222</strong></p>
-        </div>
+       </div>
        
        <!---
        <div class="lantanidos" id="eq71" data-nombre="Lutecio" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -413,8 +394,7 @@
        </div>
        
        <div class="actinidos" id="eq95" data-nombre="Americio" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>244</strong></p>
-        </div>
+       </div>
        
        <div class="actinidos" id="eq96" data-nombre="Curio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -423,8 +403,7 @@
        </div>
        
        <div class="actinidos" id="eq98" data-nombre="Californio" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <p><strong>245</strong></p>
-        </div>
+       </div>
        
        <div class="actinidos" id="eq99" data-nombre="Einstenio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -433,8 +412,7 @@
        </div>
        
        <div class="actinidos" id="eq101" data-nombre="Mendelevio" ondrop="drop(event)" ondragover="allowDrop(event)">
-       <p><strong>246</strong></p>
-        </div>
+       </div>
        
        <div class="actinidos" id="eq102" data-nombre="Nobelio" ondrop="drop(event)" ondragover="allowDrop(event)">
        </div>
@@ -759,48 +737,43 @@ window.addEventListener('popstate', function (event) {
     }
 </script>
 -->
-<script>
-    // Variables para contar arrastres y elementos colocados
+<script> //funcion de arrastre y pegar en sy casilla
     let contadorArrastres = 0; // Cuenta todos los arrastres (correctos e incorrectos)
     let elementosColocadosCorrectamente = 0; // Cuenta solo los elementos colocados correctamente
     const totalElementos = 10; // Total de elementos que se deben colocar correctamente
-    
+
     // Carga de los sonidos de acierto y error
     const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
     const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
-    
+
     function allowDrop(event) {
         event.preventDefault();
     }
-    
+
     function drag(event) {
         const elemento = event.target;
         const nombreElemento = elemento.querySelector('.nombre').textContent.trim();
         event.dataTransfer.setData('nombreElemento', nombreElemento);
         event.dataTransfer.setData('elementoId', elemento.id);
     }
-    
+
     function drop(event) {
         event.preventDefault();
         contadorArrastres++; // Incrementa el contador de arrastres totales en cada intento
-    
+
         const nombreElemento = event.dataTransfer.getData('nombreElemento');
         const dropTarget = event.currentTarget;
         const nombreCelda = dropTarget.getAttribute('data-nombre').trim();
-    
+
         console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
-    
+
         if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
             const elementoId = event.dataTransfer.getData('elementoId');
             const elemento = document.getElementById(elementoId);
-    
-            // Ajusta la posición del elemento dentro del contenedor
             dropTarget.appendChild(elemento);
-            elemento.style.position = 'absolute';
-            elemento.style.left = '50%';
-            elemento.style.top = '50%';
-            elemento.style.transform = 'translate(-50%, -50%)';
-            elemento.style.zIndex = '10'; // Asegura que el elemento esté encima del contenido existente
+            elemento.style.position = 'relative';
+            elemento.style.left = '0';
+            elemento.style.top = '0';
             elemento.classList.add('colocado');
             elemento.setAttribute('draggable', 'false'); // Deshabilita el arrastre
             elemento.removeEventListener('dragstart', drag); // Remueve el evento de arrastre
@@ -810,10 +783,10 @@ window.addEventListener('popstate', function (event) {
         } else {
             sonidoError.play(); // Reproduce el sonido de error
         }
-    
+
         // Actualiza el contador de arrastres en el DOM
         document.getElementById('contadorArrastres').textContent = contadorArrastres;
-    
+
         // Verifica si todos los elementos han sido colocados correctamente
         if (elementosColocadosCorrectamente === totalElementos) {
             Swal.fire({
@@ -825,16 +798,16 @@ window.addEventListener('popstate', function (event) {
                 // Guardar el resultado del juego en la base de datos
                 const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
                 const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
-    
+
                 guardarResultadoJuego(userId, juegoId, contadorArrastres);
             });
         }
     }
-    
+
     // Función para guardar el resultado del juego
     function guardarResultadoJuego(userId, juegoId, numArrastres) {
         const nombreJuego = obtenerNombreJuego(juegoId);
-    
+
         fetch('/guardar-resultado', {
             method: 'POST',
             headers: {
@@ -845,7 +818,7 @@ window.addEventListener('popstate', function (event) {
         .then(response => response.json())
         .then(data => {
             console.log('Resultado guardado:', data);
-    
+
             if (data.message === 'Resultado guardado correctamente') {
                 // Redirige a marcador.html
                 window.location.href = 'marcador.html';
@@ -869,7 +842,7 @@ window.addEventListener('popstate', function (event) {
             });
         });
     }
-    
+
     // Función para obtener el nombre del juego basado en el ID
     function obtenerNombreJuego(juegoId) {
         switch (parseInt(juegoId)) {
@@ -880,10 +853,1108 @@ window.addEventListener('popstate', function (event) {
             default: return 'Juego desconocido';
         }
     }
-    </script>
-    
-
+</script>
 
 
    </body>
 </html>
+
+
+
+
+css
+
+
+
+body{
+    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+p{
+    text-align: center;
+}
+.glitch {
+    position:relative;
+    justify-content: center;
+    text-align: center; /*Para poner el titulo en el centro */
+    align-items: center;
+   right: 10%;
+   top: -100px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5em;
+    text-shadow: 8px -8px 0px #d37d1b;
+    background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/*
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: #f0efee;
+    clip: rect(0, 900px, 0, 0);
+    overflow: hidden;
+}
+
+.glitch::before {
+    left: 7px;
+    text-shadow: 1px 0 #eeedea;
+    animation: glitch-effect 3s infinite linear alternate-reverse;
+}*/
+
+.glitch::after {
+    left: 3px;
+    text-shadow: -1px 0 #ebe4e4;
+    animation: glitch-effect 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-effect {
+    0% {
+        clip: rect(10px, 9999px, 48px, 0);
+    }
+    5% {
+        clip: rect(51px, 9999px, 99px, 0);
+    }
+    10% {
+        clip: rect(34px, 9999px, 71px, 0);
+    }
+    15% {
+        clip: rect(75px, 9999px, 74px, 0);
+    }
+    20% {
+        clip: rect(88px, 9999px, 28px, 0);
+    }
+    25% {
+        clip: rect(82px, 9999px, 33px, 0);
+    }
+    30% {
+        clip: rect(57px, 9999px, 73px, 0);
+    }
+    35% {
+        clip: rect(79px, 9999px, 58px, 0);
+    }
+    40% {
+        clip: rect(2px, 9999px, 78px, 0);
+    }
+    45% {
+        clip: rect(7px, 9999px, 3px, 0);
+    }
+    50% {
+        clip: rect(59px, 9999px, 16px, 0);
+    }
+    55% {
+        clip: rect(97px, 9999px, 76px, 0);
+    }
+    60% {
+        clip: rect(57px, 9999px, 43px, 0);
+    }
+    65% {
+        clip: rect(35px, 9999px, 21px, 0);
+    }
+    70% {
+        clip: rect(61px, 9999px, 84px, 0);
+    }
+    75% {
+        clip: rect(54px, 9999px, 100px, 0);
+    }
+    80% {
+        clip: rect(8px, 9999px, 98px, 0);
+    }
+    85% {
+        clip: rect(47px, 9999px, 32px, 0);
+    }
+    90% {
+        clip: rect(13px, 9999px, 5px, 0);
+    }
+    95% {
+        clip: rect(63px, 9999px, 30px, 0);
+    }
+    100% {
+        clip: rect(17px, 9999px, 39px, 0);
+    }
+}
+
+/*CSS para mostrar la informacion del perfil*/
+.profile {
+    background-color: rgba(253, 253, 253, 0.993);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .profile h1 {
+    margin-bottom: 20px;
+  }
+  /* Estilos del menú hamburguesa */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+ /*ICONO DE HAMBURGESA*/
+.hamburger span {
+    display: block;
+    width: 35px;
+    height: 4px;  /* Reduje la altura de las líneas */
+    background-color: #f18826;
+    margin: 6px 0;  /* Espaciado entre líneas */
+    border-radius: 2px;  /* Bordes redondeados */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+  
+  #toggle {
+    display: none;
+  }
+  /*Interior del menu*/
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    background-color: #111111;
+    width: 250px;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 20px;
+  }
+  
+  .menu ul li {
+    margin-bottom: 15px;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+  }
+  
+  #toggle:checked + .hamburger span {
+    transform: rotate(45deg);
+  }
+  
+  #toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  
+  #toggle:checked ~ .menu {
+    transform: translateX(0);
+  }
+  
+/*MENU OCULTO*/
+#menuoculto a{
+    position: absolute;
+    color: black;
+    left:-100px; 
+    transition: 0.2s;
+    font-size: 15px;
+    font-weight:bold;
+    text-decoration: none;
+    padding: 15px 50px 10px 10px;
+    width: 100px; /* tamaño del menú */
+    border-radius: 0 20px 5px 0; 
+    } 
+    #menuoculto a:hover {
+        left: 0; 
+        }
+    
+    #menu1{
+        top: 900px; 
+        background-color: #eb4300; 
+        }
+        #menu2{
+            top: 100px; 
+            background-color: #eb8500; 
+        }
+/*A partir de aqui es css de la tabla periodica 
+div{
+    width:100%;
+    height:100%;
+    margin: 8rem;
+    font-family: 'DynaPuff', cursive;
+    color: #fff;
+  }
+  
+  /*
+  h1{
+    position: absolute;
+    top: 20px;left: 350px;
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(#1497be, #1c2aec);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: text 5s linear infinite;
+  }*/
+  
+  @keyframes text{
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  /*contenido de cada elemento*/
+  .atomico{
+      font-size: 8px;
+      line-height: 0px;
+      font-weight: bold; /*  texto sea más grueso */
+      color: white; /* Asegurando un buen contraste con el fondo */
+  }
+  
+  .simbolo{
+      font-size: 11px;
+      line-height: 0px;
+      font-weight: bold; /*  texto sea más grueso */
+      color: white; /* Asegurando un buen contraste con el fondo */
+      
+  }
+  
+  .nombre{
+      font-size: 12px;
+      line-height: 0px;
+      font-weight: bold; /*  texto sea más grueso */
+      color: white; /* Asegurando un buen contraste con el fondo */
+  }
+  
+  .radio{
+      font-size: 22px;
+      line-height: 0px;
+      font-weight: bold; /*  texto sea más grueso */
+      color: white; /* Asegurando un buen contraste con el fondo */
+  }
+  
+  /*fin contenido de cada elementos*/
+  
+  /*elementos*/
+  
+  .gas{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  /*
+  .gas:hover{
+     /* background: #B5B8B1;
+      -webkit-transform: scale(1.2);
+  }*/
+  
+  
+  #eq1{
+      position: absolute;
+      top: 100px;left:20px;
+      color: #CF010B;
+  }
+  
+  .alcalino{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+      
+  }
+  
+  /*
+  .alcalino:hover{
+      /*background: #fb7;
+      -webkit-transform:scale(1.2);
+  }*/
+  
+  #eq3{
+      position: absolute;
+      top: 160px;left: 20px;
+  }
+  #eq11{
+      position: absolute;
+      top: 220px;left: 20px;
+  }
+  #eq19{
+      position: absolute;
+      top: 280px;left: 20px;
+  }
+  #eq37{
+      position: absolute;
+      top: 340px;left: 20px;
+  }
+  #eq55{
+      position: absolute;
+      top: 400px;left: 20px;
+  }
+  #eq87{
+      position: absolute;
+      top: 460px;left: 20px;
+  }
+  
+  .alcalinoterreos{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  
+  /*
+  .alcalinoterreos:hover{
+      /*background: #CF010B;
+      -webkit-transform: scale(1.2);
+  }*/
+  #eq4{
+      position: absolute;
+      top: 160px;left: 80px;
+  }
+  #eq12{
+      position: absolute;
+      top: 220px;left: 80px;
+  }
+  #eq20{
+      position: absolute;
+      top: 280px;left: 80px;
+  }
+  #eq38{
+      position: absolute;
+      top: 340px;left: 80px;
+  }
+  #eq56{
+      position: absolute;
+      top: 400px;left: 80px;
+  }
+  #eq88{
+      position: absolute;
+      top: 460px;left: 80px;
+  }
+  
+  .transicion{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  
+  /*
+  .transicion:hover{
+      /*background: #9B6DC6;
+      -webkit-transform: scale(1.2);
+  }*/
+  #eq21{
+      position: absolute;
+      top: 280px;left: 140px;
+  }
+  #eq39{
+      position: absolute;
+      top: 340px;left: 140px;
+  }
+  
+  .lantanidos{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  
+  /*
+  .lantanidos:hover{
+      /*background: #FF6961;
+      -webkit-transform: scale(1.2);
+  }*/
+  #eq5771{
+      position: absolute;
+      top: 400px;left: 140px;
+  }
+  
+  .actinidos{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  
+  /*
+  .actinidos:hover{
+     /* background: #EC7C26;
+      -webkit-transform: scale(1.2);
+  }*/
+  #eq89103{
+      position: absolute;
+      top: 460px;left: 140px;
+  }
+  
+  #eq22{
+      position: absolute;
+      top: 280px;left: 200px;
+  }
+  #eq40{
+      position: absolute;
+      top: 340px;left: 200px;
+  }
+  #eq72{
+      position: absolute;
+      top: 400px;left: 200px;
+  }
+  #eq104{
+      position: absolute;
+      top: 460px;left: 200px;
+      color: #9C9C9C;
+  }
+  #eq23{
+      position: absolute;
+      top: 280px;left: 260px;
+  }
+  #eq41{
+      position: absolute;
+      top: 340px;left: 260px;
+  }
+  #eq73{
+      position: absolute;
+      top: 400px;left: 260px;
+  }
+  #eq105{
+      position: absolute;
+      top: 460px;left: 260px;
+      color: #9C9C9C;
+  }
+  #eq24{
+      position: absolute;
+      top: 280px;left: 320px;
+  }
+  #eq42{
+      position: absolute;
+      top: 340px;left: 320px;
+  }
+  #eq74{
+      position: absolute;
+      top: 400px;left: 320px;
+  }
+  #eq106{
+      position: absolute;
+      top: 460px;left: 320px;
+      color: #9C9C9C;
+  }
+  #eq25{
+      position: absolute;
+      top: 280px;left: 380px;
+  }
+  #eq43{
+      position: absolute;
+      top: 340px;left: 380px;
+  }
+  #eq75{
+      position: absolute;
+      top: 400px;left: 380px;
+  }
+  #eq107{
+      position: absolute;
+      top: 460px;left: 380px;
+      color: #9C9C9C;
+  }
+  #eq26{
+      position: absolute;
+      top: 280px;left: 440px;
+  }
+  #eq44{
+      position: absolute;
+      top: 340px;left: 440px;
+  }
+  #eq76{
+      position: absolute;
+      top: 400px;left: 440px;
+  }
+  #eq108{
+      position: absolute;
+      top: 460px;left: 440px;
+      color: #9C9C9C;
+  }
+  #eq27{
+      position: absolute;
+      top: 280px;left: 500px;
+  }
+  #eq45{
+      position: absolute;
+      top: 340px;left: 500px;
+  }
+  #eq77{
+      position: absolute;
+      top: 400px;left: 500px;
+  }
+  #eq109{
+      position: absolute;
+      top: 460px;left: 500px;
+      color: #9C9C9C;
+  }
+  #eq28{
+      position: absolute;
+      top: 280px;left: 560px;
+  }
+  #eq46{
+      position: absolute;
+      top: 340px;left: 560px;
+  }
+  #eq78{
+      position: absolute;
+      top: 400px;left: 560px;
+  }
+  #eq110{
+      position: absolute;
+      top: 460px;left: 560px;
+      color: #9C9C9C;
+  }
+  #eq29{
+      position: absolute;
+      top: 280px;left: 620px;
+  }
+  #eq47{
+      position: absolute;
+      top: 340px;left: 620px;
+  }
+  #eq79{
+      position: absolute;
+      top: 400px;left: 620px;
+  }
+  #eq111{
+      position: absolute;
+      top: 460px;left: 620px;
+      color: #9C9C9C;
+  }
+  #eq30{
+      position: absolute;
+      top: 280px;left: 680px;
+  }
+  #eq48{
+      position: absolute;
+      top: 340px;left: 680px;
+  }
+  #eq80{
+      position: absolute;
+      top: 400px;left: 680px;
+      color: #0000FF;
+  }
+  #eq112{
+      position: absolute;
+      top: 460px;left: 680px;
+      color: #9C9C9C;
+  }
+  .metaloides{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  
+  /*
+  .metaloides:hover{
+     /* background: #008F39;
+      -webkit-transform: scale(1.2);
+  }*/
+  #eq5{
+      position: absolute;
+      top: 160px;left: 740px;
+  }
+  .metales{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  
+  /*
+  .metales:hover{
+     /* background: #015D52;
+      -webkit-transform: scale(1.2);
+  }*/
+  #eq13{
+      position: absolute;
+      top: 220px;left: 740px;
+  }
+  #eq31{
+      position: absolute;
+      top: 280px;left: 740px;
+  }
+  #eq49{
+      position: absolute;
+      top: 340px;left: 740px;
+  }
+  #eq81{
+      position: absolute;
+      top: 400px;left: 740px;
+  }
+  
+  .desconocidos{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  /*
+  .desconocidos:hover{
+      /*background: #009999;
+      -webkit-transform: scale(1.2);
+  }*/
+  #eq113{
+      position: absolute;
+      top: 460px;left: 740px;
+      color: #9C9C9C;
+  }
+  #eq6{
+      position: absolute;
+      top: 160px;left: 800px;
+  }
+  #eq14{
+      position: absolute;
+      top: 220px;left: 800px;
+  }
+  #eq32{
+      position: absolute;
+      top: 280px;left: 800px;
+  }
+  #eq50{
+      position: absolute;
+      top: 340px;left: 800px;
+  }
+  #eq82{
+      position: absolute;
+      top: 400px;left: 800px;
+  }
+  #eq114{
+      position: absolute;
+      top: 460px;left: 800px;
+      color: #9C9C9C;
+  }
+  #eq7{
+      position: absolute;
+      top: 160px;left: 860px;
+      color: #CF010B;
+  }
+  #eq15{
+      position: absolute;
+      top: 220px;left: 860px;
+  }
+  #eq33{
+      position: absolute;
+      top: 280px;left: 860px;
+  }
+  #eq51{
+      position: absolute;
+      top: 340px;left: 860px;
+  }
+  #eq83{
+      position: absolute;
+      top: 400px;left: 860px;
+  }
+  #eq115{
+      position: absolute;
+      top: 460px;left: 860px;
+      color: #9C9C9C;
+  }
+  #eq8{
+      position: absolute;
+      top: 160px;left: 920px;
+      color: #CF010B;
+  }
+  #eq16{
+      position: absolute;
+      top: 220px;left: 920px;
+  }
+  #eq34{
+      position: absolute;
+      top: 280px;left: 920px;
+  }
+  #eq52{
+      position: absolute;
+      top: 340px;left: 920px;
+  }
+  #eq84{
+      position: absolute;
+      top: 400px;left: 920px;
+  }
+  #eq116{
+      position: absolute;
+      top: 460px;left: 920px;
+      color: #9C9C9C;
+  }
+  .halogenos{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  
+  /*
+  .halogenos:hover{
+     /* background: #ABDEE6;
+      -webkit-transform:scale(1.2);
+  }*/
+  #eq9{
+      position: absolute;
+      top: 160px;left: 980px;
+      color: #CF010B;
+  }
+  #eq17{
+      position: absolute;
+      top: 220px;left: 980px;
+      color: #CF010B;
+  }
+  #eq35{
+      position: absolute;
+      top: 280px;left: 980px;
+      color: #0000FF;
+  }
+  #eq53{
+      position: absolute;
+      top: 340px;left: 980px;
+  }
+  #eq85{
+      position: absolute;
+      top: 400px;left: 980px;
+  }
+  #eq117{
+      position: absolute;
+      top: 460px;left: 980px;
+      color: #9C9C9C;
+  }
+  .nobles{
+      width: 50px;
+      height: 50px;
+      border: dashed black 2px;
+      text-align: center;
+      border-radius: 5px;
+      background: #f5f6f7;
+      -webkit-transition-duration: 0.9s;
+  }
+  
+  /*
+  .nobles:hover{
+      /*background: #6B85A9;
+      -webkit-transform:scale(1.2);
+  }*/
+  
+  #eq2{
+      position: absolute;
+      top: 100px;left: 1040px;
+      color: #CF010B;
+  }
+  #eq10{
+      position: absolute;
+      top: 160px;left: 1040px;
+      color: #CF010B;
+  }
+  #eq18{
+      position: absolute;
+      top: 220px;left: 1040px;
+      color: #CF010B;
+  }
+  #eq36{
+      position: absolute;
+      top: 280px;left: 1040px;
+      color: #CF010B;
+  }
+  #eq54{
+      position: absolute;
+      top: 340px;left: 1040px;
+      color: #CF010B;
+  }
+  #eq86{
+      position: absolute;
+      top: 400px;left: 1040px;
+      color: #CF010B;
+  }
+  #eq118{
+      position: absolute;
+      top: 460px;left: 1040px;
+      color: #9C9C9C;
+  }
+  
+  #eq57{
+      position: absolute;
+      top: 550px;left: 140px;
+  }
+  #eq58{
+      position: absolute;
+      top: 550px;left: 200px;
+  }
+  #eq59{
+      position: absolute;
+      top: 550px;left: 260px;
+  }
+  #eq60{
+      position: absolute;
+      top: 550px;left: 320px;
+  }
+  #eq61{
+      position: absolute;
+      top: 550px;left: 380px;
+  }
+  #eq62{
+      position: absolute;
+      top: 550px;left: 440px;
+  }
+  #eq63{
+      position: absolute;
+      top: 550px;left: 500px;
+  }
+  #eq64{
+      position: absolute;
+      top: 550px;left: 560px;
+  }
+  #eq65{
+      position: absolute;
+      top: 550px;left: 620px;
+  }
+  #eq66{
+      position: absolute;
+      top: 550px;left: 680px;
+  }
+  #eq67{
+      position: absolute;
+      top: 550px;left: 740px;
+  }
+  #eq68{
+      position: absolute;
+      top: 550px;left: 800px;
+  }
+  #eq69{
+      position: absolute;
+      top: 550px;left: 860px;
+  }
+  #eq70{
+      position: absolute;
+      top: 550px;left: 920px;
+  }
+  #eq71{
+      position: absolute;
+      top: 550px;left: 980px;
+  }
+  
+  #eq89{
+      position: absolute;
+      top: 610px;left: 140px;
+  }
+  #eq90{
+      position: absolute;
+      top: 610px;left: 200px;
+  }
+  #eq91{
+      position: absolute;
+      top: 610px;left: 260px;
+  }
+  #eq92{
+      position: absolute;
+      top: 610px;left: 320px;
+  }
+  #eq93{
+      position: absolute;
+      top: 610px;left: 380px;
+  }
+  #eq94{
+      position: absolute;
+      top: 610px;left: 440px;
+  }
+  #eq95{
+      position: absolute;
+      top: 610px;left: 500px;
+  }
+  #eq96{
+      position: absolute;
+      top: 610px;left: 560px;
+  }
+  #eq97{
+      position: absolute;
+      top: 610px;left: 620px;
+  }
+  #eq98{
+      position: absolute;
+      top: 610px;left: 680px;
+  }
+  #eq99{
+      position: absolute;
+      top: 610px;left: 740px;
+  }
+  #eq100{
+      position: absolute;
+      top: 610px;left: 800px;
+  }
+  #eq101{
+      position: absolute;
+      top: 610px;left: 860px;
+  }
+  #eq102{
+      position: absolute;
+      top: 610px;left: 920px;
+  }
+  #eq103{
+      position: absolute;
+      top: 610px;left: 980px;
+  }
+  
+  
+  /* Gradación de colores basada en el radio atómico para los elementos */
+#eq5, #eq13, #eq31, #eq49, #eq81 { background-color: #f1ddc9; } /* Naranja más claro para los radios más grandes */
+#eq29, #eq47, #eq79, #eq111, #eq30, #eq48, #eq80, #eq112 { background-color: #cfb4a8; }
+#eq27, #eq45, #eq77, #eq109, #eq28, #eq46, #eq78, #eq110 { background-color: #FFB266; }
+#eq25, #eq43, #eq75, #eq107, #eq26, #eq44, #eq76, #eq108 { background-color: #FF9933; }
+#eq23, #eq41, #eq73, #eq105, #eq24, #eq42, #eq74, #eq106 { background-color: #FF8000; }
+#eq21, #eq39, #eq22, #eq40, #eq72, #eq104 { background-color: #E65C00; }
+#eq4, #eq12, #eq20, #eq38, #eq56, #eq88 { background-color: #CC5200; }
+#eq55, #eq87 { background-color: #B34700; }
+#eq1, #eq3, #eq11, #eq19, #eq37 { background-color: #993D00; } /* Naranja más oscuro para los radios más pequeños */
+
+
+
+/* Ajusta los elementos a su posición debajo de la tabla periódica */
+#elemento1, #elemento2, #elemento3, #elemento4, #elemento5, 
+#elemento6, #elemento7, #elemento8, #elemento9, #elemento10 {
+    position: absolute;
+    color: white;
+    z-index: 1000;
+   
+}
+
+
+/* Ajusta la posición vertical para que estén debajo de la tabla */
+#elemento1 {
+    top: 850px; /* Ajusta este valor según la altura de la tabla */
+    left: 200px;
+}
+
+#elemento2 {
+    top: 850px; 
+    left: 400px;
+}
+
+#elemento3 {
+    top: 850px; 
+    left: 600px;
+}
+
+#elemento4 {
+    top: 850px; 
+    left: 800px;
+}
+
+#elemento5 {
+    top: 950px; /* Ajusta según sea necesario */
+    left: 200px;
+}
+
+#elemento6 {
+    top: 950px; 
+    left: 400px;
+}
+
+#elemento7 {
+    top: 950px;
+    left: 600px;
+}
+
+#elemento8 {
+    top: 950px;
+    left: 800px;
+}
+
+#elemento9 {
+    top: 950px;
+    left: 1000px;
+}
+
+#elemento10 {
+    top: 850px;
+    left: 1000px;
+}
+
+
+/*pruebas para el bloque por medio de mongo*/
+.elemento-arrastable{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display:inline-block ;
+    border: dashed rgb(253, 252, 252) 2px; /*tamaño del color negro del borde*/
+    text-align: center;
+    font-size: small;
+    border-radius: 2px;
+    background:black;
+    cursor: move;
+    -webkit-transition-duration: 0.9s;
+    color: white;
+    
+}
+
+.elemento-arrastable:hover{
+  /*background: #fb7;*/
+  -webkit-transform:scale(2.2);
+}
+
+.draggable {
+    cursor: grab;
+    
+}
+
+.contenedores{
+    position: relative;
+    bottom: -80px;
+    left: 100px;
+}
+
+.arrastres{
+    font-size:x-large;
+    text-align: center;
+    right: 20%;
+    position: relative;
+    top: 160px; /* Ajusta la posición desde el top del contenedor */
+    
+    
+}

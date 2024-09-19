@@ -261,7 +261,7 @@ div{
   }
   
   .simbolo{
-      font-size: 17px;
+      font-size: 11px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */
@@ -269,14 +269,14 @@ div{
   }
   
   .nombre{
-      font-size: 14px;
+      font-size: 12px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */
   }
   
   .radio{
-      font-size: 11px;
+      font-size: 22px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */
@@ -1089,4 +1089,20 @@ div{
     top: 160px; /* Ajusta la posición desde el top del contenedor */
     
     
+}
+
+
+/*para que se pueda poner encima de la P*/
+/* Contenedor destino */
+.gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, .metales, .metaloides, .halogenos, .nobles, .desconocidos {
+    position: relative; /* Contenedor relativo para elementos absolutamente posicionados */
+}
+
+/* Elementos arrastrados */
+.dragged {
+    position: absolute;  /* Elemento arrastrado en posición absoluta */
+    top: 50%;            /* Centrado verticalmente */
+    left: 50%;           /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Alineación central */
+    z-index: 10;         /* Asegura que el elemento esté encima del contenido existente */
 }

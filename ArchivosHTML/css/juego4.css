@@ -1066,7 +1066,7 @@ div{
 .contenedores{
     position: relative;
     bottom: 130px;
-    left: 100px;
+    left: 150px;
 }
 
 .arrastres{
@@ -1077,4 +1077,8 @@ div{
     top: 160px; /* Ajusta la posición desde el top del contenedor */
     
     
+}
+
+.ElementosAleatorios{
+    left: 150px;
 }

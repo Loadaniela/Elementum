@@ -38,7 +38,7 @@
  <!--INICIA EL BLOQUE S-->
 <div class="contenedor"> 
     <!--AQUI INICIA EL CONTENEDOR PADRE-->
-    <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
+    <h1 class="glitch"  data-text="Elementum">BLOQUES</h1>
     <p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
   
     
@@ -535,30 +535,36 @@
  <div class="actinidos" id="eq101">
     
  </div>
-
- <div class="actinidos" id="eq102">
     
- </div>
+    <div class="actinidos" id="eq102">
+    
+    </div>
 
-<div class="actinidos" id="eq103">
+    <div class="actinidos" id="eq103">
     
      </div>
    
+
+
 <!--AQUI TERMINA EL BLOQUE F-->
 
 <!--por si no jalan aqui estan-->
 <div class="bloquesN">
-    <div class="bloques" id="F" draggable="true" ondragstart="drag(event)"><strong>Transición interna</strong></div>
-    <div class="bloques" id="P" draggable="true" ondragstart="drag(event)"><strong>Transición</strong></div>
-    <div class="bloques" id="D" draggable="true" ondragstart="drag(event)"><strong>Nobles</strong></div>
-    <div class="bloques" id="S" draggable="true" ondragstart="drag(event)"><strong>Representativos</strong></div>
-   
+    <div class="bloques" id="F" draggable="true" ondragstart="drag(event)" data-categoria="bloqueF"><strong>Transición interna</strong></div>
+    <div class="bloques" id="P" draggable="true" ondragstart="drag(event)" data-categoria="bloqueP"><strong>Transición</strong></div>
+    <div class="bloques" id="D" draggable="true" ondragstart="drag(event)" data-categoria="bloqueD"><strong>Nobles</strong></div>
+    <div class="bloques" id="S" draggable="true" ondragstart="drag(event)" data-categoria="bloqueS"><strong>Representativos</strong></div>
+    <div class="bloques" id="F" draggable="true" ondragstart="drag(event)" data-categoria="bloqueF"><strong>Bloque F</strong></div>
+    <div class="bloques" id="P" draggable="true" ondragstart="drag(event)" data-categoria="bloqueP"><strong>Bloque P</strong></div>
+    <div class="bloques" id="D" draggable="true" ondragstart="drag(event)" data-categoria="bloqueD"><strong>Bloque D</strong></div>
+    <div class="bloques" id="S" draggable="true" ondragstart="drag(event)" data-categoria="bloqueS"><strong>Bloque S</strong></div>
+    
 </div>
 
-
-</div>
 
 </main>
+
+
 
 <script> 
     document.addEventListener('DOMContentLoaded', function() {
@@ -661,14 +667,14 @@ window.addEventListener('popstate', function (event) {
     // Variable para indicar si el juego ha terminado
     let juegoTerminado = false;
 
-    // Manejo del evento beforeunload (solo para recarga o cierre de pestaña)
+    /* Manejo del evento beforeunload (solo para recarga o cierre de pestaña)
     window.addEventListener('beforeunload', function (event) {
         if (!juegoTerminado) {
             const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
             event.returnValue = message; // Mensaje predeterminado del navegador
             return message;
         }
-    });
+    });*/
 
     // Manejo de clicks en enlaces o botones que navegan fuera del sitio
     document.querySelectorAll('a, button').forEach(function(element) {
@@ -721,141 +727,58 @@ window.addEventListener('popstate', function (event) {
 </script>
 
 
-<!--funcion para hacer los arrastres 
-<script>
-    
-    // Variable para contar el número de arrastres
+<!-- funcion para 4 
+<script> //Funcion que los genera aleatorias 2
+    // Contador de arrastres y elementos correctos
     let arrastresContador = 0;
-    // Total de elementos que deben ser arrastrados correctamente
     const totalElementos = document.querySelectorAll('.bloques[draggable="true"]').length;
-    // Contador de elementos correctos colocados
     let correctosContador = 0;
 
     const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
     const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
 
-    // Función que permite el arrastre
-    function drag(event) {
-        event.dataTransfer.setData("text", event.target.id);
+    // Función para mezclar (aleatorizar) un array
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
     }
 
-    // Función que permite soltar el elemento sobre un contenedor
-    function allowDrop(event) {
-        event.preventDefault();
-    }
+    // Función para mezclar los nombres de los elementos al cargar la página
+    document.addEventListener("DOMContentLoaded", function () {
+        const bloquesContainer = document.querySelector(".bloquesN");
+        const bloques = Array.from(bloquesContainer.children);
 
-    // Función que maneja la acción de soltar el elemento
-    function drop(event) {
-        event.preventDefault();
-        arrastresContador++; // Incrementa el contador de arrastres
-        var data = event.dataTransfer.getData("text");
-        var element = document.getElementById(data);
-        
-        // Identifica el contenedor al que se intenta soltar
-        var targetContainer = event.target.closest('.bloqueS, .bloqueD, .bloqueP, .bloqueF');
-        
-        // Verifica si el contenedor existe y si es el correcto
-        if (targetContainer && targetContainer.id === "bloque" + data) {
-            // Calcula la posición relativa al contenedor
-            var rect = targetContainer.getBoundingClientRect();
-            var elemRect = element.getBoundingClientRect();
-            var offsetX = event.clientX - elemRect.width / 2;
-            var offsetY = event.clientY - elemRect.height / 2;
+        // Crear un array de nombres posibles y mezclarlos
+        const nombresMap = [
+            { categoria: 'bloqueF', nombre: 'Transición interna' },
+            { categoria: 'bloqueP', nombre: 'Transición' },
+            { categoria: 'bloqueD', nombre: 'Nobles' },
+            { categoria: 'bloqueS', nombre: 'Representativos' }
+        ];
 
-            // Ajusta la posición del elemento para que quede sobre el contenedor
-            element.style.position = "absolute";
-            element.style.left = offsetX + "px";
-            element.style.top = offsetY + "px";
-            
-            // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
-            element.setAttribute("draggable", "false");
-            element.style.cursor = "default"; // Cambia el cursor a normal
-            // Incrementa el contador de elementos correctos
-            correctosContador++;
-            sonidoAcierto.play(); // Reproduce el sonido de acierto
-        } else {
-            sonidoError.play(); // Reproduce el sonido de error
-        }
-        // Actualiza el contador de arrastres en la página
-        document.getElementById("contadorArrastres").textContent = arrastresContador;
-        
-        // Verifica si todos los elementos han sido colocados correctamente
-        if (correctosContador === totalElementos) {
-            alert("¡Felicidades! Has colocado todos los elementos correctamente en " + arrastresContador + " arrastres.");
-            
-            // Guardar el resultado del juego en la base de datos
-            const userId = document.getElementById('usuario').textContent; // Obtener el userId del perfil cargado
-            const juegoId = obtenerIdJuegoDeURL(); // Obtener el ID del juego actual
-            
-            // Llamar a la función para guardar el resultado
-            guardarResultadoJuego(userId, juegoId, arrastresContador);
-        }
-    }
+        // Mezclar los nombres
+        const nombresAleatorios = shuffle(nombresMap);
 
-    // Función para guardar el resultado del juego
-    function guardarResultadoJuego(userId, juegoId, numArrastres) {
-    const nombreJuego = obtenerNombreJuego(juegoId);
-
-    fetch('/guardar-resultado', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ userId, juegoId, numArrastres })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Resultado guardado:', data);
-
-        if (data.message === 'Resultado guardado correctamente') {
-             // Indicar que el juego ha terminado
-             juegoTerminado = true;
-            window.location.href = 'marcador.html';
-        } else {
-            alert('Error al guardar resultados: ' + (data.error || 'Error desconocido'));
-            console.error('Detalles del error:', data);
-        }
-    })
-    .catch(error => {
-        console.error('Error de red:', error);
-        alert('Error de red, por favor intenta nuevamente.');
+        // Asignar los nombres mezclados a los elementos
+        bloques.forEach((bloque, index) => {
+            bloque.innerHTML = `<strong>${nombresAleatorios[index].nombre}</strong>`;
+            bloque.setAttribute('data-categoria', nombresAleatorios[index].categoria); // Actualizar el data-categoria
+        });
     });
-}
-//los casos de los switch estan en prueba.js
-function obtenerNombreJuego(juegoId) {
-        switch (parseInt(juegoId)) {
-            case 1: return 'Bloques';
-            case 2: return 'Elementos';
-            case 3: return 'RadioA';
-            case 4: return 'Electronegatividad';
-            default: return 'Juego desconocido';
-        }
-    }
 
-
-</script>
--->
-<script>
-    // Variable para contar el número de arrastres
-    let arrastresContador = 0;
-    // Total de elementos que deben ser arrastrados correctamente
-    const totalElementos = document.querySelectorAll('.bloques[draggable="true"]').length;
-    // Contador de elementos correctos colocados
-    let correctosContador = 0;
-    
-    const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
-    const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
-    
     // Función que permite el arrastre
     function drag(event) {
         event.dataTransfer.setData("text", event.target.id);
     }
-    
+
     // Función que permite soltar el elemento sobre un contenedor
     function allowDrop(event) {
         event.preventDefault();
     }
-    
+
     // Función que maneja la acción de soltar el elemento
     function drop(event) {
         event.preventDefault();
@@ -865,29 +788,37 @@ function obtenerNombreJuego(juegoId) {
         
         // Identifica el contenedor al que se intenta soltar
         var targetContainer = event.target.closest('.bloqueS, .bloqueD, .bloqueP, .bloqueF');
+
+        // Verifica si el contenedor existe y si el `data-categoria` del elemento coincide con el ID del contenedor
+        if (targetContainer) {
+            const categoriaElemento = element.getAttribute('data-categoria');
+            const categoriaContenedor = targetContainer.id;
+
+            if (categoriaElemento === categoriaContenedor) {
+                // Calcula la posición relativa al contenedor
+                var rect = targetContainer.getBoundingClientRect();
+                var elemRect = element.getBoundingClientRect();
+                var offsetX = event.clientX - elemRect.width / 2;
+                var offsetY = event.clientY - elemRect.height / 2;
         
-        // Verifica si el contenedor existe y si es el correcto
-        if (targetContainer && targetContainer.id === "bloque" + data) {
-            // Calcula la posición relativa al contenedor
-            var rect = targetContainer.getBoundingClientRect();
-            var elemRect = element.getBoundingClientRect();
-            var offsetX = event.clientX - elemRect.width / 2;
-            var offsetY = event.clientY - elemRect.height / 2;
-    
-            // Ajusta la posición del elemento para que quede sobre el contenedor
-            element.style.position = "absolute";
-            element.style.left = offsetX + "px";
-            element.style.top = offsetY + "px";
-            
-            // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
-            element.setAttribute("draggable", "false");
-            element.style.cursor = "default"; // Cambia el cursor a normal
-            // Incrementa el contador de elementos correctos
-            correctosContador++;
-            sonidoAcierto.play(); // Reproduce el sonido de acierto
+                // Ajusta la posición del elemento para que quede sobre el contenedor
+                element.style.position = "absolute";
+                element.style.left = offsetX + "px";
+                element.style.top = offsetY + "px";
+                
+                // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
+                element.setAttribute("draggable", "false");
+                element.style.cursor = "default"; // Cambia el cursor a normal
+                // Incrementa el contador de elementos correctos
+                correctosContador++;
+                sonidoAcierto.play(); // Reproduce el sonido de acierto
+            } else {
+                sonidoError.play(); // Reproduce el sonido de error
+            }
         } else {
             sonidoError.play(); // Reproduce el sonido de error
         }
+        
         // Actualiza el contador de arrastres en la página
         document.getElementById("contadorArrastres").textContent = arrastresContador;
         
@@ -908,8 +839,8 @@ function obtenerNombreJuego(juegoId) {
             });
         }
     }
-    
-    // Función para guardar el resultado del juego
+
+    // Función para guardar el resultado del juego (igual que antes)
     function guardarResultadoJuego(userId, juegoId, numArrastres) {
         const nombreJuego = obtenerNombreJuego(juegoId);
     
@@ -948,7 +879,7 @@ function obtenerNombreJuego(juegoId) {
             });
         });
     }
-    
+
     // Función para obtener el nombre del juego
     function obtenerNombreJuego(juegoId) {
         switch (parseInt(juegoId)) {
@@ -959,8 +890,172 @@ function obtenerNombreJuego(juegoId) {
             default: return 'Juego desconocido';
         }
     }
-    </script>
+</script>
+-->
+
+<script> 
+    // Contador de arrastres y elementos correctos
+    let arrastresContador = 0;
+    let correctosContador = 0;
+
+    const totalElementos = 4; // Número total de elementos a arrastrar
+    const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
+    const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
+
+    // Función para mezclar el array
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Función para mezclar los nombres de los elementos al cargar la página
+    document.addEventListener("DOMContentLoaded", function () {
+        const bloquesContainer = document.querySelector(".bloquesN");
+        const bloques = Array.from(bloquesContainer.children);
+
+        // Array de nombres posibles
+        const nombresMap = [
+            { categoria: 'bloqueF', nombre: 'Transición interna' },
+            { categoria: 'bloqueP', nombre: 'Transición' },
+            { categoria: 'bloqueD', nombre: 'Nobles' },
+            { categoria: 'bloqueS', nombre: 'Representativos' },
+            { categoria: 'bloqueF', nombre: 'Bloque F' },
+            { categoria: 'bloqueP', nombre: 'Bloque P' },
+            { categoria: 'bloqueD', nombre: 'Bloque D' },
+            { categoria: 'bloqueS', nombre: 'Bloque S' }
+        ];
+
+        // Mezcla los nombres
+        const nombresAleatorios = shuffle(nombresMap).slice(0, 4); // Selecciona 4 aleatorios
+
+        // Asignar los nombres mezclados a los bloques
+        bloques.forEach((bloque, index) => {
+            if (index < 4) {
+                bloque.innerHTML = `<strong>${nombresAleatorios[index].nombre}</strong>`;
+                bloque.setAttribute('data-categoria', nombresAleatorios[index].categoria);
+            } else {
+                bloque.style.display = 'none'; // Esconder los elementos no seleccionados
+            }
+        });
+    });
+
+    // Función que permite el arrastre
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    // Función que permite soltar el elemento sobre un contenedor
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    // Función que maneja la acción de soltar el elemento
+    function drop(event) {
+        event.preventDefault();
+        arrastresContador++; // Incrementa el contador de arrastres
+        var data = event.dataTransfer.getData("text");
+        var element = document.getElementById(data);
+        
+        // Identifica el contenedor al que se intenta soltar
+        var targetContainer = event.target.closest('.bloqueS, .bloqueD, .bloqueP, .bloqueF');
+
+        // Verifica si el contenedor existe y si el `data-categoria` del elemento coincide con el ID del contenedor
+        if (targetContainer) {
+            const categoriaElemento = element.getAttribute('data-categoria');
+            const categoriaContenedor = targetContainer.id;
+
+            if (categoriaElemento === categoriaContenedor) {
+                // Ajusta la posición del elemento para que quede sobre el contenedor
+                element.style.position = "absolute";
+                element.style.left = (event.clientX - element.clientWidth / 2) + "px";
+                element.style.top = (event.clientY - element.clientHeight / 2) + "px";
+                
+                // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
+                element.setAttribute("draggable", "false");
+                element.style.cursor = "default"; // Cambia el cursor a normal
+
+                // Incrementa el contador de elementos correctos
+                correctosContador++;
+                sonidoAcierto.play(); // Reproduce el sonido de acierto
+            } else {
+                sonidoError.play(); // Reproduce el sonido de error
+            }
+        } else {
+            sonidoError.play(); // Reproduce el sonido de error
+        }
+        
+        // Actualiza el contador de arrastres en la página
+        document.getElementById("contadorArrastres").textContent = arrastresContador;
+        
+        // Verifica si todos los elementos han sido colocados correctamente
+        if (correctosContador === totalElementos) {
+            Swal.fire({
+                title: '¡Felicidades!',
+                text: `Has colocado todos los elementos correctamente en ${arrastresContador} arrastres.`,
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                // Guardar el resultado del juego en la base de datos
+                const userId = document.getElementById('usuario').textContent;
+                const juegoId = obtenerIdJuegoDeURL();
+                
+                guardarResultadoJuego(userId, juegoId, arrastresContador);
+            });
+        }
+    }
+
+    // Función para guardar el resultado del juego
+    function guardarResultadoJuego(userId, juegoId, numArrastres) {
+        const nombreJuego = obtenerNombreJuego(juegoId);
     
+        fetch('/guardar-resultado', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId, juegoId, numArrastres })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Resultado guardado:', data);
+    
+            if (data.message === 'Resultado guardado correctamente') {
+                window.location.href = 'marcador.html';
+            } else {
+                Swal.fire({
+                    title: 'Error al guardar resultados',
+                    text: data.error || 'Error desconocido',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                title: 'Error de red',
+                text: 'Por favor intenta nuevamente.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        });
+    }
+
+    // Función para obtener el nombre del juego
+    function obtenerNombreJuego(juegoId) {
+        switch (parseInt(juegoId)) {
+            case 1: return 'Bloques';
+            case 2: return 'Elementos';
+            case 3: return 'RadioA';
+            case 4: return 'Electronegatividad';
+            default: return 'Juego desconocido';
+        }
+    }
+</script>
+
+
 
   </body>
 </html>

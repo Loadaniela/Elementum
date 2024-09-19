@@ -14,10 +14,12 @@ p{
     text-align: center;
 }
 .glitch {
-    position:relative;
+    position:absolute;
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
+    bottom: -210px; /* Ajusta la posición desde el top del contenedor */
+    left: 15%;
     font-family: 'Permanent Marker', cursive;
     font-size: 7em;
     text-shadow: 8px -8px 0px #d37d1b;
@@ -1139,7 +1141,7 @@ div{
 
 .contenedores{
     position: relative;
-    bottom: 190px;
+    bottom: -120px;
     left: 100px;
 }
 
@@ -1155,9 +1157,7 @@ div{
 .arrastres{
     font-size:x-large;
     text-align: center;
-    right: 50%;
+    left: 15%;
     position: absolute;
-    top: 90px; /* Ajusta la posición desde el top del contenedor */
-    
-    
+    bottom: -190px; /* Ajusta la posición desde el top del contenedor */
 }

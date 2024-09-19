@@ -105,7 +105,7 @@ body {
 
 .card .back .link{ /*links de la parte de atras de las tarjetas*/
     border-top: solid 1px #f3f3f3;
-    height: 50px;
+    height: 40px;
     line-height: 50px;
 }
 
@@ -123,7 +123,7 @@ body {
     /*letter-spacing: 1px;
     */
     text-align: justify;
-   font-size: small;
+   font-size: 14.5px;
     
 }
 
@@ -169,8 +169,8 @@ body {
     padding: 10px;
     border-radius: 10px;
     text-align: center;
-    max-width: 400px;
-    margin: 40px auto;
+    max-width: 90%;
+    margin: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -221,10 +221,12 @@ body {
 
 .menu ul li {
     margin-bottom: 15px;
+    
 }
 
 .menu ul li a {
     text-decoration: none;
+    
     color: #fff;
     font-size: 1.2em;
 }
