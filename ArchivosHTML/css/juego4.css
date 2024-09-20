@@ -270,14 +270,14 @@ div{
   }
   
   .simbolo{
-      font-size: 18px;
+      font-size: 15px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */
   }
   
   .nombre{
-      font-size: 12px;
+      font-size: 6px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */
@@ -286,7 +286,7 @@ div{
   }
   
   .electronegatividad{
-      font-size: 9px;
+      font-size: 15px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */

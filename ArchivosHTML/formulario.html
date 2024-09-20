@@ -8,8 +8,9 @@
 </head>
 <body>
     <main>
+
         <input type="checkbox" id="toggle">
-        <label for="toggle" class="hamburger"><span></span></label>
+        <label for="toggle" class="hamburger"><span></span><span></span><span></span></label>
         <nav class="menu">
             <ul>
                 <li><a href="#" >PERFIL DEL JUGADOR</a></li>
@@ -23,57 +24,95 @@
         </nav>
         <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
 
-        <h1>Formulario de Pregunta</h1>
-        <form id="questionForm">
-            <label for="question">Escribe tu pregunta:</label>
-            <input type="text" id="question" name="question" required>
-            <br><br>
-            <label>Opción:</label>
-            <input type="radio" id="true" name="option" value="true" required>
-            <label for="true">Verdadero</label>
-            <input type="radio" id="false" name="option" value="false" required>
-            <label for="false">Falso</label>
-            <br><br>
-            <button type="submit">Enviar</button>
+    
+        <div id="contenedorFormulario" style="text-align: center;">
+
+        <h1 id="formulario">Formulario Elementum</h1>
+        <form id="formularioPregunta">
+            <label for="pregunta" >Pregunta a insertar:</label><br>
+            <input type="text" id="pregunta" name="pregunta" required  placeholder="Escribe tu pregunta aquí"><br><br>
+    
+            <label for="respuestaCorrecta">Respuesta correcta:</label><br>
+            <select id="respuestaCorrecta" name="respuestaCorrecta" required>
+                <option value="true">Verdadero</option>
+                <option value="false">Falso</option>
+            </select><br><br>
+    
+            <label for="simboloElemento">Seleccione el elemento del cual será la pregunta:</label><br>
+            <select id="simboloElemento" name="simboloElemento" required>
+                <option value="" disabled selected>Seleccionar elemento</option>
+                <!-- Aquí van los símbolos de los elementos químicos -->
+                <option value="H">Hidrógeno (H)</option>
+                <option value="He">Helio (He)</option>
+                <option value="Li">Litio (Li)</option>
+                <option value="Be">Berilio (Be)</option>
+                <option value="B">Boro (B)</option>
+                <option value="C">Carbono (C)</option>
+                <option value="N">Nitrógeno (N)</option>
+                <option value="O">Oxígeno (O)</option>
+                <option value="F">Flúor (F)</option>
+                <option value="Ne">Neón (Ne)</option>
+                <option value="S">Azufre (S)</option>
+            </select><br><br>
+    
+            <button type="submit">Agregar Pregunta</button>
         </form>
+    
+        <p id="mensaje"></p>
+
+        </div>
 
 
-
-
-
+      
 
 
     </main>
+   
     <script>
-        document.getElementById('questionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const question = document.getElementById('question').value;
-            const option = document.querySelector('input[name="option"]:checked').value;
-        
-            fetch('/guardarPregunta', {
+        // Captura el evento de envío del formulario
+        document.getElementById('formularioPregunta').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obtén los valores del formulario
+            const pregunta = document.getElementById('pregunta').value;
+            const respuestaCorrecta = document.getElementById('respuestaCorrecta').value === 'true';
+            const simboloElemento = document.getElementById('simboloElemento').value;
+
+            // Envía los datos al servidor usando fetch
+            fetch('/agregar-pregunta', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ question, option }),
+                body: JSON.stringify({
+                    question: pregunta,
+                    correctAnswer: respuestaCorrecta,
+                    elementSymbol: simboloElemento
+                })
             })
             .then(response => response.json())
             .then(data => {
+                // Muestra un mensaje basado en la respuesta del servidor
+                const mensaje = document.getElementById('mensaje');
                 if (data.success) {
-                    alert('Pregunta guardada exitosamente');
+                    mensaje.textContent = 'Pregunta agregada exitosamente a Elementum.';
+                    mensaje.style.color = 'green';
+
+                     // Deja el formulario en limpio
+                     document.getElementById('formularioPregunta').reset();
                 } else {
-                    alert('Error al guardar la pregunta');
+                    mensaje.textContent = 'Error al agregar la pregunta al juego.';
+                    mensaje.style.color = 'red';
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
-                alert('Error al guardar la pregunta');
+                console.error('Error al enviar los datos:', error);
+                document.getElementById('mensaje').textContent = 'Ocurrió un error al enviar los datos verifica que tenga signo de interrogación.';
             });
         });
-        </script>
+    </script>
 
-    <script>
+    <script> //para cargar el perfil del jugador
         document.addEventListener('DOMContentLoaded', function() {
             fetch('/perfil')
                 .then(response => {
