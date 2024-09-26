@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcador</title>
     <link rel="stylesheet" href="/css/estilosJuego.css">
+    <link rel="icon" href="/Imagenes/icon-512x512.png">
 </head>
 <body>
     <main>
@@ -25,6 +26,13 @@
                 <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
             </ul>
         </nav>
+
+        <div id="menuoculto">
+            <a id="menu1" href="juego.html">Jugar juego1: Bloques </a>
+            <a id="menu2" href="juego2.html">Jugar juego2: Elementos</a>
+            <a id="menu3" href="juego3.html">Jugar juego3: Radio Atomico</a>
+            <a id="menu4" href="juego4.html">Jugar juego4: Electronegatividad </a>
+     </div>
         <h1 class="glitch" data-text="Elementum">ELEMENTUM</h1>
 
         <style>
@@ -108,6 +116,8 @@
                             <p><strong>Juego:</strong> ${resultado.juegos.nombre_juego}</p>
                             <p><strong>Número de Arrastres:</strong> ${resultado.numArrastres}</p>
                             <p><strong>Calificación obtenida:</strong> ${resultado.calificacion}</p>
+                            <p><strong>Total de Preguntas:</strong> ${resultado.totalPreguntas || 'N/A'}</p> <!-- Si no hay preguntas mostarar eso -->
+                            <p><strong>Respuestas Correctas:</strong> ${resultado.respuestasCorrectas || 'N/A'}</p> <!-- No hay pregunta -->
                             <p><strong>Hora de Inicio:</strong> ${new Date(resultado.hora_inicio).toLocaleString()}</p>
                             <p><strong>Hora de Fin:</strong> ${new Date(resultado.hora_fin).toLocaleString()}</p>
                             <hr>

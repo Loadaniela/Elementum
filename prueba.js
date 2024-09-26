@@ -89,6 +89,8 @@ const PartidasSchema = new mongoose.Schema(
         usuarios: { type: mongoose.Schema.Types.ObjectId, ref: "usuarios", required: true },
         juegos: { type: mongoose.Schema.Types.ObjectId, ref: "juegos", required: true },
         numArrastres: { type: Number, required: true },
+        totalPreguntas: { type: Number },  // Solo para el juego 4
+        respuestasCorrectas: { type: Number },  // Solo para el juego 4
         hora_inicio: { type: Date },
         hora_fin: { type: Date },
         calificacion: { type: Number, required: true } // Calificación obtenida
@@ -142,7 +144,7 @@ app.get('/obtener-resultados', async (req, res) => {
 });
 
 //SI YA EXISTE UNA PREGUNTA
-// Ruta para obtener una pregunta aleatoria por símbolo de elemento.
+/* Ruta para obtener una pregunta aleatoria por símbolo de elemento.
 app.get('/pregunta-aleatoria/:symbol', async (req, res) => {
     try {
         const symbol = req.params.symbol;
@@ -162,7 +164,31 @@ app.get('/pregunta-aleatoria/:symbol', async (req, res) => {
         console.error('Error al obtener la pregunta:', error);
         res.status(500).json({ success: false, message: 'Error en el servidor.' });
     }
+});  */
+
+app.get('/preguntas-aleatorias', (req, res) => {
+    QuestionModel.aggregate([
+        {
+            $group: {
+                _id: "$elementSymbol", // Agrupa por símbolo del elemento
+                preguntas: { $push: "$$ROOT" } // Guarda todas las preguntas en un array
+            }
+        }
+    ]).then(results => {
+        // Selecciona una pregunta aleatoria por cada grupo de preguntas (por cada elemento)
+        const preguntasAleatorias = results.map(grupo => {
+            const randomIndex = Math.floor(Math.random() * grupo.preguntas.length);
+            return grupo.preguntas[randomIndex]; // Selecciona la pregunta aleatoria
+        });
+
+        res.json({ success: true, preguntas: preguntasAleatorias });
+    }).catch(error => {
+        console.error('Error al obtener preguntas:', error);
+        res.status(500).json({ success: false, message: 'Error al obtener preguntas.' });
+    });
 });
+
+
 
 /*PAra guardar mis preguntas */
 app.post('/agregar-pregunta', (req, res) => {
@@ -197,7 +223,7 @@ app.post('/agregar-pregunta', (req, res) => {
         });
 });
 
-
+/* salvada de guardar el resultado
 app.post('/guardar-resultado', async (req, res) => {
     const { userId, juegoId, numArrastres } = req.body;
 
@@ -237,6 +263,57 @@ app.post('/guardar-resultado', async (req, res) => {
             usuarios: usuario._id,  
             juegos: juego._id,
             numArrastres: numArrastres,
+            hora_inicio: new Date(),
+            hora_fin: new Date(),
+            calificacion: calificacion
+        });
+
+        await nuevaPartida.save();
+
+        res.status(201).json({ message: 'Resultado guardado correctamente', partida: nuevaPartida });
+    } catch (error) {
+        console.error('Error al guardar el resultado del juego:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+*/
+
+/*Esta funcion guarda el resultado y verifica que tambien se guarden las preguntas */
+app.post('/guardar-resultado', async (req, res) => {
+    const { userId, juegoId, numArrastres, totalPreguntas, correctas } = req.body;
+
+    try {
+        const juego = await JuegosModel.findOne({ Id: juegoId });
+        if (!juego) {
+            return res.status(404).json({ error: 'Juego no encontrado' });
+        }
+
+        const usuario = await UsuariosModel.findOne({ usuario: userId });
+        if (!usuario) {
+            return res.status(404).json({ error: 'Usuario no encontrado' });
+        }
+
+        let calificacion = 0;
+        switch (parseInt(juegoId)) {  
+            case 1:
+                calificacion = numArrastres <= 4 ? 10 : Math.max(10 - (numArrastres - 4), 0);
+                break;
+            case 2:
+            case 3:
+            case 4:
+                calificacion = numArrastres <= 10 ? 10 : Math.max(10 - (numArrastres - 10), 0);
+                break;
+            default:
+                calificacion = 0;
+        }
+
+        // Crea y guarda una nueva partida con el número de preguntas y respuestas correctas
+        const nuevaPartida = new PartidasModel({
+            usuarios: usuario._id,
+            juegos: juego._id,
+            numArrastres: numArrastres,
+            totalPreguntas: totalPreguntas,
+            respuestasCorrectas: correctas,
             hora_inicio: new Date(),
             hora_fin: new Date(),
             calificacion: calificacion

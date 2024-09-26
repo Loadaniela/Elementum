@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Bloques</title>
     <link rel="stylesheet" href="css/juego.css">
+    <link rel="icon" href="/Imagenes/icon-512x512.png">
 </head>
 <body>
     <main>
@@ -92,18 +93,18 @@
  <div class="alcalinoterreos" id="eq56">
    
  </div>
- <div class="alcalinoterreos" id="eq2"> 
-    
+ <div class="alcalinoterreos" id="eq2" style="border-color: greenyellow;"> 
+   
  </div>
      
  <div class="alcalinoterreos" id="eq88">
-
+   
  </div>
 </div>
 <!--AQUI TERMINA EL BLOQUE S-->
 
 
-<div class="bloqueP" id="bloqueP" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="bloqueD" id="bloqueD" ondrop="drop(event)" ondragover="allowDrop(event)">
  <!--AQUI INICIA EL BLOQUE D-->
        
  <div class="transicion" id="eq21">
@@ -270,7 +271,7 @@
 <!--AQUI TERMINA EL BLOQUE D-->
 
 
-<div class="bloqueD" id="bloqueD" ondrop="drop(event)" ondragover="allowDrop(event)">              
+<div class="bloqueP" id="bloqueP" ondrop="drop(event)" ondragover="allowDrop(event)">              
  <div class="metaloides" id="eq5">
     
  </div>
@@ -295,7 +296,7 @@
      
  </div>
                  
- <div class="nobles" id="eq6">
+ <div class="metales" id="eq6">
     
  </div>
 
@@ -319,11 +320,11 @@
      
  </div>
                    
-<div class="nobles" id="eq7">
+<div class="metales" id="eq7">
      
  </div>
 
- <div class="nobles" id="eq15">
+ <div class="metales" id="eq15">
     
  </div>
  
@@ -343,15 +344,15 @@
     
  </div>
                      
- <div class="nobles" id="eq8">
+ <div class="metales" id="eq8">
      
  </div>
 
- <div class="nobles" id="eq16">
+ <div class="metales" id="eq16">
     
  </div>
  
- <div class="nobles" id="eq34">
+ <div class="metales" id="eq34">
     
  </div>
 
@@ -359,7 +360,7 @@
      
  </div>
  
-<div class="nobles" id="eq84">
+<div class="metales" id="eq84">
     
  </div>
 
@@ -387,35 +388,36 @@
     
  </div>
 
-<div class="desconocidos" id="eq117">
-     
+<div class="desconocidos" id="eq117" >
+   
  </div>
     <!--                    
 <div class="alcalinoterreos" id="eq2"> <p>ver</p>
     
  </div>-->
-                       
- <div class="nobles" id="eq10">
+                     
+ 
+ <div class="nobles" id="eq10" style="border-color: greenyellow;">
     
  </div>
 
-<div class="nobles" id="eq18">
-    
+<div class="nobles" id="eq18" style="border-color: greenyellow;">
+   
  </div>
  
-<div class="nobles" id="eq36">
+<div class="nobles" id="eq36" style="border-color: greenyellow;">
     
  </div>
 
-<div class="nobles" id="eq54">
+<div class="nobles" id="eq54" style="border-color: greenyellow;">
      
  </div>
  
-<div class="nobles" id="eq86">
+<div class="nobles" id="eq86" style="border-color: greenyellow;">
      
  </div>
 
- <div class="desconocidos" id="eq118">
+ <div class="nobles" id="eq118" style="border-color: greenyellow" style="border: 10%;"; >
      
  </div>
 </div>
@@ -509,7 +511,7 @@
  </div>
  
  <div class="actinidos" id="eq95">
-    
+   
  </div>
  
  <div class="actinidos" id="eq96">
@@ -551,8 +553,8 @@
 <!--por si no jalan aqui estan-->
 <div class="bloquesN">
     <div class="bloques" id="F" draggable="true" ondragstart="drag(event)" data-categoria="bloqueF"><strong>Transición interna</strong></div>
-    <div class="bloques" id="P" draggable="true" ondragstart="drag(event)" data-categoria="bloqueP"><strong>Transición</strong></div>
-    <div class="bloques" id="D" draggable="true" ondragstart="drag(event)" data-categoria="bloqueD"><strong>Nobles</strong></div>
+    <div class="bloques" id="P" draggable="true" ondragstart="drag(event)" data-categoria="bloqueD"><strong>Transición</strong></div>
+    <div class="bloques" id="D" draggable="true" ondragstart="drag(event)" data-categoria="bloqueP"><strong>Nobles</strong></div>
     <div class="bloques" id="S" draggable="true" ondragstart="drag(event)" data-categoria="bloqueS"><strong>Representativos</strong></div>
     <div class="bloques" id="F" draggable="true" ondragstart="drag(event)" data-categoria="bloqueF"><strong>Bloque F</strong></div>
     <div class="bloques" id="P" draggable="true" ondragstart="drag(event)" data-categoria="bloqueP"><strong>Bloque P</strong></div>
@@ -919,13 +921,14 @@ window.addEventListener('popstate', function (event) {
         // Array de nombres posibles
         const nombresMap = [
             { categoria: 'bloqueF', nombre: 'Transición interna' },
-            { categoria: 'bloqueP', nombre: 'Transición' },
-            { categoria: 'bloqueD', nombre: 'Nobles' },
+            { categoria: 'bloqueD', nombre: 'Transición' },
+            { categoria: 'bloqueP', nombre: 'Representativos y nobles' },
             { categoria: 'bloqueS', nombre: 'Representativos' },
             { categoria: 'bloqueF', nombre: 'Bloque F' },
             { categoria: 'bloqueP', nombre: 'Bloque P' },
             { categoria: 'bloqueD', nombre: 'Bloque D' },
             { categoria: 'bloqueS', nombre: 'Bloque S' }
+            
         ];
 
         // Mezcla los nombres
@@ -964,29 +967,38 @@ window.addEventListener('popstate', function (event) {
 
         // Verifica si el contenedor existe y si el `data-categoria` del elemento coincide con el ID del contenedor
         if (targetContainer) {
-            const categoriaElemento = element.getAttribute('data-categoria');
-            const categoriaContenedor = targetContainer.id;
+        const categoriaElemento = element.getAttribute('data-categoria');
+        const categoriaContenedor = targetContainer.id;
 
-            if (categoriaElemento === categoriaContenedor) {
-                // Ajusta la posición del elemento para que quede sobre el contenedor
-                element.style.position = "absolute";
-                element.style.left = (event.clientX - element.clientWidth / 2) + "px";
-                element.style.top = (event.clientY - element.clientHeight / 2) + "px";
-                
-                // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
-                element.setAttribute("draggable", "false");
-                element.style.cursor = "default"; // Cambia el cursor a normal
+        if (categoriaElemento === categoriaContenedor) {
+            // Calcula las coordenadas relativas del evento drop dentro del contenedor
+            const rect = targetContainer.getBoundingClientRect();
+            const offsetX = event.clientX - rect.left;
+            const offsetY = event.clientY - rect.top;
 
-                // Incrementa el contador de elementos correctos
-                correctosContador++;
-                sonidoAcierto.play(); // Reproduce el sonido de acierto
-            } else {
-                sonidoError.play(); // Reproduce el sonido de error
-            }
+            // Usa position absolute para posicionar el elemento donde se soltó
+            element.style.position = "absolute";
+            element.style.left = `${offsetX}px`;
+            element.style.top = `${offsetY}px`;
+
+            // Añade el elemento al contenedor
+            targetContainer.appendChild(element);
+
+            // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
+            element.setAttribute("draggable", "false");
+            element.style.cursor = "default"; // Cambia el cursor a normal
+
+            // Incrementa el contador de elementos correctos
+            correctosContador++;
+            sonidoAcierto.play(); // Reproduce el sonido de acierto
         } else {
             sonidoError.play(); // Reproduce el sonido de error
         }
-        
+    } else {
+        sonidoError.play(); // Reproduce el sonido de error
+    }
+
+    
         // Actualiza el contador de arrastres en la página
         document.getElementById("contadorArrastres").textContent = arrastresContador;
         

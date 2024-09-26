@@ -8,7 +8,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -206,7 +206,7 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #111111;
+    background-color: #746b63;
     width: 250px;
     height: 100%;
     transform: translateX(100%);
@@ -246,6 +246,45 @@ body {
 #toggle:checked ~ .menu {
     transform: translateX(0);
 }
+
+/*MENU OCULTO DE INSTRUCCIONES*/
+#menuoculto a{
+    position: fixed;
+    color: black;
+    left:-100px; 
+    transition: 0.2s;
+    font-size: 15px;
+    font-weight:bold;
+    text-decoration: none;
+    padding: 15px 50px 15px 10px;
+    width: 150px; /* tamaño del menú */
+    border-radius: 0 20px 5px 0; 
+    } 
+    #menuoculto a:hover {
+        left: 0; 
+        
+        }
+    
+    #menu1{
+        top: 100px; 
+        background-color: #eb8500; 
+        position: fixed;
+        }
+        #menu2{
+            top: 200px; 
+            background-color: #1cbdee; 
+            position: fixed;
+            }
+            #menu3{
+                top: 300px; 
+                background-color: #0018eb; 
+                position: fixed;
+                }
+                #menu4{
+                    top: 400px; 
+                    background-color: #eb0014; 
+                    position: fixed;
+                    }
 
 .glitch {
     position: relative;
@@ -386,10 +425,16 @@ body {
 
 
 #formulario{
-    text-align: center;
-    font-size: xx-large;
-   text-decoration: solid;
-    color: black;
+    
+    font-size: 2.5rem; /* Tamaño del texto */
+    color: #ff9900; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    text-shadow: 2px 2px 5px black; /* Sombra para darle efecto */
+   
+  
+    background: linear-gradient(90deg, #ff6600, #ffcc00); /* Gradiente de color */
+    -webkit-background-clip: text; /* Clip del fondo al texto para darle efecto 3d */
+   
 }
 
 #formularioPregunta{

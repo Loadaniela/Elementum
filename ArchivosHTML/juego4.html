@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Bloques</title>
     <link rel="stylesheet" href="css/juego4.css">
+    <link rel="icon" href="/Imagenes/icon-512x512.png">
 </head>
 <body>
     <input type="checkbox" id="toggle">
@@ -29,7 +30,7 @@
 <!--titulo y opciones-->
 <div id="menuoculto">
     <a id="menu1" href="juego4.html">Elementos Nuevos</a>
-    <a id="menu2" href="#">Arrastra los elementos asignados a la tabla periodica vacia. Los colores de los elementos son asigandos conforme a la carga de intensidad de electronegatividad</a>
+    <a id="menu2" href="#">Arrastra los elementos asignados a la tabla periodica vacia. Responde las preguntas de electronegatividad en verdadero o falso</a>
 </div>
 <div class="contenedores">
     <p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
@@ -90,7 +91,7 @@
    <div class="transicion" id="eq22" data-nombre="Titanio" ondrop="drop(event)" ondragover="allowDrop(event)">
    </div>
            
-   <div class="transicion" id="eq40" data-nombre="Zirconio" ondrop="drop(event)" ondragover="allowDrop(event)">
+   <div class="transicion" id="eq40" data-nombre="Circonio" ondrop="drop(event)" ondragover="allowDrop(event)">
    </div>
            
    <div class="transicion" id="eq72" data-nombre="Hafnio" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -422,7 +423,7 @@
     </div>
 
 
-    <!--PARA BUSCAR ELEMENTOS DE ELECTRONEGATIVIDAD-->
+    <!--PARA BUSCAR ELEMENTOS DE ELECTRONEGATIVIDAD ALEATORIAMNTE-->
 <script>
     /*Define la funcion buscar Elemento*/
         async function buscaElemento() {
@@ -589,130 +590,14 @@
     window.history.pushState(null, null, window.location.href);
 </script>
 
-<!--- funcion salvada
+
+
+<!-- EL ESCRIP CORRECTO POR SI NO FUNCIONA
 <script>
     let contadorArrastres = 0; // Cuenta todos los arrastres (correctos e incorrectos)
     let elementosColocadosCorrectamente = 0; // Cuenta solo los elementos colocados correctamente
     const totalElementos = 10; // Total de elementos que se deben colocar correctamente
-
-    // Carga de los sonidos de acierto y error
-    const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
-    const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
-
-    function allowDrop(event) {
-        event.preventDefault();
-    }
-
-    function drag(event) {
-        const elemento = event.target;
-        const nombreElemento = elemento.querySelector('.nombre').textContent.trim();
-        event.dataTransfer.setData('nombreElemento', nombreElemento);
-        event.dataTransfer.setData('elementoId', elemento.id);
-    }
-
-    function drop(event) {
-        event.preventDefault();
-        contadorArrastres++; // Incrementa el contador de arrastres totales en cada intento
-
-        const nombreElemento = event.dataTransfer.getData('nombreElemento');
-        const dropTarget = event.currentTarget;
-        const nombreCelda = dropTarget.getAttribute('data-nombre').trim();
-
-        console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
-
-        if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
-            const elementoId = event.dataTransfer.getData('elementoId');
-            const elemento = document.getElementById(elementoId);
-            dropTarget.appendChild(elemento);
-            elemento.style.position = 'relative';
-            elemento.style.left = '0';
-            elemento.style.top = '0';
-            elemento.classList.add('colocado');
-            elemento.setAttribute('draggable', 'false'); // Deshabilita el arrastre
-            elemento.removeEventListener('dragstart', drag); // Remueve el evento de arrastre
-            
-            elementosColocadosCorrectamente++; // Incrementa el contador de elementos colocados correctamente
-            sonidoAcierto.play(); // Reproduce el sonido de acierto
-        } else {
-            sonidoError.play(); // Reproduce el sonido de error
-        }
-
-        // Actualiza el contador de arrastres en el DOM
-        document.getElementById('contadorArrastres').textContent = contadorArrastres;
-
-        // Verifica si todos los elementos han sido colocados correctamente
-        if (elementosColocadosCorrectamente === totalElementos) {
-            Swal.fire({
-                title: '¡Felicidades!',
-                text: `Has colocado todos los elementos correctamente en ${contadorArrastres} arrastres.`,
-                icon: 'success',
-                confirmButtonText: 'Aceptar'
-            }).then(() => {
-                // Guardar el resultado del juego en la base de datos
-                const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
-                const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
-
-                guardarResultadoJuego(userId, juegoId, contadorArrastres);
-            });
-        }
-    }
-
-    // Función para guardar el resultado del juego
-    function guardarResultadoJuego(userId, juegoId, numArrastres) {
-        const nombreJuego = obtenerNombreJuego(juegoId);
-
-        fetch('/guardar-resultado', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ userId, juegoId, numArrastres })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Resultado guardado:', data);
-
-            if (data.message === 'Resultado guardado correctamente') {
-                // Redirige a marcador.html
-                window.location.href = 'marcador.html';
-            } else {
-                Swal.fire({
-                    title: 'Error',
-                    text: 'Error al guardar resultados: ' + (data.error || 'Error desconocido'),
-                    icon: 'error',
-                    confirmButtonText: 'Aceptar'
-                });
-                console.error('Detalles del error:', data);
-            }
-        })
-        .catch(error => {
-            console.error('Error de red:', error);
-            Swal.fire({
-                title: 'Error de red',
-                text: 'Por favor, intenta nuevamente.',
-                icon: 'error',
-                confirmButtonText: 'Aceptar'
-            });
-        });
-    }
-
-    // Función para obtener el nombre del juego basado en el ID
-    function obtenerNombreJuego(juegoId) {
-        switch (parseInt(juegoId)) {
-            case 1: return 'Bloques';
-            case 2: return 'Elementos';
-            case 3: return 'RadioA';
-            case 4: return 'Electronegatividad';
-            default: return 'Juego desconocido';
-        }
-    }
-</script>
--->
-
-<script>
-    let contadorArrastres = 0; // Cuenta todos los arrastres (correctos e incorrectos)
-    let elementosColocadosCorrectamente = 0; // Cuenta solo los elementos colocados correctamente
-    const totalElementos = 10; // Total de elementos que se deben colocar correctamente
+    
 
     // Carga de los sonidos de acierto y error
     const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
@@ -872,7 +757,205 @@ function drop(event) {
 </script>
 
 
+<script>
+    // Función para obtener preguntas aleatorias de todos los elementos
+    function obtenerPreguntasAleatorias() {
+        fetch('/preguntas-aleatorias')
+            .then(response => response.json())
+            .then(data => {
+                const mensaje = document.getElementById('mensaje');
+                if (data.success) {
+                    // Limpia el contenido previo
+                    mensaje.innerHTML = '';
 
+                    // Recorre las preguntas y las imprime en el DOM
+                    data.preguntas.forEach(pregunta => {
+                        const parrafoPregunta = document.createElement('p');
+                        parrafoPregunta.textContent = `Pregunta del elemento ${pregunta.elementSymbol}: ${pregunta.question}`;
+                        mensaje.appendChild(parrafoPregunta);
+                    });
+                } else {
+                    mensaje.textContent = 'No se encontraron preguntas.';
+                    mensaje.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                console.error('Error al obtener las preguntas:', error);
+                document.getElementById('mensaje').textContent = 'Error al obtener las preguntas.';
+            });
+    }
+
+    // Llama a la función para obtener preguntas aleatorias
+    obtenerPreguntasAleatorias();
+</script>
+-->
+    
+ <!--funcion para guardar el resultado y contador de preguntas-->
+<script>
+    let contadorArrastres = 0; // Cuenta todos los arrastres (correctos e incorrectos)
+let elementosColocadosCorrectamente = 0; // Cuenta solo los elementos colocados correctamente
+const totalElementos = 10; // Total de elementos que se deben colocar correctamente
+let preguntasRespondidas = 0; // Contador de preguntas respondidas
+let respuestasCorrectas = 0; // Contador de respuestas correctas
+
+// Carga de los sonidos de acierto y error
+const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
+const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drag(event) {
+    const elemento = event.target;
+    const nombreElemento = elemento.querySelector('.nombre').textContent.trim();
+    const simboloElemento = elemento.querySelector('.simbolo').textContent.trim(); // Obtén el símbolo
+    event.dataTransfer.setData('nombreElemento', nombreElemento);
+    event.dataTransfer.setData('simboloElemento', simboloElemento); // Guárdalo en el dataTransfer
+    event.dataTransfer.setData('elementoId', elemento.id);
+}
+
+function drop(event) {
+    event.preventDefault();
+    contadorArrastres++; // Incrementa el contador de arrastres totales en cada intento
+
+    const nombreElemento = event.dataTransfer.getData('nombreElemento');
+    const simboloElemento = event.dataTransfer.getData('simboloElemento'); //símbolo almacenado en el drag
+    const dropTarget = event.currentTarget;
+    const nombreCelda = dropTarget.getAttribute('data-nombre').trim();
+
+    console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
+
+    if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
+        const elementoId = event.dataTransfer.getData('elementoId');
+        const elemento = document.getElementById(elementoId);
+        dropTarget.appendChild(elemento);
+        elemento.style.position = 'relative';
+        elemento.style.left = '0';
+        elemento.style.top = '0';
+        elemento.classList.add('colocado');
+        elemento.setAttribute('draggable', 'false'); // Deshabilita el arrastre
+        elemento.removeEventListener('dragstart', drag); // Remueve el evento de arrastre
+        
+        elementosColocadosCorrectamente++; // Incrementa el contador de elementos colocados correctamente
+        sonidoAcierto.play(); // Reproduce el sonido de acierto
+
+        // fetch para obtener la pregunta usando el símbolo
+        fetch(`/get-question/${simboloElemento}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.question) {
+                    // Incrementa el contador de preguntas obtenidas
+                    preguntasRespondidas++;
+
+                    // pregunta y opciones de verdadero o falso
+                    Swal.fire({
+                        title: `Pregunta para ${nombreElemento}`,
+                        text: data.question,
+                        icon: 'info',
+                        showDenyButton: true,
+                        confirmButtonText: 'Verdadero',
+                        denyButtonText: 'Falso',
+                    }).then((result) => {
+                        let esCorrecto = data.correctAnswer; // Obtiene el booleano del resultado correcto
+
+                        // Evaluar la respuesta del usuario
+                        if ((result.isConfirmed && esCorrecto) || (result.isDenied && !esCorrecto)) {
+                            Swal.fire({
+                                title: '¡Correcto!',
+                                text: 'Has respondido correctamente.',
+                                icon: 'success',
+                                confirmButtonText: 'Aceptar'
+                            });
+                            respuestasCorrectas++; // Incrementa el contador de respuestas correctas
+                        } else {
+                            Swal.fire({
+                                title: 'Incorrecto',
+                                text: `La respuesta correcta era: ${esCorrecto ? 'Verdadero' : 'Falso'}`,
+                                icon: 'error',
+                                confirmButtonText: 'Aceptar'
+                            });
+                        }
+                    });
+                } else {
+                    console.error('No se encontró una pregunta para el símbolo:', simboloElemento);
+                }
+            })
+            .catch(error => console.error('Error al obtener la pregunta:', error));
+        
+    } else {
+        sonidoError.play(); // Reproduce el sonido de error
+    }
+
+    // Actualiza el contador de arrastres en el DOM
+    document.getElementById('contadorArrastres').textContent = contadorArrastres;
+
+    // Verifica si todos los elementos han sido colocados correctamente
+    if (elementosColocadosCorrectamente === totalElementos) {
+        Swal.fire({
+            title: '¡Felicidades!',
+            text: `Has colocado todos los elementos correctamente en ${contadorArrastres} arrastres.`,
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        }).then(() => {
+            // Guarda el resultado del juego en la base de datos
+            const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
+            const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
+
+            guardarResultadoJuego(userId, juegoId, contadorArrastres, preguntasRespondidas, respuestasCorrectas);
+        });
+    }
+}
+
+// Función para guardar el resultado del juego
+function guardarResultadoJuego(userId, juegoId, numArrastres, totalPreguntas, correctas) {
+    fetch('/guardar-resultado', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ userId, juegoId, numArrastres, totalPreguntas, correctas })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Resultado guardado:', data);
+
+        if (data.message === 'Resultado guardado correctamente') {
+            // Redirige a marcador.html
+            window.location.href = 'marcador.html';
+        } else {
+            Swal.fire({
+                title: 'Error',
+                text: 'Error al guardar resultados: ' + (data.error || 'Error desconocido'),
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+            console.error('Detalles del error:', data);
+        }
+    })
+    .catch(error => {
+        console.error('Error de red:', error);
+        Swal.fire({
+            title: 'Error de red',
+            text: 'Por favor, intenta nuevamente.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+    });
+}
+
+// Función para obtener el nombre del juego basado en el ID
+function obtenerNombreJuego(juegoId) {
+    switch (parseInt(juegoId)) {
+        case 1: return 'Bloques';
+        case 2: return 'Elementos';
+        case 3: return 'RadioA';
+        case 4: return 'Electronegatividad';
+        default: return 'Juego desconocido';
+    }
+}
+
+</script>
 
 </body>
 
