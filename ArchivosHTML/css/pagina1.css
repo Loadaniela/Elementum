@@ -240,7 +240,7 @@ p{
 #slider div p {
 	position: relative;
 	bottom: 30px;
-    top:-50px;
+    top:-10px;
 	padding: 0px 25px;
 	left: 0px;
 	margin: 0;
@@ -256,7 +256,7 @@ p{
 /* Línea decorativa para el efecto hover */ 
 #slider div p:after {
 	position: absolute;
-	top: -30px;
+	top: -50px;
 	left: 25px;
 	height: 3px;
 	width: 550px;

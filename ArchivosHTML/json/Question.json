@@ -16,7 +16,7 @@
     },
     {
       "question": "¿El Berilio tiene una electronegatividad mayor que 1.5?",
-      "correctAnswer": false,
+      "correctAnswer": true,
       "elementSymbol": "Be"
     },
     {
@@ -36,7 +36,7 @@
     },
     {
       "question": "¿El Oxígeno tiene una electronegatividad menor que 3?",
-      "correctAnswer": false,
+      "correctAnswer": true,
       "elementSymbol": "O"
     },
     {
@@ -56,12 +56,12 @@
     },
     {
       "question": "¿El Magnesio tiene una electronegatividad menor que 1.5?",
-      "correctAnswer": true,
+      "correctAnswer": false,
       "elementSymbol": "Mg"
     },
     {
       "question": "¿El Aluminio tiene una electronegatividad menor que 1.5?",
-      "correctAnswer": true,
+      "correctAnswer": false,
       "elementSymbol": "Al"
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "question": "¿El Fósforo tiene una electronegatividad mayor que 2?",
-      "correctAnswer": false,
+      "correctAnswer": true,
       "elementSymbol": "P"
     },
     {
@@ -100,47 +100,47 @@
       "elementSymbol": "Ca"
     },
     {
-      "question": "¿El Escandio tiene una electronegatividad mayor que 1.3?",
-      "correctAnswer": false,
+      "question": "¿El Escandio tiene una electronegatividad mayor que 1.2?",
+      "correctAnswer": true,
       "elementSymbol": "Sc"
     },
     {
-      "question": "¿El Titanio tiene una electronegatividad mayor que 1.5?",
+      "question": "¿El Titanio tiene una electronegatividad mayor que 1.4?",
       "correctAnswer": true,
       "elementSymbol": "Ti"
     },
     {
-      "question": "¿El Vanadio tiene una electronegatividad mayor que 1.6?",
+      "question": "¿El Vanadio tiene una electronegatividad mayor que 1.5?",
       "correctAnswer": true,
       "elementSymbol": "V"
     },
     {
-      "question": "¿El Cromo tiene una electronegatividad mayor que 1.6?",
+      "question": "¿El Cromo tiene una electronegatividad mayor que 1.2?",
       "correctAnswer": true,
       "elementSymbol": "Cr"
     },
     {
-      "question": "¿El Manganeso tiene una electronegatividad mayor que 1.5?",
+      "question": "¿El Manganeso tiene una electronegatividad mayor que 1.1?",
       "correctAnswer": true,
       "elementSymbol": "Mn"
     },
     {
-      "question": "¿El Hierro tiene una electronegatividad mayor que 1.8?",
+      "question": "¿El Hierro tiene una electronegatividad mayor que 1.4?",
       "correctAnswer": true,
       "elementSymbol": "Fe"
     },
     {
-      "question": "¿El Cobalto tiene una electronegatividad mayor que 1.8?",
+      "question": "¿El Cobalto tiene una electronegatividad mayor que 1.7?",
       "correctAnswer": true,
       "elementSymbol": "Co"
     },
     {
-      "question": "¿El Níquel tiene una electronegatividad mayor que 1.9?",
+      "question": "¿El Níquel tiene una electronegatividad mayor que 1.7?",
       "correctAnswer": true,
       "elementSymbol": "Ni"
     },
     {
-      "question": "¿El Cobre tiene una electronegatividad mayor que 1.9?",
+      "question": "¿El Cobre tiene una electronegatividad mayor que 1.6?",
       "correctAnswer": true,
       "elementSymbol": "Cu"
     },
@@ -150,12 +150,12 @@
       "elementSymbol": "Zn"
     },
     {
-      "question": "¿El Galio tiene una electronegatividad mayor que 1.8?",
+      "question": "¿El Galio tiene una electronegatividad mayor que 1.6?",
       "correctAnswer": true,
       "elementSymbol": "Ga"
     },
     {
-      "question": "¿El Germanio tiene una electronegatividad mayor que 2?",
+      "question": "¿El Germanio tiene una electronegatividad mayor que 1.9?",
       "correctAnswer": true,
       "elementSymbol": "Ge"
     },
@@ -165,7 +165,7 @@
       "elementSymbol": "As"
     },
     {
-      "question": "¿El Selenio tiene una electronegatividad mayor que 2.5?",
+      "question": "¿El Selenio tiene una electronegatividad mayor que 2.4?",
       "correctAnswer": true,
       "elementSymbol": "Se"
     },
@@ -175,7 +175,7 @@
       "elementSymbol": "Br"
     },
     {
-      "question": "¿El Kriptón tiene una electronegatividad mayor que 2.5?",
+      "question": "¿El Kriptón tiene una electronegatividad mayor que 2.8?",
       "correctAnswer": true,
       "elementSymbol": "Kr"
     }
