@@ -44,19 +44,69 @@
                 max-width: 800px;
                 margin: 0 auto;
             }
+            /*
             .resultado {
                 background-color: #fff;
                 border: 1px solid #ddd;
                 border-radius: 5px;
                 margin-bottom: 15px;
                 padding: 15px;
-            }
+            }*/
             .resultado p {
                 margin: 5px 0;
             }
             .resultado hr {
                 margin: 10px 0;
             }
+            .resultado {
+        background-color: #faf6f6; /* Cambiado de negro a gris oscuro */
+        color: rgb(5, 5, 5);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, background-color 0.3s;
+        display: flex;
+        align-items: center;
+    }
+
+    .icono-resultado {
+        font-size: 40px;
+        margin-right: 15px;
+        color: #f38e1b;
+    }
+
+    .contenido-resultado {
+        flex-grow: 1;
+    }
+
+    .calificacion-obtenida {
+        font-size: 32px;
+        font-weight: bold;
+        color: #4caf50;
+        text-align: center;
+    }
+
+    .calificacion-obtenida.mala {
+        color: #f44336;
+    }
+
+    /* Nueva sección del podio */
+    .podio {
+        background-color: #f38e1b;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Animación para la aparición suave */
+    .mostrar {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
         </style>
 
         <h2>Marcador de Resultados</h2>
@@ -65,6 +115,7 @@
         </div>
     </main>
 
+    <!-- SCRIP GUARDADO
     <script>
         function cargarPerfil() {
             return fetch('/perfil')
@@ -116,8 +167,8 @@
                             <p><strong>Juego:</strong> ${resultado.juegos.nombre_juego}</p>
                             <p><strong>Número de Arrastres:</strong> ${resultado.numArrastres}</p>
                             <p><strong>Calificación obtenida:</strong> ${resultado.calificacion}</p>
-                            <p><strong>Total de Preguntas:</strong> ${resultado.totalPreguntas || 'N/A'}</p> <!-- Si no hay preguntas mostarar eso -->
-                            <p><strong>Respuestas Correctas:</strong> ${resultado.respuestasCorrectas || 'N/A'}</p> <!-- No hay pregunta -->
+                            <p><strong>Total de Preguntas:</strong> ${resultado.totalPreguntas || 'N/A'}</p> <!-- Si no hay preguntas mostarar eso 
+                            <p><strong>Respuestas Correctas:</strong> ${resultado.respuestasCorrectas || 'N/A'}</p> <!-- No hay pregunta 
                             <p><strong>Hora de Inicio:</strong> ${new Date(resultado.hora_inicio).toLocaleString()}</p>
                             <p><strong>Hora de Fin:</strong> ${new Date(resultado.hora_fin).toLocaleString()}</p>
                             <hr>
@@ -154,6 +205,123 @@
                     alert('Error al cerrar sesión');
                 });
         });
+    </script> -->
+
+    <script>
+        function cargarPerfil() {
+            return fetch('/perfil')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No autorizado');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('nombre').textContent = data.nombre;
+                    document.getElementById('correo').textContent = data.correo;
+                    document.getElementById('usuario').textContent = data.usuario;
+                    return data.id; // Retorna el userId para usarlo después
+                })
+                .catch(error => {
+                    console.error('Error al cargar el perfil:', error);
+                    alert('Debes iniciar sesión primero');
+                    window.location.href = '/login.html';
+                });
+        }
+    
+        function mostrarResultados(userId) {
+            if (!userId) {
+                alert('No se pudo encontrar el ID del usuario.');
+                return;
+            }
+    
+            fetch(`/obtener-resultados?userId=${userId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la respuesta del servidor');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const resultadosContenedor = document.getElementById('resultados');
+                    resultadosContenedor.innerHTML = '';
+    
+                    if (data.length === 0) {
+                        resultadosContenedor.innerHTML = '<p>No se encontraron resultados.</p>';
+                        return;
+                    }
+    
+                    data.forEach((resultado, index) => {
+                        const item = document.createElement('div');
+                        item.className = 'resultado';
+    
+                        const iconoJuego = document.createElement('span');
+                        iconoJuego.className = 'icono-resultado';
+                        iconoJuego.innerHTML = '🎮';  // Aquí puedes cambiar el icono según el tipo de juego
+    
+                        const contenidoResultado = document.createElement('div');
+                        contenidoResultado.className = 'contenido-resultado';
+    
+                        // Leyenda de calificación y podio visual
+                        const calificacionClase = resultado.calificacion >= 10 ? '' : 'mala';
+                        contenidoResultado.innerHTML = `
+                            <p><strong>Juego:</strong> ${resultado.juegos.nombre_juego}</p>
+                            <div class="podio">
+                                <div>Calificación</div>
+                                <div class="calificacion-obtenida ${calificacionClase}">
+                                    ${resultado.calificacion} puntos 
+                                </div>
+                            </div>
+                            <div class="detalles-resultado">
+                                <p><strong>Número de Arrastres:</strong> ${resultado.numArrastres}</p>
+                                <p><strong>Total de Preguntas:</strong> ${resultado.totalPreguntas || 'N/A'}</p>
+                                <p><strong>Respuestas Correctas:</strong> ${resultado.respuestasCorrectas || 'N/A'}</p>
+                                <p><strong>Hora de Inicio:</strong> ${new Date(resultado.hora_inicio).toLocaleString()}</p>
+                                <p><strong>Hora de Fin:</strong> ${new Date(resultado.hora_fin).toLocaleString()}</p>
+                            </div>
+                        `;
+    
+                        item.appendChild(iconoJuego);
+                        item.appendChild(contenidoResultado);
+    
+                        // Agregar con animación de retraso para cada item
+                        setTimeout(() => {
+                            item.classList.add('mostrar');
+                        }, index * 100); // Retraso para cada item
+    
+                        resultadosContenedor.appendChild(item);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener los resultados:', error);
+                    alert('Error al cargar los resultados.');
+                });
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarPerfil().then(userId => {
+                if (userId) {
+                    mostrarResultados(userId); // Llama a la función después de obtener el userId
+                }
+            });
+        });
+    
+        document.getElementById('logout').addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch('/logout', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/login.html';
+                    } else {
+                        throw new Error('Error al cerrar sesión');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al cerrar sesión:', error);
+                    alert('Error al cerrar sesión');
+                });
+        });
     </script>
+    
 </body>
 </html>

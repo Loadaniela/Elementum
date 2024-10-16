@@ -739,6 +739,8 @@ window.addEventListener('popstate', function (event) {
     }
 
     function drag(event) {
+        event.dataTransfer.setData('text', event.target.id);  // Guardar el ID del elemento arrastrado
+        event.dataTransfer.setDragImage(event.target, event.target.clientWidth / 2, event.target.clientHeight / 2);  // Centramos el punto de agarre
         const elemento = event.target;
         const nombreElemento = elemento.querySelector('.nombre').textContent.trim();
         event.dataTransfer.setData('nombreElemento', nombreElemento);
@@ -746,51 +748,52 @@ window.addEventListener('popstate', function (event) {
     }
 
     function drop(event) {
-        event.preventDefault();
-        contadorArrastres++; // Incrementa el contador de arrastres totales en cada intento
+    event.preventDefault();
+    contadorArrastres++; // Incrementa el contador de arrastres totales en cada intento
 
-        const nombreElemento = event.dataTransfer.getData('nombreElemento');
-        const dropTarget = event.currentTarget;
-        const nombreCelda = dropTarget.getAttribute('data-nombre').trim();
+    const nombreElemento = event.dataTransfer.getData('nombreElemento');
+    const dropTarget = event.currentTarget;
+    const nombreCelda = dropTarget.getAttribute('data-nombre').trim();
 
-        console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
+    console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
 
-        if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
-            const elementoId = event.dataTransfer.getData('elementoId');
-            const elemento = document.getElementById(elementoId);
-            dropTarget.appendChild(elemento);
-            elemento.style.position = 'relative';
-            elemento.style.left = '0';
-            elemento.style.top = '0';
-            elemento.classList.add('colocado');
-            elemento.setAttribute('draggable', 'false'); // Deshabilita el arrastre
-            elemento.removeEventListener('dragstart', drag); // Remueve el evento de arrastre
-            
-            elementosColocadosCorrectamente++; // Incrementa el contador de elementos colocados correctamente
-            sonidoAcierto.play(); // Reproduce el sonido de acierto
-        } else {
-            sonidoError.play(); // Reproduce el sonido de error
-        }
-
-        // Actualiza el contador de arrastres en el DOM
-        document.getElementById('contadorArrastres').textContent = contadorArrastres;
-
-        // Verifica si todos los elementos han sido colocados correctamente
-        if (elementosColocadosCorrectamente === totalElementos) {
-            Swal.fire({
-                title: '¡Felicidades!',
-                text: `Has colocado todos los elementos correctamente en ${contadorArrastres} arrastres.`,
-                icon: 'success',
-                confirmButtonText: 'Aceptar'
-            }).then(() => {
-                // Guardar el resultado del juego en la base de datos
-                const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
-                const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
-
-                guardarResultadoJuego(userId, juegoId, contadorArrastres);
-            });
-        }
+    // Verificar si el nombre del elemento coincide con el nombre de la celda
+    if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
+        const elementoId = event.dataTransfer.getData('elementoId');
+        const elemento = document.getElementById(elementoId);
+        dropTarget.appendChild(elemento);  // Coloca el elemento en la nueva celda
+        elemento.style.position = 'relative';
+        elemento.style.left = '0';
+        elemento.style.top = '0';
+        elemento.classList.add('colocado');
+        elemento.setAttribute('draggable', 'false'); // Deshabilitar arrastre después de soltarlo
+        elemento.removeEventListener('dragstart', drag); // Remover evento de arrastre
+        
+        elementosColocadosCorrectamente++; // Incrementa el contador de elementos colocados correctamente
+        sonidoAcierto.play(); // Reproduce el sonido de acierto
+    } else {
+        sonidoError.play(); // Reproduce el sonido de error
     }
+
+    // Actualiza el contador de arrastres en el DOM
+    document.getElementById('contadorArrastres').textContent = contadorArrastres;
+
+    // Verifica si todos los elementos han sido colocados correctamente
+    if (elementosColocadosCorrectamente === totalElementos) {
+        Swal.fire({
+            title: '¡Felicidades!',
+            text: `Has colocado todos los elementos correctamente en ${contadorArrastres} arrastres.`,
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        }).then(() => {
+            // Guardar el resultado del juego en la base de datos
+            const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
+            const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
+
+            guardarResultadoJuego(userId, juegoId, contadorArrastres);
+        });
+    }
+}
 
     // Función para guardar el resultado del juego
     function guardarResultadoJuego(userId, juegoId, numArrastres) {
@@ -842,6 +845,7 @@ window.addEventListener('popstate', function (event) {
         }
     }
 </script>
+
 
 
 </body>

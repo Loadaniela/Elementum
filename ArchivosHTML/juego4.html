@@ -807,6 +807,8 @@ function allowDrop(event) {
 }
 
 function drag(event) {
+    event.dataTransfer.setData('text', event.target.id);  // Guardar el ID del elemento arrastrado
+    event.dataTransfer.setDragImage(event.target, event.target.clientWidth / 2, event.target.clientHeight / 2);  // Centramos el punto de agarre
     const elemento = event.target;
     const nombreElemento = elemento.querySelector('.nombre').textContent.trim();
     const simboloElemento = elemento.querySelector('.simbolo').textContent.trim(); // Obtén el símbolo
@@ -820,69 +822,25 @@ function drop(event) {
     contadorArrastres++; // Incrementa el contador de arrastres totales en cada intento
 
     const nombreElemento = event.dataTransfer.getData('nombreElemento');
-    const simboloElemento = event.dataTransfer.getData('simboloElemento'); //símbolo almacenado en el drag
     const dropTarget = event.currentTarget;
     const nombreCelda = dropTarget.getAttribute('data-nombre').trim();
 
     console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
 
+    // Verificar si el nombre del elemento coincide con el nombre de la celda
     if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
         const elementoId = event.dataTransfer.getData('elementoId');
         const elemento = document.getElementById(elementoId);
-        dropTarget.appendChild(elemento);
+        dropTarget.appendChild(elemento);  // Coloca el elemento en la nueva celda
         elemento.style.position = 'relative';
         elemento.style.left = '0';
         elemento.style.top = '0';
         elemento.classList.add('colocado');
-        elemento.setAttribute('draggable', 'false'); // Deshabilita el arrastre
-        elemento.removeEventListener('dragstart', drag); // Remueve el evento de arrastre
+        elemento.setAttribute('draggable', 'false'); // Deshabilitar arrastre después de soltarlo
+        elemento.removeEventListener('dragstart', drag); // Remover evento de arrastre
         
         elementosColocadosCorrectamente++; // Incrementa el contador de elementos colocados correctamente
         sonidoAcierto.play(); // Reproduce el sonido de acierto
-
-        // fetch para obtener la pregunta usando el símbolo
-        fetch(`/get-question/${simboloElemento}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.question) {
-                    // Incrementa el contador de preguntas obtenidas
-                    preguntasRespondidas++;
-
-                    // pregunta y opciones de verdadero o falso
-                    Swal.fire({
-                        title: `Pregunta para ${nombreElemento}`,
-                        text: data.question,
-                        icon: 'info',
-                        showDenyButton: true,
-                        confirmButtonText: 'Verdadero',
-                        denyButtonText: 'Falso',
-                    }).then((result) => {
-                        let esCorrecto = data.correctAnswer; // Obtiene el booleano del resultado correcto
-
-                        // Evaluar la respuesta del usuario
-                        if ((result.isConfirmed && esCorrecto) || (result.isDenied && !esCorrecto)) {
-                            Swal.fire({
-                                title: '¡Correcto!',
-                                text: 'Has respondido correctamente.',
-                                icon: 'success',
-                                confirmButtonText: 'Aceptar'
-                            });
-                            respuestasCorrectas++; // Incrementa el contador de respuestas correctas
-                        } else {
-                            Swal.fire({
-                                title: 'Incorrecto',
-                                text: `La respuesta correcta era: ${esCorrecto ? 'Verdadero' : 'Falso'}`,
-                                icon: 'error',
-                                confirmButtonText: 'Aceptar'
-                            });
-                        }
-                    });
-                } else {
-                    console.error('No se encontró una pregunta para el símbolo:', simboloElemento);
-                }
-            })
-            .catch(error => console.error('Error al obtener la pregunta:', error));
-        
     } else {
         sonidoError.play(); // Reproduce el sonido de error
     }
@@ -898,11 +856,11 @@ function drop(event) {
             icon: 'success',
             confirmButtonText: 'Aceptar'
         }).then(() => {
-            // Guarda el resultado del juego en la base de datos
+            // Guardar el resultado del juego en la base de datos
             const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
             const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
 
-            guardarResultadoJuego(userId, juegoId, contadorArrastres, preguntasRespondidas, respuestasCorrectas);
+            guardarResultadoJuego(userId, juegoId, contadorArrastres);
         });
     }
 }

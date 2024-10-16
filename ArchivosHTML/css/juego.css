@@ -945,17 +945,6 @@ div{
   }
   
   
- 
-  /*
-  .box11{
-      width: 10px;
-      height: 10px;
-      background: #006666;
-      position: absolute;
-      top: 140px;left: 580px;
-  }
-  /*fin colores de los tipos de elementos*/
-  
   
   .bloques{
     width: 130px; /*Ancho*/
@@ -1051,31 +1040,3 @@ div{
 }
 
 
-/*RESPONSIVE*/
-/* Para pantallas de menos de 768px (móviles) */
-@media (max-width: 768px) {
-    .glitch {
-      font-size: 4em; /* Ajusta el tamaño de fuente para pantallas pequeñas */
-      left: 2%; /* Ajusta la posición desde el lado izquierdo */
-    }
-}
-
-/* Para pantallas entre 768px y 1024px (tabletas) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .glitch {
-      font-size: 5em;
-    }
-  
-    .profile {
-      max-width: 80%;
-    }
-  
-    .hamburger {
-      top: 15px;
-      right: 15px;
-    }
-  
-    .menu {
-      width: 230px;
-    }
-  }
