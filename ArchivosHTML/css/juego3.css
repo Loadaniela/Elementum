@@ -1,5 +1,6 @@
 body{
-    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+    background-image: url(../Imagenes/prueba3.png);
+    /* Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
 }
 
 
@@ -16,9 +17,9 @@ p{
     align-items: center;
    right: 10%;
    top: -100px;
-    font-family: 'Permanent Marker', cursive;
+    
     font-size: 5em;
-    text-shadow: 8px -8px 0px #d37d1b;
+    text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -143,7 +144,7 @@ p{
     display: block;
     width: 35px;
     height: 4px;  /* Reduje la altura de las líneas */
-    background-color: #f18826;
+    background-color: #8319ca;
     margin: 6px 0;  /* Espaciado entre líneas */
     border-radius: 2px;  /* Bordes redondeados */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -287,8 +288,8 @@ div{
   /*elementos*/
   
   .gas{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -309,8 +310,8 @@ div{
   }
   
   .alcalino{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -351,8 +352,8 @@ div{
   }
   
   .alcalinoterreos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -391,8 +392,8 @@ div{
   }
   
   .transicion{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -415,8 +416,8 @@ div{
   }
   
   .lantanidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -435,8 +436,8 @@ div{
   }
   
   .actinidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -609,8 +610,8 @@ div{
       color: #9C9C9C;
   }
   .metaloides{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -628,8 +629,8 @@ div{
       top: 160px;left: 740px;
   }
   .metales{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -660,8 +661,8 @@ div{
   }
   
   .desconocidos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -756,8 +757,8 @@ div{
       color: #9C9C9C;
   }
   .halogenos{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
@@ -799,8 +800,8 @@ div{
       color: #9C9C9C;
   }
   .nobles{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;

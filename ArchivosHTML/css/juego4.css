@@ -1,8 +1,9 @@
 /*CSS PARA EL TITULO*/
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+  
+    background-image: url(../Imagenes/prueba3.png);
+    /* Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
@@ -15,9 +16,9 @@ p{
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
-    font-family: 'Permanent Marker', cursive;
+   
     font-size: 5em;
-    text-shadow: 8px -8px 0px #d37d1b;
+    text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -145,7 +146,7 @@ p{
     display: block;
     width: 35px;
     height: 4px;  /* Reduje la altura de las líneas */
-    background-color: #f18826;
+    background-color: #8319ca;
     margin: 6px 0;  /* Espaciado entre líneas */
     border-radius: 2px;  /* Bordes redondeados */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -1053,7 +1054,7 @@ div{
     font-size: small;
     cursor: move;
     border-radius: 2px;
-    background: #ee2a1c; /*no mover*/
+    background: #b169e0; /*no mover*/
     -webkit-transition-duration: 0.9s;
     
 }

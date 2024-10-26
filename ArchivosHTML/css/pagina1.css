@@ -1,11 +1,12 @@
 body {
-  
-    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
-    /*background-image: url(../Imagenes/fondo1.jpg);*/
+	
+    /*Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
+    background-image: url(../Imagenes/prueba3.png);
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center;
 	display: flex;
+	opacity: 4;
     
    /* 
     height: 100vh;
@@ -58,7 +59,7 @@ p{
     display: block;
     width: 35px;
     height: 4px;  /* Reduje la altura de las líneas */
-    background-color: #f18826;
+    background-color: #340455;
     margin: 6px 0;  /* Espaciado entre líneas */
     border-radius: 2px;  /* Bordes redondeados */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -73,7 +74,7 @@ p{
     top: 0;
     right: 0;
     
-    background-color: #746b63;
+    background-color:  rgb(196, 217, 236);
     width: 250px;
     height: 100%;
     transform: translateX(100%);
@@ -115,14 +116,15 @@ p{
 
 /* Contenedor principal */
 #tablon {
-    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+    /*Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
+	background-image: url(../Imagenes/prueba3.png);
 	width: 1245px;
 	max-width: 100%;
 	height: 600px; /*Largo de todo*/
 	margin: 0 auto;
     justify-content: center;
 	padding: 0;
-	font-family: 'Open Sans';
+	
 	font-size: 0;
 	
 	overflow: hidden;
@@ -193,6 +195,7 @@ p{
 	min-height: 100%;
 	position: absolute;
 	z-index: 4;
+	opacity: 3;
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -225,7 +228,7 @@ p{
 	font-size: 60px;
 	text-transform: uppercase;
 	font-weight: 400;
-	color: #f7f5f3;
+	color: #f5f3f7;
 	line-height: 55px;
 	letter-spacing: -2px;
 	text-shadow: 15px 15px 15px rgba(0,0,0,0.7);
@@ -306,15 +309,17 @@ p{
 a.mas, a.menos {
 	opacity: 0;
 	position: absolute;
-	bottom: 300px; /*bajo la flechas*/
-	right: 700px; /*distancia entre las flechaas*/
+	bottom: 350px; /*bajo la flechas*/
+	right: 750px; /*distancia entre las flechaas*/
 	z-index: 40;
-	margin-top: -30px;
+	/*margin-top: -30px;
+	/*
 	width: 100px;   /*estaba en 20*/
-	height: 100px;  /*estaba en 30*/
+	/*height: 100px;  /*estaba en 30
+	*/
 	text-align: center;
-	line-height: 24px;
-	font-size: 100px;
+	line-height: 0px;
+	font-size: 140px; /*tamaño de las flechas*/
 	color: white;
 	background: rgba(0,0,0,0.4);
 	border: 2px solid #FFF;
@@ -547,7 +552,7 @@ height: 100%;
     align-items: center;
    
     font-size: 7em;
-    text-shadow: 8px -8px 0px #d37d1b;
+    text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -565,7 +570,7 @@ height: 100%;
     clip: rect(0, 900px, 0, 0);
     overflow: hidden;
 }
-
+/*
 .glitch::before {
     left: 7px;
     text-shadow: 1px 0 #eeedea;
@@ -577,7 +582,7 @@ height: 100%;
     text-shadow: -1px 0 #ebe4e4;
     animation: glitch-effect 2s infinite linear alternate-reverse;
 }
-
+*/
 @keyframes glitch-effect {
     0% {
         clip: rect(10px, 9999px, 48px, 0);

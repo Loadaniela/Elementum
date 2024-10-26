@@ -21,9 +21,9 @@
         <nav class="menu">
             <ul>
                 <li><a href="#" >PERFIL DEL JUGADOR</a></li>
-                <p><strong style="color: orange;">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
-                <p><strong style="color: orange;">Correo:</strong> <span id="correo" style="color: white;"></span></p>
-                <p><strong style="color: orange;">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
+                <p><strong style="color: rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
+                <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>
+                <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
                 
                 <li><a href="login.html" id="logout">Cerrar sesión</a></li>
                 <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
@@ -45,28 +45,28 @@
             <div id="slider-wrapper">
                  <p id="hover">Pasa tu mouse por encima</p>
                 <div id="slider">
-                    <a href="juego.html">
+                    <a href="javascript:void(0);" onclick="instruccionesJuego1()">
                         <img src="Imagenes/juego11.jpg" alt="">
                         <div>
                             <span>Juego 1<br/><b>Bloques</b></span>					
                             <p>Se pueden distingir 4 bloques generados de acuerdo al orbital que están ocupando los elctrones más externos: S, P, D y F. </p>
                         </div>
                     </a>
-                    <a href="juego2.html">
+                    <a href="javascript:void(0);" onclick="instruccionesJuego2()">
                         <img src="Imagenes/fotoJ2.jpg" alt="">
                         <div>
                             <span>Juego 2<br/><b>Elementos</b></span>					
                             <p>Un elemento, en química, es un tipo de materia formada por átomos, poseen un número determinado de protones en su núcleo haciéndolo pertenecer a una categoría única clasificada por su número atómico.</p>
                         </div>
                     </a>
-                    <a href="juego3.html">
+                    <a href="javascript:void(0);" onclick="instruccionesJuego3()">
                         <img src="Imagenes/fotoJ3.jpg" alt="">
                         <div>
                             <span>Juego 3<br/><b>Radio Atomico</b></span>				
                             <p>El radio atómico identifica la distancia entre dos núcleos de un mismo elemento enlazados entre sí.</p>
                         </div>
                     </a>
-                    <a href="juego4.html">
+                    <a href="javascript:void(0);" onclick="instruccionesJuego4()">
                         <img src="Imagenes/foto4J.jpg" alt="">
                         <div>
                             <span>Juego 4<br/><b>Electronegatividad</b></span>				
@@ -95,7 +95,7 @@
                         </a>
                         <a href="normas.html" id="rules">
                             <img src="Imagenes/normas.jpg">
-                             <p>Normas y reglas del juego</p>
+                             <p>Reglas del juego</p>
                         </a>
                     </div>
                     <div class="down">
@@ -152,6 +152,71 @@
                 });
         });
     </script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script> /*instruciones del juego1*/
+        function instruccionesJuego1() {
+            Swal.fire({
+                title: 'Instrucciones Del Juego Bloques',
+                text: 'Arrastra los nombres de los bloques a su lugar correspondiente en los 4 bloques en los que se clasifica la tabla periódica',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonText: 'Jugar ahora',
+                cancelButtonText: 'Quizá más tarde'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'juego.html';  // Abre el juego si el usuario hace clic en "Jugar ahora"
+                }
+            });
+        }
+    </script>
+
+<script> /*instruciones del juego 2*/
+function instruccionesJuego2() {
+    Swal.fire({
+        title: 'Instrucciones Del Juego Elementos',
+        text: 'Arrastra los elementos a su lugar correspondiente en la tabla periódica, en caso de que lo desees, puedes cambiar de elementos.',
+        showCancelButton: true,
+        confirmButtonText: 'Jugar ahora',
+        cancelButtonText: 'Quizá más tarde',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = 'juego2.html';
+        }
+    });
+}
+</script>
+
+<script> /*instruciones juego 3*/
+    function instruccionesJuego3() {
+        Swal.fire({
+            title: 'Instrucciones Del Juego Radio Atómico',
+            text: 'Arrastra los elementos asignados, posiciona el elemento conforme a la carga de radio atómico que te muestra en la tabla y compara los números.',
+            showCancelButton: true,
+            confirmButtonText: 'Jugar ahora',
+            cancelButtonText: 'Quizá más tarde',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'juego3.html';
+            }
+        });
+    }
+    </script>
+
+<script> /*instruciones del juego 4*/
+    function instruccionesJuego4() {
+        Swal.fire({
+            title: 'Instrucciones Del Juego Electronegatividad',
+            text: 'Arrastra los elementos asignados a la tabla periódica vacía. Responde las preguntas de electronegatividad en verdadero o falso.',
+            showCancelButton: true,
+            confirmButtonText: 'Jugar ahora',
+            cancelButtonText: 'Quizá más tarde',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'juego4.html';
+            }
+        });
+    }
+    </script>  
 </body>
 </html>

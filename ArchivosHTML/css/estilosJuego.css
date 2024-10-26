@@ -1,8 +1,8 @@
 body {
-    background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    
+    /*background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
+   /* background-size: cover; 
+    background-repeat: no-repeat; */
+    background-image: url(../Imagenes/prueba.jpg);
     
     margin: 0;
     padding: 0;
@@ -192,7 +192,7 @@ body {
     display: block;
     width: 35px;
     height: 4px;  /* Reduje la altura de las líneas */
-    background-color: #f18826;
+    background-color: #8319ca;
     margin: 6px 0;  /* Espaciado entre líneas */
     border-radius: 2px;  /* Bordes redondeados */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -292,30 +292,13 @@ body {
     text-align: center;
     align-items: center;
     font-size: 5em;
-    text-shadow: 8px -8px 0px #d37d1b;
+    text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: black;
-    color: #f0efee;
-    clip: rect(0, 900px, 0, 0);
-    overflow: hidden;
-}
 
-.glitch::before {
-    left: 7px;
-    text-shadow: 1px 0 #eeedea;
-    animation: glitch-effect 3s infinite linear alternate-reverse;
-}
 
 .glitch::after {
     left: 3px;
@@ -427,7 +410,7 @@ body {
 #formulario{
     
     font-size: 2.5rem; /* Tamaño del texto */
-    color: #ff9900; /* Color del texto */
+    color: #8319ca; /* Color del texto */
     text-align: center; /* Centrar el texto */
     text-shadow: 2px 2px 5px black; /* Sombra para darle efecto */
    
@@ -482,7 +465,7 @@ input[type="text"], select {
 }
 
 button {
-    background-color: #fc800d;
+    background-color: #8319ca;
     color: #000;
     padding: 10px 20px;
     font-size: 16px;

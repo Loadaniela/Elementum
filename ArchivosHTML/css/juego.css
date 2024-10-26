@@ -1,11 +1,12 @@
 /*CSS PARA EL TITULO*/
 
 body{
-    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+    /*Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
+    background-image: url(../Imagenes/prueba3.png);
     background-size: cover;
     background-position: center;
     margin: 0;
-    
+    background-attachment: fixed;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
@@ -16,7 +17,7 @@ body{
     bottom: 120px; /* Ajusta la posición desde el top del contenedor */
     left: 5%;
     font-size: 6em;
-    text-shadow: 8px -8px 0px #d37d1b;
+    text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -131,7 +132,7 @@ body{
     display: block;
     width: 35px;
     height: 4px;  /* Reduje la altura de las líneas */
-    background-color: #f18826;
+    background-color: #5706c2;
     margin: 6px 0;  /* Espaciado entre líneas */
     border-radius: 2px;  /* Bordes redondeados */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -273,7 +274,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #2f96e6;
+      background: #BBD5ED;
       /*background: #002392;*/
       -webkit-transition-duration: 0.9s;
   }
@@ -294,7 +295,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #2f96e6; /*no mover*/
+      background: #BBD5ED; /*no mover*/
       -webkit-transition-duration: 0.9s;
       
   }
@@ -332,7 +333,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #2f96e6; /*no mover*/
+      background: #BBD5ED; /*no mover*/
       -webkit-transition-duration: 0.9s;
   }
   /*HASTA AQUI ES EL CSS DEL BLOQUE S
@@ -392,7 +393,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #CB3234;
+      background: #CCFFCB;
       -webkit-transition-duration: 0.9s;
   }
   
@@ -412,7 +413,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #CB3234;
+      background: #CCFFCB;
       -webkit-transition-duration: 0.9s;
   }
   /*
@@ -585,7 +586,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #2f96e6;
+      background: #BBD5ED;
       -webkit-transition-duration: 0.9s;
   }
   
@@ -604,7 +605,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #2f96e6;
+      background: #BBD5ED;
       -webkit-transition-duration: 0.9s;
   }
   
@@ -636,7 +637,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #2f96e6;
+      background: #BBD5ED;
       -webkit-transition-duration: 0.9s;
   }
   /*
@@ -732,7 +733,7 @@ div{
       border: dashed black 2px;
       text-align: center;
       border-radius: 5px;
-      background: #2f96e6;
+      background: #BBD5ED;
       -webkit-transition-duration: 0.9s;
   }
   
@@ -1039,4 +1040,97 @@ div{
     
 }
 
+/*responsive desing*/
+/*responsive */
+@media (max-width: 1200px) {
+    .glitch {
+        font-size: 5em;
+        bottom: 100px;
+    }
+}
 
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 4em;
+        bottom: 80px;
+        left: 10%;
+    }
+    .hamburger {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 3em;
+        bottom: 60px;
+        left: 20%;
+    }
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+    }
+    .profile {
+        max-width: 100%;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+/* Para pantallas pequeñas, ajustar los tamaños y distribución */
+@media only screen and (max-width: 768px) {
+    .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, 
+    .metaloides, .metales, .desconocidos, .halogenos, .nobles {
+        width: 50px;
+        height: 50px;
+        font-size: 10px; /* Reducir el tamaño del texto */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, 
+    .metaloides, .metales, .desconocidos, .halogenos, .nobles {
+        width: 40px;
+        height: 40px;
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
+        font-size: 0.8rem;
+    }
+}
+
+.nobles, .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, .metaloides, .metales, .halogenos, .desconocidos {
+   
+    display: flex;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: dashed black 2px;
+    text-align: center;
+    border-radius: 5px;
+   
+    margin: 10px;
+    -webkit-transition-duration: 0.9s;
+    /* Uso de flex para centrar contenido */
+    justify-content: center;
+    align-items: center;
+}

@@ -1,10 +1,93 @@
 /*CSS PARA EL TITULO*/
 
 body{
-    Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");
+   /* Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
+   background-image: url(../Imagenes/prueba3.png);
+   background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/*responsive */
+@media (max-width: 1200px) {
+    .glitch {
+        font-size: 5em;
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 4em;
+        bottom: 80px;
+        left: 10%;
+    }
+    .hamburger {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 3em;
+        bottom: 60px;
+        left: 20%;
+    }
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+    }
+    .profile {
+        max-width: 100%;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+/* Para pantallas pequeñas, ajustar los tamaños y distribución */
+@media only screen and (max-width: 768px) {
+    .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, 
+    .metaloides, .metales, .desconocidos, .halogenos, .nobles {
+        width: 50px;
+        height: 50px;
+        font-size: 10px; /* Reducir el tamaño del texto */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, 
+    .metaloides, .metales, .desconocidos, .halogenos, .nobles {
+        width: 40px;
+        height: 40px;
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
+        font-size: 0.8rem;
+    }
+}
+
 
 h2{
     font-size: 2em;
@@ -18,14 +101,15 @@ p{
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
-    bottom: -210px; /* Ajusta la posición desde el top del contenedor */
+    bottom: -20vh; /* Ajusta la posición desde el top del contenedor */
     left: 15%;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 7em;
-    text-shadow: 8px -8px 0px #d37d1b;
+    
+    font-size: 7vw;
+    text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
 }
 
 /*
@@ -177,6 +261,9 @@ p{
   .menu ul {
     list-style: none;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
   }
   
   .menu ul li {
@@ -240,6 +327,10 @@ main {
     margin: auto;
     padding: 20px;
     margin-top: 70px; /* Ajustar según la altura del menú hamburguesa */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px
 }
 
 /*.image-container {
@@ -248,10 +339,6 @@ main {
     gap: 4px; /* Espacio entre las imágenes 
 }
 */
-
-
-  
-
 
 /*contenido de cada elemento
 div{
@@ -275,6 +362,7 @@ div{
 .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
     margin: 0;           /* Elimina márgenes para evitar desalineaciones */
     line-height: 1.6;  /* Restablece el line-height */
+    font-size: 1.2rem; /* Usa rem en lugar de px */
     
   }
 .atomico {
@@ -1150,9 +1238,18 @@ div{
  .nobles, .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, .metaloides, .metales, .halogenos, .desconocidos {
    
     display: flex;
-   
     position: relative;
-   
+    width: 60px;
+    height: 60px;
+    border: dashed black 2px;
+    text-align: center;
+    border-radius: 5px;
+    background: #f5f6f7;
+    margin: 10px;
+    -webkit-transition-duration: 0.9s;
+    /* Uso de flex para centrar contenido */
+    justify-content: center;
+    align-items: center;
 }
 .arrastres{
     font-size:x-large;
