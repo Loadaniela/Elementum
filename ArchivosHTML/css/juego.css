@@ -948,17 +948,17 @@ div{
   
   
   .bloques{
-    width: 130px; /*Ancho*/
-    height: 50px;
+    width: 140px; /*Ancho*/
+    height: 60px;
     position: relative;
     display:inline-block ;
     border: dashed black 2px; /*tamaño del color negro del borde*/
     text-align: center;
-    font-size:medium;
+    font-size:large;
     top: auto;
     border-radius: 2px;
-    color: black;
-    background: #fcfdfd; /*no mover*/
+    color: rgb(19, 18, 18);
+    background: #A288E3; /*no mover*/
     -webkit-transition-duration: 0.9s;
     
     
