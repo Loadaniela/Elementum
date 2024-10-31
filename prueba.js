@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const MongoStore = require('connect-mongo');
 const path = require('path');
 const session = require('express-session');
+const multer = require('multer');
 
 // Crear la instancia de Express
 const app = express();
@@ -143,6 +144,36 @@ app.get('/obtener-resultados', async (req, res) => {
     }
 });
 
+//nuevo obtener MEJORES RESULTADOS 
+app.get('/obtener-mejores-resultados', async (req, res) => {
+    const userId = req.query.userId;
+    if (!userId) {
+        return res.status(400).json({ error: 'ID de usuario no proporcionado' });
+    }
+
+    try {
+        // Busca todas las partidas del usuario y clasifica por juego
+        const resultados = await PartidasModel.find({ usuarios: userId })
+            .populate('juegos')
+            .sort({ calificacion: -1 }) // Ordena por calificación descendente
+            .exec();
+
+        // Filtra solo el mejor resultado para cada juego
+        const mejoresResultados = {};
+        resultados.forEach((resultado) => {
+            const juegoId = resultado.juegos._id;
+            if (!mejoresResultados[juegoId]) {
+                mejoresResultados[juegoId] = resultado;
+            }
+        });
+
+        res.json(Object.values(mejoresResultados)); // Enviar solo los mejores resultados
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error al obtener los resultados' });
+    }
+});
+
 //SI YA EXISTE UNA PREGUNTA
 /* Ruta para obtener una pregunta aleatoria por símbolo de elemento.
 app.get('/pregunta-aleatoria/:symbol', async (req, res) => {
@@ -188,6 +219,7 @@ app.get('/preguntas-aleatorias', (req, res) => {
     });
 });
 
+/*Ruta para alcanear las fotos de perfil de los jugadores */
 
 
 /*PAra guardar mis preguntas */

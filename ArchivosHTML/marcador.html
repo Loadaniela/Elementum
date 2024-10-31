@@ -17,7 +17,7 @@
         </label>
         <nav class="menu">
             <ul>
-                <li><a href="#">PERFIL DEL JUGADOR</a></li>
+                <li><a href="Perfil.html">PERFIL DEL JUGADOR</a></li>
                 <p><strong style="color: orange;">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
                 <p><strong style="color: orange;">Correo:</strong> <span id="correo" style="color: white;"></span></p>
                 <p><strong style="color: orange;">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
@@ -38,7 +38,7 @@
         <style>
             h2 {
                 text-align: center;
-                color: #f38e1b;
+                color: #8b5edf;
             }
             #resultados {
                 max-width: 800px;
@@ -83,17 +83,17 @@
     .calificacion-obtenida {
         font-size: 32px;
         font-weight: bold;
-        color: #4caf50;
+        color: #f3f5f3;
         text-align: center;
     }
 
     .calificacion-obtenida.mala {
-        color: #f44336;
+        color: #e25348;
     }
 
     /* Nueva sección del podio */
     .podio {
-        background-color: #f38e1b;
+        background-color: #8b5edf;
         border-radius: 10px;
         padding: 10px;
         text-align: center;
@@ -257,7 +257,7 @@
     
                         const iconoJuego = document.createElement('span');
                         iconoJuego.className = 'icono-resultado';
-                        iconoJuego.innerHTML = '🎮';  // Aquí puedes cambiar el icono según el tipo de juego
+                        iconoJuego.innerHTML = '🎮';  //icocno del juego
     
                         const contenidoResultado = document.createElement('div');
                         contenidoResultado.className = 'contenido-resultado';
@@ -284,7 +284,7 @@
                         item.appendChild(iconoJuego);
                         item.appendChild(contenidoResultado);
     
-                        // Agregar con animación de retraso para cada item
+                        
                         setTimeout(() => {
                             item.classList.add('mostrar');
                         }, index * 100); // Retraso para cada item

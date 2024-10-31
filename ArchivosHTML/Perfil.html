@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del jugador</title>
+    <link rel="stylesheet" href="/css/perfil.css">
+</head>
+<body>
+    <main>
+        <input type="checkbox" id="toggle">
+        <label for="toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="menu">
+            <ul>
+                <li><a href="pagina1.html">Menú Principal</a></li>
+                <li><a href="login.html" id="logout">Cerrar sesión</a></li>
+                <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
+            </ul>
+        </nav>
+
+        <h1 class="glitch" data-text="Elementum">ELEMENTUM</h1>
+
+        <div class="perfil-container">
+            <div class="perfil-card">
+                <div class="foto-container">
+                    <img id="foto-perfil" src="Imagenes/oncahui.png" alt="Foto de perfil" />
+                    <input type="file" id="input-foto" style="display: none;" />
+                    <button id="btn-cambiar-foto">Cambiar Foto de Perfil</button>
+                </div>
+                <div class="info-container">
+                    <p><strong>Jugador:</strong> <span id="nombre"></span></p>
+                    <p><strong>Correo:</strong> <span id="correo"></span></p>
+                    <p><strong>Usuario:</strong> <span id="usuario"></span></p>
+                </div>
+            </div>
+        </div>
+        
+        <section id="mejores-puntajes">
+            <h2>Mejores Puntajes</h2>
+            <div id="resultados">
+                <!-- Aquí se mostrarán los mejores puntajes de cada juego -->
+            </div>
+        </section>
+    
+    </main>
+
+    <script>
+   
+   async function cargarPerfil() {
+    try {
+        const response = await fetch('/perfil');
+        if (!response.ok) throw new Error('No autorizado');
+        const data = await response.json();
+        document.getElementById('nombre').textContent = data.nombre;
+        document.getElementById('correo').textContent = data.correo;
+        document.getElementById('usuario').textContent = data.usuario;
+        return data.id;
+    } catch (error) {
+        console.error('Error al cargar el perfil:', error);
+        alert('Debes iniciar sesión primero');
+        window.location.href = '/login.html';
+    }
+}
+
+function mostrarMejoresResultados(userId) {
+    if (!userId) {
+        alert('No se pudo encontrar el ID del usuario.');
+        return;
+    }
+
+    fetch(`/obtener-mejores-resultados?userId=${userId}`)
+        .then(response => {
+            if (!response.ok) throw new Error('Error en la respuesta del servidor');
+            return response.json();
+        })
+        .then(data => {
+            const resultadosContenedor = document.getElementById('resultados');
+            resultadosContenedor.innerHTML = '';
+
+            const juegos = ['Bloques', 'Elementos', 'RadioA', 'Electronegatividad'];
+            juegos.forEach(juegoNombre => {
+                const resultado = data.find(res => res.juegos.nombre_juego === juegoNombre);
+
+                const item = document.createElement('div');
+                item.className = 'resultado';
+
+                const iconoJuego = document.createElement('span');
+                iconoJuego.className = 'icono-resultado';
+                iconoJuego.innerHTML = '🎮';
+
+                const contenidoResultado = document.createElement('div');
+                contenidoResultado.className = 'contenido-resultado';
+
+                if (resultado) {
+                    const calificacionClase = resultado.calificacion >= 10 ? '' : 'mala';
+                    contenidoResultado.innerHTML = `
+                        <p><strong>Juego:</strong> ${resultado.juegos.nombre_juego}</p>
+                        <div class="podio">
+                            <div>Calificación</div>
+                            <div class="calificacion-obtenida ${calificacionClase}">
+                                ${resultado.calificacion} puntos 
+                            </div>
+                        </div>
+                        <div class="detalles-resultado">
+                            <p><strong>Número de Arrastres:</strong> ${resultado.numArrastres || 'N/A'}</p>
+                            <p><strong>Total de Preguntas:</strong> ${resultado.totalPreguntas || 'N/A'}</p>
+                            <p><strong>Respuestas Correctas:</strong> ${resultado.respuestasCorrectas || 'N/A'}</p>
+                            <p><strong>Hora de Inicio:</strong> ${resultado.hora_inicio ? new Date(resultado.hora_inicio).toLocaleString() : 'N/A'}</p>
+                            <p><strong>Hora de Fin:</strong> ${resultado.hora_fin ? new Date(resultado.hora_fin).toLocaleString() : 'N/A'}</p>
+                        </div>
+                    `;
+                } else {
+                    contenidoResultado.innerHTML = `
+                        <p><strong>Juego:</strong> ${juegoNombre}</p>
+                        <p>No has jugado este juego aún.</p>
+                    `;
+                }
+
+                item.appendChild(iconoJuego);
+                item.appendChild(contenidoResultado);
+                resultadosContenedor.appendChild(item);
+            });
+        })
+        .catch(error => {
+            console.error('Error al obtener los resultados:', error);
+            alert('Error al cargar los resultados.');
+        });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    cargarPerfil().then(userId => {
+        if (userId) {
+            mostrarMejoresResultados(userId);
+        }
+    });
+});
+
+document.getElementById('logout').addEventListener('click', function(e) {
+    e.preventDefault();
+    fetch('/logout', { method: 'POST' })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '/login.html';
+            } else {
+                throw new Error('Error al cerrar sesión');
+            }
+        })
+        .catch(error => {
+            console.error('Error al cerrar sesión:', error);
+            alert('Error al cerrar sesión');
+        });
+});
+
+    </script>
+</body>
+</html>

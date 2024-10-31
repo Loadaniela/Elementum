@@ -46,124 +46,7 @@ body {
     
   }
  
-.card{
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 20px;
-}
-
-.card .face{
-    position: absolute;
-    width: 100%;
-    height: 125%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: justify;
-    transition: .5s;
-}
-
-.card .front{
-    transform: perspective(600px) rotateY(0deg);
-    box-shadow:0 5px 10px black;
-}
-.card .back p{
-    text-align: justify;
-}
-
-.card .front img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/*linea negra del titulo de la carta*/
-.card .front h3{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    line-height: 45px;
-    color: #fff;
-    background: rgb(233, 120, 44);
-    text-align: center;
-}
-
-.card .back{
-    transform: perspective(600px) rotateY(180deg);
-    background: black;
-    padding: 5px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 5px 10px black;
-}
-
-.card .back .link{ /*links de la parte de atras de las tarjetas*/
-    border-top: solid 1px #f3f3f3;
-    height: 40px;
-    line-height: 50px;
-}
-
-.card .back .link a{
-    color:#f3f3f3;
-}
-
-.card .back h3{
-    font-size: 25px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-
-.card .back p{
-    /*letter-spacing: 1px;
-    */
-    text-align: justify;
-   font-size: 14.5px;
-    
-}
-
-
-.card:hover .front{
-    transform: perspective(600px) rotateY(180deg);
-}
-
-.card:hover .back{
-    transform: perspective(600px) rotateY(360deg);
-}
-
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.card {
-    width: 300px;   
-    margin-bottom: 20px;
-}
-.card img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-.card h3 {
-    margin-top: 0;
-}
-.card p {
-    margin-bottom: 0;
-    
-}
-.link a {
-    color: rgb(255, 136, 0);
-}
-
-
-  /*De aqui para abajo ya lo tenia y es necesario todod*/
+   /*De aqui para abajo ya lo tenia y es necesario todod*/
 .profile {
     background-color: rgba(253, 253, 253, 0.993);
     padding: 10px;
@@ -266,27 +149,11 @@ body {
         }
     
     #menu1{
-        top: 100px;
-        right: 600px;
+        top: 100px; 
         background-color: #eb8500; 
         position: fixed;
         }
-        #menu2{
-            top: 200px; 
-            right: 700px;
-            background-color: #1cbdee; 
-            position: fixed;
-            }
-            #menu3{
-                top: 300px; 
-                background-color: #0018eb; 
-                position: fixed;
-                }
-                #menu4{
-                    top: 400px; 
-                    background-color: #eb0014; 
-                    position: fixed;
-                    }
+      
 
 .glitch {
     position: relative;
@@ -409,44 +276,6 @@ body {
 /*Estilos de formulario */
 
 
-#formulario{
-    
-    font-size: 2.5rem; /* Tamaño del texto */
-    color: #8319ca; /* Color del texto */
-    text-align: center; /* Centrar el texto */
-    text-shadow: 2px 2px 5px black; /* Sombra para darle efecto */
-   
-  
-    background: linear-gradient(90deg, #ff6600, #ffcc00); /* Gradiente de color */
-    -webkit-background-clip: text; /* Clip del fondo al texto para darle efecto 3d */
-   
-}
-
-#formularioPregunta{
-    color: white;
-    justify-content: center;
-}
-
-#contenedorFormulario{
-    padding: 20px;
-    background-color: #fff;
-    color: #333;
-    height: 600px;
-    width: 800px;
-    margin: 50px auto; /*centra el contenedor*/
-    justify-content: center;
-    border-radius: 20px;
-    
-}
-
-form {
-    background-color: #333; /* Fondo del formulario */
-    padding: 20px;
-    border-radius: 10px; /* Bordes redondeados */
-    width: 600px;
-    margin: 50px auto; /* Centra el formulario */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra */
-}
 
 label {
     display: block;
@@ -509,10 +338,10 @@ button:hover {
 
 .perfil-card {
     display: inline-block;
-    background-color: #1e1e2f;
+    background-color: #d1d1e6;
     border-radius: 15px;
     padding: 20px;
-    width: 400px;
+    width: 600px;
     height: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: white;
@@ -523,6 +352,11 @@ button:hover {
     text-align: center;
     margin-bottom: 15px;
     position: relative;
+}
+
+h2 {
+    text-align: center;
+    color: #8b5edf;
 }
 
 #foto-perfil {
@@ -554,7 +388,7 @@ button:hover {
 }
 
 .info-container strong {
-    color: orange;
+    color: rgb(62, 60, 224);
 }
 
 /*css para los resultados del perfil*/
@@ -567,3 +401,58 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo para cada resultado individual */
+.resultado {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #f9f9fb;
+    border: 1px solid #e1e1e8;
+    transition: transform 0.2s ease-in-out;
+}
+
+.resultado:hover {
+    transform: translateY(-3px);
+}
+
+/* Icono de juego */
+.icono-resultado {
+    font-size: 30px;
+    margin-right: 15px;
+    color: #6c63ff;
+}
+
+/* Contenido de cada resultado */
+.contenido-resultado p {
+    margin: 5px 0;
+}
+
+.podio {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.podio div:first-child {
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+}
+
+.calificacion-obtenida {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.calificacion-obtenida.mala {
+    background-color: #ff6b6b;
+}
+
+.calificacion-obtenida:not(.mala) {
+    background-color: #4caf50;
+}
