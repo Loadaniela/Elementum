@@ -68,15 +68,17 @@ body {
     transform: perspective(600px) rotateY(0deg);
     box-shadow:0 5px 10px black;
 }
-.card .back p{
+.card .front p{
+    text-decoration: solid;
     text-align: justify;
 }
 
-.card .front img{
+.carta .front img{
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.3; /* Ajusta el nivel de transparencia */
 }
 
 /*linea negra del titulo de la carta*/
@@ -109,25 +111,47 @@ body {
     line-height: 50px;
 }
 
-.card .back .link a{
-    color:#f3f3f3;
+
+
+.carta .a{
+    border-top: solid 1px #f3f3f3;
+    height: 40px;
+    line-height: 50px;
+    color: #c51414;
 }
 
-.card .back h3{
-    font-size: 25px;
-    margin-top: 20px;
-    letter-spacing: 2px;
-}
-
-.card .back p{
+.carta p{
     /*letter-spacing: 1px;
     */
     text-align: justify;
-   font-size: 14.5px;
+   font-size: 18.5px;
+   color: black;
+   text-decoration: solid;
     
 }
 
 
+
+
+.carta{
+    box-shadow: #000;
+   position: relative;
+   width: 380px;
+   height: 400px;
+   margin: 20px;
+   border-radius: 10px;
+}
+
+h1{
+    font-size: 1.5rem; /* Tamaño del texto */
+    color: #8319ca; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    text-shadow: 2px 2px 5px black; /* Sombra para darle efecto */
+   
+  
+    background: linear-gradient(90deg, #ff6600, #ffcc00); /* Gradiente de color */
+    -webkit-background-clip: text; /* Clip del fondo al texto para darle efecto 3d */
+}
 .card:hover .front{
     transform: perspective(600px) rotateY(180deg);
 }
@@ -147,7 +171,7 @@ body {
     margin-bottom: 20px;
 }
 .card img {
-    width: 100%;
+    width: 10%;
     height: auto;
     margin-bottom: 10px;
 }

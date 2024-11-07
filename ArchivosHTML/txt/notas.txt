@@ -1,0 +1,69 @@
+ <div class="card">
+                        <div class="face front">
+                            <img src="Imagenes/oncahui.png" alt="">
+                            <h3>Autor</h3>
+                        </div>
+                        
+                        <div class="face back">
+                            <h3>Daniela Loa Salinas</h3>
+                            <p aling="justify">Soy estudiante de la licenciatura en Tecnologias y Sistemas de Información, de la Unversidad Autonoma Mteropolitana Unidad Cuajimalpa, generación 
+                                2020.
+                            </p>
+                            <p aling="justify">
+                                Te presento mi proyecto terminal, **Elementum**, una plataforma de juegos educativos web diseñada para reforzar los conocimientos de química adquiridos en clase.
+                                 Esta plataforma está dirigida a estudiantes que deseen aprender más sobre los elementos de la tabla periódica. En Elementum, encontrarán diversos juegos que abarcan temas
+                                  como los bloques en los que se divide la tabla periódica, la ubicación de los elementos, así como sus radios atómicos y electronegatividades.
+                              </p>
+                              
+                        
+                        <div class="link">
+                            <a href="loadaniela2@gmail.com" target="_blank" style="color: rgb(255, 60, 0);">Correo Electronico</a>
+                        </div>
+                        </div></div>
+    
+    
+    
+                        <div class="card">
+                            <div class="face front">
+                                <img src="Imagenes/fuentes.jpg" alt="">
+                                    <h3>Fuentes</h3>
+                            </div>
+                                
+                            <div class="face back">
+                                <h3>Fuentes de Elementum</h3>
+                                <p>
+                                    Bibliografía del documento escrito del proyecto terminal de Daniela Loa Salinas: <a href="https://docs.google.com/document/d/16uEXcrZmVbPiMCSI4qvDamG2N7knhkHK/edit?usp=sharing&ouid=105418930439442311903&rtpof=true&sd=true" target="_blank">PDF</a><br>
+                                    Fuente de referencia sobre la posición de los elementos en la tabla periódica: <a href="https://ptable.com/?lang=es#Propiedades" target="_blank">Tabla Periódica</a><br>
+                                    Fuente de información sobre los elementos y su radio atómico: <a href="https://www.lifeder.com/radio-atomico/" target="_blank">Radio</a><br>
+                                    Fuente de información sobre la electronegatividad de los elementos: <a href="https://www.lifeder.com/electronegatividad/" target="_blank">Datos</a><br>
+                                    Fuente de imágenes utilizadas en Elementum: <a href="https://www.shutterstock.com/es/explore/mexico-stock-assets-0222?&cr=ec&ds_ag=Images-Bank&ds_agid=58700003945715212&ds_cid=71700000034280538&ds_eid=700000001393952&gclid=528f386f5de11c96eacb5eb03413c779&gclsrc=3p.ds&kw=banco%20de%20fotos&msclkid=528f386f5de11c96eacb5eb03413c779&pl=PPC_BNG_MX_IG-&utm_campaign=CO%3DMX_LG%3DES_BU%3DIMG_AD%3DGENERIC_TS%3Dlggeneric_RG%3DAMER_AB%3DACQ_CH%3DSEM_OG%3DCONV_PB%3DMicrosoft-Ads&utm_campaign=CO%3DMX_LG%3DES_BU%3DIMG_AD%3DGENERIC_TS%3Dlggeneric_RG%3DAMER_AB%3DACQ_CH%3DSEM_OG%3DCONV_PB%3DMicrosoft-Ads&utm_content=Images-Bank&utm_medium=cpc&utm_medium=cpc&utm_source=MICROSOFT&utm_source=bing&utm_term=banco%20de%20fotos" target="_blank">Imágenes</a><br>
+                                    Fuente de audios utilizados en Elementum: <a href="https://pixabay.com/es/sound-effects/" target="_blank">Audios</a><br>
+                                    Fuentes adicionales: <a href="#">Extra</a>, <a href="#">Extra2</a>.
+                                  </p>
+                                  
+                            <div class="link">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        </div>
+                    
+    
+    
+                    <div class="card">
+                        <div class="face front">
+                            <img src="Imagenes/uam.jpg" alt="">
+                            <h3>Asesores e Instución</h3>
+                        </div>
+                        
+                        <div class="face back">
+                            <h3>Univerisdad Autónoma Mteropolitana</h3>
+                            <p style="text-align: justify;"> Proyecto Terminal de la UAM plantel Cuajimalpa Vasco de Quiroga 4871, Contadero, Cuajimalpa de Morelos, 05348 Ciudad de México, CDMX.<br><br><br> 
+                                Asesores encargados a este proyecto; <strong>Mc. Jorge Matadamas Hernandez</strong> y <strong>Dr. Carlos Roberto Jaimez González</strong><br><br>
+                                Agradezco sus consejos y asesorias de gran ayuda hacía mi proyecto. 
+
+                                </p>
+                        
+                        <div class="link">
+                            <a href="https://www.cua.uam.mx/" target="_blank" style="color: rgb(255, 60, 0);">UAM CUAJIMALPA</a>
+                        </div>
+                        </div></div>

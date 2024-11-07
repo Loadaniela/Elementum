@@ -11,14 +11,14 @@ p{
     text-align: center;
 }
 .glitch {
-    position:relative;
+    position:absolute;
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
-   right: 10%;
-   top: -100px;
+    bottom: 100vh; /* Ajusta la posición desde el top del contenedor */
+    left: 15%;
     
-    font-size: 5em;
+    font-size: 7vw;
     text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
@@ -1106,4 +1106,18 @@ div{
     left: 50%;           /* Centrado horizontalmente */
     transform: translate(-50%, -50%); /* Alineación central */
     z-index: 10;         /* Asegura que el elemento esté encima del contenido existente */
+}
+
+
+.resultados {
+    display: flex;
+    flex-direction: column; /* O la dirección que necesites */
+    max-width: 1400px;
+    min-height: 1000px;
+    margin: 10px auto;
+    padding: 10px;
+    
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }

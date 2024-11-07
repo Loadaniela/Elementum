@@ -117,7 +117,7 @@ p{
 /* Contenedor principal */
 #tablon {
     /*Background-image: url("https://static1.squarespace.com/static/596e6b656a49639b84c00512/t/5ab90f756d2a734262577413/1522077591829/background.jpg?format=2500w");*/
-	background-image: url(../Imagenes/prueba3.png);
+	background-color: #fff ;
 	width: 1245px;
 	max-width: 100%;
 	height: 600px; /*Largo de todo*/
@@ -220,8 +220,8 @@ p{
 /* Título de cada capa */
 #slider div span {
 	position: absolute;
-	top: -30px; /*SUBE EL TEXTO DEL TITULO PRINCIPAL */
-	left: 10px; /*pone el titulo de los juegos*/
+	top: -120px; /*SUBE EL TEXTO DEL TITULO PRINCIPAL */
+	left: 20px; /*pone el titulo de los juegos*/
 	margin: 0;
 	display: block;
 	padding-bottom: 20px;
@@ -699,4 +699,15 @@ height: 100%;
     #slider div span {
         font-size: 20px;
     }
+}
+
+
+.resultados {
+    max-width: 1400px;
+	max-height: 1600px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }

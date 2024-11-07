@@ -1259,3 +1259,15 @@ div{
     bottom: -190px; /* Ajusta la posición desde el top del contenedor */
 }
 
+.resultados {
+    display: flex;
+    flex-direction: column; /* O la dirección que necesites */
+    max-width: 1400px;
+    min-height: 1000px;
+    margin: 10px auto;
+    padding: 10px;
+    
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}

@@ -955,7 +955,7 @@ div{
     border: dashed black 2px; /*tamaño del color negro del borde*/
     text-align: center;
     font-size:large;
-    top: auto;
+    top: 600px;
     border-radius: 2px;
     color: rgb(19, 18, 18);
     background: #A288E3; /*no mover*/
@@ -1028,6 +1028,7 @@ div{
     position: relative;
     top: 330px;
     left: 300px;
+    
 }
 
 .arrastres{
@@ -1133,4 +1134,17 @@ div{
     /* Uso de flex para centrar contenido */
     justify-content: center;
     align-items: center;
+}
+
+.resultados {
+    display: flex;
+    flex-direction: column; /* O la dirección que necesites */
+    max-width: 1400px;
+    min-height: 780px;
+    margin: 10px auto;
+    padding: 10px;
+    
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }

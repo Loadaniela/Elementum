@@ -18,12 +18,13 @@
     </label>
     <nav class="menu">
         <ul>
+            <li><a href="pagina1.html">Menú Principal</a></li>
+            <li><a href="login.html" id="logout">Cerrar sesión</a></li>
             <li><a href="Perfil.html">PERFIL DEL JUGADOR</a></li>
             <p><strong style="color:rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
             <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>
             <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
-            <li><a href="pagina1.html">Menú Principal</a></li>
-            <li><a href="login.html" id="logout">Cerrar sesión</a></li>
+            
             <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
         </ul>
     </nav>
@@ -35,6 +36,7 @@
  <!--ELEMENTOS DE LA TABLA PERIODICA-->  
  
  <!--INICIA EL BLOQUE S-->
+ <div class="resultados">
 <div class="contenedor"> 
     <!--AQUI INICIA EL CONTENEDOR PADRE-->
     <h1 class="glitch"  data-text="Elementum">BLOQUES</h1>
@@ -560,8 +562,11 @@
     <div class="bloques" id="S" draggable="true" ondragstart="drag(event)" data-categoria="bloqueS"><strong>Bloque S</strong></div>
     
 </div>
+</div>
 
-
+</div>
+ </div>
+ </div>
 </main>
 
 
@@ -633,35 +638,7 @@
 <!-- Incluye SweetAlert2 desde CDN -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!--
-<script> //funcion para indicar el alrt de salir sin guardar o juego terminado
 
-    // Variable para indicar si el juego ha terminado
-let juegoTerminado = false;
-
-// Manejo del evento beforeunload
-window.addEventListener('beforeunload', function (event) {
-    if (!juegoTerminado) { // Solo muestra el mensaje si el juego no ha terminado
-        const message = "Estás a punto de salir del juego. Los datos podrían no guardarse.";
-        event.returnValue = message;
-        return message;
-    }
-});
-
-// Manejo del evento popstate
-window.addEventListener('popstate', function (event) {
-    if (!juegoTerminado) { // Solo muestra el mensaje si el juego no ha terminado
-        const confirmExit = confirm("Estás a punto de salir del juego. Los datos podrían no guardarse.");
-        if (!confirmExit) {
-            // Si el usuario decide no salir
-            history.pushState(null, null, window.location.href);
-        }
-    }
-});
-
-
-</script>
--->
 
 <script> //ventanas de swet alart para salir
     // Variable para indicar si el juego ha terminado
@@ -727,171 +704,7 @@ window.addEventListener('popstate', function (event) {
 </script>
 
 
-<!-- funcion para 4 
-<script> //Funcion que los genera aleatorias 2
-    // Contador de arrastres y elementos correctos
-    let arrastresContador = 0;
-    const totalElementos = document.querySelectorAll('.bloques[draggable="true"]').length;
-    let correctosContador = 0;
 
-    const sonidoAcierto = new Audio('audio/acierto.mp3'); // Ruta al archivo de sonido de acierto
-    const sonidoError = new Audio('audio/error.mp3'); // Ruta al archivo de sonido de error
-
-    // Función para mezclar (aleatorizar) un array
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-
-    // Función para mezclar los nombres de los elementos al cargar la página
-    document.addEventListener("DOMContentLoaded", function () {
-        const bloquesContainer = document.querySelector(".bloquesN");
-        const bloques = Array.from(bloquesContainer.children);
-
-        // Crear un array de nombres posibles y mezclarlos
-        const nombresMap = [
-            { categoria: 'bloqueF', nombre: 'Transición interna' },
-            { categoria: 'bloqueP', nombre: 'Transición' },
-            { categoria: 'bloqueD', nombre: 'Nobles' },
-            { categoria: 'bloqueS', nombre: 'Representativos' }
-        ];
-
-        // Mezclar los nombres
-        const nombresAleatorios = shuffle(nombresMap);
-
-        // Asignar los nombres mezclados a los elementos
-        bloques.forEach((bloque, index) => {
-            bloque.innerHTML = `<strong>${nombresAleatorios[index].nombre}</strong>`;
-            bloque.setAttribute('data-categoria', nombresAleatorios[index].categoria); // Actualizar el data-categoria
-        });
-    });
-
-    // Función que permite el arrastre
-    function drag(event) {
-        event.dataTransfer.setData("text", event.target.id);
-    }
-
-    // Función que permite soltar el elemento sobre un contenedor
-    function allowDrop(event) {
-        event.preventDefault();
-    }
-
-    // Función que maneja la acción de soltar el elemento
-    function drop(event) {
-        event.preventDefault();
-        arrastresContador++; // Incrementa el contador de arrastres
-        var data = event.dataTransfer.getData("text");
-        var element = document.getElementById(data);
-        
-        // Identifica el contenedor al que se intenta soltar
-        var targetContainer = event.target.closest('.bloqueS, .bloqueD, .bloqueP, .bloqueF');
-
-        // Verifica si el contenedor existe y si el `data-categoria` del elemento coincide con el ID del contenedor
-        if (targetContainer) {
-            const categoriaElemento = element.getAttribute('data-categoria');
-            const categoriaContenedor = targetContainer.id;
-
-            if (categoriaElemento === categoriaContenedor) {
-                // Calcula la posición relativa al contenedor
-                var rect = targetContainer.getBoundingClientRect();
-                var elemRect = element.getBoundingClientRect();
-                var offsetX = event.clientX - elemRect.width / 2;
-                var offsetY = event.clientY - elemRect.height / 2;
-        
-                // Ajusta la posición del elemento para que quede sobre el contenedor
-                element.style.position = "absolute";
-                element.style.left = offsetX + "px";
-                element.style.top = offsetY + "px";
-                
-                // Deshabilita el arrastre del elemento para que no pueda ser movido nuevamente
-                element.setAttribute("draggable", "false");
-                element.style.cursor = "default"; // Cambia el cursor a normal
-                // Incrementa el contador de elementos correctos
-                correctosContador++;
-                sonidoAcierto.play(); // Reproduce el sonido de acierto
-            } else {
-                sonidoError.play(); // Reproduce el sonido de error
-            }
-        } else {
-            sonidoError.play(); // Reproduce el sonido de error
-        }
-        
-        // Actualiza el contador de arrastres en la página
-        document.getElementById("contadorArrastres").textContent = arrastresContador;
-        
-        // Verifica si todos los elementos han sido colocados correctamente
-        if (correctosContador === totalElementos) {
-            Swal.fire({
-                title: '¡Felicidades!',
-                text: `Has colocado todos los elementos correctamente en ${arrastresContador} arrastres.`,
-                icon: 'success',
-                confirmButtonText: 'Aceptar'
-            }).then(() => {
-                // Guardar el resultado del juego en la base de datos
-                const userId = document.getElementById('usuario').textContent; // Obtener el userId del perfil cargado
-                const juegoId = obtenerIdJuegoDeURL(); // Obtener el ID del juego actual
-                
-                // Llamar a la función para guardar el resultado
-                guardarResultadoJuego(userId, juegoId, arrastresContador);
-            });
-        }
-    }
-
-    // Función para guardar el resultado del juego (igual que antes)
-    function guardarResultadoJuego(userId, juegoId, numArrastres) {
-        const nombreJuego = obtenerNombreJuego(juegoId);
-    
-        fetch('/guardar-resultado', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ userId, juegoId, numArrastres })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Resultado guardado:', data);
-    
-            if (data.message === 'Resultado guardado correctamente') {
-                 // Indicar que el juego ha terminado
-                 juegoTerminado = true;
-                window.location.href = 'marcador.html';
-            } else {
-                Swal.fire({
-                    title: 'Error al guardar resultados',
-                    text: data.error || 'Error desconocido',
-                    icon: 'error',
-                    confirmButtonText: 'Aceptar'
-                });
-                console.error('Detalles del error:', data);
-            }
-        })
-        .catch(error => {
-            console.error('Error de red:', error);
-            Swal.fire({
-                title: 'Error de red',
-                text: 'Por favor intenta nuevamente.',
-                icon: 'error',
-                confirmButtonText: 'Aceptar'
-            });
-        });
-    }
-
-    // Función para obtener el nombre del juego
-    function obtenerNombreJuego(juegoId) {
-        switch (parseInt(juegoId)) {
-            case 1: return 'Bloques';
-            case 2: return 'Elementos';
-            case 3: return 'RadioA';
-            case 4: return 'Electronegatividad';
-            default: return 'Juego desconocido';
-        }
-    }
-</script>
--->
 
 <script> 
     // Contador de arrastres y elementos correctos
