@@ -15,11 +15,12 @@ p{
     position:absolute;
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
+   
     align-items: center;
-    bottom: -10vh; /* Ajusta la posición desde el top del contenedor */
-    left: 8%;
-    
-    font-size: 5vw;
+   
+    bottom: -90px; /* Ajusta la posición desde el top del contenedor */
+    left: 0%;
+    font-size: 6em;
     text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
@@ -163,7 +164,7 @@ p{
     top: 0;
     right: 0;
     
-    background-color: #746b63;
+    background-color:  rgb(196, 217, 236);
     width: 250px;
     height: 100%;
     transform: translateX(100%);
@@ -1044,7 +1045,14 @@ div{
     left: 1000px;
 }
 
-
+.ElementosAleatorios{
+    display: block; /* Cambia flex a block o inline-block */
+    position: absolute; /* O prueba con static */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla si es necesario */
+    gap: 10px; /* Espacio entre elementos */
+}
 /*pruebas para el bloque por medio de mongo*/
 .elemento-arrastable{
     width: 55px;
@@ -1069,7 +1077,7 @@ div{
 .contenedores{
     position: relative;
     bottom: -50px;
-    left: 100px;
+    left: 140px;
 }
 
 .arrastres{
@@ -1083,7 +1091,7 @@ div{
 }
 
 .ElementosAleatorios{
-    left: 150px;
+    
 }
 
 .resultados {

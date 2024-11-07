@@ -12,13 +12,11 @@ p{
 }
 .glitch {
     position:absolute;
-    justify-content: center;
-    text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
-    bottom: 100vh; /* Ajusta la posición desde el top del contenedor */
+    bottom: -110px; /* Ajusta la posición desde el top del contenedor */
     left: 15%;
+    font-size: 6em;
     
-    font-size: 7vw;
     text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
@@ -159,7 +157,7 @@ p{
     top: 0;
     right: 0;
     
-    background-color: #746b63;
+    background-color:  rgb(196, 217, 236);
     width: 250px;
     height: 100%;
     transform: translateX(100%);
@@ -973,18 +971,16 @@ div{
       top: 610px;left: 980px;
   }
   
-  
   /* Gradación de colores basada en el radio atómico para los elementos */
-#eq5, #eq13, #eq31, #eq49, #eq81 { background-color: #f1ddc9; } /* Naranja más claro para los radios más grandes */
-#eq29, #eq47, #eq79, #eq111, #eq30, #eq48, #eq80, #eq112 { background-color: #cfb4a8; }
-#eq27, #eq45, #eq77, #eq109, #eq28, #eq46, #eq78, #eq110 { background-color: #FFB266; }
-#eq25, #eq43, #eq75, #eq107, #eq26, #eq44, #eq76, #eq108 { background-color: #FF9933; }
-#eq23, #eq41, #eq73, #eq105, #eq24, #eq42, #eq74, #eq106 { background-color: #FF8000; }
-#eq21, #eq39, #eq22, #eq40, #eq72, #eq104 { background-color: #E65C00; }
-#eq4, #eq12, #eq20, #eq38, #eq56, #eq88 { background-color: #CC5200; }
-#eq55, #eq87 { background-color: #B34700; }
-#eq1, #eq3, #eq11, #eq19, #eq37 { background-color: #993D00; } /* Naranja más oscuro para los radios más pequeños */
-
+#eq5, #eq13, #eq31, #eq49, #eq81 { background-color: #e0f7fa; } /* Azul celeste pastel */
+#eq29, #eq47, #eq79, #eq111, #eq30, #eq48, #eq80, #eq112 { background-color: #b2ebf2; } /* Azul pastel */
+#eq27, #eq45, #eq77, #eq109, #eq28, #eq46, #eq78, #eq110 { background-color: #b3e5fc; } /* Azul cielo suave */
+#eq25, #eq43, #eq75, #eq107, #eq26, #eq44, #eq76, #eq108 { background-color: #ce93d8; } /* Lila pastel */
+#eq23, #eq41, #eq73, #eq105, #eq24, #eq42, #eq74, #eq106 { background-color: #ba68c8; } /* Lila intermedio */
+#eq21, #eq39, #eq22, #eq40, #eq72, #eq104 { background-color: #9fa8da; } /* Azul lavanda */
+#eq4, #eq12, #eq20, #eq38, #eq56, #eq88 { background-color: #7986cb; } /* Azul más oscuro pero suave */
+#eq55, #eq87 { background-color: #80cbc4; } /* Verde agua pastel */
+#eq1, #eq3, #eq11, #eq19, #eq37 { background-color: #4db6ac; } /* Verde menta pastel */
 
 
 /* Ajusta los elementos a su posición debajo de la tabla periódica */
@@ -1048,21 +1044,33 @@ div{
     left: 1000px;
 }
 
-
+.ElementosAleatorios{
+    display: block; /* Cambia flex a block o inline-block */
+    position: absolute; /* O prueba con static */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla si es necesario */
+    gap: 10px; /* Espacio entre elementos */
+}
 /*pruebas para el bloque por medio de mongo*/
 .elemento-arrastable{
     width: 60px;
     height: 60px;
     position: relative;
     display:inline-block ;
-    border: dashed rgb(253, 252, 252) 2px; /*tamaño del color negro del borde*/
+    border: dashed rgb(15, 15, 15) 2px; /*tamaño del color negro del borde*/
     text-align: center;
-    font-size: small;
-    border-radius: 2px;
-    background:black;
+    font-size: 1.5em;
+    border-radius: 3px;
+    left: 40%;
+    top: 5px;
+    background:#92b0e9;
     cursor: move;
     -webkit-transition-duration: 0.9s;
     color: white;
+    
+
+  
     
 }
 
@@ -1078,8 +1086,8 @@ div{
 
 .contenedores{
     position: relative;
-    bottom: -80px;
-    left: 100px;
+    bottom: -10px;
+    left: 110px;
 }
 
 .arrastres{

@@ -148,7 +148,7 @@ body{
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #746b63;
+    background-color:  rgb(196, 217, 236);
     width: 250px;
     height: 100%;
     transform: translateX(100%);

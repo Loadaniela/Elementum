@@ -101,10 +101,10 @@ p{
     justify-content: center;
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
-    bottom: -20vh; /* Ajusta la posición desde el top del contenedor */
+   
+    bottom: -120px; /* Ajusta la posición desde el top del contenedor */
     left: 15%;
-    
-    font-size: 7vw;
+    font-size: 7em;
     text-shadow: 8px -8px 0px #8319ca;
     background: repeating-linear-gradient(45deg, #005792, #005792, #005792 1px, #fff 2px, #fff 3px);
     -webkit-background-clip: text;
@@ -235,7 +235,7 @@ p{
     display: block;
     width: 35px;
     height: 4px;  /* Reduje la altura de las líneas */
-    background-color: #f18826;
+    background-color: #340455;
     margin: 6px 0;  /* Espaciado entre líneas */
     border-radius: 2px;  /* Bordes redondeados */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -250,7 +250,7 @@ p{
     top: 0;
     right: 0;
     
-    background-color: #746b63;
+    background-color:  rgb(196, 217, 236);
     width: 250px;
     height: 100%;
     transform: translateX(100%);
@@ -1147,6 +1147,7 @@ div{
 #elemento6, #elemento7, #elemento8, #elemento9, #elemento10 {
     position: absolute;
     z-index: 1000;
+    top: 100px;
   
 }
 
@@ -1201,20 +1202,30 @@ div{
     left: 1000px;
 }
 
+.ElementosAleatorios{
+    display: block; /* Cambia flex a block o inline-block */
+    position: absolute; /* O prueba con static */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla si es necesario */
+    gap: 10px; /* Espacio entre elementos */
+}
+
 /*pruebas para el bloque por medio de mongo*/
 .elemento-arrastable{
     width: 60px;
     height: 60px;
-    position: absolute;
-    display:inline-block ;
-    border: dashed black 2px; /*tamaño del color negro del borde*/
+    position: relative;
+    display: inline-block;
+    border: dashed black 2px;
     text-align: center;
-    font-size: small;
+    font-size: 1.5em;
     cursor: move;
-  
+    left: 40%;
+    top: -20px;
     border-radius: 2px;
-    background: #2f96e6; /*no mover*/
-    -webkit-transition-duration: 0.9s;
+    background: #35bbf0;
+    transition-duration: 0.9s;
     
 }
 
@@ -1229,7 +1240,7 @@ div{
 
 .contenedores{
     position: relative;
-    bottom: -120px;
+    bottom: -130px;
     left: 100px;
 }
 
@@ -1238,7 +1249,7 @@ div{
  .nobles, .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, .metaloides, .metales, .halogenos, .desconocidos {
    
     display: flex;
-    position: relative;
+   
     width: 60px;
     height: 60px;
     border: dashed black 2px;

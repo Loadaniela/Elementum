@@ -6,7 +6,7 @@ body {
     
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    
 }
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 * {
@@ -24,7 +24,9 @@ body {
   }
 
   .content {
-    padding: 20px;
+    padding: 10px;
+    height: 600px;
+    
     background-color: #fff;
     color: #333;
   }
@@ -46,70 +48,20 @@ body {
     
   }
  
-.card{
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 20px;
-}
 
-.card .face{
-    position: absolute;
-    width: 100%;
-    height: 125%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: justify;
-    transition: .5s;
-}
-
-.card .front{
-    transform: perspective(600px) rotateY(0deg);
-    box-shadow:0 5px 10px black;
-}
-.card .front p{
-    text-decoration: solid;
-    text-align: justify;
-}
 
 .carta .front img{
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3; /* Ajusta el nivel de transparencia */
+    opacity: 0.16; /* Ajusta el nivel de transparencia */
 }
 
 /*linea negra del titulo de la carta*/
-.card .front h3{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    line-height: 45px;
-    color: #fff;
-    background: rgb(233, 120, 44);
-    text-align: center;
-}
 
-.card .back{
-    transform: perspective(600px) rotateY(180deg);
-    background: black;
-    padding: 5px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 5px 10px black;
-}
 
-.card .back .link{ /*links de la parte de atras de las tarjetas*/
-    border-top: solid 1px #f3f3f3;
-    height: 40px;
-    line-height: 50px;
-}
+
 
 
 
@@ -124,7 +76,7 @@ body {
     /*letter-spacing: 1px;
     */
     text-align: justify;
-   font-size: 18.5px;
+   font-size: 20.5px;
    color: black;
    text-decoration: solid;
     
@@ -164,6 +116,7 @@ h1{
 .card-container {
     display: flex;
     flex-wrap: wrap;
+    
     justify-content: space-between;
 }
 .card {
@@ -230,7 +183,7 @@ h1{
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #746b63;
+    background-color:  rgb(196, 217, 236);
     width: 250px;
     height: 100%;
     transform: translateX(100%);
@@ -438,7 +391,7 @@ h1{
     font-size: 2.5rem; /* Tamaño del texto */
     color: #8319ca; /* Color del texto */
     text-align: center; /* Centrar el texto */
-    text-shadow: 2px 2px 5px black; /* Sombra para darle efecto */
+    text-shadow: 1px 1px 2px black; /* Sombra para darle efecto */
    
   
     background: linear-gradient(90deg, #ff6600, #ffcc00); /* Gradiente de color */
