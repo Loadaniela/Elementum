@@ -178,6 +178,156 @@
       "question": "¿El Kriptón tiene una electronegatividad mayor que 2.8?",
       "correctAnswer": true,
       "elementSymbol": "Kr"
+    },
+    {
+      "question": "¿El Rubidio tiene una electronegatividad menor que 1?",
+      "correctAnswer": true,
+      "elementSymbol": "Rb"
+    },
+    {
+      "question": "¿El Estroncio tiene una electronegatividad mayor que 1?",
+      "correctAnswer": false,
+      "elementSymbol": "Sr"
+    },
+    {
+      "question": "¿El Itrio tiene una electronegatividad mayor que 1.1?",
+      "correctAnswer": true,
+      "elementSymbol": "Y"
+    },
+    {
+      "question": "¿El Circonio tiene una electronegatividad mayor que 1.2?",
+      "correctAnswer": true,
+      "elementSymbol": "Zr"
+    },
+    {
+      "question": "¿El Niobio tiene una electronegatividad mayor que 1.4?",
+      "correctAnswer": true,
+      "elementSymbol": "Nb"
+    },
+    {
+      "question": "¿El Molibdeno tiene una electronegatividad mayor que 1.3?",
+      "correctAnswer": true,
+      "elementSymbol": "Mo"
+    },
+    {
+      "question": "¿El Tecnecio tiene una electronegatividad mayor que 1.4?",
+      "correctAnswer": true,
+      "elementSymbol": "Tc"
+    },
+    {
+      "question": "¿El Rutenio tiene una electronegatividad mayor que 2?",
+      "correctAnswer": true,
+      "elementSymbol": "Ru"
+    },
+    {
+      "question": "¿El Rodio tiene una electronegatividad mayor que 3?",
+      "correctAnswer": false,
+      "elementSymbol": "Rh"
+    },
+    {
+      "question": "¿El Paladio tiene una electronegatividad mayor que 2?",
+      "correctAnswer": true,
+      "elementSymbol": "Pd"
+    },
+    {
+      "question": "¿La Plata tiene una electronegatividad menor que 1.9?",
+      "correctAnswer": false,
+      "elementSymbol": "Ag"
+    },
+    {
+      "question": "¿El Cadmio tiene una electronegatividad menor que 1.8?",
+      "correctAnswer": true,
+      "elementSymbol": "Cd"
+    },
+    {
+      "question": "¿El Indio tiene una electronegatividad mayor que 1.6?",
+      "correctAnswer": true,
+      "elementSymbol": "In"
+    },
+    {
+      "question": "¿El Estaño tiene una electronegatividad mayor que 1.7?",
+      "correctAnswer": true,
+      "elementSymbol": "Sn"
+    },
+    {
+      "question": "¿El Antimonio tiene una electronegatividad mayor que 1.9?",
+      "correctAnswer": true,
+      "elementSymbol": "Sb"
+    },
+    {
+      "question": "¿El Telurio tiene una electronegatividad mayor que 2?",
+      "correctAnswer": true,
+      "elementSymbol": "Te"
+    },
+    {
+      "question": "¿El Yodo tiene una electronegatividad mayor que 2.5?",
+      "correctAnswer": true,
+      "elementSymbol": "I"
+    },
+    {
+      "question": "¿El Xenón tiene una electronegatividad menor que 2.6?",
+      "correctAnswer": false,
+      "elementSymbol": "Xe"
+    },
+    {
+      "question": "¿El Cesio tiene una electronegatividad menor que 1?",
+      "correctAnswer": true,
+      "elementSymbol": "Cs"
+    },
+    {
+      "question": "¿El Bario tiene una electronegatividad mayor que 1?",
+      "correctAnswer": false,
+      "elementSymbol": "Ba"
+    },
+    {
+      "question": "¿El Lantano tiene una electronegatividad menor que 1.1?",
+      "correctAnswer": false,
+      "elementSymbol": "La"
+    },
+    {
+      "question": "¿El Cerio tiene una electronegatividad mayor que 1?",
+      "correctAnswer": true,
+      "elementSymbol": "Ce"
+    },
+    {
+      "question": "¿El Praseodimio tiene una electronegatividad mayor que 1?",
+      "correctAnswer": true,
+      "elementSymbol": "Pr"
+    },
+    {
+      "question": "¿El Neodimio tiene una electronegatividad menor que 1.2?",
+      "correctAnswer": true,
+      "elementSymbol": "Nd"
+    },
+    {
+      "question": "¿El Prometio tiene una electronegatividad menor que 1.2?",
+      "correctAnswer": true,
+      "elementSymbol": "Pm"
+    },
+    {
+      "question": "¿El Samario tiene una electronegatividad mayor que 1.7?",
+      "correctAnswer": false,
+      "elementSymbol": "Sm"
+    },
+    {
+      "question": "¿El Europio tiene una electronegatividad menor que 1?",
+      "correctAnswer": false,
+      "elementSymbol": "Eu"
+    },
+    {
+      "question": "¿El Gadolinio tiene una electronegatividad mayor que 1.1?",
+      "correctAnswer": true,
+      "elementSymbol": "Gd"
+    },
+    {
+      "question": "¿El Terbio tiene una electronegatividad mayor que 1?",
+      "correctAnswer": true,
+      "elementSymbol": "Tb"
+    },
+    {
+      "question": "¿El Disprosio tiene una electronegatividad mayor que 1.1?",
+      "correctAnswer": true,
+      "elementSymbol": "Dy"
     }
   ]
   

@@ -355,8 +355,14 @@ button:hover {
 }
 
 h2 {
-    text-align: center;
-    color: #8b5edf;
+    font-size: 3rem; /* Tamaño del texto */
+    color: #3336db; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    text-shadow: 1px 1px 2px black; /* Sombra para darle efecto */
+   
+  
+    background: linear-gradient(90deg, #ff6600, #ffcc00); /* Gradiente de color */
+    -webkit-background-clip: text; /* Clip del fondo al texto para darle efecto 3d */
 }
 
 #foto-perfil {
@@ -383,8 +389,10 @@ h2 {
 }
 
 .info-container p {
-    font-size: 1rem;
+    text-align: justify;
+    font-size: 1.6rem;
     margin: 5px 0;
+
 }
 
 .info-container strong {

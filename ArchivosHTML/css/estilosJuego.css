@@ -267,23 +267,23 @@ h1{
     #menu1{
         top: 100px;
         right: 600px;
-        background-color: #eb8500; 
+        background-color: #00a1eb; 
         position: fixed;
         }
         #menu2{
             top: 200px; 
             right: 700px;
-            background-color: #1cbdee; 
+            background-color: #324997; 
             position: fixed;
             }
             #menu3{
                 top: 300px; 
-                background-color: #0018eb; 
+                background-color: #a71fdd; 
                 position: fixed;
                 }
                 #menu4{
                     top: 400px; 
-                    background-color: #eb0014; 
+                    background-color: #FFD8BE; 
                     position: fixed;
                     }
 

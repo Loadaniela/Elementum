@@ -1065,7 +1065,7 @@ div{
     font-size: small;
     cursor: move;
     border-radius: 2px;
-    background: #69e0e0; /*no mover*/
+    background: #0e8888; /*no mover*/
     -webkit-transition-duration: 0.9s;
     
 }

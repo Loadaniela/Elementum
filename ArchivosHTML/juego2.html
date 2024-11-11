@@ -19,6 +19,10 @@
             <li><a href="pagina1.html" class="button-style">MENÚ PRINCIPAL</a></li>
                 <li><a href="login.html" id="logout" class="button-style">CERRAR SESIÓN</a></li>
                 <li><a href="Perfil.html" class="button-style">PERFIL DEL JUGADOR</a></li>
+                <li><a href="normas.html" class="button-style">NORMAS</a></li>
+                <li><a href="autor.html" class="button-style">ACERCA DE</a></li>
+                <li><a href="marcador.html" class="button-style">MARCADOR</a></li>
+                <li><a href="tabla-periodica.html" class="button-style">TABLA PERIÓDICAa></li>
             <p><strong style="color: rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
             <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>
             <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
@@ -41,13 +45,14 @@
     .button-style:hover {
         background-color: #7a539d; /* color al pasar el mouse */
     }
-    
-     div[data-nombre] p {
-            visibility: hidden; /* Oculta los elementos <p> que contienen los símbolos */
+            
+            /* Oculta todos los símbolos inicialmente */
+        div[data-nombre] p {
+            visibility: hidden;
         }
 
-        /* Cuando se activa el botón de ayuda, hace visible el contenido */
-    .mostrar-simbolos div[data-nombre] p {
+        /* Muestra símbolos cuando el botón de ayuda está activado */
+        .mostrar-simbolos div[data-nombre] p {
             visibility: visible;
         }
 
@@ -55,6 +60,7 @@
         div[data-nombre] p.visible {
             visibility: visible !important;
         }
+
 
                 #btnAyuda {
             padding: 10px 20px;
@@ -471,6 +477,7 @@
         </div>
         
         <div class="lantanidos" id="eq60" data-nombre="Neodimio" ondrop="drop(event)" ondragover="allowDrop(event)">
+        
             <p>Nd</p>
         </div>
         
@@ -1045,9 +1052,10 @@ window.addEventListener('popstate', function (event) {
 </script>
 -->
 <script>
+    // Función para alternar la ayuda
 function mostrarSimbolos(event) {
     event.preventDefault();
-    
+
     // Alterna la clase en el `body` para mostrar/ocultar símbolos
     document.body.classList.toggle('mostrar-simbolos');
 
@@ -1055,26 +1063,30 @@ function mostrarSimbolos(event) {
     const btn = event.target;
     if (document.body.classList.contains('mostrar-simbolos')) {
         btn.textContent = "Ocultar ayuda";
-        btn.classList.add('activo');  // Agrega una clase para el estilo activo
+        btn.classList.add('activo');
     } else {
         btn.textContent = "Ayuda";
-        btn.classList.remove('activo');  // Quita la clase si está desactivado
+        btn.classList.remove('activo');
     }
 }
 
-</script>
-<script>
-   function onDrop(event) {
-   
+// Función que se ejecuta cuando un elemento se coloca correctamente en una celda
+function onDrop(event) {
+    event.preventDefault();
     
     const celdaCorrecta = event.target; 
     const simbolo = celdaCorrecta.querySelector('p');
     
     // Si la celda es correcta y el símbolo existe, agrega la clase "visible"
     if (simbolo) {
-        simbolo.classList.add('visible');  // Agrega la clase para mantener el símbolo visible
+        simbolo.classList.add('visible');  // Asegura que el símbolo sea visible al colocarse
     }
 }
+
+// Asocia el evento de `drop` a cada celda relevante
+document.querySelectorAll('.celda').forEach(celda => {
+    celda.addEventListener('drop', onDrop);
+});
 
 
 </script>
