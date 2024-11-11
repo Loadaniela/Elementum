@@ -102,7 +102,7 @@ p{
     text-align: center; /*Para poner el titulo en el centro */
     align-items: center;
    
-    bottom: -120px; /* Ajusta la posición desde el top del contenedor */
+    bottom: -180px; /* Ajusta la posición desde el top del contenedor */
     left: 15%;
     font-size: 7em;
     text-shadow: 8px -8px 0px #8319ca;
@@ -298,11 +298,11 @@ p{
 #menuoculto a{
     position: absolute;
     color: black;
-    left:-100px; 
+    left:10px; 
     transition: 0.2s;
     font-size: 15px;
     font-weight:bold;
-    text-decoration: none;
+    text-decoration:solid;
     padding: 15px 50px 10px 10px;
     width: 100px; /* tamaño del menú */
     border-radius: 0 20px 5px 0; 
@@ -313,7 +313,7 @@ p{
     
     #menu1{
         top: 900px; 
-        background-color: #00a8eb; 
+        background-color: #51b2d8; 
         }
     #menu2{
         top: 100px; 
@@ -1222,9 +1222,9 @@ div{
     font-size: 1.5em;
     cursor: move;
     left: 40%;
-    top: -20px;
+    top: -30px;
     border-radius: 2px;
-    background: #35bbf0;
+    background: #a518aa;
     transition-duration: 0.9s;
     
 }
@@ -1240,7 +1240,7 @@ div{
 
 .contenedores{
     position: relative;
-    bottom: -130px;
+    bottom: -120px;
     left: 100px;
 }
 
@@ -1274,11 +1274,11 @@ div{
     display: flex;
     flex-direction: column; /* O la dirección que necesites */
     max-width: 1400px;
-    min-height: 1000px;
+    min-height: 1100px;
     margin: 10px auto;
-    padding: 10px;
+    padding: -10px;
     
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }

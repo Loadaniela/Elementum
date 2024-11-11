@@ -17,9 +17,9 @@
         </label>
         <nav class="menu">
             <ul>
-                <li><a href="pagina1.html">MENÚ PRINCIPAL</a></li>
-                <li><a href="login.html" id="logout">CERRAR SESIÓN</a></li>
-                <li><a href="Perfil.html" >PERFIL DEL JUGADOR</a></li>
+                <li><a href="pagina1.html" class="button-style">MENÚ PRINCIPAL</a></li>
+                <li><a href="login.html" id="logout" class="button-style">CERRAR SESIÓN</a></li>
+                <li><a href="Perfil.html" class="button-style">PERFIL DEL JUGADOR</a></li>
                 <p><strong style="color: rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
                 <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>
                 <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
@@ -27,7 +27,23 @@
             </ul>
         </nav>
         <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
-
+        <button onclick="flipCards()">Voltear Tarjetas</button>
+        <style>
+            .button-style {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #9b68bd; /* o el color que prefieras */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .button-style:hover {
+            background-color: #7a539d; /* color al pasar el mouse */
+        }
+        
+        </style>
 
         <body>
             <div class="container">
@@ -90,8 +106,10 @@
                                 <img src="Imagenes/logojuego4.png" alt="">
                                
                             </div>
+                           
                             <div class="face back">
                                 <h3>Electronegatividad</h3>
+                                
                                 <p id="instruciones"><strong>1.</strong>Localiza los elementos en la parte interior de la tabla periódica. <br>
                                     <strong>2.</strong> Visualiza el número del elemento, ese es el nivel de  <strong>Electronegatividad</strong>. <br>
                                     <strong>3.</strong>Arrastra el elemento a su casilla correspondiente de acuerdo a su posición y nivel de electronegatividad de la tabla periódica de los elementos. <br>
@@ -105,7 +123,7 @@
                 </div>
                 <div class="footer">
                     <p>Proyecto Terminal UAM-Cuajimalpa</p>
-                    <button onclick="flipCards()">Voltear Tarjetas</button>
+
                 </div>
             </div>
         

@@ -9,6 +9,22 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" href="/Imagenes/icon-512x512.png"> <!--Etiqueta para la imagen del icono-->
 </head>
+<style>
+    .button-style {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #9b68bd; /* o el color que prefieras */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button-style:hover {
+    background-color: #7a539d; /* color al pasar el mouse */
+}
+
+</style>
 <body>
     <main>
         <input type="checkbox" id="toggle">
@@ -20,7 +36,8 @@
         </label>
         <nav class="menu">
             <ul>
-                <li><a href="login.html" id="logout">CERRAR SESIÓN</a></li>
+              
+               <li><a href="login.html" id="logout" class="button-style">CERRAR SESIÓN</a></li>
                 <li><a href="Perfil.html" >PERFIL DEL JUGADOR</a></li>
                 <p><strong style="color: rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
                 <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>

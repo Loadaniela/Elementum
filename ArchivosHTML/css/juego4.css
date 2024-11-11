@@ -206,14 +206,15 @@ p{
   /*Menu oculto*/
   /*MENU OCULTO*/
 #menuoculto a{
+   
     position: absolute;
     color: black;
-    left:-100px; 
+    left: 10px; 
     transition: 0.2s;
     font-size: 15px;
     font-weight:bold;
     text-decoration: none;
-    padding: 1px 50px 10px 10px;
+    padding: 15px 50px 10px 10px;
     width: 100px; /* tamaño del menú */
     border-radius: 0 20px 5px 0; 
     } 
@@ -223,7 +224,7 @@ p{
     
     #menu1{
         top: 900px; 
-        background-color: #eb4300; 
+        background-color: #51b2d8; 
         }
         #menu2{
             top: 100px; 
@@ -274,7 +275,7 @@ div{
   }
   
   .simbolo{
-      font-size: 15px;
+      font-size: 18px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */
@@ -290,7 +291,7 @@ div{
   }
   
   .electronegatividad{
-      font-size: 15px;
+      font-size: 25px;
       line-height: 0px;
       font-weight: bold; /*  texto sea más grueso */
       color: white; /* Asegurando un buen contraste con el fondo */
@@ -1055,8 +1056,8 @@ div{
 }
 /*pruebas para el bloque por medio de mongo*/
 .elemento-arrastable{
-    width: 55px;
-    height: 55px;
+    width: 65px;
+    height: 65px;
     position: relative;
     display:inline-block ;
     border: dashed black 2px; /*tamaño del color negro del borde*/
@@ -1064,7 +1065,7 @@ div{
     font-size: small;
     cursor: move;
     border-radius: 2px;
-    background: #b169e0; /*no mover*/
+    background: #69e0e0; /*no mover*/
     -webkit-transition-duration: 0.9s;
     
 }
@@ -1098,7 +1099,7 @@ div{
     display: flex;
     flex-direction: column; /* O la dirección que necesites */
     max-width: 1400px;
-    min-height: 1000px;
+    min-height: 1100px;
     margin: 10px auto;
     padding: 10px;
     

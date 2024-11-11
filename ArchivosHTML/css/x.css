@@ -89,7 +89,7 @@ body {
 }
 
 h3{
-    color: #f18826;
+    color: #c313c9;
     font-size: xx-large;
     text-align: center;
     font-style: italic;
@@ -98,15 +98,15 @@ h3{
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #BBD5ED;
+    padding: 10px 30px;
+    background-color: #0c28a3;
     color: white;
-    
-    border-radius: 5px;
-    margin-top: 20px; /* Espacio superior */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    border-radius: 5px; /* Bordes redondeados del botón */
-    text-decoration: none; /* Quita subrayado en enlaces */
+    border-radius: 10px;
+    margin: 20px auto; /* Centra horizontalmente */
+    cursor: pointer;
+    text-align: center;
+    display: block; /* Necesario para centrar con `margin: auto` */
+    top: 20px;
 }
 
 button a{
@@ -168,7 +168,7 @@ button a{
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #746b63;
+    background-color:  rgb(196, 217, 236);
     width: 250px;
     height: 100%;
     transform: translateX(100%);

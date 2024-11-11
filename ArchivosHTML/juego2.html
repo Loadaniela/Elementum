@@ -16,9 +16,9 @@
     </label>
     <nav class="menu">
         <ul>
-            <li><a href="pagina1.html">MENÚ PRINCIPAL</a></li>
-            <li><a href="login.html" id="logout">CERRAR SESIÓN</a></li>
-            <li><a href="Perfil.html">PERFIL DEL JUGADOR</a></li>
+            <li><a href="pagina1.html" class="button-style">MENÚ PRINCIPAL</a></li>
+                <li><a href="login.html" id="logout" class="button-style">CERRAR SESIÓN</a></li>
+                <li><a href="Perfil.html" class="button-style">PERFIL DEL JUGADOR</a></li>
             <p><strong style="color: rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
             <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>
             <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
@@ -27,7 +27,53 @@
     </nav>
 
    
-  
+    <style>
+        .button-style {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #9b68bd; /* o el color que prefieras */
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .button-style:hover {
+        background-color: #7a539d; /* color al pasar el mouse */
+    }
+    
+     div[data-nombre] p {
+            visibility: hidden; /* Oculta los elementos <p> que contienen los símbolos */
+        }
+
+        /* Cuando se activa el botón de ayuda, hace visible el contenido */
+    .mostrar-simbolos div[data-nombre] p {
+            visibility: visible;
+        }
+
+        /* Muestra permanentemente los símbolos en las celdas donde el elemento se colocó correctamente */
+        div[data-nombre] p.visible {
+            visibility: visible !important;
+        }
+
+                #btnAyuda {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #177df1; /* Verde inicial */
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        #btnAyuda.activo {
+            background-color: #0d18b6; /* Cambia a rojo cuando está activo */
+            color: white;
+        }
+
+
+    </style>
     <!--ELEMENTOS DE LA TABLA PERIODICA-->  
 
 <!--MENU OCULTO-->
@@ -42,277 +88,370 @@
             <h1 class="glitch"  data-text="Elementum">ELEMENTOS</h1>
             <p class="arrastres"><strong style="color:#8319ca">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: rgb(7, 7, 7);">0</span></p>
         <!--INICIA EL BLOQUE S-->
-        <div class="gas" id="eq1" data-nombre="Hidrógeno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <button id="btnAyuda" onclick="mostrarSimbolos(event)">Ayuda</button>
+       
 
-        <div class="alcalino" id="eq3" data-nombre="Litio" ondrop="drop(event)" ondragover="allowDrop(event)">   
+
+        <div class="gas" id="eq1" data-nombre="Hidrógeno" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p>H</p>
+        </div>
+            
+        <div class="alcalino" id="eq3" data-nombre="Litio" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+            <p>Li</p>  
         </div>
 
         <div class="alcalino" id="eq11" data-nombre="Sodio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Na</p>
         </div>
 
         <div class="alcalino" id="eq19" data-nombre="Potasio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <P>K</P>
         </div>
 
         <div class="alcalino" id="eq37" data-nombre="Rubidio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Rb</p>
         </div>
 
         <div class="alcalino" id="eq55" data-nombre="Cesio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cs</p>
         </div>
 
         <div class="alcalino" id="eq87" data-nombre="Francio" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+            <p>Fr</p>
         </div>
         
         <div class="alcalinoterreos" data-nombre="Berilio" id="eq4" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Be</p>
         </div>
             
         <div class="alcalinoterreos" id="eq12" data-nombre="Magnesio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Mg</p>
         </div>
             
         <div class="alcalinoterreos" id="eq20" data-nombre="Calcio" ondrop="drop(event)" ondragover="allowDrop(event)">
-            
+            <p>Ca</p>
         </div>
 
         <div class="alcalinoterreos" id="eq38" data-nombre="Estroncio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Sr</p>
         </div>
             
         <div class="alcalinoterreos" id="eq56" data-nombre="Bario" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ba</p>
         </div>
             
         <div class="alcalinoterreos" id="eq88" data-nombre="Radio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ra</p>
         </div>
         <!--AQUI TERMINA EL BLOQUE S-->
         <!--AQUI INICIA EL BLOQUE D-->
             
         <div class="transicion" id="eq21" data-nombre="Escandio" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p>Sc</p>
         </div>
                 
         <div class="transicion" id="eq39" data-nombre="Itrio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Y</p>
         </div>
                 
         <div class="lantanidos" id="eq5771" data-nombre="Lutecio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Lu</p>
         </div>
                 
         <div class="actinidos" id="eq89103" data-nombre="Lawrencio" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+            <p>Lr</p>
         </div>
                 
         <div class="transicion" id="eq22" data-nombre="Titanio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ti</p>
         </div>
                 
         <div class="transicion" id="eq40" data-nombre="Circonio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Zr</p>
         </div>
                 
         <div class="transicion" id="eq72" data-nombre="Hafnio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Hf</p>
         </div>
                 
         <div class="transicion" id="eq104" data-nombre="Rutherfordio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Rf</p>
         </div>
                 
         <div class="transicion" id="eq23" data-nombre="Vanadio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>V</p>
         </div>
                 
         <div class="transicion" id="eq41" data-nombre="Niobio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Nb</p>
         </div>
                 
         <div class="transicion" id="eq73" data-nombre="Tántalo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ta</p>
         </div>
                 
         <div class="transicion" id="eq105" data-nombre="Dubnio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Db</p>
         </div>
             
         <div class="transicion" id="eq24" data-nombre="Cromo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cr</p>
         </div>
                     
         <div class="transicion" id="eq42" data-nombre="Molibdeno" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Mo</p>
         </div>
                     
         <div class="transicion" id="eq74" data-nombre="Wolframio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>W</p>
         </div>
                     
         <div class="transicion" id="eq106" data-nombre="Seaborgio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Sg</p>
         </div>
                     
         <div class="transicion" id="eq25" data-nombre="Manganeso" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Mn</p>
         </div>
                     
         <div class="transicion" id="eq43" data-nombre="Tecnecio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Tc</p>
         </div>
                     
         <div class="transicion" id="eq75" data-nombre="Renio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Re</p>
         </div>
                     
         <div class="transicion" id="eq107" data-nombre="Bohrio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Bh</p>
         </div>
         
         <div class="transicion" id="eq26" data-nombre="Hierro" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Fe</p>
         </div>
-                    
+        
         <div class="transicion" id="eq44" data-nombre="Rutenio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ru</p>
         </div>
-                    
+        
         <div class="transicion" id="eq76" data-nombre="Osmio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Os</p>
         </div>
-                    
+        
         <div class="transicion" id="eq108" data-nombre="Hassio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Hs</p>
         </div>
-            
+        
         <div class="transicion" id="eq27" data-nombre="Cobalto" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Co</p>
         </div>
-                    
+        
         <div class="transicion" id="eq45" data-nombre="Rodio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Rh</p>
         </div>
-                    
+        
         <div class="transicion" id="eq77" data-nombre="Iridio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ir</p>
         </div>
-                    
+        
         <div class="transicion" id="eq109" data-nombre="Meitnerio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Mt</p>
         </div>
-            
+        
         <div class="transicion" id="eq28" data-nombre="Níquel" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ni</p>
         </div>
-                    
+        
         <div class="transicion" id="eq46" data-nombre="Paladio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Pd</p>
         </div>
-                    
+        
         <div class="transicion" id="eq78" data-nombre="Platino" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Pt</p>
         </div>
-                    
+        
         <div class="transicion" id="eq110" data-nombre="Darmstadtio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ds</p>
         </div>
-                
+        
         <div class="transicion" id="eq29" data-nombre="Cobre" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cu</p>
         </div>
-                    
+        
         <div class="transicion" id="eq47" data-nombre="Plata" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ag</p>
         </div>
-                    
+        
         <div class="transicion" id="eq79" data-nombre="Oro" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Au</p>
         </div>
-                    
+        
         <div class="transicion" id="eq111" data-nombre="Roentgenio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Rg</p>
         </div>
-                
+        
         <div class="transicion" id="eq30" data-nombre="Zinc" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Zn</p>
         </div>
-                    
+        
         <div class="transicion" id="eq48" data-nombre="Cadmio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cd</p>
         </div>
-                    
+        
         <div class="transicion" id="eq80" data-nombre="Mercurio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Hg</p>
         </div>
-                    
+        
         <div class="transicion" id="eq112" data-nombre="Copernicio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cn</p>
         </div>
-        <!--AQUI TERMINA EL BLOQUE D-->
-                    
+        
         <div class="metaloides" id="eq5" data-nombre="Boro" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>B</p>
         </div>
-                        
+        
         <div class="metales" id="eq13" data-nombre="Aluminio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Al</p>
         </div>
-                        
+        
         <div class="metales" id="eq31" data-nombre="Galio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ga</p>
         </div>
-                        
+        
         <div class="metales" id="eq49" data-nombre="Indio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>In</p>
         </div>
-                        
+        
         <div class="metales" id="eq81" data-nombre="Talio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Tl</p>
         </div>
-                        
+        
         <div class="desconocidos" id="eq113" data-nombre="Nihonio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Nh</p>
         </div>
-                        
+        
         <div class="gas" id="eq6" data-nombre="Carbono" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>C</p>
         </div>
-
+        
         <div class="metaloides" id="eq14" data-nombre="Silicio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Si</p>
         </div>
-
-        <div class="metaloides" id="eq32" data-nombre="Germanio" ondrop="drop(event)" ondragover="allowDrop(event)"><!--AQUI ME QUEDE-->
+        
+        <div class="metaloides" id="eq32" data-nombre="Germanio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ge</p>
         </div>
-
+        
         <div class="metales" id="eq50" data-nombre="Estaño" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Sn</p>
         </div>
-
+        
         <div class="metales" id="eq82" data-nombre="Plomo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Pb</p>
         </div>
-
+        
         <div class="desconocidos" id="eq114" data-nombre="Flerovio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Fl</p>
         </div>
-                        
+        
         <div class="gas" id="eq7" data-nombre="Nitrógeno" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>N</p>
         </div>
-
+        
         <div class="gas" id="eq15" data-nombre="Fósforo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>P</p>
         </div>
-
+        
         <div class="metaloides" id="eq33" data-nombre="Arsénico" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>As</p>
         </div>
-
+        
         <div class="metaloides" id="eq51" data-nombre="Antimonio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Sb</p>
         </div>
-
+        
         <div class="metales" id="eq83" data-nombre="Bismuto" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Bi</p>
         </div>
-
+        
         <div class="desconocidos" id="eq115" data-nombre="Moscovio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Mc</p>
         </div>
-                            
+        
         <div class="gas" id="eq8" data-nombre="Oxígeno" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>O</p>
         </div>
-
+        
         <div class="gas" id="eq16" data-nombre="Azufre" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>S</p>
         </div>
-
+        
         <div class="gas" id="eq34" data-nombre="Selenio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Se</p>
         </div>
-
+        
         <div class="metaloides" id="eq52" data-nombre="Telurio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Te</p>
         </div>
-
+        
         <div class="metaloides" id="eq84" data-nombre="Polonio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Po</p>
         </div>
-
+        
         <div class="desconocidos" id="eq116" data-nombre="Livermorio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Lv</p>
         </div>
-                            
+        
         <div class="halogenos" id="eq9" data-nombre="Flúor" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>F</p>
         </div>
-
+        
         <div class="halogenos" id="eq17" data-nombre="Cloro" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cl</p>
         </div>
-
+        
         <div class="halogenos" id="eq35" data-nombre="Bromo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Br</p>
         </div>
-
+        
         <div class="halogenos" id="eq53" data-nombre="Yodo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>I</p>
         </div>
-
+        
         <div class="halogenos" id="eq85" data-nombre="Astato" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>At</p>
         </div>
-
+        
         <div class="desconocidos" id="eq117" data-nombre="Tenesino" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ts</p>
         </div>
-                                
+        
         <div class="nobles" id="eq2" data-nombre="Helio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>He</p>
         </div>
-                            
+        
         <div class="nobles" id="eq10" data-nombre="Neón" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ne</p>
         </div>
-
+        
         <div class="nobles" id="eq18" data-nombre="Argón" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ar</p>
         </div>
-
+        
         <div class="nobles" id="eq36" data-nombre="Kriptón" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Kr</p>
         </div>
-
+        
         <div class="nobles" id="eq54" data-nombre="Xenón" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Xe</p>
         </div>
-
+        
         <div class="nobles" id="eq86" data-nombre="Radón" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Rn</p>
         </div>
-
-        <div class="desconocidos" data-nombre="Oganesón" id="eq118" ondrop="drop(event)" ondragover="allowDrop(event)">
+        
+        <div class="desconocidos" id="eq118" data-nombre="Oganesón" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Og</p>
         </div>
 
         <!--AQUI TERMINA EL BLOQUE P-->
@@ -320,92 +459,117 @@
 
         <!--AQUI INICIA EL BLOQUE F-->
         <div class="lantanidos" id="eq57" data-nombre="Lantano" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>La</p>
         </div>
-
+        
         <div class="lantanidos" id="eq58" data-nombre="Cerio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ce</p>
         </div>
-
+        
         <div class="lantanidos" id="eq59" data-nombre="Praseodimio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Pr</p>
         </div>
-
+        
         <div class="lantanidos" id="eq60" data-nombre="Neodimio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Nd</p>
         </div>
-
+        
         <div class="lantanidos" id="eq61" data-nombre="Prometio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Pm</p>
         </div>
-
+        
         <div class="lantanidos" id="eq62" data-nombre="Samario" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Sm</p>
         </div>
-
+        
         <div class="lantanidos" id="eq63" data-nombre="Europio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Eu</p>
         </div>
-
+        
         <div class="lantanidos" id="eq64" data-nombre="Gadolinio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Gd</p>
         </div>
-
+        
         <div class="lantanidos" id="eq65" data-nombre="Terbio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Tb</p>
         </div>
-
+        
         <div class="lantanidos" id="eq66" data-nombre="Disprosio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Dy</p>
         </div>
-
+        
         <div class="lantanidos" id="eq67" data-nombre="Holmio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ho</p>
         </div>
-
+        
         <div class="lantanidos" id="eq68" data-nombre="Erbio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Er</p>
         </div>
-
+        
         <div class="lantanidos" id="eq69" data-nombre="Tulio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Tm</p>
         </div>
-
+        
         <div class="lantanidos" id="eq70" data-nombre="Iterbio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Yb</p>
         </div>
-
-        <!--
-        <div class="lantanidos" id="eq71" data-nombre="Actinio" ondrop="drop(event)" ondragover="allowDrop(event)"><p>act</p> 
-        </div>-->
-
+        
         <div class="actinidos" id="eq89" data-nombre="Actinio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Ac</p>
         </div>
-
+        
         <div class="actinidos" id="eq90" data-nombre="Torio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Th</p>
         </div>
-
+        
         <div class="actinidos" id="eq91" data-nombre="Protactinio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Pa</p>
         </div>
-
+        
         <div class="actinidos" id="eq92" data-nombre="Uranio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>U</p>
         </div>
-
+        
         <div class="actinidos" id="eq93" data-nombre="Neptunio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Np</p>
         </div>
-
+        
         <div class="actinidos" id="eq94" data-nombre="Plutonio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Pu</p>
         </div>
-
+        
         <div class="actinidos" id="eq95" data-nombre="Americio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Am</p>
         </div>
-
+        
         <div class="actinidos" id="eq96" data-nombre="Curio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cm</p>
         </div>
-
+        
         <div class="actinidos" id="eq97" data-nombre="Berkelio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Bk</p>
         </div>
-
+        
         <div class="actinidos" id="eq98" data-nombre="Californio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Cf</p>
         </div>
-
+        
         <div class="actinidos" id="eq99" data-nombre="Einstenio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Es</p>
         </div>
-
+        
         <div class="actinidos" id="eq100" data-nombre="Fermio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Fm</p>
         </div>
-
+        
         <div class="actinidos" id="eq101" data-nombre="Mendelevio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Md</p>
         </div>
-
+        
         <div class="actinidos" id="eq102" data-nombre="Nobelio" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>No</p>
         </div>
+        
 
         <!---
         <div class="actinidos" id="eq103" data-nombre="Lawrencio" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -532,6 +696,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!--
+
+
    <script> //AQUI ESTA LA FUNCION PARA SALIR DEL JUEGO SIN GUARDAR O ACEPTAR EL GUARADADO 
     // Variable para indicar si el juego ha terminado
 let juegoTerminado = false;
@@ -558,6 +724,8 @@ window.addEventListener('popstate', function (event) {
 
 </script>
 -->
+
+<!--
 <script>//funcion de swt alert al salir de las ventanas
     // Variable para indicar si el juego ha terminado
     let juegoTerminado = false;
@@ -621,7 +789,7 @@ window.addEventListener('popstate', function (event) {
     // Simulamos una entrada de historial para manejar el popstate correctamente
     window.history.pushState(null, null, window.location.href);
 </script>
-
+-->
 
 <!--   
 <script> //funciones de arratre y almacenamiento en la base y marcador.html
@@ -758,24 +926,26 @@ window.addEventListener('popstate', function (event) {
 
     console.log(`Comparando: ${nombreElemento} con ${nombreCelda}`);
 
-    // Verificar si el nombre del elemento coincide con el nombre de la celda
     if (nombreElemento.toLowerCase() === nombreCelda.toLowerCase()) {
         const elementoId = event.dataTransfer.getData('elementoId');
         const elemento = document.getElementById(elementoId);
-        dropTarget.appendChild(elemento);  // Coloca el elemento en la nueva celda
-        elemento.style.position = 'relative';
-        elemento.style.left = '0';
-        elemento.style.top = '0';
+
+        // Ajusta la posición del elemento dentro del contenedor "centrado"
+        dropTarget.appendChild(elemento);
+        elemento.style.position = 'absolute';  
+        elemento.style.left = '50%';  // Posicionamos en el centro del contenedor
+        elemento.style.top = '50%';
+        elemento.style.transform = 'translate(-50%, -50%)';  // Centramos completamente el elemento
+        elemento.style.zIndex = '10'; // Asegura que el elemento esté sobre el contenido existente
         elemento.classList.add('colocado');
-        elemento.setAttribute('draggable', 'false'); // Deshabilitar arrastre después de soltarlo
-        elemento.removeEventListener('dragstart', drag); // Remover evento de arrastre
-        
+        elemento.setAttribute('draggable', 'false'); // Deshabilita el arrastre después de soltar
+        elemento.removeEventListener('dragstart', drag); // Remueve el evento de arrastre
+
         elementosColocadosCorrectamente++; // Incrementa el contador de elementos colocados correctamente
         sonidoAcierto.play(); // Reproduce el sonido de acierto
     } else {
         sonidoError.play(); // Reproduce el sonido de error
     }
-
     // Actualiza el contador de arrastres en el DOM
     document.getElementById('contadorArrastres').textContent = contadorArrastres;
 
@@ -847,7 +1017,66 @@ window.addEventListener('popstate', function (event) {
     }
 </script>
 
+<!--
+<script>
+    function mostrarSimbolos(event) {
+    event.preventDefault(); // Evita que el botón realice una acción predeterminada (como enviar un formulario o navegar)
+    
+    // Selecciona todos los elementos <p> dentro de los divs con el atributo data-nombre
+    const simbolos = document.querySelectorAll('div[data-nombre] p');
+
+    // Alterna la visibilidad de cada símbolo
+    simbolos.forEach(simbolo => {
+        simbolo.style.visibility = (simbolo.style.visibility === 'hidden') ? 'visible' : 'hidden';
+    });
+}
 
 
+</script>
+
+<script>
+    function mostrarSimbolos(event) {
+    event.preventDefault(); // Previene la acción predeterminada del botón
+
+    // Alterna la clase `mostrar-simbolos` en el body para controlar la visibilidad
+    document.body.classList.toggle('mostrar-simbolos');
+}
+
+</script>
+-->
+<script>
+function mostrarSimbolos(event) {
+    event.preventDefault();
+    
+    // Alterna la clase en el `body` para mostrar/ocultar símbolos
+    document.body.classList.toggle('mostrar-simbolos');
+
+    // Cambia el texto y el estilo del botón
+    const btn = event.target;
+    if (document.body.classList.contains('mostrar-simbolos')) {
+        btn.textContent = "Ocultar ayuda";
+        btn.classList.add('activo');  // Agrega una clase para el estilo activo
+    } else {
+        btn.textContent = "Ayuda";
+        btn.classList.remove('activo');  // Quita la clase si está desactivado
+    }
+}
+
+</script>
+<script>
+   function onDrop(event) {
+   
+    
+    const celdaCorrecta = event.target; 
+    const simbolo = celdaCorrecta.querySelector('p');
+    
+    // Si la celda es correcta y el símbolo existe, agrega la clase "visible"
+    if (simbolo) {
+        simbolo.classList.add('visible');  // Agrega la clase para mantener el símbolo visible
+    }
+}
+
+
+</script>
 </body>
 </html>

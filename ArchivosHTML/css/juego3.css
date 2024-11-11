@@ -200,7 +200,7 @@ p{
 #menuoculto a{
     position: absolute;
     color: black;
-    left:-100px; 
+    left: 10px; 
     transition: 0.2s;
     font-size: 15px;
     font-weight:bold;
@@ -215,7 +215,7 @@ p{
     
     #menu1{
         top: 900px; 
-        background-color: #eb4300; 
+        background-color: #51b2d8; 
         }
         #menu2{
             top: 100px; 
@@ -1049,7 +1049,7 @@ div{
     position: absolute; /* O prueba con static */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla si es necesario */
+    height: 90vh; /* Ajusta la altura para que ocupe toda la pantalla si es necesario */
     gap: 10px; /* Espacio entre elementos */
 }
 /*pruebas para el bloque por medio de mongo*/
@@ -1063,11 +1063,11 @@ div{
     font-size: 1.5em;
     border-radius: 3px;
     left: 40%;
-    top: 5px;
-    background:#92b0e9;
+    top: 40px;
+    background:#a246c7;
     cursor: move;
     -webkit-transition-duration: 0.9s;
-    color: white;
+    color: rgb(105, 102, 102);
     
 
   
@@ -1121,7 +1121,7 @@ div{
     display: flex;
     flex-direction: column; /* O la dirección que necesites */
     max-width: 1400px;
-    min-height: 1000px;
+    min-height: 1100px;
     margin: 10px auto;
     padding: 10px;
     

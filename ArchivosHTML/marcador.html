@@ -17,9 +17,9 @@
         </label>
         <nav class="menu">
             <ul>
-                <li><a href="pagina1.html">MENÚ PRINCIPAL</a></li>
-                <li><a href="login.html" id="logout">CERRAR SESIÓN</a></li>
-                <li><a href="Perfil.html">PERFIL DEL JUGADOR</a></li>
+                <li><a href="pagina1.html" class="button-style">MENÚ PRINCIPAL</a></li>
+                <li><a href="login.html" id="logout" class="button-style">CERRAR SESIÓN</a></li>
+                <li><a href="Perfil.html" class="button-style">PERFIL DEL JUGADOR</a></li>
                 <p><strong style="color: rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
                 <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>
                 <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
@@ -36,6 +36,22 @@
         <h1 class="glitch" data-text="Elementum">ELEMENTUM</h1>
 
         <style>
+            
+                    .button-style {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #9b68bd; /* o el color que prefieras */
+                    color: white;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+                .button-style:hover {
+                    background-color: #7a539d; /* color al pasar el mouse */
+                }
+
+
             h2 {
                 text-align: center;
                 color: #8b5edf;

@@ -16,12 +16,27 @@
         </label>
         <nav class="menu">
             <ul>
-                <li><a href="pagina1.html">MENÚ PRINCIPAL</a></li>
-                <li><a href="login.html" id="logout">CERRAR SESIÓN</a></li>
+                <li><a href="login.html" id="logout" class="button-style">CERRAR SESIÓN</a></li>
+                <li><a href="pagina1.html" class="button-style">MENÚ PRINCIPAL</a></li>
                 <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
             </ul>
         </nav>
-
+        <style>
+            .button-style {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #9b68bd; /* o el color que prefieras */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .button-style:hover {
+            background-color: #7a539d; /* color al pasar el mouse */
+        }
+        
+        </style>
         <h1 class="glitch" data-text="Elementum">ELEMENTUM</h1>
 
         <div class="perfil-container">
@@ -29,7 +44,7 @@
                 <div class="foto-container">
                     <img id="foto-perfil" src="Imagenes/oncahui.png" alt="Foto de perfil" />
                     <input type="file" id="input-foto" style="display: none;" />
-                    <button id="btn-cambiar-foto">Cambiar Foto de Perfil</button>
+                   
                 </div>
                 <div class="info-container">
                     <p><strong>Jugador:</strong> <span id="nombre"></span></p>

@@ -129,6 +129,8 @@ p{
 	
 	overflow: hidden;
 	border-radius: 3px;
+	display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 
 /* Panel izquierdo */
@@ -346,6 +348,7 @@ a.mas {
 	padding: 0;
 	display: inline-block;
 	color: #FFF;
+	
 }
 
 /* Imágenes dentro del panel */
@@ -698,6 +701,42 @@ height: 100%;
 
     #slider div span {
         font-size: 20px;
+    }
+}
+/*responsive desing*/
+/*responsive */
+@media (max-width: 1200px) {
+    .glitch {
+        font-size: 5em;
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 4em;
+        bottom: 80px;
+        left: 10%;
+    }
+    .hamburger {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 3em;
+        bottom: 60px;
+        left: 20%;
+    }
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+    }
+    .profile {
+        max-width: 100%;
+        padding: 5px;
     }
 }
 
