@@ -105,6 +105,7 @@ button {
     border-radius: 10px;
     margin: 20px auto; /* Centra horizontalmente */
     cursor: pointer;
+    font-size: large;
     text-align: center;
     display: block; /* Necesario para centrar con `margin: auto` */
     top: 20px;
