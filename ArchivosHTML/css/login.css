@@ -22,7 +22,7 @@ main {
 
 .contenedor_todo {
     width: 100%;
-    max-width: 930px;
+    max-width: 800px;
     margin: auto;
     margin-top: 100px;
 }
@@ -136,6 +136,7 @@ main {
     -webkit-text-fill-color: transparent;
 }
 
+/*
 .glitch::before,
 .glitch::after {
     content: attr(data-text);
@@ -148,7 +149,7 @@ main {
     clip: rect(0, 900px, 0, 0);
     overflow: hidden;
 }
-
+*/
 .glitch::before {
     left: 7px;
     text-shadow: 1px 0 #eeedea;
@@ -165,8 +166,10 @@ main {
     /* keyframes... */
 }
 
+
+
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .contenedor_todo, .caja_trasera {
         padding: 20px;
         max-width: 100%;

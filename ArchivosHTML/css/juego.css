@@ -7,6 +7,10 @@ body{
     background-position: center;
     margin: 0;
     background-attachment: fixed;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
@@ -155,7 +159,9 @@ body{
     transition: transform 0.3s ease;
     z-index: 1000;
   }
-  
+  .menu ul p{
+    font-size:large;
+  }
   .menu ul {
     list-style: none;
     padding: 20px;
@@ -1041,6 +1047,38 @@ div{
     
 }
 
+
+
+.nobles, .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, .metaloides, .metales, .halogenos, .desconocidos {
+   
+    display: flex;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: dashed black 2px;
+    text-align: center;
+    border-radius: 5px;
+   
+    margin: 10px;
+    -webkit-transition-duration: 0.9s;
+    /* Uso de flex para centrar contenido */
+    justify-content: center;
+    align-items: center;
+}
+
+.resultados {
+    display: flex;
+    flex-direction: column; /* O la dirección que necesites */
+    max-width: 1400px;
+    min-height: 780px;
+    margin: 10px auto;
+    padding: 10px;
+    
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
 /*responsive desing*/
 /*responsive */
 @media (max-width: 1200px) {
@@ -1117,34 +1155,4 @@ div{
     .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
         font-size: 0.8rem;
     }
-}
-
-.nobles, .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, .metaloides, .metales, .halogenos, .desconocidos {
-   
-    display: flex;
-    position: relative;
-    width: 60px;
-    height: 60px;
-    border: dashed black 2px;
-    text-align: center;
-    border-radius: 5px;
-   
-    margin: 10px;
-    -webkit-transition-duration: 0.9s;
-    /* Uso de flex para centrar contenido */
-    justify-content: center;
-    align-items: center;
-}
-
-.resultados {
-    display: flex;
-    flex-direction: column; /* O la dirección que necesites */
-    max-width: 1400px;
-    min-height: 780px;
-    margin: 10px auto;
-    padding: 10px;
-    
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }

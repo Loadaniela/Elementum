@@ -22,10 +22,10 @@
                 <li><a href="normas.html" class="button-style">NORMAS</a></li>
                 <li><a href="autor.html" class="button-style">ACERCA DE</a></li>
                 <li><a href="marcador.html" class="button-style">MARCADOR</a></li>
-                <li><a href="tabla-periodica.html" class="button-style">TABLA PERIÓDICAa></li>
-            <p><strong style="color: rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
-            <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>
-            <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
+                <li><a href="tabla-periodica.html" class="button-style">TABLA PERIÓDICA></a></li>
+            <p><strong style="color: rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: black;"></span></p>
+            <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: black;"></span></p>
+            <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: black;"></span></p>
             <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
         </ul>
     </nav>
@@ -35,7 +35,7 @@
         .button-style {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #9b68bd; /* o el color que prefieras */
+        background-color: #9b68bd; 
         color: white;
         text-align: center;
         text-decoration: none;
@@ -60,6 +60,7 @@
         div[data-nombre] p.visible {
             visibility: visible !important;
         }
+             
 
 
                 #btnAyuda {
@@ -970,6 +971,14 @@ window.addEventListener('popstate', function (event) {
 
             guardarResultadoJuego(userId, juegoId, contadorArrastres);
         });
+    }
+}
+
+function realizarArrastre(juegoId) {
+    contadorArrastres++;
+
+    if ([2, 3, 4].includes(juegoId) && contadorArrastres >= 30) {
+        terminarJuego(juegoId);
     }
 }
 

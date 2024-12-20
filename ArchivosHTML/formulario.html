@@ -18,15 +18,53 @@
                 <li><a href="pagina1.html" class="button-style">MENÚ PRINCIPAL</a></li>
                 <li><a href="login.html" id="logout" class="button-style">CERRAR SESIÓN</a></li>
                 <li><a href="Perfil.html" class="button-style">PERFIL DEL JUGADOR</a></li>
-                <p><strong style="color:rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: white;"></span></p>
-                <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: white;"></span></p>
-                <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: white;"></span></p>
+                <p><strong style="color:rgb(119, 11, 241);">Jugador:</strong> <span id="nombre" style="color: black;"></span></p>
+                <p><strong style="color: rgb(119, 11, 241);">Correo:</strong> <span id="correo" style="color: black;"></span></p>
+                <p><strong style="color:rgb(119, 11, 241);">Usuario:</strong> <span id="usuario" style="color: black;"></span></p>
                 
                 <img src="Imagenes/oncahui.png" alt="panda" width="220" height="350">
             </ul>
         </nav>
 
         <style>
+            /* Responsividad */
+        @media (max-width: 768px) {
+            nav.menu {
+                width: 200px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            #contenedorFormulario {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav.menu {
+                width: 180px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            form input, form select, form button {
+                font-size: 14px;
+            }
+
+            nav.menu ul li a {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
             .button-style {
             display: inline-block;
             padding: 10px 20px;

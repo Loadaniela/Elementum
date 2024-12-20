@@ -56,7 +56,7 @@ body {
     height: 140%;
     object-fit: cover;
     z-index: 0; /* Asegúrate de que la imagen no cubra los enlaces */
-    opacity: 0.16; /* Ajusta el nivel de transparencia */
+    opacity: 0.14; /* Ajusta el nivel de transparencia */
 }
 
 /*linea negra del titulo de la carta*/
@@ -88,7 +88,7 @@ body {
    
     z-index: 1; /* El contenido de texto y los enlaces están por encima */
     text-align: justify;
-   font-size: 20.5px;
+   font-size: 1.4rem;
    color: black;
    text-decoration: solid;
     
@@ -212,6 +212,11 @@ h1{
     transition: transform 0.3s ease;
     z-index: 1000;
 }
+.menu ul p{
+    font-size:large;
+    text-align: justify;
+    padding: 0%;
+  }
 
 .menu ul {
     list-style: none;
@@ -282,7 +287,7 @@ h1{
                 position: fixed;
                 }
                 #menu4{
-                    top: 400px; 
+                    top: 420px; 
                     background-color: #FFD8BE; 
                     position: fixed;
                     }
@@ -403,7 +408,38 @@ h1{
         font-size: 0.9em;
     }
 }
+/* Responsividad: Menú móvil */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
 
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .carta h1 {
+        font-size: 1.2em;
+    }
+
+    .carta p {
+        font-size: 0.9em;
+    }
+}
 
 /*Estilos de formulario */
 

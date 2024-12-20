@@ -784,7 +784,11 @@
   transition: transform 0.3s ease;
   z-index: 1000;
 }
-
+.menu ul p{
+  font-size:large;
+  text-align: justify;
+  padding: 0%;
+}
 .menu ul {
   list-style: none;
   padding: 20px;

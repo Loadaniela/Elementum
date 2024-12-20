@@ -267,3 +267,81 @@ function drop(event) {
     obtenerPreguntasAleatorias();
 </script>
 -->
+
+/*responsive desing*/
+/*responsive */
+@media (max-width: 1200px) {
+    .glitch {
+        font-size: 5em;
+        bottom: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 4em;
+        bottom: 80px;
+        left: 10%;
+    }
+    .hamburger {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 3em;
+        bottom: 60px;
+        left: 20%;
+    }
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+    }
+    .profile {
+        max-width: 100%;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+/* Para pantallas pequeñas, ajustar los tamaños y distribución */
+@media only screen and (max-width: 768px) {
+    .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, 
+    .metaloides, .metales, .desconocidos, .halogenos, .nobles {
+        width: 50px;
+        height: 50px;
+        font-size: 10px; /* Reducir el tamaño del texto */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gas, .alcalino, .alcalinoterreos, .transicion, .lantanidos, .actinidos, 
+    .metaloides, .metales, .desconocidos, .halogenos, .nobles {
+        width: 40px;
+        height: 40px;
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .atomico, .simbolo, .nombre, .peso, .grupo, .periodo {
+        font-size: 0.8rem;
+    }
+}
