@@ -6,6 +6,8 @@ Juego interactivo para reforzar los conocimientos sobre las propiedades de los e
 
 copiar .env.example en .env
 
+version node utilizada: v20.10.0
+
 npm install
 npm run dev
 

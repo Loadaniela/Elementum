@@ -974,13 +974,7 @@ window.addEventListener('popstate', function (event) {
     }
 }
 
-function realizarArrastre(juegoId) {
-    contadorArrastres++;
 
-    if ([2, 3, 4].includes(juegoId) && contadorArrastres >= 30) {
-        terminarJuego(juegoId);
-    }
-}
 
     // Función para guardar el resultado del juego
     function guardarResultadoJuego(userId, juegoId, numArrastres) {
