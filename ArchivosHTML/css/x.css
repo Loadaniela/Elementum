@@ -81,21 +81,24 @@ body {
 
 
 #instruciones {
-    text-align: center;
-    font-size: large;
+   
+    font-size: 1.4rem;
    justify-content: center;
     padding: 5px; /* Espacio dentro del párrafo */
     line-height: 1.1; /* Espaciado entre líneas */
     margin: 5px;
+    text-align: justify;
 }
 
 h3{
-    color: #c313c9;
-    font-size: xx-large;
-    text-align: center;
-    font-style: italic;
-    margin-top: 0%;
-    margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+    font-size: 2rem; /* Tamaño del texto */
+    color: #8319ca; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    text-shadow: 1px 0px 2px black; /* Sombra para darle efecto */
+   
+  
+    background: linear-gradient(90deg, #ff6600, #ffcc00); /* Gradiente de color */
+    -webkit-background-clip: text; /* Clip del fondo al texto para darle efecto 3d */
 }
 
 button {

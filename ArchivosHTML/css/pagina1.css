@@ -347,7 +347,7 @@ a.mas {
 	overflow: hidden;
 	margin: 0;
 	margin-left: 5px;
-	width: 440px;
+	width: 390px;
 	height: 600px;
 	padding: 0;
 	display: inline-block;
@@ -399,7 +399,7 @@ justify-content: space-between; /* Distribuye los elementos */
     justify-content: space-around; /* Centra el contenido horizontalmente */
     flex-grow: 50; /* Permite que el contenido crezca */
     margin: 10px 0; /* Añade espacio entre las secciones */
-	height: 200px;
+	height: 400px;
 }
 
 /* Sombra del contenedor superior */
@@ -422,13 +422,14 @@ justify-content: space-between; /* Distribuye los elementos */
 	left: 0;
 	right: 0;
 	height: 100px;
-	top: 10px;
+	top: 35px;
 	z-index: 5;
+	
 	margin: 0;
 	padding: 0;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 35px;
+	font-size: 40px;
 	line-height: 35px;
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -439,12 +440,12 @@ justify-content: space-between; /* Distribuye los elementos */
 
 /* Contenedor de los links aqui le movi */
 .right #top .links {
-	width: 380px;
+	width: 400px;
 	position: absolute;
     font-size:x-large;
-	bottom: 10px;
+	bottom: 20px;
 	left: 10px;
-	z-index: 5;
+	z-index: 6;
 }
 
 .right #top .links a {
@@ -453,6 +454,7 @@ justify-content: space-between; /* Distribuye los elementos */
 	text-align: left;
     font-size: x-large;
 	display: block;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 }
@@ -488,7 +490,7 @@ height: 100%;
 .right #bottom a {
 	display: inline-block;
 	width: 198px;
-	height: 160px;
+	height: 150px; /*altura de los cuadros inferiores*/
 	position: relative;
 	overflow: hidden;
 }
@@ -539,17 +541,17 @@ height: 100%;
 
 /* HOVERS DEL PANEL DERECHO */
 .right #top:hover > img, .right #bottom a:hover > img {
-	transform: scale(1.1);
+	transform: scale(1.01);
 }
 
 .right #top .links a:hover * {
-	color: #FFFF00;
+	color: #f7509e;
 }
 
 .right #bottom a:hover > p {
 	-webkit-transform: translate3d(0,-30px,0);
 	transform: translate3d(0,-30px,0);
-	font-size: 16px;
+	font-size: 25px;
 }
 
 .glitch {
