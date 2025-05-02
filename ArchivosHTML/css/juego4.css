@@ -1081,7 +1081,7 @@ div{
 
 .contenedores{
     position: relative;
-    bottom: -50px;
+    bottom: -120px;
     left: 140px;
 }
 
@@ -1103,7 +1103,7 @@ div{
     display: flex;
     flex-direction: column; /* O la dirección que necesites */
     max-width: 1400px;
-    min-height: 1100px;
+    min-height: 1020px;
     margin: 10px auto;
     padding: 10px;
     

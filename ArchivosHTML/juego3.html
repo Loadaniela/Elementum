@@ -485,6 +485,7 @@
            </div>-->
        
        </div>
+        
        <!--AQUI TERMINA EL BLOQUE F-->
 
   
@@ -502,11 +503,59 @@
         <div class="elemento-arrastable" id="elemento10" draggable="true" ondragstart="drag(event)"></div>
         </div>
 
+        <div id="resumenModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); z-index:9999;">
+            <div style="background:#fff; margin: 5% auto; padding: 20px; width: 60%; border-radius: 10px;">
+              <h2 style="color:#4a148c;">Resumen del Radio Atómico</h2>
+              <div id="barrasResumen"></div>
+              <button id="continuarBtn" style="margin-top:20px; background:#4a148c; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+                Ir a marcadores
+              </button>
+            </div>
+          </div>
+          
+                  
+          
 </div>
     </main>
 
+    <script>
+        async function terminarJuego() {
+    try {
+        const response = await fetch('http://localhost:3000/elementos/aleatorios');
+        const elementos = await response.json();
+        mostrarResumenFinal(elementos); // Mostrar el resumen
+    } catch (err) {
+        console.error('Error al obtener elementos aleatorios:', err);
+    }
+}
+
+    </script>
     
-  
+  <script>
+    function mostrarResumenFinal(elementos) {
+    const resumenModal = document.getElementById('resumenModal');
+    const barrasResumen = document.getElementById('barrasResumen');
+    resumenModal.style.display = 'block';
+    barrasResumen.innerHTML = '';
+
+    const maxRadio = Math.max(...elementos.map(e => parseFloat(e.radio)));
+
+    elementos.forEach((elemento) => {
+        const ancho = (parseFloat(elemento.radio) / maxRadio) * 100;
+        const barra = document.createElement('div');
+        barra.innerHTML = `
+            <span><strong>${elemento.simbolo}</strong> (${elemento.radio} pm)</span>
+            <div style="background-color: #6a1b9a; height: 20px; width: ${ancho}%; margin-bottom: 10px; border-radius: 5px;"></div>
+        `;
+        barrasResumen.appendChild(barra);
+    });
+
+    document.getElementById('continuarBtn').onclick = () => {
+        window.location.href = 'marcador.html';
+    };
+}
+
+</script>
 
         <!--PARA ENCONTAR LOS ELEMENTOS DEL RADIO ATOMICO de mongo db-->
    <script>
@@ -530,6 +579,11 @@
                 
             `;
         });
+
+        //DE AQUI PARA ABAJO
+        
+        //HASTA AQUI
+
     } catch (err) {
         console.error('Error de fetching elementos:', err);
     }
@@ -606,6 +660,8 @@
     });
 
 </script>
+
+
 
 <!--
 <script> //AQUI ESTA LA FUNCION PARA SALIR DEL JUEGO SIN GUARDAR O ACEPTAR EL GUARADADO 
@@ -867,13 +923,26 @@ window.addEventListener('popstate', function (event) {
             text: `Has colocado todos los elementos correctamente en ${contadorArrastres} arrastres.`,
             icon: 'success',
             confirmButtonText: 'Aceptar'
-        }).then(() => {
-            // Guardar el resultado del juego en la base de datos
-            const userId = document.getElementById('usuario').textContent; // Obtiene el userId del perfil cargado
-            const juegoId = obtenerIdJuegoDeURL(); // Obtiene el ID del juego actual
+        }).then(async () => {
+        const userId = document.getElementById('usuario').textContent;
+        const juegoId = obtenerIdJuegoDeURL();
 
-            guardarResultadoJuego(userId, juegoId, contadorArrastres);
-        });
+        try {
+            const response = await fetch('http://localhost:3000/elementos/aleatorios');
+            const elementos = await response.json();
+
+            mostrarResumenFinal(elementos); // Mostrar resumen primero
+
+            // Solo guardar resultado cuando se dé clic en "Ir a marcadores"
+            document.getElementById('continuarBtn').onclick = () => {
+                guardarResultadoJuego(userId, juegoId, contadorArrastres);
+            };
+
+        } catch (err) {
+            console.error('Error al cargar elementos para el resumen:', err);
+            guardarResultadoJuego(userId, juegoId, contadorArrastres); // Si falla, aún guarda
+        }
+    });
     }
 }
 

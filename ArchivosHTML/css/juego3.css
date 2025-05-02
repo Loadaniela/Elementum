@@ -1058,9 +1058,9 @@ div{
 }
 /*pruebas para el bloque por medio de mongo*/
 .elemento-arrastable{
-    width: 60px;
-    height: 60px;
-    position: relative;
+    width: 65px;
+    height: 65px;
+    position: absolute;
     display:inline-block ;
     border: dashed rgb(15, 15, 15) 2px; /*tamaño del color negro del borde*/
     text-align: center;
@@ -1088,9 +1088,10 @@ div{
     
 }
 
-.contenedores{
+
+.contenedores{ /*AQUI AJUSTE EL TAMAÑO DE LOS ELEMENTOS A LA TABLA*/
     position: relative;
-    bottom: -10px;
+    bottom: -130px;
     left: 110px;
 }
 
@@ -1125,7 +1126,7 @@ div{
     display: flex;
     flex-direction: column; /* O la dirección que necesites */
     max-width: 1400px;
-    min-height: 1100px;
+    min-height: 1020px;
     margin: 10px auto;
     padding: 10px;
     
@@ -1133,3 +1134,15 @@ div{
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
+
+#comparacion-radios h3 {
+    font-size: 1.4rem;
+    color: #4a148c;
+    margin-bottom: 10px;
+}
+#barras-radio span {
+    display: block;
+    margin-bottom: 4px;
+    font-family: 'Arial';
+}
+

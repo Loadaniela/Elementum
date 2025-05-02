@@ -47,6 +47,28 @@
         background-color: #7a539d; /* color al pasar el mouse */
     }
     
+    .reloj {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    background: linear-gradient(90deg, #6a0c81, #ee2dde);
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0 0 10px rgb(113, 15, 241);
+    margin: 20px auto;
+    text-align: left;
+
+    animation: pulso 1s infinite alternate;
+    }
+
+    /* Animación de pulso suave */
+    @keyframes pulso {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.05); opacity: 0.9; }
+    }
+
     </style>
    <!--- <h1 class="glitch"  data-text="Elementum">ELEMENTUM</h1>
     <p class="arrastres"><strong style="color: orange;">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: white;">0</span></p>
@@ -56,11 +78,14 @@
  
  <!--INICIA EL BLOQUE S-->
  <div class="resultados">
+    <div id="temporizador" class="reloj" >
+        Tiempo restante: 25s
+      </div>
 <div class="contenedor"> 
     <!--AQUI INICIA EL CONTENEDOR PADRE-->
     <h1 class="glitch"  data-text="Elementum">BLOQUES</h1>
     <p class="arrastres"><strong style="color: rgb(113, 15, 241);">Número de arrastres realizados:</strong> <span id="contadorArrastres" style="color: rgb(8, 3, 3);">0</span></p>
-  
+    
     
  <div class="bloqueS" id="bloqueS" ondrop="drop(event)" ondragover="allowDrop(event)" >
     
@@ -722,7 +747,29 @@
     window.history.pushState(null, null, window.location.href);
 </script>
 
-
+<script> //funcion para poner un contrareloj
+    let tiempo = 25; // segundos del marcador
+    const temporizador = document.getElementById('temporizador');
+  
+    const intervalo = setInterval(() => {
+      tiempo--;
+      temporizador.textContent = `Tiempo restante: ${tiempo}s`;
+  
+      if (tiempo <= 0) {
+        clearInterval(intervalo);
+        terminarJuego(); // Llama a la función que termina el juego
+      }
+    }, 1000);
+  
+    function terminarJuego() {
+      alert("¡Tiempo agotado! El juego ha terminado.");
+      
+       location.href = 'marcador.html';
+      // o
+      // document.getElementById("contenedor-juego").style.pointerEvents = "none";
+    }
+  </script>
+  
 
 
 <script> 
